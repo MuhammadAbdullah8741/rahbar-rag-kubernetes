@@ -1,0 +1,23 @@
+Verified at 2026-11-06 11:02 UTC
+minikube version: v1.39.0
+commit: 7a9f6a841470a207de8cf4bafcccee0969d8ba10
+Client Version: v1.36.1
+Kustomize Version: v5.8.1
+NAME       STATUS   ROLES           AGE     VERSION
+minikube   Ready    control-plane   3m45s   v1.36.1
+NAMESPACE       NAME                                        READY   STATUS      RESTARTS   AGE
+ingress-nginx   ingress-nginx-admission-create-dtdc5        0/1     Completed   0          3m35s
+ingress-nginx   ingress-nginx-admission-patch-c8b6b         0/1     Completed   0          3m35s
+ingress-nginx   ingress-nginx-controller-7b86db8c55-c4d4k   1/1     Running     0          3m35s
+kube-system     calico-kube-controllers-7848b846c6-5kjt2    1/1     Running     0          3m37s
+kube-system     calico-node-4gxpq                           1/1     Running     0          3m37s
+kube-system     coredns-589f44dc88-cl7sb                    1/1     Running     0          3m37s
+kube-system     etcd-minikube                               1/1     Running     0          3m43s
+kube-system     kube-apiserver-minikube                     1/1     Running     0          3m43s
+kube-system     kube-controller-manager-minikube            1/1     Running     0          3m43s
+kube-system     kube-proxy-hmtvx                            1/1     Running     0          3m37s
+kube-system     kube-scheduler-minikube                     1/1     Running     0          3m43s
+kube-system     metrics-server-84c57757c7-f7gbx             1/1     Running     0          3m37s
+kube-system     storage-provisioner                         1/1     Running     0          3m40s
+NAME       CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+minikube   744m         9%       1219Mi          15%         
