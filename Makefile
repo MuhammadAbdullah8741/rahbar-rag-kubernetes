@@ -5,7 +5,7 @@ SHELL := /bin/bash
 NS ?= rahbar
 TAG ?= dev
 PY ?= python3
-VENV ?= .venv
+VENV ?= $(HOME)/.venvs/rahbar
 DEV_HOST ?= 127.0.0.1
 BIN := $(abspath $(VENV))/bin
 # The Ingress address. On Linux this is the minikube IP. On macOS or Windows with the
@@ -72,8 +72,8 @@ fetch: ## download the documents listed in corpus/sources.yaml
 eval: ## score eval/golden.yaml through the Ingress and apply the CI gate
 	$(BIN)/python eval/run_eval.py --api "http://$(INGRESS_IP)" --host $(HOST)
 
-eval-fixtures: ## score the CI fixture golden set against a local `make dev`
-	$(BIN)/python eval/run_eval.py --api http://localhost:8000 --golden eval/fixtures/golden.fixture.yaml --out /tmp/rahbar-fixture-results.json
+eval-fixtures: ## score fixtures against a running fixture-configured API on port 8000
+	$(BIN)/python eval/run_eval.py --api http://localhost:8000 --golden eval/fixtures/golden.fixture.yaml --baseline eval/fixtures/baseline.json --out /tmp/rahbar-fixture-results.json
 
 check: ## run the submission checker
 	$(PY) scripts/check_submission.py
