@@ -1,0 +1,53 @@
+name: CD
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  test:
+    uses: ./.github/workflows/ci.yml
+  build-push:
+    needs: test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        component: [api, indexer, ui]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Login to Docker Hub
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: printf '%s' "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+      - name: Publish immutable commit tag
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          SHA: ${{ github.sha }}
+          COMPONENT: ${{ matrix.component }}
+        run: |
+          docker build -t "$DOCKERHUB_USERNAME/rahbar-$COMPONENT:$SHA" "$COMPONENT"
+          docker push "$DOCKERHUB_USERNAME/rahbar-$COMPONENT:$SHA"
+  deploy:
+    needs: build-push
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install httpx==0.28.1 pyyaml==6.0.2
+      - name: Deploy SHA images, wait for rollout status, and smoke Ingress
+        env:
+          PREFIX: ${{ secrets.DOCKERHUB_USERNAME }}/rahbar
+          TAG: ${{ github.sha }}
+        run: |
+          curl -fsSL -o kind https://kind.sigs.k8s.io/dl/v0.31.0/kind-linux-amd64
+          chmod +x kind
+          sudo mv kind /usr/local/bin/kind
+          bash scripts/ci_e2e.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: deployment-smoke-evaluation
+          path: eval/fixtures/ci-results.json
