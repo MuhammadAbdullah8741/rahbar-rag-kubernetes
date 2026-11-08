@@ -6,6 +6,10 @@ from .base import LLMProvider
 
 def get_provider(settings: Settings) -> LLMProvider:
     name = settings.llm_provider
+    if name == "fixture":
+        from .fixture import FixtureProvider
+
+        return FixtureProvider()
     if name == "stub":
         from .stub import StubProvider
 
