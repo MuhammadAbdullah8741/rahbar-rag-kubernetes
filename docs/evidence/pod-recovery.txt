@@ -1,0 +1,21 @@
+$ kubectl delete pod api-c7b8cbbdf-r9qp9 -n rahbar --wait=false
+pod "api-c7b8cbbdf-r9qp9" deleted from rahbar namespace
+
+
+$ kubectl rollout status deployment/api -n rahbar --timeout=45s
+Waiting for deployment "api" rollout to finish: 2 of 3 updated replicas are available...
+deployment "api" successfully rolled out
+
+
+$ kubectl get pods -n rahbar -l app=api
+NAME                  READY   STATUS        RESTARTS   AGE
+api-c7b8cbbdf-8ct4l   1/1     Running       0          4s
+api-c7b8cbbdf-r9qp9   1/1     Terminating   0          2m20s
+api-c7b8cbbdf-rhv6t   1/1     Running       0          2m20s
+api-c7b8cbbdf-vw25g   1/1     Running       0          2m20s
+embedding-pin-check   0/1     Terminating   0          11s
+
+
+$ kubectl get hpa -n rahbar
+NAME   REFERENCE        TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+api    Deployment/api   cpu: 10%/70%   3         8         3          2m20s

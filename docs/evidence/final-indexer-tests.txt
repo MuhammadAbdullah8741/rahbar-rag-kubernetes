@@ -1,0 +1,18 @@
+Success: no issues found in 10 source files
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-8.3.5, pluggy-1.7.0
+rootdir: /mnt/x/semester 5/SCD/A2/rahbar-starter/indexer
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.16.0, cov-6.1.1
+collected 12 items
+
+tests/test_stages.py ........                                            [ 66%]
+tests/test_starter_dummy.py ....                                         [100%]
+
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.3-final-0 ________________
+
+Coverage XML written to file ../docs/evidence/indexer-coverage.xml
+Required test coverage of 60% reached. Total coverage: 80.81%
+============================= 12 passed in 14.21s ==============================

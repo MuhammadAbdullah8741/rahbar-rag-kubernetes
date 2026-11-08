@@ -1,0 +1,58 @@
+{
+  "url": "http://localhost:18081/",
+  "status": 200,
+  "errors": [],
+  "response": {
+    "request_id": "82225c7d6954d98f78772d8ad18f59c6",
+    "answer": "The university charges a one-time admission fee of Rs 30,000. [fee-structure-page.html / Admission Fee]",
+    "citations": [
+      {
+        "source": "fee-structure-page.html",
+        "section": "Admission Fee",
+        "page": 1
+      }
+    ],
+    "answered_from_context": true,
+    "confidence": "high",
+    "retrieved": [
+      {
+        "chunk_id": "91bab5c636c9ea3910ef3ae1",
+        "source": "fee-structure-page.html",
+        "section": "Admission Fee",
+        "page": 1,
+        "score": 0.75693905
+      },
+      {
+        "chunk_id": "41331bf9eabcafdf02a5bde7",
+        "source": "fee-structure-page.html",
+        "section": "Fee Refund Policy",
+        "page": 1,
+        "score": 0.6068382299999999
+      },
+      {
+        "chunk_id": "73602474c1bfbba7bb6db36e",
+        "source": "fee-structure-page.html",
+        "section": "Miscellaneous Fees",
+        "page": 1,
+        "score": 0.6527449000000001
+      },
+      {
+        "chunk_id": "09e6a4227cca3e2b1f10fdf6",
+        "source": "student-handbook-jun-2026.pdf",
+        "section": "Internal Scholarships",
+        "page": 19,
+        "score": 0.5806697000000001
+      },
+      {
+        "chunk_id": "d14017d42a646f23fd5bef7f",
+        "source": "student-handbook-jun-2026.pdf",
+        "section": "Fee Structure and Mode of Payment",
+        "page": 18,
+        "score": 0.57712966
+      }
+    ],
+    "provider": "ollama",
+    "cached": true,
+    "fallback": false
+  }
+}

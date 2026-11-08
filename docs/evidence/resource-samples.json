@@ -1,0 +1,62 @@
+[
+  {
+    "time": 1794080550.8318424,
+    "output": "POD                      NAME      CPU(cores)   MEMORY(bytes)   \napi-c7b8cbbdf-frblb      api       21m          55Mi            \napi-c7b8cbbdf-p4fzl      api       25m          55Mi            \napi-c7b8cbbdf-vw25g      api       26m          57Mi            \nchroma-0                 chroma    5m           56Mi            \nindexer-nb4b6            indexer   941m         233Mi           \nredis-64f484c8c9-bczbz   redis     41m          10Mi            \nui-74f4bc7bf-bn7pr       ui        1m           4Mi             \n",
+    "error": ""
+  },
+  {
+    "time": 1794080567.5738783,
+    "output": "POD                      NAME      CPU(cores)   MEMORY(bytes)   \napi-c7b8cbbdf-frblb      api       21m          55Mi            \napi-c7b8cbbdf-p4fzl      api       25m          55Mi            \napi-c7b8cbbdf-vw25g      api       26m          57Mi            \nchroma-0                 chroma    5m           56Mi            \nindexer-nb4b6            indexer   941m         233Mi           \nredis-64f484c8c9-bczbz   redis     41m          10Mi            \nui-74f4bc7bf-bn7pr       ui        1m           4Mi             \n",
+    "error": ""
+  },
+  {
+    "time": 1794080585.6220882,
+    "output": "POD                      NAME      CPU(cores)   MEMORY(bytes)   \napi-c7b8cbbdf-frblb      api       21m          55Mi            \napi-c7b8cbbdf-p4fzl      api       25m          55Mi            \napi-c7b8cbbdf-vw25g      api       26m          57Mi            \nchroma-0                 chroma    5m           56Mi            \nindexer-nb4b6            indexer   941m         233Mi           \nredis-64f484c8c9-bczbz   redis     41m          10Mi            \nui-74f4bc7bf-bn7pr       ui        1m           4Mi             \n",
+    "error": ""
+  },
+  {
+    "time": 1794080603.6637216,
+    "output": "POD                      NAME      CPU(cores)   MEMORY(bytes)   \napi-c7b8cbbdf-frblb      api       21m          55Mi            \napi-c7b8cbbdf-p4fzl      api       25m          55Mi            \napi-c7b8cbbdf-vw25g      api       26m          57Mi            \nchroma-0                 chroma    5m           56Mi            \nindexer-nb4b6            indexer   941m         233Mi           \nredis-64f484c8c9-bczbz   redis     41m          10Mi            \nui-74f4bc7bf-bn7pr       ui        1m           4Mi             \n",
+    "error": ""
+  },
+  {
+    "time": 1794080628.610748,
+    "output": "POD                      NAME      CPU(cores)   MEMORY(bytes)   \napi-c7b8cbbdf-frblb      api       12m          57Mi            \napi-c7b8cbbdf-p4fzl      api       16m          54Mi            \napi-c7b8cbbdf-vw25g      api       17m          57Mi            \nchroma-0                 chroma    11m          54Mi            \nindexer-nb4b6            indexer   961m         388Mi           \nredis-64f484c8c9-bczbz   redis     32m          13Mi            \nui-74f4bc7bf-bn7pr       ui        1m           4Mi             \n",
+    "error": ""
+  },
+  {
+    "time": 1794080654.403335,
+    "output": "POD                      NAME      CPU(cores)   MEMORY(bytes)   \napi-c7b8cbbdf-frblb      api       12m          57Mi            \napi-c7b8cbbdf-p4fzl      api       16m          54Mi            \napi-c7b8cbbdf-vw25g      api       17m          57Mi            \nchroma-0                 chroma    11m          54Mi            \nindexer-nb4b6            indexer   961m         388Mi           \nredis-64f484c8c9-bczbz   redis     32m          13Mi            \nui-74f4bc7bf-bn7pr       ui        1m           4Mi             \n",
+    "error": ""
+  },
+  {
+    "time": 1794080673.6891778,
+    "output": "POD                      NAME      CPU(cores)   MEMORY(bytes)   \napi-c7b8cbbdf-frblb      api       29m          57Mi            \napi-c7b8cbbdf-p4fzl      api       30m          54Mi            \napi-c7b8cbbdf-vw25g      api       33m          57Mi            \nchroma-0                 chroma    109m         55Mi            \nindexer-nb4b6            indexer   905m         426Mi           \nredis-64f484c8c9-bczbz   redis     114m         11Mi            \nui-74f4bc7bf-bn7pr       ui        1m           4Mi             \n",
+    "error": ""
+  },
+  {
+    "time": 1794080690.3738372,
+    "output": "POD                      NAME      CPU(cores)   MEMORY(bytes)   \napi-c7b8cbbdf-frblb      api       29m          57Mi            \napi-c7b8cbbdf-p4fzl      api       30m          54Mi            \napi-c7b8cbbdf-vw25g      api       33m          57Mi            \nchroma-0                 chroma    109m         55Mi            \nindexer-nb4b6            indexer   905m         426Mi           \nredis-64f484c8c9-bczbz   redis     114m         11Mi            \nui-74f4bc7bf-bn7pr       ui        1m           4Mi             \n",
+    "error": ""
+  },
+  {
+    "time": 1794080707.8353014,
+    "output": "POD                      NAME      CPU(cores)   MEMORY(bytes)   \napi-c7b8cbbdf-frblb      api       29m          57Mi            \napi-c7b8cbbdf-p4fzl      api       30m          54Mi            \napi-c7b8cbbdf-vw25g      api       33m          57Mi            \nchroma-0                 chroma    109m         55Mi            \nindexer-nb4b6            indexer   905m         426Mi           \nredis-64f484c8c9-bczbz   redis     114m         11Mi            \nui-74f4bc7bf-bn7pr       ui        1m           4Mi             \n",
+    "error": ""
+  },
+  {
+    "time": 1794080733.8052497,
+    "output": "POD                      NAME      CPU(cores)   MEMORY(bytes)   \napi-c7b8cbbdf-frblb      api       29m          57Mi            \napi-c7b8cbbdf-p4fzl      api       30m          54Mi            \napi-c7b8cbbdf-vw25g      api       33m          57Mi            \nchroma-0                 chroma    109m         55Mi            \nindexer-nb4b6            indexer   905m         426Mi           \nredis-64f484c8c9-bczbz   redis     114m         11Mi            \nui-74f4bc7bf-bn7pr       ui        1m           4Mi             \n",
+    "error": ""
+  },
+  {
+    "time": 1794080762.8437314,
+    "output": "POD                      NAME      CPU(cores)   MEMORY(bytes)   \napi-c7b8cbbdf-frblb      api       16m          57Mi            \napi-c7b8cbbdf-p4fzl      api       16m          54Mi            \napi-c7b8cbbdf-vw25g      api       16m          57Mi            \nchroma-0                 chroma    14m          53Mi            \nindexer-nb4b6            indexer   951m         522Mi           \nredis-64f484c8c9-bczbz   redis     36m          10Mi            \nui-74f4bc7bf-bn7pr       ui        1m           4Mi             \n",
+    "error": ""
+  },
+  {
+    "time": 1794080785.135103,
+    "output": "POD                      NAME      CPU(cores)   MEMORY(bytes)   \napi-c7b8cbbdf-frblb      api       16m          57Mi            \napi-c7b8cbbdf-p4fzl      api       16m          54Mi            \napi-c7b8cbbdf-vw25g      api       16m          57Mi            \nchroma-0                 chroma    14m          53Mi            \nindexer-nb4b6            indexer   951m         522Mi           \nredis-64f484c8c9-bczbz   redis     36m          10Mi            \nui-74f4bc7bf-bn7pr       ui        1m           4Mi             \n",
+    "error": ""
+  }
+]
