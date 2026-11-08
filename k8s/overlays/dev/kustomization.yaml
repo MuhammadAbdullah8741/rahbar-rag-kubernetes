@@ -1,0 +1,29 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../base
+- ollama-egress.yaml
+patches:
+- target:
+    kind: Deployment
+    name: api
+  patch: "- op: add\n  path: /spec/template/spec/hostAliases\n  value:\n  - hostnames:\n\
+    \    - host.docker.internal\n    ip: 192.168.65.254\n"
+- target:
+    kind: Job
+    name: indexer
+  patch: "- op: add\n  path: /spec/template/spec/hostAliases\n  value:\n  - hostnames:\n\
+    \    - host.docker.internal\n    ip: 192.168.65.254\n"
+- target:
+    kind: CronJob
+    name: reindex
+  patch: "- op: add\n  path: /spec/jobTemplate/spec/template/spec/hostAliases\n  value:\n\
+    \  - hostnames:\n    - host.docker.internal\n    ip: 192.168.65.254\n"
+- target:
+    kind: ConfigMap
+    name: rahbar-config
+  patch: "- op: replace\n  path: /data/OLLAMA_URL\n  value: http://host.docker.internal:11434\n"
+- target:
+    kind: Ingress
+    name: rahbar
+  patch: "- op: remove\n  path: /spec/rules/0/host\n"
