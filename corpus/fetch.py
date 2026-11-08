@@ -36,7 +36,9 @@ HERE = Path(__file__).resolve().parent
 RAW = HERE / "raw"
 SOURCES = HERE / "sources.yaml"
 MANIFEST = HERE / "MANIFEST.md"
-USER_AGENT = "RAHBAR-coursework-fetcher/1.0 (CS4032 student project; one request at a time)"
+USER_AGENT = (
+    "RAHBAR-coursework-fetcher/1.0 (CS4032 student project; one request at a time)"
+)
 PAUSE_SECONDS = 2.0
 DRIVE_VIEW = re.compile(r"https?://drive\.google\.com/file/d/([^/?#]+)")
 
@@ -61,7 +63,11 @@ def guess_extension(url: str, content_type: str) -> str:
     if "html" in content_type:
         return ".html"
     suffix = Path(urlsplit(url).path).suffix.lower()
-    return suffix if suffix in {".pdf", ".html", ".htm", ".docx", ".txt", ".md"} else ".bin"
+    return (
+        suffix
+        if suffix in {".pdf", ".html", ".htm", ".docx", ".txt", ".md"}
+        else ".bin"
+    )
 
 
 def get(client: httpx.Client, url: str, attempts: int = 3) -> httpx.Response:
@@ -74,7 +80,7 @@ def get(client: httpx.Client, url: str, attempts: int = 3) -> httpx.Response:
         except httpx.TransportError as exc:
             reason = type(exc).__name__
         if attempt < attempts:
-            wait = PAUSE_SECONDS * 2 ** attempt
+            wait = PAUSE_SECONDS * 2**attempt
             print(f"    {reason}; retrying in {wait:.0f}s ({attempt}/{attempts - 1})")
             time.sleep(wait)
     raise RuntimeError(f"gave up after {attempts} attempts: {reason}")
@@ -82,8 +88,10 @@ def get(client: httpx.Client, url: str, attempts: int = 3) -> httpx.Response:
 
 def load_sources() -> list[dict]:
     if not SOURCES.exists():
-        sys.exit("corpus/sources.yaml not found. Copy corpus/sources.example.yaml to "
-                 "corpus/sources.yaml and keep the documents you want.")
+        sys.exit(
+            "corpus/sources.yaml not found. Copy corpus/sources.example.yaml to "
+            "corpus/sources.yaml and keep the documents you want."
+        )
     data = yaml.safe_load(SOURCES.read_text(encoding="utf-8")) or {}
     docs = data.get("documents") or []
     for i, doc in enumerate(docs):
@@ -96,18 +104,29 @@ def fetch(force: bool) -> int:
     docs = load_sources()
     RAW.mkdir(exist_ok=True)
     index_path = RAW / "_index.json"
-    previous = {e["name"]: e for e in json.loads(index_path.read_text())} \
-        if index_path.exists() else {}
+    previous = (
+        {e["name"]: e for e in json.loads(index_path.read_text())}
+        if index_path.exists()
+        else {}
+    )
     entries, failures = [], []
-    with httpx.Client(headers={"User-Agent": USER_AGENT}, follow_redirects=True,
-                      timeout=httpx.Timeout(60.0, connect=15.0)) as client:
+    with httpx.Client(
+        headers={"User-Agent": USER_AGENT},
+        follow_redirects=True,
+        timeout=httpx.Timeout(60.0, connect=15.0),
+    ) as client:
         for doc in docs:
             name, url = doc["name"], normalise(doc["url"])
             old = previous.get(name)
             if old and not force and (RAW / old["file"]).exists() and old["url"] == url:
                 print(f"  have    {old['file']}")
-                entries.append({**old, "doc_version": doc.get("doc_version", "unknown"),
-                                "superseded": bool(doc.get("superseded", False))})
+                entries.append(
+                    {
+                        **old,
+                        "doc_version": doc.get("doc_version", "unknown"),
+                        "superseded": bool(doc.get("superseded", False)),
+                    }
+                )
                 continue
             print(f"  fetch   {name}")
             try:
@@ -116,18 +135,25 @@ def fetch(force: bool) -> int:
                     raise RuntimeError(f"HTTP {response.status_code}")
                 content_type = response.headers.get("content-type", "")
                 if "drive.google.com" in url and "html" in content_type:
-                    raise RuntimeError("Google Drive returned a web page, not the file "
-                                       "(too large for direct download, or not shared publicly)")
+                    raise RuntimeError(
+                        "Google Drive returned a web page, not the file "
+                        "(too large for direct download, or not shared publicly)"
+                    )
                 file = slug(name) + guess_extension(url, content_type)
                 (RAW / file).write_bytes(response.content)
-                entries.append({
-                    "name": name, "url": url, "file": file, "bytes": len(response.content),
-                    "sha256": hashlib.sha256(response.content).hexdigest(),
-                    "content_type": content_type.split(";")[0],
-                    "fetched_at": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-                    "doc_version": doc.get("doc_version", "unknown"),
-                    "superseded": bool(doc.get("superseded", False)),
-                })
+                entries.append(
+                    {
+                        "name": name,
+                        "url": url,
+                        "file": file,
+                        "bytes": len(response.content),
+                        "sha256": hashlib.sha256(response.content).hexdigest(),
+                        "content_type": content_type.split(";")[0],
+                        "fetched_at": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+                        "doc_version": doc.get("doc_version", "unknown"),
+                        "superseded": bool(doc.get("superseded", False)),
+                    }
+                )
                 print(f"          {file}, {len(response.content):,} bytes")
             except Exception as exc:  # report every failure, keep going
                 failures.append((name, str(exc)))
@@ -136,7 +162,9 @@ def fetch(force: bool) -> int:
 
     index_path.write_text(json.dumps(entries, indent=2), encoding="utf-8")
     write_manifest(entries)
-    print(f"\n{len(entries)} documents in corpus/raw, manifest written to corpus/MANIFEST.md")
+    print(
+        f"\n{len(entries)} documents in corpus/raw, manifest written to corpus/MANIFEST.md"
+    )
     if failures:
         print(f"{len(failures)} failed; fix their URLs in sources.yaml and run again:")
         for name, reason in failures:
@@ -157,15 +185,19 @@ def write_manifest(entries: list[dict]) -> None:
         "| --- | --- | --- | --- | ---: | --- | --- |",
     ]
     for e in entries:
-        lines.append(f"| {e['name']} | {e['doc_version']} | {'yes' if e['superseded'] else 'no'} "
-                     f"| `{e['file']}` | {e['bytes']:,} | `{e['sha256']}` | <{e['url']}> |")
+        lines.append(
+            f"| {e['name']} | {e['doc_version']} | {'yes' if e['superseded'] else 'no'} "
+            f"| `{e['file']}` | {e['bytes']:,} | `{e['sha256']}` | <{e['url']}> |"
+        )
     MANIFEST.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def verify() -> int:
     if not MANIFEST.exists():
         sys.exit("no corpus/MANIFEST.md yet; run fetch first")
-    rows = re.findall(r"\| `([^`]+)` \| [\d,]+ \| `([0-9a-f]{64})` \|", MANIFEST.read_text())
+    rows = re.findall(
+        r"\| `([^`]+)` \| [\d,]+ \| `([0-9a-f]{64})` \|", MANIFEST.read_text()
+    )
     bad = 0
     for file, expected in rows:
         path = RAW / file
@@ -206,8 +238,9 @@ class _Links(HTMLParser):
 def list_documents(index_url: str) -> int:
     """Print the PDF and Google Drive links on an index page, ready to paste into
     sources.yaml. Downloads nothing but the page itself."""
-    with httpx.Client(headers={"User-Agent": USER_AGENT}, follow_redirects=True,
-                      timeout=30.0) as client:
+    with httpx.Client(
+        headers={"User-Agent": USER_AGENT}, follow_redirects=True, timeout=30.0
+    ) as client:
         page = get(client, index_url)
     parser = _Links()
     parser.feed(page.text)
@@ -227,8 +260,12 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--force", action="store_true", help="download everything again")
-    group.add_argument("--verify", action="store_true", help="check local files against MANIFEST.md")
-    group.add_argument("--list", metavar="URL", help="list document links on an index page")
+    group.add_argument(
+        "--verify", action="store_true", help="check local files against MANIFEST.md"
+    )
+    group.add_argument(
+        "--list", metavar="URL", help="list document links on an index page"
+    )
     args = parser.parse_args()
     if args.verify:
         return verify()
