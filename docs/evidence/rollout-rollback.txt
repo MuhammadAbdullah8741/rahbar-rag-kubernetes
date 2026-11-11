@@ -1,0 +1,106 @@
++ docker build -t rahbar-ui:layout-check ui
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 286B 1.2s done
+#1 DONE 1.5s
+
+#2 [internal] load metadata for docker.io/nginxinc/nginx-unprivileged:1.31.7-alpine3.24
+#2 ...
+
+#3 [auth] nginxinc/nginx-unprivileged:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/nginxinc/nginx-unprivileged:1.31.7-alpine3.24
+#2 DONE 6.3s
+
+#4 [internal] load .dockerignore
+#4 transferring context:
+#4 transferring context: 57B 0.6s done
+#4 DONE 0.8s
+
+#5 [internal] load build context
+#5 ...
+
+#6 [1/4] FROM docker.io/nginxinc/nginx-unprivileged:1.31.7-alpine3.24@sha256:b5047b9b76845eac124358373c6852377c52e4b05834a47647e955dd91cb8f1e
+#6 resolve docker.io/nginxinc/nginx-unprivileged:1.31.7-alpine3.24@sha256:b5047b9b76845eac124358373c6852377c52e4b05834a47647e955dd91cb8f1e 0.6s done
+#6 DONE 0.6s
+
+#5 [internal] load build context
+#5 transferring context: 9.72kB 0.7s done
+#5 DONE 0.9s
+
+#7 [2/4] RUN apk upgrade --no-cache
+#7 CACHED
+
+#8 [3/4] COPY nginx.conf /etc/nginx/nginx.conf
+#8 CACHED
+
+#9 [4/4] COPY index.html /usr/share/nginx/html/index.html
+#9 DONE 1.7s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 1.6s done
+#10 exporting manifest sha256:58f3903c805e1647a2227f08f27a6aa290ace759f1e358d50d852640cf157f6d 0.1s done
+#10 exporting config sha256:cbb5bcf6b78910779edd1a983e747f7d96c06ca82e70100afe9880b1232e6cef
+#10 exporting config sha256:cbb5bcf6b78910779edd1a983e747f7d96c06ca82e70100afe9880b1232e6cef 0.1s done
+#10 exporting attestation manifest sha256:f7121ad077cbcbe460bcd6af74961af43984e940a1efb78839d26bf692225796
+#10 exporting attestation manifest sha256:f7121ad077cbcbe460bcd6af74961af43984e940a1efb78839d26bf692225796 0.4s done
+#10 exporting manifest list sha256:48b40faf7c8fe1c8b0bc0a2d6af07a32a8b3c59183e2b733464ac31141e11cbe
+#10 exporting manifest list sha256:48b40faf7c8fe1c8b0bc0a2d6af07a32a8b3c59183e2b733464ac31141e11cbe 0.3s done
+#10 naming to docker.io/library/rahbar-ui:layout-check
+#10 naming to docker.io/library/rahbar-ui:layout-check 0.0s done
+#10 unpacking to docker.io/library/rahbar-ui:layout-check
+#10 unpacking to docker.io/library/rahbar-ui:layout-check 0.6s done
+#10 DONE 4.0s
++ docker save rahbar-ui:layout-check
++ docker exec -i minikube ctr -n k8s.io images import -
+docker.io/library/rahbar ui:layout check	saved	
+application/vnd.oci.image.index.v1+json sha256:48b40faf7c8fe1c8b0bc0a2d6af07a32a8b3c59183e2b733464ac31141e11cbe
+Importing	elapsed: 33.4s	total:   0.0 B	(0.0 B/s)	
++ kubectl -n rahbar set image deployment/ui ui=rahbar-ui:layout-check
+deployment.apps/ui image updated
++ kubectl -n rahbar rollout status deployment/ui --timeout=180s
+Waiting for deployment "ui" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "ui" rollout to finish: 1 old replicas are pending termination...
+deployment "ui" successfully rolled out
++ curl -fsS http://127.0.0.1:18081/
++ grep 'document.querySelector("header").append(reset)'
+document.querySelector("header").append(reset);
++ kubectl -n rahbar rollout undo deployment/ui
+Warning: resource deployments/ui was previously managed with 'kubectl apply'. Rolling back will not update the kubectl.kubernetes.io/last-applied-configuration annotation, which may cause unexpected behavior on future 'kubectl apply' operations. Consider using 'kubectl apply' with your previous configuration file instead.
+deployment.apps/ui rolled back
++ kubectl -n rahbar rollout status deployment/ui --timeout=180s
+Waiting for deployment "ui" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "ui" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "ui" rollout to finish: 1 old replicas are pending termination...
+deployment "ui" successfully rolled out
++ curl -fsS http://127.0.0.1:18081/
++ grep 'form.before(reset)'
+curl: (22) The requested URL returned error: 502
++ curl --retry 10 --retry-delay 2 --retry-all-errors -fsS http://127.0.0.1:18081/
++ grep 'form.before(reset)'
+form.before(reset);
++ docker tag rahbar-ui:layout-check rahbar-ui:dev
++ docker save rahbar-ui:dev
++ docker exec -i minikube ctr -n k8s.io images import -
+docker.io/library/rahbar ui:dev         	saved	
+application/vnd.oci.image.index.v1+json sha256:48b40faf7c8fe1c8b0bc0a2d6af07a32a8b3c59183e2b733464ac31141e11cbe
+Importing	elapsed: 7.8 s	total:   0.0 B	(0.0 B/s)	
++ kubectl -n rahbar rollout restart deployment/ui
+deployment.apps/ui restarted
++ kubectl -n rahbar rollout status deployment/ui --timeout=180s
+Waiting for deployment "ui" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "ui" rollout to finish: 1 old replicas are pending termination...
+deployment "ui" successfully rolled out
++ grep 'document.querySelector("header").append(reset)'
++ curl --retry 10 --retry-delay 2 --retry-all-errors -fsS http://127.0.0.1:18081/
+curl: (22) The requested URL returned error: 502
+document.querySelector("header").append(reset);
++ trivy image --timeout 20m --scanners vuln --severity HIGH,CRITICAL --ignore-unfixed --exit-code 1 --format json --output docs/evidence/trivy-ui.json rahbar-ui:dev
+2026-11-08T12:04:33+05:00	INFO	[vuln] Vulnerability scanning is enabled
+2026-11-08T12:04:38+05:00	INFO	Detected OS	family="alpine" version="3.24.2"
+2026-11-08T12:04:38+05:00	INFO	[alpine] Detecting vulnerabilities...	os_version="3.24" repository="3.24" pkg_num=71
+2026-11-08T12:04:39+05:00	INFO	Number of language-specific files	num=0

@@ -1,0 +1,51 @@
+﻿{
+    "models":  [
+                   {
+                       "name":  "nomic-embed-text:latest",
+                       "model":  "nomic-embed-text:latest",
+                       "modified_at":  "2026-11-06T16:26:38.7745747+05:00",
+                       "size":  274302450,
+                       "digest":  "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+                       "details":  {
+                                       "parent_model":  "",
+                                       "format":  "gguf",
+                                       "family":  "nomic-bert",
+                                       "families":  [
+                                                        "nomic-bert"
+                                                    ],
+                                       "parameter_size":  "137M",
+                                       "quantization_level":  "F16",
+                                       "context_length":  2048,
+                                       "embedding_length":  768,
+                                       "runner":  "ggml"
+                                   },
+                       "capabilities":  [
+                                            "embedding"
+                                        ]
+                   },
+                   {
+                       "name":  "llama3.2:3b",
+                       "model":  "llama3.2:3b",
+                       "modified_at":  "2026-11-06T16:25:36.4100288+05:00",
+                       "size":  2019393189,
+                       "digest":  "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+                       "details":  {
+                                       "parent_model":  "",
+                                       "format":  "gguf",
+                                       "family":  "llama",
+                                       "families":  [
+                                                        "llama"
+                                                    ],
+                                       "parameter_size":  "3.2B",
+                                       "quantization_level":  "Q4_K_M",
+                                       "context_length":  131072,
+                                       "embedding_length":  3072,
+                                       "runner":  "ggml"
+                                   },
+                       "capabilities":  [
+                                            "completion",
+                                            "tools"
+                                        ]
+                   }
+               ]
+}

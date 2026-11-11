@@ -1,0 +1,110 @@
+{
+  "embed_model": "nomic-embed-text:latest",
+  "selected_threshold": 0.98,
+  "pairs": [
+    {
+      "a": "How much is the admission fee?",
+      "b": "How much is the admission fee?",
+      "same_intent": true,
+      "similarity": 1.0,
+      "exact_terms_match": true
+    },
+    {
+      "a": "What is the security deposit?",
+      "b": "How much is the refundable security deposit?",
+      "same_intent": true,
+      "similarity": 0.7518586645882088,
+      "exact_terms_match": true
+    },
+    {
+      "a": "What is the student activities fund charge?",
+      "b": "How much is the student activities fund?",
+      "same_intent": true,
+      "similarity": 0.9457239725428919,
+      "exact_terms_match": true
+    },
+    {
+      "a": "What CGPA causes academic warning?",
+      "b": "When is a student put on academic warning?",
+      "same_intent": true,
+      "similarity": 0.8221451835467999,
+      "exact_terms_match": true
+    },
+    {
+      "a": "What is the admission fee?",
+      "b": "Is the admission fee refundable?",
+      "same_intent": false,
+      "similarity": 0.7624739879630361,
+      "exact_terms_match": true
+    },
+    {
+      "a": "Is the security deposit refundable?",
+      "b": "Is the tuition fee refundable?",
+      "same_intent": false,
+      "similarity": 0.7511617969673652,
+      "exact_terms_match": true
+    },
+    {
+      "a": "What are the summer rules in 2023?",
+      "b": "What are the summer rules in 2026?",
+      "same_intent": false,
+      "similarity": 0.9169050744357714,
+      "exact_terms_match": false
+    },
+    {
+      "a": "What grade points does B carry?",
+      "b": "What grade points does B- carry?",
+      "same_intent": false,
+      "similarity": 0.982401142649369,
+      "exact_terms_match": false
+    },
+    {
+      "a": "Can I repeat a failed course?",
+      "b": "Can I withdraw from a failed course?",
+      "same_intent": false,
+      "similarity": 0.8481165484440519,
+      "exact_terms_match": true
+    },
+    {
+      "a": "How much is the student activities fund?",
+      "b": "How much is the security deposit?",
+      "same_intent": false,
+      "similarity": 0.6021787052837893,
+      "exact_terms_match": true
+    },
+    {
+      "a": "What CGPA causes academic warning?",
+      "b": "What CGPA earns a gold medal?",
+      "same_intent": false,
+      "similarity": 0.6922363568606863,
+      "exact_terms_match": true
+    },
+    {
+      "a": "What is the fee refund in the first 10 days?",
+      "b": "What is the fee refund after 30 days?",
+      "same_intent": false,
+      "similarity": 0.8602572969936633,
+      "exact_terms_match": false
+    }
+  ],
+  "results": [
+    {
+      "threshold": 0.9,
+      "hits": 2,
+      "false_hits": 0,
+      "missed_equivalent": 2
+    },
+    {
+      "threshold": 0.95,
+      "hits": 1,
+      "false_hits": 0,
+      "missed_equivalent": 3
+    },
+    {
+      "threshold": 0.98,
+      "hits": 1,
+      "false_hits": 0,
+      "missed_equivalent": 3
+    }
+  ]
+}

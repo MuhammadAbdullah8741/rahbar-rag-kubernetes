@@ -1,0 +1,142 @@
+2026-11-08T12:19:06+05:00
+Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice
+NAME                         READY   STATUS      RESTARTS        AGE
+pod/api-66fc56699d-5gz6t     1/1     Running     0               5m33s
+pod/api-66fc56699d-7d6hc     1/1     Running     0               5m28s
+pod/api-66fc56699d-mgvts     1/1     Running     0               5m24s
+pod/chroma-0                 1/1     Running     3 (5h25m ago)   43h
+pod/indexer-2vklt            0/1     Completed   0               5h8m
+pod/redis-64f484c8c9-bczbz   1/1     Running     3 (5h25m ago)   43h
+pod/ui-57c6d6c86-78zld       1/1     Running     0               13m
+
+NAME                STATUS     COMPLETIONS   DURATION   AGE
+job.batch/indexer   Complete   1/1           7m8s       5h8m
+
+NAME                                      REFERENCE        TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/api   Deployment/api   cpu: 18%/70%   3         8         3          43h
+
+NAME               ENDPOINTS                                                  AGE
+endpoints/api      10.244.120.70:8000,10.244.120.85:8000,10.244.120.86:8000   43h
+endpoints/chroma   10.244.120.112:8000                                        43h
+endpoints/redis    10.244.120.115:6379                                        43h
+endpoints/ui       10.244.120.68:8080                                         43h
+POD                      NAME     CPU(cores)   MEMORY(bytes)   
+api-66fc56699d-5gz6t     api      15m          95Mi            
+api-66fc56699d-7d6hc     api      18m          82Mi            
+api-66fc56699d-mgvts     api      21m          79Mi            
+chroma-0                 chroma   5m           80Mi            
+redis-64f484c8c9-bczbz   redis    29m          13Mi            
+ui-57c6d6c86-78zld       ui       1m           2Mi             
+readiness {"status":"ready","checks":{"embedding":"ok","chroma":"ok","redis":"ok"}}
+liveness 200
+rahbar_retrieval_seconds_bucket{le="0.005"} 0.0
+rahbar_retrieval_seconds_bucket{le="0.01"} 0.0
+rahbar_retrieval_seconds_bucket{le="0.025"} 0.0
+rahbar_retrieval_seconds_bucket{le="0.05"} 0.0
+rahbar_retrieval_seconds_bucket{le="0.075"} 0.0
+rahbar_retrieval_seconds_bucket{le="0.1"} 0.0
+rahbar_retrieval_seconds_bucket{le="0.25"} 0.0
+rahbar_retrieval_seconds_bucket{le="0.5"} 3.0
+rahbar_retrieval_seconds_bucket{le="0.75"} 3.0
+rahbar_retrieval_seconds_bucket{le="1.0"} 3.0
+rahbar_retrieval_seconds_bucket{le="2.5"} 4.0
+rahbar_retrieval_seconds_bucket{le="5.0"} 4.0
+rahbar_retrieval_seconds_bucket{le="7.5"} 4.0
+rahbar_retrieval_seconds_bucket{le="10.0"} 4.0
+rahbar_retrieval_seconds_bucket{le="+Inf"} 4.0
+rahbar_retrieval_seconds_count 4.0
+rahbar_retrieval_seconds_sum 3.2420163659953687
+rahbar_retrieval_seconds_created 1.794122017989148e+09
+rahbar_generation_seconds_bucket{le="1.0"} 0.0
+rahbar_generation_seconds_bucket{le="5.0"} 0.0
+rahbar_generation_seconds_bucket{le="10.0"} 0.0
+rahbar_generation_seconds_bucket{le="30.0"} 1.0
+rahbar_generation_seconds_bucket{le="60.0"} 3.0
+rahbar_generation_seconds_bucket{le="120.0"} 3.0
+rahbar_generation_seconds_bucket{le="240.0"} 3.0
+rahbar_generation_seconds_bucket{le="480.0"} 3.0
+rahbar_generation_seconds_bucket{le="+Inf"} 3.0
+rahbar_generation_seconds_count 3.0
+rahbar_generation_seconds_sum 84.84765505699761
+rahbar_generation_seconds_created 1.794122017989205e+09
+rahbar_cache_hits_total 0.0
+rahbar_cache_hits_created 1.7941220179893446e+09
+rahbar_cache_lookups_total 4.0
+rahbar_cache_lookups_created 1.794122017989356e+09
+rahbar_cache_hit_ratio 0.0
+rahbar_abstentions_total 0.0
+rahbar_abstentions_created 1.7941220179893758e+09
+rahbar_fallbacks_total 0.0
+rahbar_fallbacks_created 1.794122017989382e+09
+rahbar_tokens_per_request_bucket{direction="input",le="0.0"} 0.0
+rahbar_tokens_per_request_bucket{direction="input",le="50.0"} 0.0
+rahbar_tokens_per_request_bucket{direction="input",le="100.0"} 0.0
+rahbar_tokens_per_request_bucket{direction="input",le="500.0"} 0.0
+rahbar_tokens_per_request_bucket{direction="input",le="1000.0"} 1.0
+rahbar_tokens_per_request_bucket{direction="input",le="4000.0"} 3.0
+rahbar_tokens_per_request_bucket{direction="input",le="8000.0"} 3.0
+rahbar_tokens_per_request_bucket{direction="input",le="16000.0"} 3.0
+rahbar_tokens_per_request_bucket{direction="input",le="+Inf"} 3.0
+rahbar_tokens_per_request_count{direction="input"} 3.0
+rahbar_tokens_per_request_sum{direction="input"} 2994.0
+rahbar_tokens_per_request_bucket{direction="output",le="0.0"} 0.0
+rahbar_tokens_per_request_bucket{direction="output",le="50.0"} 0.0
+rahbar_tokens_per_request_bucket{direction="output",le="100.0"} 3.0
+rahbar_tokens_per_request_bucket{direction="output",le="500.0"} 3.0
+rahbar_tokens_per_request_bucket{direction="output",le="1000.0"} 3.0
+rahbar_tokens_per_request_bucket{direction="output",le="4000.0"} 3.0
+rahbar_tokens_per_request_bucket{direction="output",le="8000.0"} 3.0
+rahbar_tokens_per_request_bucket{direction="output",le="16000.0"} 3.0
+rahbar_tokens_per_request_bucket{direction="output",le="+Inf"} 3.0
+rahbar_tokens_per_request_count{direction="output"} 3.0
+rahbar_tokens_per_request_sum{direction="output"} 245.0
+rahbar_tokens_per_request_created{direction="input"} 1.7941220525971365e+09
+rahbar_tokens_per_request_created{direction="output"} 1.7941220525972204e+09
+rahbar_requests_total{path="/healthz",status="200"} 19.0
+rahbar_requests_total{path="/readyz",status="200"} 35.0
+rahbar_requests_total{path="/api/ask",status="200"} 3.0
+rahbar_requests_created{path="/healthz",status="200"} 1.7941220193201878e+09
+rahbar_requests_created{path="/readyz",status="200"} 1.7941220194008932e+09
+rahbar_requests_created{path="/api/ask",status="200"} 1.7941220525989413e+09
+rahbar_request_seconds_bucket{le="0.05",path="/healthz"} 19.0
+rahbar_request_seconds_bucket{le="0.1",path="/healthz"} 19.0
+rahbar_request_seconds_bucket{le="0.25",path="/healthz"} 19.0
+rahbar_request_seconds_bucket{le="0.5",path="/healthz"} 19.0
+rahbar_request_seconds_bucket{le="1.0",path="/healthz"} 19.0
+rahbar_request_seconds_bucket{le="2.0",path="/healthz"} 19.0
+rahbar_request_seconds_bucket{le="5.0",path="/healthz"} 19.0
+rahbar_request_seconds_bucket{le="10.0",path="/healthz"} 19.0
+rahbar_request_seconds_bucket{le="30.0",path="/healthz"} 19.0
+rahbar_request_seconds_bucket{le="60.0",path="/healthz"} 19.0
+rahbar_request_seconds_bucket{le="+Inf",path="/healthz"} 19.0
+rahbar_request_seconds_count{path="/healthz"} 19.0
+rahbar_request_seconds_sum{path="/healthz"} 0.04689564500222332
+rahbar_request_seconds_bucket{le="0.05",path="/readyz"} 0.0
+rahbar_request_seconds_bucket{le="0.1",path="/readyz"} 10.0
+rahbar_request_seconds_bucket{le="0.25",path="/readyz"} 31.0
+rahbar_request_seconds_bucket{le="0.5",path="/readyz"} 35.0
+rahbar_request_seconds_bucket{le="1.0",path="/readyz"} 35.0
+rahbar_request_seconds_bucket{le="2.0",path="/readyz"} 35.0
+rahbar_request_seconds_bucket{le="5.0",path="/readyz"} 35.0
+rahbar_request_seconds_bucket{le="10.0",path="/readyz"} 35.0
+rahbar_request_seconds_bucket{le="30.0",path="/readyz"} 35.0
+rahbar_request_seconds_bucket{le="60.0",path="/readyz"} 35.0
+rahbar_request_seconds_bucket{le="+Inf",path="/readyz"} 35.0
+rahbar_request_seconds_count{path="/readyz"} 35.0
+rahbar_request_seconds_sum{path="/readyz"} 5.0607493089810305
+rahbar_request_seconds_bucket{le="0.05",path="/api/ask"} 0.0
+rahbar_request_seconds_bucket{le="0.1",path="/api/ask"} 0.0
+rahbar_request_seconds_bucket{le="0.25",path="/api/ask"} 0.0
+rahbar_request_seconds_bucket{le="0.5",path="/api/ask"} 0.0
+rahbar_request_seconds_bucket{le="1.0",path="/api/ask"} 0.0
+rahbar_request_seconds_bucket{le="2.0",path="/api/ask"} 0.0
+rahbar_request_seconds_bucket{le="5.0",path="/api/ask"} 0.0
+rahbar_request_seconds_bucket{le="10.0",path="/api/ask"} 0.0
+rahbar_request_seconds_bucket{le="30.0",path="/api/ask"} 1.0
+rahbar_request_seconds_bucket{le="60.0",path="/api/ask"} 3.0
+rahbar_request_seconds_bucket{le="+Inf",path="/api/ask"} 3.0
+rahbar_request_seconds_count{path="/api/ask"} 3.0
+rahbar_request_seconds_sum{path="/api/ask"} 87.64788059800412
+rahbar_request_seconds_created{path="/healthz"} 1.794122019320215e+09
+rahbar_request_seconds_created{path="/readyz"} 1.7941220194009156e+09
+rahbar_request_seconds_created{path="/api/ask"} 1.794122052598977e+09

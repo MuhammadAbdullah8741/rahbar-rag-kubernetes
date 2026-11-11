@@ -1,0 +1,347 @@
+No kind clusters found.
+Creating cluster "rahbar-ci" ...
+ • Ensuring node image (kindest/node:v1.35.0) 🖼  ...
+ ✓ Ensuring node image (kindest/node:v1.35.0) 🖼
+ • Preparing nodes 📦   ...
+ ✓ Preparing nodes 📦 
+ • Writing configuration 📜  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Starting control-plane 🕹️
+ • Installing CNI 🔌  ...
+ ✓ Installing CNI 🔌
+ • Installing StorageClass 💾  ...
+ ✓ Installing StorageClass 💾
+ • Waiting ≤ 3m0s for control-plane = Ready ⏳  ...
+ ✓ Waiting ≤ 3m0s for control-plane = Ready ⏳
+ • Ready after 34s 💚
+Set kubectl context to "kind-rahbar-ci"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-rahbar-ci
+
+Have a question, bug, or feature request? Let us know! https://kind.sigs.k8s.io/#community 🙂
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 442B 0.1s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm
+#2 ...
+
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm
+#2 DONE 2.6s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 139B 0.0s done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 ...
+
+#6 [1/5] FROM docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#6 resolve docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df 0.1s done
+#6 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 1.39kB 0.4s done
+#5 DONE 0.4s
+
+#7 [2/5] WORKDIR /app
+#7 CACHED
+
+#8 [3/5] COPY requirements.txt .
+#8 CACHED
+
+#9 [4/5] RUN pip install --no-cache-dir -r requirements.txt     && groupadd --gid 10001 app && useradd --uid 10001 --gid app --no-create-home app
+#9 CACHED
+
+#10 [5/5] COPY --chown=10001:10001 app/ ./app/
+#10 CACHED
+
+#11 exporting to image
+#11 exporting layers done
+#11 exporting manifest sha256:5321944c9884a1fb75ef850770a0e350af98f2e7ebecad61ba9ef2ab29c0f7cc done
+#11 exporting config sha256:90c65ade65931d28c66bb40f52cae38a9998b61077122c1c9d61f711ceb4ec48 done
+#11 exporting attestation manifest sha256:fe5c6b4490c40d383e084667aa364ff5762d610da827b9920699ee5b89a4afa0
+#11 exporting attestation manifest sha256:fe5c6b4490c40d383e084667aa364ff5762d610da827b9920699ee5b89a4afa0 0.0s done
+#11 exporting manifest list sha256:440f338552e0896c587f1ec35ab674c9bed92d303a4c710918102afb59ff0f45 0.0s done
+#11 naming to docker.io/library/rahbar-api:ci done
+#11 unpacking to docker.io/library/rahbar-api:ci 0.0s done
+#11 DONE 0.4s
+Image: "rahbar-api:ci" with ID "sha256:440f338552e0896c587f1ec35ab674c9bed92d303a4c710918102afb59ff0f45" not yet present on node "rahbar-ci-control-plane", loading...
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 30B 0.1s
+#1 transferring dockerfile: 562B 0.1s done
+#1 DONE 0.2s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm
+#2 DONE 1.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 32B 0.1s
+#3 transferring context: 146B 0.3s done
+#3 DONE 0.5s
+
+#4 [internal] load build context
+#4 ...
+
+#5 [1/6] FROM docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#5 resolve docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df 0.3s done
+#5 DONE 0.4s
+
+#4 [internal] load build context
+#4 transferring context: 438B 0.6s done
+#4 DONE 0.8s
+
+#6 [2/6] WORKDIR /app
+#6 CACHED
+
+#7 [3/6] RUN apt-get update && apt-get install -y --no-install-recommends tesseract-ocr poppler-utils     && rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [4/6] COPY requirements.txt .
+#8 CACHED
+
+#9 [5/6] RUN pip install --no-cache-dir -r requirements.txt     && groupadd --gid 10001 app && useradd --uid 10001 --gid app --no-create-home app
+#9 CACHED
+
+#10 [6/6] COPY --chown=10001:10001 pipeline/ ./pipeline/
+#10 CACHED
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 0.0s done
+#11 exporting manifest sha256:bc5713192d1b79036fb544ce5c225f8c1f1c7dd979c015ff6793874241e989ef 0.0s done
+#11 exporting config sha256:b2b4beda9e3ea4631e9ee045cde059e01226cd4416d62e11b8c0fecc614a4813 0.1s done
+#11 exporting attestation manifest sha256:c05e33c440516db8db9d8e24c6b125685ed7206642279e2f00480aafd2a28309
+#11 exporting attestation manifest sha256:c05e33c440516db8db9d8e24c6b125685ed7206642279e2f00480aafd2a28309 1.0s done
+#11 exporting manifest list sha256:cb86b90ade1aa8439b46ef8b3ae831cfb515f76166110665c380a5c45ab461b4
+#11 exporting manifest list sha256:cb86b90ade1aa8439b46ef8b3ae831cfb515f76166110665c380a5c45ab461b4 1.2s done
+#11 naming to docker.io/library/rahbar-indexer:ci
+#11 naming to docker.io/library/rahbar-indexer:ci 1.0s done
+#11 unpacking to docker.io/library/rahbar-indexer:ci
+#11 unpacking to docker.io/library/rahbar-indexer:ci 0.8s done
+#11 DONE 5.0s
+Image: "rahbar-indexer:ci" with ID "sha256:cb86b90ade1aa8439b46ef8b3ae831cfb515f76166110665c380a5c45ab461b4" not yet present on node "rahbar-ci-control-plane", loading...
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 30B 0.1s
+#1 transferring dockerfile: 286B 0.2s done
+#1 DONE 0.2s
+
+#2 [internal] load metadata for docker.io/nginxinc/nginx-unprivileged:1.31.7-alpine3.24
+#2 DONE 1.5s
+
+#3 [internal] load .dockerignore
+#3 transferring context:
+#3 transferring context: 57B 0.4s done
+#3 DONE 0.5s
+
+#4 [internal] load build context
+#4 ...
+
+#5 [1/4] FROM docker.io/nginxinc/nginx-unprivileged:1.31.7-alpine3.24@sha256:b5047b9b76845eac124358373c6852377c52e4b05834a47647e955dd91cb8f1e
+#5 resolve docker.io/nginxinc/nginx-unprivileged:1.31.7-alpine3.24@sha256:b5047b9b76845eac124358373c6852377c52e4b05834a47647e955dd91cb8f1e 0.2s done
+#5 DONE 0.2s
+
+#4 [internal] load build context
+#4 transferring context: 62B 0.2s done
+#4 DONE 0.2s
+
+#6 [2/4] RUN apk upgrade --no-cache
+#6 CACHED
+
+#7 [3/4] COPY nginx.conf /etc/nginx/nginx.conf
+#7 CACHED
+
+#8 [4/4] COPY index.html /usr/share/nginx/html/index.html
+#8 CACHED
+
+#9 exporting to image
+#9 exporting layers 0.0s done
+#9 exporting manifest sha256:58f3903c805e1647a2227f08f27a6aa290ace759f1e358d50d852640cf157f6d done
+#9 exporting config sha256:cbb5bcf6b78910779edd1a983e747f7d96c06ca82e70100afe9880b1232e6cef done
+#9 exporting attestation manifest sha256:5f47b286ca951787ba7e5f3ab386fe6c3da622a58fada3a216f76937440baa88
+#9 exporting attestation manifest sha256:5f47b286ca951787ba7e5f3ab386fe6c3da622a58fada3a216f76937440baa88 0.0s done
+#9 exporting manifest list sha256:5d6c0ac1dbc956723f44cbab8eeb8d8d7500ec13b0b24f05c0667e6c49ed9bbd 0.0s done
+#9 naming to docker.io/library/rahbar-ui:ci done
+#9 unpacking to docker.io/library/rahbar-ui:ci 0.0s done
+#9 DONE 0.2s
+Image: "rahbar-ui:ci" with ID "sha256:5d6c0ac1dbc956723f44cbab8eeb8d8d7500ec13b0b24f05c0667e6c49ed9bbd" not yet present on node "rahbar-ci-control-plane", loading...
+scripts/ci_e2e.sh: error reading input file: No data available
+Resuming after Windows/WSL live-file read interruption; cluster and all three loaded images retained.
+namespace/ingress-nginx created
+serviceaccount/ingress-nginx created
+serviceaccount/ingress-nginx-admission created
+role.rbac.authorization.k8s.io/ingress-nginx created
+role.rbac.authorization.k8s.io/ingress-nginx-admission created
+clusterrole.rbac.authorization.k8s.io/ingress-nginx created
+clusterrole.rbac.authorization.k8s.io/ingress-nginx-admission created
+rolebinding.rbac.authorization.k8s.io/ingress-nginx created
+rolebinding.rbac.authorization.k8s.io/ingress-nginx-admission created
+clusterrolebinding.rbac.authorization.k8s.io/ingress-nginx created
+clusterrolebinding.rbac.authorization.k8s.io/ingress-nginx-admission created
+configmap/ingress-nginx-controller created
+service/ingress-nginx-controller created
+service/ingress-nginx-controller-admission created
+deployment.apps/ingress-nginx-controller created
+job.batch/ingress-nginx-admission-create created
+job.batch/ingress-nginx-admission-patch created
+ingressclass.networking.k8s.io/nginx created
+validatingwebhookconfiguration.admissionregistration.k8s.io/ingress-nginx-admission created
+node/rahbar-ci-control-plane labeled
+Waiting for deployment "ingress-nginx-controller" rollout to finish: 0 of 1 updated replicas are available...
+deployment "ingress-nginx-controller" successfully rolled out
+namespace/rahbar created
+serviceaccount/api created
+serviceaccount/chroma created
+serviceaccount/indexer created
+serviceaccount/redis created
+serviceaccount/ui created
+configmap/fixture-corpus created
+configmap/rahbar-config created
+service/api created
+service/chroma created
+service/redis created
+service/ui created
+persistentvolumeclaim/corpus created
+persistentvolumeclaim/redis-data created
+deployment.apps/api created
+deployment.apps/redis created
+deployment.apps/ui created
+statefulset.apps/chroma created
+cronjob.batch/reindex created
+horizontalpodautoscaler.autoscaling/api created
+job.batch/indexer created
+ingress.networking.k8s.io/rahbar created
+networkpolicy.networking.k8s.io/allow-dns created
+networkpolicy.networking.k8s.io/api-dependencies created
+networkpolicy.networking.k8s.io/api-ingress created
+networkpolicy.networking.k8s.io/chroma-readers-writer created
+networkpolicy.networking.k8s.io/default-deny created
+networkpolicy.networking.k8s.io/indexer-to-chroma created
+networkpolicy.networking.k8s.io/redis-api-only created
+networkpolicy.networking.k8s.io/ui-ingress created
+networkpolicy.networking.k8s.io/ui-to-api created
+error: timed out waiting for the condition on jobs/indexer
+NAME                         READY   STATUS             RESTARTS      AGE    IP            NODE                      NOMINATED NODE   READINESS GATES
+pod/api-f4bd5f595-7fhjr      0/1     Running            0             5m2s   10.244.0.11   rahbar-ci-control-plane   <none>           <none>
+pod/api-f4bd5f595-dv2nl      0/1     Running            0             5m2s   10.244.0.9    rahbar-ci-control-plane   <none>           <none>
+pod/api-f4bd5f595-prrq8      0/1     Running            0             5m3s   10.244.0.8    rahbar-ci-control-plane   <none>           <none>
+pod/chroma-0                 0/1     Running            0             5m2s   10.244.0.16   rahbar-ci-control-plane   <none>           <none>
+pod/indexer-mwqvk            0/1     CrashLoopBackOff   5 (76s ago)   5m2s   10.244.0.12   rahbar-ci-control-plane   <none>           <none>
+pod/redis-7dfdbdcf6b-vzrjl   1/1     Running            0             5m2s   10.244.0.15   rahbar-ci-control-plane   <none>           <none>
+pod/ui-7cb58f56-kvt8g        1/1     Running            0             5m2s   10.244.0.10   rahbar-ci-control-plane   <none>           <none>
+
+NAME                STATUS    COMPLETIONS   DURATION   AGE    CONTAINERS   IMAGES              SELECTOR
+job.batch/indexer   Running   0/1           5m2s       5m2s   indexer      rahbar-indexer:ci   batch.kubernetes.io/controller-uid=339f8dcc-1747-4f72-b1db-c2cee63bcc9d
+{"ts": "2026-11-08T07:12:01Z", "logger": "rahbar.indexer", "msg": "indexer starting", "dummy": false, "embed_model": "fixture-hash-v1", "collection": "rahbar", "chroma": "chroma:8000", "pod": "indexer-mwqvk"}
+{"ts": "2026-11-08T07:12:02Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "academic-rules-2023.md", "chunks": 4}
+{"ts": "2026-11-08T07:12:02Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "academic-rules-2026.md", "chunks": 4}
+{"ts": "2026-11-08T07:12:02Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "fees-2026.md", "chunks": 3}
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno -5] No address associated with hostname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/chromadb/api/client.py", line 108, in get_user_identity
+    return self._server.get_user_identity()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 150, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/chromadb/api/fastapi.py", line 201, in get_user_identity
+    return UserIdentity(**self._make_request("get", "/auth/identity"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/chromadb/api/fastapi.py", line 106, in _make_request
+    response = self._session.request(method, url, **cast(Any, kwargs))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/usr/local/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno -5] No address associated with hostname
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/app/pipeline/run.py", line 146, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/app/pipeline/run.py", line 127, in main
+    count = run_pipeline(settings)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/pipeline/run.py", line 103, in run_pipeline
+    return store(all_chunks, vectors, settings)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/pipeline/store.py", line 31, in store
+    client = get_client(settings)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/app/pipeline/store.py", line 16, in get_client
+    return chromadb.HttpClient(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/chromadb/__init__.py", line 241, in HttpClient
+    return ClientCreator(tenant=tenant, database=database, settings=settings)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/chromadb/api/client.py", line 72, in __init__
+    user_identity = self.get_user_identity()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/chromadb/api/client.py", line 110, in get_user_identity
+    raise ValueError(
+ValueError: Could not connect to a Chroma server. Are you sure it is running?
+Deleting cluster "rahbar-ci" ...
+Deleted nodes: ["rahbar-ci-control-plane"]

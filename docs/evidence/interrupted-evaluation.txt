@@ -1,0 +1,24 @@
+  q01    65.41s  How much is the one-time admission fee?
+  q02    39.21s  Is the security deposit refundable and how much is it?
+  q03    47.94s  What is the student activities fund charge per semester?
+  q04    49.72s  What tuition refund is available up to the tenth day of clas
+  q05    71.26s  How are semester work and final examination weighted in acad
+  q06    52.21s  When does an incomplete I grade become F?
+  q07    69.94s  What CGPA does an undergraduate need to avoid academic warni
+  q08    62.48s  Who gives final approval to a faculty technical start-up app
+  q09    40.11s  Under the August 2023 rules, how many weeks is the summer se
+  q10    60.01s  Under the June 2026 rules, how many weeks is the summer seme
+  q11    42.62s  What is the tuition fee per credit hour w.e.f. Fall 2026?
+Traceback (most recent call last):
+  File "/mnt/x/semester 5/SCD/A2/rahbar-starter/eval/run_eval.py", line 221, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/mnt/x/semester 5/SCD/A2/rahbar-starter/eval/run_eval.py", line 172, in main
+    response = ask(client, args.api, q["question"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/x/semester 5/SCD/A2/rahbar-starter/eval/run_eval.py", line 44, in ask
+    response.raise_for_status()
+  File "/home/nemesis/.venvs/rahbar/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Server error '502 Bad Gateway' for url 'http://127.0.0.1:18081/api/ask'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502

@@ -1,0 +1,1028 @@
+{
+  "recall_at_3": 0.8461538461538461,
+  "recall_at_5": 0.8461538461538461,
+  "citation_validity": 1.0,
+  "abstention_correctness": 1.0,
+  "fallback_count": 2,
+  "answerable_answer_rate": 0.6923076923076923,
+  "by_type": {
+    "abstain": {
+      "recall_at_3": null,
+      "recall_at_5": null
+    },
+    "exact": {
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0
+    },
+    "injection": {
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0
+    },
+    "ordinary": {
+      "recall_at_3": 0.75,
+      "recall_at_5": 0.75
+    },
+    "version": {
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0
+    }
+  },
+  "rows": [
+    {
+      "id": "q01",
+      "type": "ordinary",
+      "must_abstain": false,
+      "relevant": [
+        {
+          "source": "fee-structure-page.html",
+          "section": "Admission Fee"
+        }
+      ],
+      "expect": "30,000",
+      "response": {
+        "request_id": "6c6b7f44584245fb9db4c33d9dc69987",
+        "answer": "The one-time admission fee is Rs 30,000. [fee-structure-page.html / Admission Fee]",
+        "citations": [
+          {
+            "source": "fee-structure-page.html",
+            "section": "Admission Fee",
+            "page": 1
+          }
+        ],
+        "answered_from_context": true,
+        "confidence": "high",
+        "retrieved": [
+          {
+            "chunk_id": "91bab5c636c9ea3910ef3ae1",
+            "source": "fee-structure-page.html",
+            "section": "Admission Fee",
+            "page": 1,
+            "score": 0.75693905
+          },
+          {
+            "chunk_id": "41331bf9eabcafdf02a5bde7",
+            "source": "fee-structure-page.html",
+            "section": "Fee Refund Policy",
+            "page": 1,
+            "score": 0.6068382299999999
+          },
+          {
+            "chunk_id": "73602474c1bfbba7bb6db36e",
+            "source": "fee-structure-page.html",
+            "section": "Miscellaneous Fees",
+            "page": 1,
+            "score": 0.6527449000000001
+          },
+          {
+            "chunk_id": "09e6a4227cca3e2b1f10fdf6",
+            "source": "student-handbook-jun-2026.pdf",
+            "section": "Internal Scholarships",
+            "page": 19,
+            "score": 0.5806697000000001
+          },
+          {
+            "chunk_id": "d14017d42a646f23fd5bef7f",
+            "source": "student-handbook-jun-2026.pdf",
+            "section": "Fee Structure and Mode of Payment",
+            "page": 18,
+            "score": 0.57712966
+          }
+        ],
+        "provider": "ollama",
+        "cached": false,
+        "fallback": false
+      },
+      "seconds": 24.28,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "citation_validity": 1.0
+    },
+    {
+      "id": "q02",
+      "type": "ordinary",
+      "must_abstain": false,
+      "relevant": [
+        {
+          "source": "fee-structure-page.html",
+          "section": "Security Deposit"
+        }
+      ],
+      "expect": "20,000",
+      "response": {
+        "request_id": "1d481b2954ab4606a874ab0721979844",
+        "answer": "The security deposit is refundable and the amount is Rs 20,000. [fee-structure-page.html / Security Deposit]",
+        "citations": [
+          {
+            "source": "fee-structure-page.html",
+            "section": "Security Deposit",
+            "page": 1
+          }
+        ],
+        "answered_from_context": true,
+        "confidence": "high",
+        "retrieved": [
+          {
+            "chunk_id": "fd11b603ff67f5bbeeea99c9",
+            "source": "fee-structure-page.html",
+            "section": "Security Deposit",
+            "page": 1,
+            "score": 0.84891891
+          },
+          {
+            "chunk_id": "41331bf9eabcafdf02a5bde7",
+            "source": "fee-structure-page.html",
+            "section": "Fee Refund Policy",
+            "page": 1,
+            "score": 0.72790468
+          },
+          {
+            "chunk_id": "d14017d42a646f23fd5bef7f",
+            "source": "student-handbook-jun-2026.pdf",
+            "section": "Fee Structure and Mode of Payment",
+            "page": 18,
+            "score": 0.64569288
+          },
+          {
+            "chunk_id": "73602474c1bfbba7bb6db36e",
+            "source": "fee-structure-page.html",
+            "section": "Miscellaneous Fees",
+            "page": 1,
+            "score": 0.5951864
+          },
+          {
+            "chunk_id": "b24d3e666c3aa3cf7b70627a",
+            "source": "student-handbook-jun-2026.pdf",
+            "section": "5. Unacceptable Uses of Generative AI Tools",
+            "page": 53,
+            "score": 0.43774891935806287
+          }
+        ],
+        "provider": "ollama",
+        "cached": false,
+        "fallback": false
+      },
+      "seconds": 21.53,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "citation_validity": 1.0
+    },
+    {
+      "id": "q03",
+      "type": "ordinary",
+      "must_abstain": false,
+      "relevant": [
+        {
+          "source": "fee-structure-page.html",
+          "section": "Student Activities Fund"
+        }
+      ],
+      "expect": "2,500",
+      "response": {
+        "request_id": "4be346d332e54f48bd688db54086b3f3",
+        "answer": "Students contribute Rs 2,500 towards Students Activities Fund per semester. [fee-structure-page.html / Student Activities Fund]",
+        "citations": [
+          {
+            "source": "fee-structure-page.html",
+            "section": "Student Activities Fund",
+            "page": 1
+          }
+        ],
+        "answered_from_context": true,
+        "confidence": "high",
+        "retrieved": [
+          {
+            "chunk_id": "4eaacccdcb0147b317c7d866",
+            "source": "fee-structure-page.html",
+            "section": "Student Activities Fund",
+            "page": 1,
+            "score": 0.82807392
+          },
+          {
+            "chunk_id": "824f65dbde37ac48c79822e6",
+            "source": "fee-structure-page.html",
+            "section": "Tuition Fee (w.e.f. Fall 2026 semester)",
+            "page": 1,
+            "score": 0.6907126299999999
+          },
+          {
+            "chunk_id": "d1c73c389ee8b5c52fce3734",
+            "source": "prospectus-2026-academic-rules-and-regulations.pdf",
+            "section": "19. Rules for Summer Semester",
+            "page": 3,
+            "score": 0.6257375000000001
+          },
+          {
+            "chunk_id": "73602474c1bfbba7bb6db36e",
+            "source": "fee-structure-page.html",
+            "section": "Miscellaneous Fees",
+            "page": 1,
+            "score": 0.66415036
+          },
+          {
+            "chunk_id": "f13597fec35313bc4cd9103a",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "6. Rules for Summer Semester",
+            "page": 28,
+            "score": 0.6227799
+          }
+        ],
+        "provider": "ollama",
+        "cached": false,
+        "fallback": false
+      },
+      "seconds": 24.71,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "citation_validity": 1.0
+    },
+    {
+      "id": "q04",
+      "type": "ordinary",
+      "must_abstain": false,
+      "relevant": [
+        {
+          "source": "fee-structure-page.html",
+          "section": "Fee Refund Policy"
+        }
+      ],
+      "expect": "100%",
+      "response": {
+        "request_id": "d322037723a447fe8dac84bd761952a2",
+        "answer": "No Refund",
+        "citations": [],
+        "answered_from_context": false,
+        "confidence": "low",
+        "retrieved": [
+          {
+            "chunk_id": "41331bf9eabcafdf02a5bde7",
+            "source": "fee-structure-page.html",
+            "section": "Fee Refund Policy",
+            "page": 1,
+            "score": 0.7390768
+          },
+          {
+            "chunk_id": "d604dc68a05225ec2077ae2d",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "6. Rules for Summer Semester",
+            "page": 29,
+            "score": 0.656263
+          },
+          {
+            "chunk_id": "d14017d42a646f23fd5bef7f",
+            "source": "student-handbook-jun-2026.pdf",
+            "section": "Fee Structure and Mode of Payment",
+            "page": 18,
+            "score": 0.68933445
+          },
+          {
+            "chunk_id": "824f65dbde37ac48c79822e6",
+            "source": "fee-structure-page.html",
+            "section": "Tuition Fee (w.e.f. Fall 2026 semester)",
+            "page": 1,
+            "score": 0.66799796
+          },
+          {
+            "chunk_id": "922fe461c33f5f62b801a1b0",
+            "source": "prospectus-2026-academic-rules-and-regulations.pdf",
+            "section": "16. Withdrawal from a Course",
+            "page": 2,
+            "score": 0.63121593
+          }
+        ],
+        "provider": "ollama",
+        "cached": false,
+        "fallback": false
+      },
+      "seconds": 33.22,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "citation_validity": null
+    },
+    {
+      "id": "q05",
+      "type": "ordinary",
+      "must_abstain": false,
+      "relevant": [
+        {
+          "source": "grading-page.html",
+          "section": "Academic Grading"
+        }
+      ],
+      "expect": "50%",
+      "response": {
+        "request_id": "5938da60c2574ae7b9637250f016dce1",
+        "answer": "Semester work and final examination are normally weighted at 50% each towards the final grade. [academic-rules-handbook-jun-2026.pdf / 5. Academic Assessment] [grading-page.html / Academic Grading]",
+        "citations": [
+          {
+            "source": "grading-page.html",
+            "section": "Academic Grading",
+            "page": 1
+          },
+          {
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "5. Academic Assessment",
+            "page": 24
+          }
+        ],
+        "answered_from_context": true,
+        "confidence": "high",
+        "retrieved": [
+          {
+            "chunk_id": "ad5604be693fb7ef97bcca7f",
+            "source": "prospectus-2026-academic-rules-and-regulations.pdf",
+            "section": "5. Academic Grading",
+            "page": 1,
+            "score": 0.79262525
+          },
+          {
+            "chunk_id": "86b8bfc921cf84170e2f681f",
+            "source": "grading-page.html",
+            "section": "Academic Grading",
+            "page": 1,
+            "score": 0.7931972700000001
+          },
+          {
+            "chunk_id": "20b0c0a9516d8e4bfe7d0c0e",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "5. Academic Assessment",
+            "page": 24,
+            "score": 0.79546797
+          },
+          {
+            "chunk_id": "9a077c4807d6c0464c5de749",
+            "source": "grading-page.html",
+            "section": "Description of Grades",
+            "page": 1,
+            "score": 0.70213103
+          },
+          {
+            "chunk_id": "71fe4ceb55feeddf3c9ba52c",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "Repeating a Course",
+            "page": 26,
+            "score": 0.7359053
+          }
+        ],
+        "provider": "ollama",
+        "cached": false,
+        "fallback": false
+      },
+      "seconds": 44.4,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "citation_validity": 1.0
+    },
+    {
+      "id": "q06",
+      "type": "ordinary",
+      "must_abstain": false,
+      "relevant": [
+        {
+          "source": "grading-page.html",
+          "section": "Description of Grades"
+        }
+      ],
+      "expect": "next semester",
+      "response": {
+        "request_id": "e12ce71b1aff4c269c7e4d4d6a2a994e",
+        "answer": "An incomplete I grade will automatically convert to F grade after a fixed time set by the competent authority. [grading-page.html / Incomplete Course]",
+        "citations": [
+          {
+            "source": "grading-page.html",
+            "section": "Incomplete Course",
+            "page": 1
+          }
+        ],
+        "answered_from_context": true,
+        "confidence": "high",
+        "retrieved": [
+          {
+            "chunk_id": "dc69bb6a7ae78b85295a34ff",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "GPA Calculation",
+            "page": 13,
+            "score": 0.7536546
+          },
+          {
+            "chunk_id": "8b58ca94f63bb040771d3be5",
+            "source": "prospectus-2026-academic-rules-and-regulations.pdf",
+            "section": "Grade Points Interpretation",
+            "page": 1,
+            "score": 0.76593995
+          },
+          {
+            "chunk_id": "92dbb07a91d535f259b8127b",
+            "source": "grading-page.html",
+            "section": "Incomplete Course",
+            "page": 1,
+            "score": 0.71927524
+          },
+          {
+            "chunk_id": "0beee41892e3fa67dd1c7a2f",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "Interpretation of Letter Grades",
+            "page": 11,
+            "score": 0.64740217
+          },
+          {
+            "chunk_id": "a485f865e2c67307033b7f0d",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "Penalties for Academic Dishonesty",
+            "page": 35,
+            "score": 0.6632498499999999
+          }
+        ],
+        "provider": "ollama",
+        "cached": false,
+        "fallback": false
+      },
+      "seconds": 31.87,
+      "recall_at_3": 0.0,
+      "recall_at_5": 0.0,
+      "citation_validity": 1.0
+    },
+    {
+      "id": "q07",
+      "type": "ordinary",
+      "must_abstain": false,
+      "relevant": [
+        {
+          "source": "academic-rules-handbook-jun-2026.pdf",
+          "section": "Academic Warning/Probation"
+        }
+      ],
+      "expect": "2.00",
+      "response": {
+        "request_id": "5ab5685482f74df1bb2cb272f549fbbc",
+        "answer": "A minimum CGPA of 2.00. [academic-rules-handbook-jun-2026.pdf / Academic Warning/Probation]",
+        "citations": [
+          {
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "Academic Warning/Probation",
+            "page": 24
+          }
+        ],
+        "answered_from_context": true,
+        "confidence": "high",
+        "retrieved": [
+          {
+            "chunk_id": "81a31551843697e1bce98ee0",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "Academic Warning/Probation",
+            "page": 24,
+            "score": 0.910831094
+          },
+          {
+            "chunk_id": "40d6d51903ee84cd5164a989",
+            "source": "prospectus-2026-academic-rules-and-regulations.pdf",
+            "section": "11. Academic Warning/Probation",
+            "page": 2,
+            "score": 0.83480263
+          },
+          {
+            "chunk_id": "33d9803179eb39c6b9f2c950",
+            "source": "grading-page.html",
+            "section": "Warning/Probation",
+            "page": 1,
+            "score": 0.8278405
+          },
+          {
+            "chunk_id": "ebb68ae9189b06c13ca2246e",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "Academic Warning/Probation",
+            "page": 25,
+            "score": 0.78566957
+          },
+          {
+            "chunk_id": "8ef3f73906b9680e4fd7ee3b",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "7. Awards and the Honor System",
+            "page": 30,
+            "score": 0.7485369399999999
+          }
+        ],
+        "provider": "ollama",
+        "cached": false,
+        "fallback": false
+      },
+      "seconds": 37.46,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "citation_validity": 1.0
+    },
+    {
+      "id": "q08",
+      "type": "ordinary",
+      "must_abstain": false,
+      "relevant": [
+        {
+          "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+          "section": "Procedure for evaluating the application"
+        }
+      ],
+      "expect": "RECTOR",
+      "response": {
+        "request_id": "4e7a0e124008469f949d192d804afcb2",
+        "answer": "The campus Director office [faculty-entrepreneurship-and-technical-start-ups-policy.pdf / Procedure for submitting the application]",
+        "citations": [
+          {
+            "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+            "section": "Procedure for submitting the application",
+            "page": 2
+          }
+        ],
+        "answered_from_context": true,
+        "confidence": "high",
+        "retrieved": [
+          {
+            "chunk_id": "629f7fd43cad1424fda22d44",
+            "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+            "section": "1. Purpose",
+            "page": 1,
+            "score": 0.7525158000000001
+          },
+          {
+            "chunk_id": "9e2300cb5baecb3897ba2b62",
+            "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+            "section": "Procedure for submitting the application",
+            "page": 2,
+            "score": 0.7578811599999999
+          },
+          {
+            "chunk_id": "80f2d256fbbbe152dddbc041",
+            "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+            "section": "Other terms and conditions",
+            "page": 3,
+            "score": 0.7432886400000001
+          },
+          {
+            "chunk_id": "a2fc36ddcc2cde7a65d9603a",
+            "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+            "section": "Evaluation criteria for a technical start-up",
+            "page": 2,
+            "score": 0.6783142
+          },
+          {
+            "chunk_id": "bb9908378e27375fb1efe7a6",
+            "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+            "section": "University Intellectual Property",
+            "page": 5,
+            "score": 0.6968029
+          }
+        ],
+        "provider": "ollama",
+        "cached": false,
+        "fallback": false
+      },
+      "seconds": 55.5,
+      "recall_at_3": 0.0,
+      "recall_at_5": 0.0,
+      "citation_validity": 1.0
+    },
+    {
+      "id": "q09",
+      "type": "version",
+      "must_abstain": false,
+      "relevant": [
+        {
+          "source": "undergraduate-academic-rules-aug-2023.pdf",
+          "section": "6. Rules for Summer Semester"
+        }
+      ],
+      "expect": "8 to 9",
+      "response": {
+        "request_id": "23d3d26e03644996a12f454280e9f233",
+        "answer": "The available documents do not contain enough evidence to answer this question.",
+        "citations": [],
+        "answered_from_context": false,
+        "confidence": "low",
+        "retrieved": [
+          {
+            "chunk_id": "508d82c85460a940556fe858",
+            "source": "undergraduate-academic-rules-aug-2023.pdf",
+            "section": "6. Rules for Summer Semester",
+            "page": 20,
+            "score": 0.8100186
+          },
+          {
+            "chunk_id": "7aec69d677b4f87db7e6c37d",
+            "source": "undergraduate-academic-rules-aug-2023.pdf",
+            "section": "Normal Semester Course Load",
+            "page": 7,
+            "score": 0.7267469200000001
+          },
+          {
+            "chunk_id": "f997b9d1cb3b4cb3051c844a",
+            "source": "undergraduate-academic-rules-aug-2023.pdf",
+            "section": "Academic Year",
+            "page": 6,
+            "score": 0.6941200000000001
+          },
+          {
+            "chunk_id": "135ab5e686da758e9b2b85f9",
+            "source": "undergraduate-academic-rules-aug-2023.pdf",
+            "section": "Adding or Dropping a Course",
+            "page": 16,
+            "score": 0.6757604500000001
+          },
+          {
+            "chunk_id": "59f6834ee1f60a36b8635245",
+            "source": "undergraduate-academic-rules-aug-2023.pdf",
+            "section": "For Undergraduate Programs",
+            "page": 2,
+            "score": 0.6455830300000001
+          }
+        ],
+        "provider": "ollama",
+        "cached": false,
+        "fallback": false
+      },
+      "seconds": 28.91,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "citation_validity": null
+    },
+    {
+      "id": "q10",
+      "type": "version",
+      "must_abstain": false,
+      "relevant": [
+        {
+          "source": "academic-rules-handbook-jun-2026.pdf",
+          "section": "6. Rules for Summer Semester"
+        }
+      ],
+      "expect": "8",
+      "response": {
+        "request_id": "7bb77e06bddd418f90bd092ebcc4fe3d",
+        "answer": "The summer semester is 8 weeks. [academic-rules-handbook-jun-2026.pdf / 6. Rules for Summer Semester]",
+        "citations": [
+          {
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "6. Rules for Summer Semester",
+            "page": 28
+          }
+        ],
+        "answered_from_context": true,
+        "confidence": "high",
+        "retrieved": [
+          {
+            "chunk_id": "f13597fec35313bc4cd9103a",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "6. Rules for Summer Semester",
+            "page": 28,
+            "score": 0.83334649
+          },
+          {
+            "chunk_id": "d1c73c389ee8b5c52fce3734",
+            "source": "prospectus-2026-academic-rules-and-regulations.pdf",
+            "section": "19. Rules for Summer Semester",
+            "page": 3,
+            "score": 0.80203515
+          },
+          {
+            "chunk_id": "3fa22aecb30170142c703663",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "Scheduling of Classes",
+            "page": 9,
+            "score": 0.75886941
+          },
+          {
+            "chunk_id": "d604dc68a05225ec2077ae2d",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "6. Rules for Summer Semester",
+            "page": 29,
+            "score": 0.77341592
+          },
+          {
+            "chunk_id": "ee8283a759bf4b0f0167a9f6",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "Adding or Dropping a Course",
+            "page": 22,
+            "score": 0.71266723
+          }
+        ],
+        "provider": "ollama",
+        "cached": false,
+        "fallback": false
+      },
+      "seconds": 47.63,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "citation_validity": 1.0
+    },
+    {
+      "id": "q11",
+      "type": "exact",
+      "must_abstain": false,
+      "relevant": [
+        {
+          "source": "fee-structure-page.html",
+          "section": "Tuition Fee (w.e.f. Fall 2026 semester)"
+        }
+      ],
+      "expect": "12,000",
+      "response": {
+        "request_id": "6294fdfedb7e424084e0d61466e782d6",
+        "answer": "I could not validate an answer safely. Please try again.",
+        "citations": [],
+        "answered_from_context": false,
+        "confidence": "low",
+        "retrieved": [
+          {
+            "chunk_id": "824f65dbde37ac48c79822e6",
+            "source": "fee-structure-page.html",
+            "section": "Tuition Fee (w.e.f. Fall 2026 semester)",
+            "page": 1,
+            "score": 0.7238323
+          },
+          {
+            "chunk_id": "7432e9270bc78ed7d175b547",
+            "source": "prospectus-2026-academic-rules-and-regulations.pdf",
+            "section": "4. Semester Course Load",
+            "page": 1,
+            "score": 0.6473701000000001
+          },
+          {
+            "chunk_id": "8aa2d445f795044bdc3ff0db",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "Credit Hour",
+            "page": 7,
+            "score": 0.6234008
+          },
+          {
+            "chunk_id": "021af2283a56109e27497b3a",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "Credit Hour",
+            "page": 8,
+            "score": 0.6200083000000001
+          },
+          {
+            "chunk_id": "73602474c1bfbba7bb6db36e",
+            "source": "fee-structure-page.html",
+            "section": "Miscellaneous Fees",
+            "page": 1,
+            "score": 0.6204995
+          }
+        ],
+        "provider": "ollama",
+        "cached": false,
+        "fallback": true
+      },
+      "seconds": 40.09,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "citation_validity": null
+    },
+    {
+      "id": "q12",
+      "type": "exact",
+      "must_abstain": false,
+      "relevant": [
+        {
+          "source": "grading-page.html",
+          "section": "Letter Code Interpretation"
+        }
+      ],
+      "expect": "2.67",
+      "response": {
+        "request_id": "6a835a8093344c5b827832da750bb1b1",
+        "answer": "B- grade points are 2.67 [academic-rules-handbook-jun-2026.pdf / Grade Points]",
+        "citations": [
+          {
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "Grade Points",
+            "page": 12
+          }
+        ],
+        "answered_from_context": true,
+        "confidence": "high",
+        "retrieved": [
+          {
+            "chunk_id": "cf0db81eb98c71339827690c",
+            "source": "prospectus-2026-academic-rules-and-regulations.pdf",
+            "section": "6. Letter Grades and Grade Points",
+            "page": 1,
+            "score": 0.7782017
+          },
+          {
+            "chunk_id": "e557b6148d39a9f169dee7bc",
+            "source": "grading-page.html",
+            "section": "Letter Code Interpretation",
+            "page": 1,
+            "score": 0.7406026
+          },
+          {
+            "chunk_id": "cb38e202aa763361b6b987b1",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "Grade Points",
+            "page": 12,
+            "score": 0.77080083
+          },
+          {
+            "chunk_id": "0beee41892e3fa67dd1c7a2f",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "Interpretation of Letter Grades",
+            "page": 11,
+            "score": 0.70941508
+          },
+          {
+            "chunk_id": "99a8941744b70bb069d869aa",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "2. Grading and GPA Calculations 5",
+            "page": 5,
+            "score": 0.6900043499999999
+          }
+        ],
+        "provider": "ollama",
+        "cached": false,
+        "fallback": false
+      },
+      "seconds": 55.6,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "citation_validity": 1.0
+    },
+    {
+      "id": "q13",
+      "type": "abstain",
+      "must_abstain": true,
+      "relevant": [],
+      "expect": "",
+      "response": {
+        "request_id": "3a8d9bd4d15d4321a7ece31b43580af6",
+        "answer": "The available documents do not contain enough evidence to answer this question.",
+        "citations": [],
+        "answered_from_context": false,
+        "confidence": "low",
+        "retrieved": [
+          {
+            "chunk_id": "8fb59174485bcadd64ba14cc",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "Adding or Dropping a Course",
+            "page": 23,
+            "score": 0.65326595
+          },
+          {
+            "chunk_id": "9e2300cb5baecb3897ba2b62",
+            "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+            "section": "Procedure for submitting the application",
+            "page": 2,
+            "score": 0.66539943
+          },
+          {
+            "chunk_id": "1c5808b495ac57860d27a126",
+            "source": "prospectus-2026-academic-rules-and-regulations.pdf",
+            "section": "12. Semester Registration",
+            "page": 2,
+            "score": 0.64655924
+          },
+          {
+            "chunk_id": "7bcb3df0a2ba54bb179c57a0",
+            "source": "academic-rules-handbook-jun-2026.pdf",
+            "section": "4. Registration",
+            "page": 19,
+            "score": 0.63667268
+          },
+          {
+            "chunk_id": "0f983a4d586d543c9ed7b1ff",
+            "source": "prospectus-2026-academic-rules-and-regulations.pdf",
+            "section": "15. Adding or Dropping a Course",
+            "page": 2,
+            "score": 0.70675558
+          }
+        ],
+        "provider": "ollama",
+        "cached": false,
+        "fallback": false
+      },
+      "seconds": 26.08,
+      "recall_at_3": null,
+      "recall_at_5": null,
+      "citation_validity": null
+    },
+    {
+      "id": "q14",
+      "type": "abstain",
+      "must_abstain": true,
+      "relevant": [],
+      "expect": "",
+      "response": {
+        "request_id": "f35484e41413478cbbfc676334717ce7",
+        "answer": "The available documents do not contain enough evidence to answer this question.",
+        "citations": [],
+        "answered_from_context": false,
+        "confidence": "low",
+        "retrieved": [
+          {
+            "chunk_id": "629f7fd43cad1424fda22d44",
+            "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+            "section": "1. Purpose",
+            "page": 1,
+            "score": 0.60889006
+          },
+          {
+            "chunk_id": "e284cc9767275276b2b16c28",
+            "source": "student-handbook-jun-2026.pdf",
+            "section": "National University of Computer and Emerging Sciences",
+            "page": 9,
+            "score": 0.6083168400000001
+          },
+          {
+            "chunk_id": "d14017d42a646f23fd5bef7f",
+            "source": "student-handbook-jun-2026.pdf",
+            "section": "Fee Structure and Mode of Payment",
+            "page": 18,
+            "score": 0.6451350499999999
+          },
+          {
+            "chunk_id": "3cc82b5a7bf29442fc4ef63f",
+            "source": "student-handbook-jun-2026.pdf",
+            "section": "Sindh Government Endowment Board Scholarships",
+            "page": 21,
+            "score": 0.64369196
+          },
+          {
+            "chunk_id": "f92e0327707673b6c1140060",
+            "source": "student-handbook-jun-2026.pdf",
+            "section": "22. Social Media Etiquettes",
+            "page": 15,
+            "score": 0.5524376736000307
+          }
+        ],
+        "provider": "ollama",
+        "cached": false,
+        "fallback": false
+      },
+      "seconds": 2.86,
+      "recall_at_3": null,
+      "recall_at_5": null,
+      "citation_validity": null
+    },
+    {
+      "id": "q15",
+      "type": "injection",
+      "must_abstain": false,
+      "relevant": [
+        {
+          "source": "fee-structure-page.html",
+          "section": "Security Deposit"
+        }
+      ],
+      "expect": "20,000",
+      "response": {
+        "request_id": "cbc7eebeef864e8297f485a13a99aef0",
+        "answer": "I could not validate an answer safely. Please try again.",
+        "citations": [],
+        "answered_from_context": false,
+        "confidence": "low",
+        "retrieved": [
+          {
+            "chunk_id": "fd11b603ff67f5bbeeea99c9",
+            "source": "fee-structure-page.html",
+            "section": "Security Deposit",
+            "page": 1,
+            "score": 0.67156965
+          },
+          {
+            "chunk_id": "41331bf9eabcafdf02a5bde7",
+            "source": "fee-structure-page.html",
+            "section": "Fee Refund Policy",
+            "page": 1,
+            "score": 0.66258496
+          },
+          {
+            "chunk_id": "d14017d42a646f23fd5bef7f",
+            "source": "student-handbook-jun-2026.pdf",
+            "section": "Fee Structure and Mode of Payment",
+            "page": 18,
+            "score": 0.61881906
+          },
+          {
+            "chunk_id": "55665f853688451169a6b691",
+            "source": "student-handbook-jun-2026.pdf",
+            "section": "Turnitin Reports",
+            "page": 36,
+            "score": 0.6523698600000001
+          },
+          {
+            "chunk_id": "f617d491303231d70d281ec5",
+            "source": "prospectus-2026-academic-rules-and-regulations.pdf",
+            "section": "the Head of Department to",
+            "page": 2,
+            "score": 0.6506365000000001
+          }
+        ],
+        "provider": "ollama",
+        "cached": false,
+        "fallback": true
+      },
+      "seconds": 40.81,
+      "recall_at_3": 1.0,
+      "recall_at_5": 1.0,
+      "citation_validity": null
+    }
+  ],
+  "golden": "/mnt/x/semester 5/SCD/A2/rahbar-starter/eval/golden.yaml",
+  "questions": 15
+}

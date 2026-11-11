@@ -54,6 +54,7 @@
   button { padding: 0 20px; font: inherit; font-weight: 600; color: #fff; background: var(--accent);
            border: 0; border-radius: 10px; cursor: pointer; }
   button:disabled { opacity: 0.5; cursor: progress; }
+  .new-conversation { margin: 0 0 20px; padding: 8px 14px; font-size: 14px; }
   .hint { max-width: 760px; margin: 6px auto 0; font-size: 12px; color: var(--muted); }
 </style>
 </head>
@@ -159,6 +160,12 @@ function errorMessage(status, body) {
   return `Request failed (HTTP ${status})${detail ? `: ${detail}` : "."}`;
 }
 
+let conversationId = crypto.randomUUID ? crypto.randomUUID() : `session-${Date.now()}`;
+const reset = document.createElement("button");
+reset.type = "button"; reset.className = "new-conversation"; reset.textContent = "New conversation";
+reset.onclick = () => { conversationId = `session-${Date.now()}`; thread.replaceChildren(); };
+document.querySelector("header").append(reset);
+
 async function ask(question) {
   thread.append(el("div", { class: "q" }, question));
   const pending = el("div", { class: "pending" }, "Retrieving passages and writing an answer…");
@@ -169,7 +176,7 @@ async function ask(question) {
     const res = await fetch(`${API_BASE}/api/ask`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question }),
+      body: JSON.stringify({ question, session_id: conversationId }),
     });
     let body = null;
     try { body = await res.json(); } catch { /* non-JSON error page */ }

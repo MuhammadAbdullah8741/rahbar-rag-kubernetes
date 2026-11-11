@@ -1,0 +1,62 @@
+name: CI
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [dev]
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r api/requirements-dev.txt -r indexer/requirements-dev.txt
+      - run: |
+          ruff check api indexer eval corpus
+          (cd api && mypy app && pytest --cov=app --cov-fail-under=60 --cov-report=xml)
+          (cd indexer && mypy pipeline && pytest --cov=pipeline --cov-fail-under=60 --cov-report=xml)
+  manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          curl -fsSL https://github.com/yannh/kubeconform/releases/download/v0.8.0/kubeconform-linux-amd64.tar.gz | tar xz kubeconform
+          for overlay in dev prod; do
+            kubectl kustomize k8s/overlays/$overlay | ./kubeconform -strict -summary -kubernetes-version 1.34.0
+          done
+  images:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        component: [api, indexer, ui]
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t rahbar-${{ matrix.component }}:ci ${{ matrix.component }}
+      - name: Scan fixable HIGH and CRITICAL vulnerabilities
+        run: |
+          curl -fsSL https://github.com/aquasecurity/trivy/releases/download/v0.76.2/trivy_0.76.2_Linux-64bit.tar.gz | tar xz trivy
+          ./trivy image --timeout 20m --scanners vuln --severity HIGH,CRITICAL --ignore-unfixed --exit-code 1 rahbar-${{ matrix.component }}:ci
+  e2e:
+    needs: [test, manifests, images]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install httpx==0.28.1 pyyaml==6.0.2
+      - run: |
+          curl -fsSL -o kind https://kind.sigs.k8s.io/dl/v0.31.0/kind-linux-amd64
+          chmod +x kind
+          sudo mv kind /usr/local/bin/kind
+          bash scripts/ci_e2e.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fixture-evaluation
+          path: eval/fixtures/ci-results.json

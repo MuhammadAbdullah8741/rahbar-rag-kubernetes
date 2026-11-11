@@ -5,7 +5,8 @@ SHELL := /bin/bash
 NS ?= rahbar
 TAG ?= dev
 PY ?= python3
-VENV ?= .venv
+VENV ?= $(HOME)/.venvs/rahbar
+DEV_HOST ?= 127.0.0.1
 BIN := $(abspath $(VENV))/bin
 # The Ingress address. On Linux this is the minikube IP. On macOS or Windows with the
 # docker driver, run `minikube tunnel` in another terminal and use INGRESS_IP=127.0.0.1.
@@ -33,7 +34,7 @@ lint: ## ruff and mypy over everything in Python
 	cd indexer && $(BIN)/mypy pipeline
 
 dev: ## run the API with stubs on http://localhost:8000, serving the chat UI too
-	cd api && SERVE_UI_DIR=../ui RETRIEVER=stub LLM_PROVIDER=stub $(BIN)/uvicorn app.main:app --reload --port 8000
+	cd api && SERVE_UI_DIR=../ui RETRIEVER=stub LLM_PROVIDER=stub $(BIN)/uvicorn app.main:app --reload --host $(DEV_HOST) --port 8000
 
 cluster: ## start minikube with Calico, then enable metrics-server and ingress
 	minikube start --driver=docker --cni=calico --memory=6144 --cpus=4
@@ -71,8 +72,8 @@ fetch: ## download the documents listed in corpus/sources.yaml
 eval: ## score eval/golden.yaml through the Ingress and apply the CI gate
 	$(BIN)/python eval/run_eval.py --api "http://$(INGRESS_IP)" --host $(HOST)
 
-eval-fixtures: ## score the CI fixture golden set against a local `make dev`
-	$(BIN)/python eval/run_eval.py --api http://localhost:8000 --golden eval/fixtures/golden.fixture.yaml --out /tmp/rahbar-fixture-results.json
+eval-fixtures: ## score fixtures against a running fixture-configured API on port 8000
+	$(BIN)/python eval/run_eval.py --api http://localhost:8000 --golden eval/fixtures/golden.fixture.yaml --baseline eval/fixtures/baseline.json --out /tmp/rahbar-fixture-results.json
 
 check: ## run the submission checker
 	$(PY) scripts/check_submission.py

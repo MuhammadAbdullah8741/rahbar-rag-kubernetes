@@ -21,6 +21,7 @@ from .logjson import configure_logging, request_id_var
 from .providers.llm import get_provider
 from .retrieval import get_retriever
 from .routes import ask, health, metrics
+from .services.readiness import check_dependencies, is_ready
 
 log = logging.getLogger("rahbar.api")
 
@@ -32,13 +33,18 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     app.state.settings = settings
     app.state.retriever = get_retriever(settings)
     app.state.provider = get_provider(settings)
-    # STARTER-TODO(4.4): compare the collection's embedding-model metadata with
-    # settings.embed_model here, and make /readyz fail on a mismatch.
-    # This process only reads the index. The indexer Job writes it.
+    checks = check_dependencies(settings)
+    if not is_ready(checks):
+        log.warning("startup dependencies not ready", extra={"checks": checks})
+    # Stay alive while dependencies recover. /readyz repeats these read-only checks.
     log.info(
         "api started",
-        extra={"retriever": settings.retriever, "llm_provider": settings.llm_provider,
-               "embed_model": settings.embed_model, "top_k": settings.top_k},
+        extra={
+            "retriever": settings.retriever,
+            "llm_provider": settings.llm_provider,
+            "embed_model": settings.embed_model,
+            "top_k": settings.top_k,
+        },
     )
     yield
 
@@ -59,13 +65,14 @@ async def request_context(request: Request, call_next):  # type: ignore[no-untyp
         return response
     finally:
         route = request.scope.get("route")
-        path = getattr(route, "path", "unmatched")   # route template, not the raw URL
+        path = getattr(route, "path", "unmatched")  # route template, not the raw URL
         elapsed = time.perf_counter() - start
         metrics.REQUESTS.labels(path=path, status=str(status)).inc()
         metrics.LATENCY.labels(path=path).observe(elapsed)
         if path not in ("/healthz", "/readyz", "/metrics"):
-            log.info("request", extra={"path": path, "status": status,
-                                       "ms": round(elapsed * 1000, 1)})
+            log.info(
+                "request", extra={"path": path, "status": status, "ms": round(elapsed * 1000, 1)}
+            )
         request_id_var.reset(token)
 
 

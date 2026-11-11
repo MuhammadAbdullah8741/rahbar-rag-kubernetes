@@ -10,11 +10,13 @@ from __future__ import annotations
 
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class AskRequest(BaseModel):
     question: str = Field(min_length=3, max_length=500)
+    session_id: str | None = Field(default=None, pattern=r"^[a-zA-Z0-9-]{8,64}$")
+    follow_up: bool = False
 
 
 class Passage(BaseModel):
@@ -29,6 +31,7 @@ class Passage(BaseModel):
 
 
 class Citation(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     source: str
     section: str
     page: int | None = None
@@ -37,6 +40,7 @@ class Citation(BaseModel):
 class Answer(BaseModel):
     """The model's output contract. Send its JSON schema to the model, then validate."""
 
+    model_config = ConfigDict(extra="forbid")
     reasoning: str
     answer: str
     citations: list[Citation]
@@ -62,3 +66,5 @@ class AskResponse(BaseModel):
     confidence: Literal["high", "medium", "low"]
     retrieved: list[RetrievedRef]
     provider: str
+    cached: bool = False
+    fallback: bool = False

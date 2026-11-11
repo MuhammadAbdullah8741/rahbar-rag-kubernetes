@@ -1,0 +1,217 @@
+$ kubectl get deployment/api -n rahbar -o json
+{
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+        "annotations": {
+            "deployment.kubernetes.io/revision": "1",
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"name\":\"api\",\"namespace\":\"rahbar\"},\"spec\":{\"replicas\":3,\"selector\":{\"matchLabels\":{\"app\":\"api\"}},\"strategy\":{\"rollingUpdate\":{\"maxSurge\":1,\"maxUnavailable\":0},\"type\":\"RollingUpdate\"},\"template\":{\"metadata\":{\"labels\":{\"app\":\"api\"}},\"spec\":{\"automountServiceAccountToken\":false,\"containers\":[{\"envFrom\":[{\"configMapRef\":{\"name\":\"rahbar-config\"}}],\"image\":\"rahbar-api:dev\",\"imagePullPolicy\":\"IfNotPresent\",\"lifecycle\":{\"preStop\":{\"exec\":{\"command\":[\"/bin/sh\",\"-c\",\"sleep 5\"]}}},\"livenessProbe\":{\"failureThreshold\":3,\"httpGet\":{\"path\":\"/healthz\",\"port\":8000},\"periodSeconds\":20,\"timeoutSeconds\":2},\"name\":\"api\",\"ports\":[{\"containerPort\":8000,\"name\":\"http\"}],\"readinessProbe\":{\"failureThreshold\":3,\"httpGet\":{\"path\":\"/readyz\",\"port\":8000},\"periodSeconds\":10,\"timeoutSeconds\":8},\"resources\":{\"limits\":{\"cpu\":\"500m\",\"memory\":\"384Mi\"},\"requests\":{\"cpu\":\"100m\",\"memory\":\"128Mi\"}},\"securityContext\":{\"allowPrivilegeEscalation\":false,\"capabilities\":{\"drop\":[\"ALL\"]},\"readOnlyRootFilesystem\":true},\"startupProbe\":{\"failureThreshold\":30,\"httpGet\":{\"path\":\"/healthz\",\"port\":8000},\"periodSeconds\":2},\"volumeMounts\":[{\"mountPath\":\"/tmp\",\"name\":\"tmp\"}]}],\"securityContext\":{\"fsGroup\":10001,\"runAsGroup\":10001,\"runAsNonRoot\":true,\"runAsUser\":10001,\"seccompProfile\":{\"type\":\"RuntimeDefault\"}},\"serviceAccountName\":\"api\",\"terminationGracePeriodSeconds\":30,\"volumes\":[{\"emptyDir\":{},\"name\":\"tmp\"}]}}}}\n"
+        },
+        "creationTimestamp": "2026-11-06T11:25:31Z",
+        "generation": 1,
+        "name": "api",
+        "namespace": "rahbar",
+        "resourceVersion": "2781",
+        "uid": "a8a05301-1dc7-4f7b-876d-d9026f464e98"
+    },
+    "spec": {
+        "progressDeadlineSeconds": 600,
+        "replicas": 3,
+        "revisionHistoryLimit": 10,
+        "selector": {
+            "matchLabels": {
+                "app": "api"
+            }
+        },
+        "strategy": {
+            "rollingUpdate": {
+                "maxSurge": 1,
+                "maxUnavailable": 0
+            },
+            "type": "RollingUpdate"
+        },
+        "template": {
+            "metadata": {
+                "labels": {
+                    "app": "api"
+                }
+            },
+            "spec": {
+                "automountServiceAccountToken": false,
+                "containers": [
+                    {
+                        "envFrom": [
+                            {
+                                "configMapRef": {
+                                    "name": "rahbar-config"
+                                }
+                            }
+                        ],
+                        "image": "rahbar-api:dev",
+                        "imagePullPolicy": "IfNotPresent",
+                        "lifecycle": {
+                            "preStop": {
+                                "exec": {
+                                    "command": [
+                                        "/bin/sh",
+                                        "-c",
+                                        "sleep 5"
+                                    ]
+                                }
+                            }
+                        },
+                        "livenessProbe": {
+                            "failureThreshold": 3,
+                            "httpGet": {
+                                "path": "/healthz",
+                                "port": 8000,
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 20,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 2
+                        },
+                        "name": "api",
+                        "ports": [
+                            {
+                                "containerPort": 8000,
+                                "name": "http",
+                                "protocol": "TCP"
+                            }
+                        ],
+                        "readinessProbe": {
+                            "failureThreshold": 3,
+                            "httpGet": {
+                                "path": "/readyz",
+                                "port": 8000,
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 10,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 8
+                        },
+                        "resources": {
+                            "limits": {
+                                "cpu": "500m",
+                                "memory": "384Mi"
+                            },
+                            "requests": {
+                                "cpu": "100m",
+                                "memory": "128Mi"
+                            }
+                        },
+                        "securityContext": {
+                            "allowPrivilegeEscalation": false,
+                            "capabilities": {
+                                "drop": [
+                                    "ALL"
+                                ]
+                            },
+                            "readOnlyRootFilesystem": true
+                        },
+                        "startupProbe": {
+                            "failureThreshold": 30,
+                            "httpGet": {
+                                "path": "/healthz",
+                                "port": 8000,
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 2,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 1
+                        },
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/tmp",
+                                "name": "tmp"
+                            }
+                        ]
+                    }
+                ],
+                "dnsPolicy": "ClusterFirst",
+                "restartPolicy": "Always",
+                "schedulerName": "default-scheduler",
+                "securityContext": {
+                    "fsGroup": 10001,
+                    "runAsGroup": 10001,
+                    "runAsNonRoot": true,
+                    "runAsUser": 10001,
+                    "seccompProfile": {
+                        "type": "RuntimeDefault"
+                    }
+                },
+                "serviceAccount": "api",
+                "serviceAccountName": "api",
+                "terminationGracePeriodSeconds": 30,
+                "volumes": [
+                    {
+                        "emptyDir": {},
+                        "name": "tmp"
+                    }
+                ]
+            }
+        }
+    },
+    "status": {
+        "availableReplicas": 3,
+        "conditions": [
+            {
+                "lastTransitionTime": "2026-11-06T11:26:19Z",
+                "lastUpdateTime": "2026-11-06T11:26:19Z",
+                "message": "Deployment has minimum availability.",
+                "reason": "MinimumReplicasAvailable",
+                "status": "True",
+                "type": "Available"
+            },
+            {
+                "lastTransitionTime": "2026-11-06T11:25:31Z",
+                "lastUpdateTime": "2026-11-06T11:26:19Z",
+                "message": "ReplicaSet \"api-c7b8cbbdf\" has successfully progressed.",
+                "reason": "NewReplicaSetAvailable",
+                "status": "True",
+                "type": "Progressing"
+            }
+        ],
+        "observedGeneration": 1,
+        "readyReplicas": 3,
+        "replicas": 3,
+        "terminatingReplicas": 0,
+        "updatedReplicas": 3
+    }
+}
+
+
+$ kubectl logs embedding-pin-check -n rahbar
+Error from server (BadRequest): container "api" in pod "embedding-pin-check" is waiting to start: ContainerCreating
+
+
+$ kubectl logs embedding-pin-check -n rahbar
+
+
+$ kubectl logs embedding-pin-check -n rahbar
+
+
+$ kubectl logs embedding-pin-check -n rahbar
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+{"ts": "2026-11-06T11:27:43Z", "level": "INFO", "logger": "httpx", "msg": "HTTP Request: GET http://chroma:8000/api/v2/tenants/default_tenant/databases/default_database/collections/rahbar \"HTTP/1.1 200 OK\"", "request_id": "-"}
+{"ts": "2026-11-06T11:27:43Z", "level": "INFO", "logger": "httpx", "msg": "HTTP Request: GET http://chroma:8000/api/v2/tenants/default_tenant/databases/default_database/collections/b00e510e-cb05-4413-93bd-ba0931d91115/count \"HTTP/1.1 200 OK\"", "request_id": "-"}
+{"ts": "2026-11-06T11:27:43Z", "level": "WARNING", "logger": "rahbar.api", "msg": "startup dependencies not ready", "request_id": "-", "checks": {"embedding": "mismatch: expected deliberately-wrong-model/768, found dummy-768/768", "chroma": "ok", "redis": "ok"}}
+{"ts": "2026-11-06T11:27:43Z", "level": "INFO", "logger": "rahbar.api", "msg": "api started", "request_id": "-", "retriever": "stub", "llm_provider": "stub", "embed_model": "deliberately-wrong-model", "top_k": 5}
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+
+
+$ kubectl exec -n rahbar embedding-pin-check -- python -c import httpx; live=httpx.get('http://127.0.0.1:8000/healthz'); ready=httpx.get('http://127.0.0.1:8000/readyz'); print('liveness',live.status_code,'readiness',ready.status_code,ready.text); assert live.status_code==200 and ready.status_code==503
+liveness 200 readiness 503 {"status":"not-ready","checks":{"embedding":"mismatch: expected deliberately-wrong-model/768, found dummy-768/768","chroma":"ok","redis":"ok"}}
+
+
+$ kubectl get pod/embedding-pin-check -n rahbar
+NAME                  READY   STATUS    RESTARTS   AGE
+embedding-pin-check   0/1     Running   0          6s
+
+
+$ kubectl delete pod/embedding-pin-check -n rahbar --wait=false
+pod "embedding-pin-check" deleted from rahbar namespace

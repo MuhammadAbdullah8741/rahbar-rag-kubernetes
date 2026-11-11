@@ -1,0 +1,320 @@
+[
+  {
+    "id": "q01",
+    "type": "ordinary",
+    "must_abstain": false,
+    "relevant": [
+      {
+        "source": "fee-structure-page.html",
+        "section": "Admission Fee"
+      }
+    ],
+    "expect": "30,000",
+    "response": {
+      "request_id": "7e5a33931e6244ef9c65a90aafe2ced8",
+      "answer": "The one-time admission fee is Rs 30,000, payable once at the time of admission.[fee-structure-page.html / Admission Fee]",
+      "citations": [
+        {
+          "source": "fee-structure-page.html",
+          "section": "Admission Fee",
+          "page": 1
+        }
+      ],
+      "answered_from_context": true,
+      "confidence": "high",
+      "retrieved": [
+        {
+          "chunk_id": "91bab5c636c9ea3910ef3ae1",
+          "source": "fee-structure-page.html",
+          "section": "Admission Fee",
+          "page": 1,
+          "score": 0.75693905
+        },
+        {
+          "chunk_id": "41331bf9eabcafdf02a5bde7",
+          "source": "fee-structure-page.html",
+          "section": "Fee Refund Policy",
+          "page": 1,
+          "score": 0.6068382299999999
+        },
+        {
+          "chunk_id": "73602474c1bfbba7bb6db36e",
+          "source": "fee-structure-page.html",
+          "section": "Miscellaneous Fees",
+          "page": 1,
+          "score": 0.6527449000000001
+        },
+        {
+          "chunk_id": "09e6a4227cca3e2b1f10fdf6",
+          "source": "student-handbook-jun-2026.pdf",
+          "section": "Internal Scholarships",
+          "page": 19,
+          "score": 0.5806697000000001
+        },
+        {
+          "chunk_id": "d14017d42a646f23fd5bef7f",
+          "source": "student-handbook-jun-2026.pdf",
+          "section": "Fee Structure and Mode of Payment",
+          "page": 18,
+          "score": 0.57712966
+        }
+      ],
+      "provider": "ollama",
+      "cached": false,
+      "fallback": false
+    },
+    "seconds": 63.0
+  },
+  {
+    "id": "q02",
+    "type": "ordinary",
+    "must_abstain": false,
+    "relevant": [
+      {
+        "source": "fee-structure-page.html",
+        "section": "Security Deposit"
+      }
+    ],
+    "expect": "20,000",
+    "response": {
+      "request_id": "f5f8f821c13c4a02bc40fc61dc19f144",
+      "answer": "A refundable security deposit of Rs 20,000 is also payable at the time of admission.[fee-structure-page.html / Security Deposit]",
+      "citations": [
+        {
+          "source": "fee-structure-page.html",
+          "section": "Security Deposit",
+          "page": 1
+        }
+      ],
+      "answered_from_context": true,
+      "confidence": "high",
+      "retrieved": [
+        {
+          "chunk_id": "fd11b603ff67f5bbeeea99c9",
+          "source": "fee-structure-page.html",
+          "section": "Security Deposit",
+          "page": 1,
+          "score": 0.84891891
+        },
+        {
+          "chunk_id": "41331bf9eabcafdf02a5bde7",
+          "source": "fee-structure-page.html",
+          "section": "Fee Refund Policy",
+          "page": 1,
+          "score": 0.72790468
+        },
+        {
+          "chunk_id": "d14017d42a646f23fd5bef7f",
+          "source": "student-handbook-jun-2026.pdf",
+          "section": "Fee Structure and Mode of Payment",
+          "page": 18,
+          "score": 0.64569288
+        },
+        {
+          "chunk_id": "73602474c1bfbba7bb6db36e",
+          "source": "fee-structure-page.html",
+          "section": "Miscellaneous Fees",
+          "page": 1,
+          "score": 0.5951864
+        },
+        {
+          "chunk_id": "b24d3e666c3aa3cf7b70627a",
+          "source": "student-handbook-jun-2026.pdf",
+          "section": "5. Unacceptable Uses of Generative AI Tools",
+          "page": 53,
+          "score": 0.43774891935806287
+        }
+      ],
+      "provider": "ollama",
+      "cached": false,
+      "fallback": false
+    },
+    "seconds": 34.73
+  },
+  {
+    "id": "q03",
+    "type": "ordinary",
+    "must_abstain": false,
+    "relevant": [
+      {
+        "source": "fee-structure-page.html",
+        "section": "Student Activities Fund"
+      }
+    ],
+    "expect": "2,500",
+    "response": {
+      "request_id": "fd4d775d93914a86973ec17ce2d061ec",
+      "answer": "I could not validate an answer safely. Please try again.",
+      "citations": [],
+      "answered_from_context": false,
+      "confidence": "low",
+      "retrieved": [
+        {
+          "chunk_id": "4eaacccdcb0147b317c7d866",
+          "source": "fee-structure-page.html",
+          "section": "Student Activities Fund",
+          "page": 1,
+          "score": 0.82807392
+        },
+        {
+          "chunk_id": "824f65dbde37ac48c79822e6",
+          "source": "fee-structure-page.html",
+          "section": "Tuition Fee (w.e.f. Fall 2026 semester)",
+          "page": 1,
+          "score": 0.6907126299999999
+        },
+        {
+          "chunk_id": "d1c73c389ee8b5c52fce3734",
+          "source": "prospectus-2026-academic-rules-and-regulations.pdf",
+          "section": "19. Rules for Summer Semester",
+          "page": 3,
+          "score": 0.6257375000000001
+        },
+        {
+          "chunk_id": "73602474c1bfbba7bb6db36e",
+          "source": "fee-structure-page.html",
+          "section": "Miscellaneous Fees",
+          "page": 1,
+          "score": 0.66415036
+        },
+        {
+          "chunk_id": "f13597fec35313bc4cd9103a",
+          "source": "academic-rules-handbook-jun-2026.pdf",
+          "section": "6. Rules for Summer Semester",
+          "page": 28,
+          "score": 0.6227799
+        }
+      ],
+      "provider": "ollama",
+      "cached": false,
+      "fallback": true
+    },
+    "seconds": 71.94
+  },
+  {
+    "id": "q04",
+    "type": "ordinary",
+    "must_abstain": false,
+    "relevant": [
+      {
+        "source": "fee-structure-page.html",
+        "section": "Fee Refund Policy"
+      }
+    ],
+    "expect": "100%",
+    "response": {
+      "request_id": "7bc7ebde8cf4495cae397e8fbbf5a9b3",
+      "answer": "100% of the fee is refundable up to the 10th day of classes [fee-structure-page.html / Fee Refund Policy]",
+      "citations": [
+        {
+          "source": "fee-structure-page.html",
+          "section": "Fee Refund Policy",
+          "page": 1
+        }
+      ],
+      "answered_from_context": true,
+      "confidence": "high",
+      "retrieved": [
+        {
+          "chunk_id": "41331bf9eabcafdf02a5bde7",
+          "source": "fee-structure-page.html",
+          "section": "Fee Refund Policy",
+          "page": 1,
+          "score": 0.7390768
+        },
+        {
+          "chunk_id": "d604dc68a05225ec2077ae2d",
+          "source": "academic-rules-handbook-jun-2026.pdf",
+          "section": "6. Rules for Summer Semester",
+          "page": 29,
+          "score": 0.656263
+        },
+        {
+          "chunk_id": "d14017d42a646f23fd5bef7f",
+          "source": "student-handbook-jun-2026.pdf",
+          "section": "Fee Structure and Mode of Payment",
+          "page": 18,
+          "score": 0.68933445
+        },
+        {
+          "chunk_id": "824f65dbde37ac48c79822e6",
+          "source": "fee-structure-page.html",
+          "section": "Tuition Fee (w.e.f. Fall 2026 semester)",
+          "page": 1,
+          "score": 0.66799796
+        },
+        {
+          "chunk_id": "922fe461c33f5f62b801a1b0",
+          "source": "prospectus-2026-academic-rules-and-regulations.pdf",
+          "section": "16. Withdrawal from a Course",
+          "page": 2,
+          "score": 0.63121593
+        }
+      ],
+      "provider": "ollama",
+      "cached": false,
+      "fallback": false
+    },
+    "seconds": 64.59
+  },
+  {
+    "id": "q05",
+    "type": "ordinary",
+    "must_abstain": false,
+    "relevant": [
+      {
+        "source": "grading-page.html",
+        "section": "Academic Grading"
+      }
+    ],
+    "expect": "50%",
+    "response": {
+      "request_id": "1f7fba90dbd445b08791af0ac27d9158",
+      "answer": "I could not validate an answer safely. Please try again.",
+      "citations": [],
+      "answered_from_context": false,
+      "confidence": "low",
+      "retrieved": [
+        {
+          "chunk_id": "ad5604be693fb7ef97bcca7f",
+          "source": "prospectus-2026-academic-rules-and-regulations.pdf",
+          "section": "5. Academic Grading",
+          "page": 1,
+          "score": 0.79262525
+        },
+        {
+          "chunk_id": "86b8bfc921cf84170e2f681f",
+          "source": "grading-page.html",
+          "section": "Academic Grading",
+          "page": 1,
+          "score": 0.7931972700000001
+        },
+        {
+          "chunk_id": "20b0c0a9516d8e4bfe7d0c0e",
+          "source": "academic-rules-handbook-jun-2026.pdf",
+          "section": "5. Academic Assessment",
+          "page": 24,
+          "score": 0.79546797
+        },
+        {
+          "chunk_id": "9a077c4807d6c0464c5de749",
+          "source": "grading-page.html",
+          "section": "Description of Grades",
+          "page": 1,
+          "score": 0.70213103
+        },
+        {
+          "chunk_id": "71fe4ceb55feeddf3c9ba52c",
+          "source": "academic-rules-handbook-jun-2026.pdf",
+          "section": "Repeating a Course",
+          "page": 26,
+          "score": 0.7359053
+        }
+      ],
+      "provider": "ollama",
+      "cached": false,
+      "fallback": true
+    },
+    "seconds": 138.57
+  }
+]

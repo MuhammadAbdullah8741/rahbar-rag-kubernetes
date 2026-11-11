@@ -1,0 +1,44 @@
+[
+  {
+    "stage": "extraction",
+    "fault": "Disable OCR and read PDF text layer only",
+    "text_layer_characters": 0,
+    "restored_ocr_characters": 11757,
+    "ocr_pages": 8
+  },
+  {
+    "stage": "chunking",
+    "fault": "Discard section metadata as a naive fixed-window splitter would",
+    "broken_recall5": 0.0,
+    "restored_recall5": 0.8461538461538461
+  },
+  {
+    "stage": "retrieval",
+    "fault": "Change API embedding model only",
+    "observed": "Embedding pin mismatch; refusing retrieval"
+  },
+  {
+    "stage": "generation",
+    "fault": "Provider returns a schema validation error on every attempt",
+    "attempts": 2,
+    "response": {
+      "request_id": "-",
+      "answer": "I could not validate an answer safely. Please try again.",
+      "citations": [],
+      "answered_from_context": false,
+      "confidence": "low",
+      "retrieved": [
+        {
+          "chunk_id": "fault-evidence",
+          "source": "fixture.md",
+          "section": "Rules",
+          "page": 1,
+          "score": 0.9
+        }
+      ],
+      "provider": "fault-provider",
+      "cached": false,
+      "fallback": true
+    }
+  }
+]

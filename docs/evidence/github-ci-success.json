@@ -1,0 +1,37 @@
+{
+  "run_url": "https://github.com/MuhammadAbdullah8741/rahbar-rag-kubernetes/actions/runs/42957528780",
+  "head_sha": "9f9937e861254c12a65954622c4ea5e275919b14",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "name": "images (ui)",
+      "conclusion": "success",
+      "url": "https://github.com/MuhammadAbdullah8741/rahbar-rag-kubernetes/actions/runs/42957528780/job/130316054189"
+    },
+    {
+      "name": "manifests",
+      "conclusion": "success",
+      "url": "https://github.com/MuhammadAbdullah8741/rahbar-rag-kubernetes/actions/runs/42957528780/job/130316054466"
+    },
+    {
+      "name": "test",
+      "conclusion": "success",
+      "url": "https://github.com/MuhammadAbdullah8741/rahbar-rag-kubernetes/actions/runs/42957528780/job/130316054548"
+    },
+    {
+      "name": "images (indexer)",
+      "conclusion": "success",
+      "url": "https://github.com/MuhammadAbdullah8741/rahbar-rag-kubernetes/actions/runs/42957528780/job/130316054559"
+    },
+    {
+      "name": "images (api)",
+      "conclusion": "success",
+      "url": "https://github.com/MuhammadAbdullah8741/rahbar-rag-kubernetes/actions/runs/42957528780/job/130316054597"
+    },
+    {
+      "name": "e2e",
+      "conclusion": "success",
+      "url": "https://github.com/MuhammadAbdullah8741/rahbar-rag-kubernetes/actions/runs/42957528780/job/130316377471"
+    }
+  ]
+}

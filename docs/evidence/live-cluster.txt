@@ -1,0 +1,39 @@
+2026-11-08T11:59:03+05:00
+Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice
+NAME                         READY   STATUS              RESTARTS       AGE
+pod/api-7d898b7bc9-bdcvg     1/1     Running             0              4h41m
+pod/api-7d898b7bc9-g2w8c     1/1     Running             0              4h48m
+pod/api-7d898b7bc9-h8zpg     0/1     ContainerCreating   0              24s
+pod/api-7d898b7bc9-rh446     1/1     Running             0              4h41m
+pod/chroma-0                 1/1     Running             3 (5h5m ago)   43h
+pod/indexer-2vklt            0/1     Completed           0              4h48m
+pod/redis-64f484c8c9-bczbz   1/1     Running             3 (5h5m ago)   43h
+pod/ui-6dfc49748d-j6c5l      1/1     Running             0              4h46m
+
+NAME                STATUS     COMPLETIONS   DURATION   AGE
+job.batch/indexer   Complete   1/1           7m8s       4h48m
+
+NAME                                      REFERENCE        TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/api   Deployment/api   cpu: 82%/70%   3         8         4          43h
+
+NAME               ENDPOINTS                                                     AGE
+endpoints/api      10.244.120.124:8000,10.244.120.126:8000,10.244.120.127:8000   43h
+endpoints/chroma   10.244.120.112:8000                                           43h
+endpoints/redis    10.244.120.115:6379                                           43h
+endpoints/ui       10.244.120.125:8080                                           43h
+POD                      NAME     CPU(cores)   MEMORY(bytes)   
+api-7d898b7bc9-bdcvg     api      67m          106Mi           
+api-7d898b7bc9-g2w8c     api      144m         98Mi            
+api-7d898b7bc9-rh446     api      36m          121Mi           
+chroma-0                 chroma   23m          85Mi            
+redis-64f484c8c9-bczbz   redis    93m          11Mi            
+ui-6dfc49748d-j6c5l      ui       1m           2Mi             
+readiness {"status":"ready","checks":{"embedding":"ok","chroma":"ok","redis":"ok"}}
+liveness 200
+UI -> Chroma and Redis must be blocked by Calico
+wget: download timed out
+command terminated with exit code 1
+Blocked chroma:8000/api/v2/heartbeat as expected
+wget: download timed out
+command terminated with exit code 1
+Blocked redis:6379 as expected

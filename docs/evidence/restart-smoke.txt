@@ -1,0 +1,75 @@
+2026-11-08T16:57:48+05:00
+NAME                         READY   STATUS      RESTARTS      AGE
+pod/api-66fc56699d-5gz6t     1/1     Running     1 (72s ago)   4h44m
+pod/api-66fc56699d-7d6hc     1/1     Running     1 (72s ago)   4h44m
+pod/api-66fc56699d-mgvts     1/1     Running     1 (72s ago)   4h44m
+pod/chroma-0                 1/1     Running     4 (72s ago)   2d
+pod/indexer-2vklt            0/1     Completed   0             9h
+pod/redis-64f484c8c9-bczbz   1/1     Running     4 (72s ago)   2d
+pod/ui-57c6d6c86-78zld       1/1     Running     1 (72s ago)   4h52m
+
+NAME                                      REFERENCE        TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/api   Deployment/api   cpu: <unknown>/70%   3         8         3          2d
+UI HTTP 200
+{
+  "request_id": "fdeb45470dd30d37f36f3c2e1432123b",
+  "answer": "The university charges a one-time admission fee of Rs 30,000. [fee-structure-page.html / Admission Fee]",
+  "citations": [
+    {
+      "source": "fee-structure-page.html",
+      "section": "Admission Fee",
+      "page": 1
+    }
+  ],
+  "answered_from_context": true,
+  "confidence": "high",
+  "retrieved": [
+    {
+      "chunk_id": "91bab5c636c9ea3910ef3ae1",
+      "source": "fee-structure-page.html",
+      "section": "Admission Fee",
+      "page": 1,
+      "score": 0.75693905
+    },
+    {
+      "chunk_id": "41331bf9eabcafdf02a5bde7",
+      "source": "fee-structure-page.html",
+      "section": "Fee Refund Policy",
+      "page": 1,
+      "score": 0.6068382299999999
+    },
+    {
+      "chunk_id": "73602474c1bfbba7bb6db36e",
+      "source": "fee-structure-page.html",
+      "section": "Miscellaneous Fees",
+      "page": 1,
+      "score": 0.6527449000000001
+    },
+    {
+      "chunk_id": "09e6a4227cca3e2b1f10fdf6",
+      "source": "student-handbook-jun-2026.pdf",
+      "section": "Internal Scholarships",
+      "page": 19,
+      "score": 0.5806697000000001
+    },
+    {
+      "chunk_id": "d14017d42a646f23fd5bef7f",
+      "source": "student-handbook-jun-2026.pdf",
+      "section": "Fee Structure and Mode of Payment",
+      "page": 18,
+      "score": 0.57712966
+    }
+  ],
+  "provider": "ollama",
+  "cached": true,
+  "fallback": false
+}
+After metrics warm-up:
+api   Deployment/api   cpu: 71%/70%   3     8     3     2d
+NAME                     CPU(cores)   MEMORY(bytes)   
+api-66fc56699d-5gz6t     59m          48Mi            
+api-66fc56699d-7d6hc     65m          57Mi            
+api-66fc56699d-mgvts     89m          74Mi            
+chroma-0                 10m          33Mi            
+redis-64f484c8c9-bczbz   18m          8Mi             
+ui-57c6d6c86-78zld       3m           3Mi             
