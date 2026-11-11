@@ -85,3 +85,8 @@ readiness was not proof that the webhook listener and routing were available.
 CI now waits for both certificate Jobs and retries a server-side dry-run Ingress
 through the actual admission path for a bounded period. It does not disable
 validation or persist the probe. This check is shared by CI and CD.
+
+The first repair run exposed a second startup assumption: nginx admission setup
+Jobs are TTL-deleted immediately after success, so waiting for their names can
+return NotFound even on a healthy installation. The repair now relies directly
+on the bounded server-side dry-run probe instead of those transient Job objects.

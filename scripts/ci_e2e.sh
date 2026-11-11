@@ -42,7 +42,7 @@ fi
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.15.1/deploy/static/provider/kind/deploy.yaml
 kubectl label node "$CLUSTER-control-plane" ingress-ready=true --overwrite
 kubectl -n ingress-nginx rollout status deployment/ingress-nginx-controller --timeout=600s
-kubectl -n ingress-nginx wait --for=condition=complete job/ingress-nginx-admission-create job/ingress-nginx-admission-patch --timeout=120s
+# Admission setup Jobs may already be TTL-deleted; probe the webhook itself.
 # Controller readiness can precede the admission listener and Service routing.
 # Exercise the actual webhook with a server-side dry run; no probe is persisted.
 admission_probe='{"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"name":"rahbar-admission-readiness","namespace":"ingress-nginx"},"spec":{"ingressClassName":"nginx","rules":[{"host":"rahbar-readiness.invalid","http":{"paths":[{"path":"/","pathType":"Prefix","backend":{"service":{"name":"ingress-nginx-controller","port":{"number":80}}}}]}}]}}'
