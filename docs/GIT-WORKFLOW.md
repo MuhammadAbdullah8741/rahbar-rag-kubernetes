@@ -1,8 +1,9 @@
 # Manual GitHub workflow
 
-Only the students perform commits, pushes, PRs, reviews, branch protection and
-GitHub settings changes. No new commit or remote write was made during implementation.
-Three earlier local setup commits already exist; inspect them with `git log --oneline`.
+Historical manual workflow, retained for reproduction. The student later authorized
+Codex to push fixes and configure GitHub. Main protection, PR #1 and Docker Hub
+secrets are now configured. See `evidence/github-runs.md` for actual delivery status.
+Review approval must still come from Umar personally.
 
 ## Review and commit locally
 
@@ -84,8 +85,7 @@ Never modify the real measured baseline to hide a regression.
 
 Record the successful CD URL in `docs/evidence/github-runs.md`, with PR/review and
 commit links. No placeholder screenshot, invented run URL or fabricated partner
-contribution is acceptable. These external evidence items remain outstanding until
-the students perform them. The assignment deadline is 8 November 2026 at 23:59 PKT.
+contribution is acceptable. Consult the evidence status before treating these items as complete. The assignment deadline is 8 November 2026 at 23:59 PKT.
 
 ## Classroom submission
 

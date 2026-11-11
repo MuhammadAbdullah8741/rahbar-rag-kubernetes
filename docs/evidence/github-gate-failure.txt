@@ -1,0 +1,1278 @@
+﻿2026-11-11T04:13:36.4046299Z Current runner version: '2.338.2'
+2026-11-11T04:13:36.4062967Z ##[group]Runner Image Provisioner
+2026-11-11T04:13:36.4063540Z Hosted Compute Agent
+2026-11-11T04:13:36.4063967Z Version: 20261028.624
+2026-11-11T04:13:36.4064338Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-11T04:13:36.4064832Z Build Date: 2026-10-28T21:51:42Z
+2026-11-11T04:13:36.4065263Z Worker ID: {409f67c1-4f4d-443c-ab01-2a271e813b51}
+2026-11-11T04:13:36.4065860Z Region: centralus
+2026-11-11T04:13:36.4066231Z Cloud: Azure
+2026-11-11T04:13:36.4066554Z ##[endgroup]
+2026-11-11T04:13:36.4067349Z ##[group]Operating System
+2026-11-11T04:13:36.4067721Z Ubuntu
+2026-11-11T04:13:36.4068021Z 24.04.5
+2026-11-11T04:13:36.4068401Z LTS
+2026-11-11T04:13:36.4068709Z ##[endgroup]
+2026-11-11T04:13:36.4069051Z ##[group]Runner Image
+2026-11-11T04:13:36.4069414Z Image: ubuntu-24.04
+2026-11-11T04:13:36.4069825Z Version: 20261101.360.1
+2026-11-11T04:13:36.4070592Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-11T04:13:36.4071467Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-11T04:13:36.4072055Z ##[endgroup]
+2026-11-11T04:13:36.4072726Z ##[group]GITHUB_TOKEN Permissions
+2026-11-11T04:13:36.4074042Z Contents: read
+2026-11-11T04:13:36.4074356Z Metadata: read
+2026-11-11T04:13:36.4074962Z ##[endgroup]
+2026-11-11T04:13:36.4076456Z Secret source: Actions
+2026-11-11T04:13:36.4077101Z Cache mode: write
+2026-11-11T04:13:36.4077508Z Prepare workflow directory
+2026-11-11T04:13:36.4282193Z Prepare all required actions
+2026-11-11T04:13:36.4313236Z Getting action download info
+2026-11-11T04:13:36.6603043Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-11T04:13:36.7256789Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-11T04:13:36.8158764Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-11T04:13:37.0199417Z Complete job name: e2e
+2026-11-11T04:13:37.0676810Z ##[group]Run actions/checkout@v4
+2026-11-11T04:13:37.0677204Z with:
+2026-11-11T04:13:37.0677521Z   repository: MuhammadAbdullah8741/rahbar-rag-kubernetes
+2026-11-11T04:13:37.0679539Z   token: ***
+2026-11-11T04:13:37.0679764Z   ssh-strict: true
+2026-11-11T04:13:37.0679995Z   ssh-user: git
+2026-11-11T04:13:37.0680235Z   persist-credentials: true
+2026-11-11T04:13:37.0680488Z   clean: true
+2026-11-11T04:13:37.0680725Z   sparse-checkout-cone-mode: true
+2026-11-11T04:13:37.0681003Z   fetch-depth: 1
+2026-11-11T04:13:37.0681232Z   fetch-tags: false
+2026-11-11T04:13:37.0681472Z   show-progress: true
+2026-11-11T04:13:37.0681707Z   lfs: false
+2026-11-11T04:13:37.0681926Z   submodules: false
+2026-11-11T04:13:37.0682163Z   set-safe-directory: true
+2026-11-11T04:13:37.0682432Z   allow-unsafe-pr-checkout: false
+2026-11-11T04:13:37.0682769Z ##[endgroup]
+2026-11-11T04:13:37.2801730Z Syncing repository: MuhammadAbdullah8741/rahbar-rag-kubernetes
+2026-11-11T04:13:37.2802853Z ##[group]Getting Git version info
+2026-11-11T04:13:37.2803288Z Working directory is '/home/runner/work/rahbar-rag-kubernetes/rahbar-rag-kubernetes'
+2026-11-11T04:13:37.2803898Z [command]/usr/bin/git version
+2026-11-11T04:13:37.2887863Z git version 2.56.0
+2026-11-11T04:13:37.2904467Z ##[endgroup]
+2026-11-11T04:13:37.2909414Z Temporarily overriding HOME='/home/runner/work/_temp/66b49e65-9a10-434e-9a63-7dc4aca22da3' before making global git config changes
+2026-11-11T04:13:37.2910604Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-11T04:13:37.2913262Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/rahbar-rag-kubernetes/rahbar-rag-kubernetes
+2026-11-11T04:13:37.2963143Z Deleting the contents of '/home/runner/work/rahbar-rag-kubernetes/rahbar-rag-kubernetes'
+2026-11-11T04:13:37.2965694Z ##[group]Initializing the repository
+2026-11-11T04:13:37.2969131Z [command]/usr/bin/git init /home/runner/work/rahbar-rag-kubernetes/rahbar-rag-kubernetes
+2026-11-11T04:13:37.3070184Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-11T04:13:37.3071021Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-11T04:13:37.3071512Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-11T04:13:37.3071896Z hint: call:
+2026-11-11T04:13:37.3072107Z hint:
+2026-11-11T04:13:37.3072385Z hint: 	git config --global init.defaultBranch <name>
+2026-11-11T04:13:37.3072709Z hint:
+2026-11-11T04:13:37.3073017Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-11T04:13:37.3073494Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-11T04:13:37.3073874Z hint:
+2026-11-11T04:13:37.3074094Z hint: 	git branch -m <name>
+2026-11-11T04:13:37.3074344Z hint:
+2026-11-11T04:13:37.3074668Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-11T04:13:37.3087981Z Initialized empty Git repository in /home/runner/work/rahbar-rag-kubernetes/rahbar-rag-kubernetes/.git/
+2026-11-11T04:13:37.3096731Z [command]/usr/bin/git remote add origin https://github.com/MuhammadAbdullah8741/rahbar-rag-kubernetes
+2026-11-11T04:13:37.3136895Z ##[endgroup]
+2026-11-11T04:13:37.3137546Z ##[group]Disabling automatic garbage collection
+2026-11-11T04:13:37.3139038Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-11T04:13:37.3165389Z ##[endgroup]
+2026-11-11T04:13:37.3166171Z ##[group]Setting up auth
+2026-11-11T04:13:37.3170830Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-11T04:13:37.3219410Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-11T04:13:37.3536090Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-11T04:13:37.3571245Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-11T04:13:37.3752915Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-11T04:13:37.3788611Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-11T04:13:37.3979423Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-11T04:13:37.4018547Z ##[endgroup]
+2026-11-11T04:13:37.4019180Z ##[group]Fetching the repository
+2026-11-11T04:13:37.4027920Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9fd363cf1333e373daceddedc3020e8a5d9841dd:refs/remotes/origin/dev
+2026-11-11T04:13:37.8339169Z From https://github.com/MuhammadAbdullah8741/rahbar-rag-kubernetes
+2026-11-11T04:13:37.8341516Z  * [new ref]         9fd363cf1333e373daceddedc3020e8a5d9841dd -> origin/dev
+2026-11-11T04:13:37.8342819Z ##[endgroup]
+2026-11-11T04:13:37.8343264Z ##[group]Determining the checkout info
+2026-11-11T04:13:37.8344757Z ##[endgroup]
+2026-11-11T04:13:37.8349231Z [command]/usr/bin/git sparse-checkout disable
+2026-11-11T04:13:37.8398429Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-11T04:13:37.8430266Z ##[group]Checking out the ref
+2026-11-11T04:13:37.8432635Z [command]/usr/bin/git checkout --progress --force -B dev refs/remotes/origin/dev
+2026-11-11T04:13:37.8573706Z Switched to a new branch 'dev'
+2026-11-11T04:13:37.8578554Z branch 'dev' set up to track 'origin/dev'.
+2026-11-11T04:13:37.8582851Z ##[endgroup]
+2026-11-11T04:13:37.8621271Z [command]/usr/bin/git log -1 --format=%H
+2026-11-11T04:13:37.8648637Z 9fd363cf1333e373daceddedc3020e8a5d9841dd
+2026-11-11T04:13:37.8850368Z ##[group]Run actions/setup-python@v5
+2026-11-11T04:13:37.8850683Z with:
+2026-11-11T04:13:37.8851037Z   python-version: 3.12
+2026-11-11T04:13:37.8851286Z   check-latest: false
+2026-11-11T04:13:37.8853225Z   token: ***
+2026-11-11T04:13:37.8853457Z   update-environment: true
+2026-11-11T04:13:37.8853718Z   allow-prereleases: false
+2026-11-11T04:13:37.8853969Z   freethreaded: false
+2026-11-11T04:13:37.8854213Z ##[endgroup]
+2026-11-11T04:13:37.9720698Z ##[group]Installed versions
+2026-11-11T04:13:37.9728064Z (node:2128) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-11T04:13:37.9728712Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-11T04:13:37.9729485Z Successfully set up CPython (3.12.16)
+2026-11-11T04:13:37.9730277Z ##[endgroup]
+2026-11-11T04:13:37.9879726Z ##[group]Run pip install httpx==0.28.1 pyyaml==6.0.2
+2026-11-11T04:13:37.9880176Z [36;1mpip install httpx==0.28.1 pyyaml==6.0.2[0m
+2026-11-11T04:13:37.9911314Z shell: /usr/bin/bash -e {0}
+2026-11-11T04:13:37.9911770Z env:
+2026-11-11T04:13:37.9912230Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-11T04:13:37.9912908Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-11T04:13:37.9913578Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-11T04:13:37.9914194Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-11T04:13:37.9914810Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-11T04:13:37.9915434Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-11T04:13:37.9916100Z ##[endgroup]
+2026-11-11T04:13:38.7353629Z Collecting httpx==0.28.1
+2026-11-11T04:13:38.7972098Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2026-11-11T04:13:38.8339975Z Collecting pyyaml==6.0.2
+2026-11-11T04:13:38.8466208Z   Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2026-11-11T04:13:38.8647080Z Collecting anyio (from httpx==0.28.1)
+2026-11-11T04:13:38.8773590Z   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+2026-11-11T04:13:38.8963851Z Collecting certifi (from httpx==0.28.1)
+2026-11-11T04:13:38.9090182Z   Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+2026-11-11T04:13:38.9257457Z Collecting httpcore==1.* (from httpx==0.28.1)
+2026-11-11T04:13:38.9384804Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2026-11-11T04:13:38.9605335Z Collecting idna (from httpx==0.28.1)
+2026-11-11T04:13:38.9731891Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-11-11T04:13:38.9900988Z Collecting h11>=0.16 (from httpcore==1.*->httpx==0.28.1)
+2026-11-11T04:13:39.0028221Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-11-11T04:13:39.0203940Z Collecting typing_extensions>=4.16.0 (from anyio->httpx==0.28.1)
+2026-11-11T04:13:39.0329926Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-11-11T04:13:39.0620249Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2026-11-11T04:13:39.0893130Z Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+2026-11-11T04:13:39.1206373Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 34.6 MB/s  0:00:00
+2026-11-11T04:13:39.1332435Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+2026-11-11T04:13:39.1473348Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-11-11T04:13:39.1615253Z Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+2026-11-11T04:13:39.1761740Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-11-11T04:13:39.1907202Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-11-11T04:13:39.2053006Z Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+2026-11-11T04:13:39.2480289Z Installing collected packages: typing_extensions, pyyaml, idna, h11, certifi, httpcore, anyio, httpx
+2026-11-11T04:13:39.5024172Z 
+2026-11-11T04:13:39.5034896Z Successfully installed anyio-4.16.0 certifi-2026.10.23 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.20 pyyaml-6.0.2 typing_extensions-4.16.0
+2026-11-11T04:13:39.5040691Z 
+2026-11-11T04:13:39.5041292Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+2026-11-11T04:13:39.5387030Z [notice] To update, run: pip install --upgrade pip
+2026-11-11T04:13:39.5418671Z ##[group]Run curl -fsSL -o kind https://kind.sigs.k8s.io/dl/v0.31.0/kind-linux-amd64
+2026-11-11T04:13:39.5419062Z [36;1mcurl -fsSL -o kind https://kind.sigs.k8s.io/dl/v0.31.0/kind-linux-amd64[0m
+2026-11-11T04:13:39.5419280Z [36;1mchmod +x kind[0m
+2026-11-11T04:13:39.5419416Z [36;1msudo mv kind /usr/local/bin/kind[0m
+2026-11-11T04:13:39.5419571Z [36;1mbash scripts/ci_e2e.sh[0m
+2026-11-11T04:13:39.5436720Z shell: /usr/bin/bash -e {0}
+2026-11-11T04:13:39.5436861Z env:
+2026-11-11T04:13:39.5437009Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-11T04:13:39.5437236Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-11T04:13:39.5437457Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-11T04:13:39.5437659Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-11T04:13:39.5437872Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-11T04:13:39.5438194Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-11T04:13:39.5438441Z ##[endgroup]
+2026-11-11T04:13:40.0807647Z No kind clusters found.
+2026-11-11T04:13:40.3252271Z Creating cluster "rahbar-ci" ...
+2026-11-11T04:13:40.3252833Z  • Ensuring node image (kindest/node:v1.35.0) 🖼  ...
+2026-11-11T04:13:50.2602115Z  ✓ Ensuring node image (kindest/node:v1.35.0) 🖼
+2026-11-11T04:13:50.2602466Z  • Preparing nodes 📦   ...
+2026-11-11T04:13:53.1159665Z  ✓ Preparing nodes 📦 
+2026-11-11T04:13:53.1383838Z  • Writing configuration 📜  ...
+2026-11-11T04:13:53.2820289Z  ✓ Writing configuration 📜
+2026-11-11T04:13:53.2820834Z  • Starting control-plane 🕹️  ...
+2026-11-11T04:14:00.0448559Z  ✓ Starting control-plane 🕹️
+2026-11-11T04:14:00.0448900Z  • Installing CNI 🔌  ...
+2026-11-11T04:14:00.2521569Z  ✓ Installing CNI 🔌
+2026-11-11T04:14:00.2521903Z  • Installing StorageClass 💾  ...
+2026-11-11T04:14:00.4656620Z  ✓ Installing StorageClass 💾
+2026-11-11T04:14:00.4880207Z  • Waiting ≤ 3m0s for control-plane = Ready ⏳  ...
+2026-11-11T04:14:17.1090524Z  ✓ Waiting ≤ 3m0s for control-plane = Ready ⏳
+2026-11-11T04:14:17.1090877Z  • Ready after 17s 💚
+2026-11-11T04:14:17.2187400Z Set kubectl context to "kind-rahbar-ci"
+2026-11-11T04:14:17.2187943Z You can now use your cluster with:
+2026-11-11T04:14:17.2188156Z 
+2026-11-11T04:14:17.2188367Z kubectl cluster-info --context kind-rahbar-ci
+2026-11-11T04:14:17.2188541Z 
+2026-11-11T04:14:17.2189115Z Thanks for using kind! 😊
+2026-11-11T04:14:17.6240435Z #0 building with "default" instance using docker driver
+2026-11-11T04:14:17.6240826Z 
+2026-11-11T04:14:17.6242316Z #1 [internal] load build definition from Dockerfile
+2026-11-11T04:14:17.6244783Z #1 transferring dockerfile: 442B done
+2026-11-11T04:14:17.6245053Z #1 DONE 0.0s
+2026-11-11T04:14:17.6245159Z 
+2026-11-11T04:14:17.6245320Z #2 [auth] library/python:pull token for registry-1.docker.io
+2026-11-11T04:14:17.7745078Z #2 DONE 0.0s
+2026-11-11T04:14:17.7745375Z 
+2026-11-11T04:14:17.7745882Z #3 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm
+2026-11-11T04:14:18.2312221Z #3 DONE 0.7s
+2026-11-11T04:14:18.3581464Z 
+2026-11-11T04:14:18.3581996Z #4 [internal] load .dockerignore
+2026-11-11T04:14:18.3582298Z #4 transferring context: 139B done
+2026-11-11T04:14:18.3582444Z #4 DONE 0.0s
+2026-11-11T04:14:18.3582506Z 
+2026-11-11T04:14:18.3582568Z #5 [internal] load build context
+2026-11-11T04:14:18.3582711Z #5 transferring context: 49.17kB done
+2026-11-11T04:14:18.3582847Z #5 DONE 0.0s
+2026-11-11T04:14:18.3582909Z 
+2026-11-11T04:14:18.3583136Z #6 [1/5] FROM docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+2026-11-11T04:14:18.3583584Z #6 resolve docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df done
+2026-11-11T04:14:18.3583974Z #6 sha256:313cf8f190a1abab00472c1f0c950c10486c22114bcd8aef2a8198fb587a6d18 5.68kB / 5.68kB done
+2026-11-11T04:14:18.3584833Z #6 sha256:dd051e1b8c92ff101fa3071ab97ea4924885942f15644e01c3dc095764e863e3 1.05MB / 28.25MB 0.1s
+2026-11-11T04:14:18.3585236Z #6 sha256:a47be7bff94f52aefb243d8b245b01c74976150bb88de60875c5eb7ac964f91e 0B / 3.34MB 0.1s
+2026-11-11T04:14:18.3585769Z #6 sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7 0B / 13.68MB 0.1s
+2026-11-11T04:14:18.3586244Z #6 sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df 6.55kB / 6.55kB done
+2026-11-11T04:14:18.3586565Z #6 sha256:0f086103b026048cc50cb5da25ec435c023c5241a83fc44daea593377abc61c4 1.75kB / 1.75kB done
+2026-11-11T04:14:18.5576538Z #6 sha256:dd051e1b8c92ff101fa3071ab97ea4924885942f15644e01c3dc095764e863e3 28.25MB / 28.25MB 0.3s
+2026-11-11T04:14:18.5577478Z #6 sha256:a47be7bff94f52aefb243d8b245b01c74976150bb88de60875c5eb7ac964f91e 3.34MB / 3.34MB 0.3s
+2026-11-11T04:14:18.5578134Z #6 sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7 10.49MB / 13.68MB 0.3s
+2026-11-11T04:14:18.6580413Z #6 sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7 13.68MB / 13.68MB 0.4s
+2026-11-11T04:14:18.7865181Z #6 sha256:dd051e1b8c92ff101fa3071ab97ea4924885942f15644e01c3dc095764e863e3 28.25MB / 28.25MB 0.4s done
+2026-11-11T04:14:18.7865976Z #6 sha256:a47be7bff94f52aefb243d8b245b01c74976150bb88de60875c5eb7ac964f91e 3.34MB / 3.34MB 0.4s done
+2026-11-11T04:14:18.7866377Z #6 sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7 13.68MB / 13.68MB 0.4s done
+2026-11-11T04:14:18.7866880Z #6 extracting sha256:dd051e1b8c92ff101fa3071ab97ea4924885942f15644e01c3dc095764e863e3 0.1s
+2026-11-11T04:14:18.7867432Z #6 sha256:88d15687540999237909e04714b1393c610db9dc2e13d82acd6356fa9bf8f092 249B / 249B 0.5s done
+2026-11-11T04:14:19.3689385Z #6 extracting sha256:dd051e1b8c92ff101fa3071ab97ea4924885942f15644e01c3dc095764e863e3 0.6s done
+2026-11-11T04:14:19.3690247Z #6 extracting sha256:a47be7bff94f52aefb243d8b245b01c74976150bb88de60875c5eb7ac964f91e 0.1s done
+2026-11-11T04:14:22.1142690Z #6 extracting sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7
+2026-11-11T04:14:22.4616973Z #6 extracting sha256:8691b22c22a3e005c632ab6bc07b085b98dae9cc02d1d84de175849f997439c7 0.3s done
+2026-11-11T04:14:22.7624136Z #6 extracting sha256:88d15687540999237909e04714b1393c610db9dc2e13d82acd6356fa9bf8f092
+2026-11-11T04:14:22.9443669Z #6 extracting sha256:88d15687540999237909e04714b1393c610db9dc2e13d82acd6356fa9bf8f092 done
+2026-11-11T04:14:22.9444088Z #6 DONE 4.5s
+2026-11-11T04:14:22.9444201Z 
+2026-11-11T04:14:22.9444294Z #7 [2/5] WORKDIR /app
+2026-11-11T04:14:22.9444481Z #7 DONE 0.0s
+2026-11-11T04:14:22.9444581Z 
+2026-11-11T04:14:22.9444693Z #8 [3/5] COPY requirements.txt .
+2026-11-11T04:14:22.9444906Z #8 DONE 0.0s
+2026-11-11T04:14:22.9445006Z 
+2026-11-11T04:14:22.9445391Z #9 [4/5] RUN pip install --no-cache-dir -r requirements.txt     && groupadd --gid 10001 app && useradd --uid 10001 --gid app --no-create-home app
+2026-11-11T04:14:23.7742785Z #9 0.980 Collecting fastapi==0.162.2 (from -r requirements.txt (line 2))
+2026-11-11T04:14:23.8829061Z #9 1.040   Downloading fastapi-0.162.2-py3-none-any.whl.metadata (27 kB)
+2026-11-11T04:14:23.8829597Z #9 1.076 Collecting starlette==1.10.0 (from -r requirements.txt (line 3))
+2026-11-11T04:14:23.8830444Z #9 1.089   Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
+2026-11-11T04:14:24.0183712Z #9 1.118 Collecting uvicorn==0.34.2 (from -r requirements.txt (line 4))
+2026-11-11T04:14:24.0184021Z #9 1.130   Downloading uvicorn-0.34.2-py3-none-any.whl.metadata (6.5 kB)
+2026-11-11T04:14:24.0184267Z #9 1.224 Collecting pydantic==2.11.4 (from -r requirements.txt (line 5))
+2026-11-11T04:14:24.1351303Z #9 1.238   Downloading pydantic-2.11.4-py3-none-any.whl.metadata (66 kB)
+2026-11-11T04:14:24.1351613Z #9 1.272 Collecting httpx==0.28.1 (from -r requirements.txt (line 6))
+2026-11-11T04:14:24.1351858Z #9 1.284   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2026-11-11T04:14:24.1352436Z #9 1.304 Collecting prometheus-client==0.21.1 (from -r requirements.txt (line 7))
+2026-11-11T04:14:24.1352871Z #9 1.317   Downloading prometheus_client-0.21.1-py3-none-any.whl.metadata (1.8 kB)
+2026-11-11T04:14:24.1353161Z #9 1.341 Collecting chromadb-client==1.0.12 (from -r requirements.txt (line 10))
+2026-11-11T04:14:24.2412334Z #9 1.355   Downloading chromadb_client-1.0.12-py3-none-any.whl.metadata (2.4 kB)
+2026-11-11T04:14:24.2412768Z #9 1.395 Collecting posthog==5.4.0 (from -r requirements.txt (line 12))
+2026-11-11T04:14:24.2413013Z #9 1.408   Downloading posthog-5.4.0-py3-none-any.whl.metadata (5.7 kB)
+2026-11-11T04:14:24.2413248Z #9 1.435 Collecting redis==5.2.1 (from -r requirements.txt (line 13))
+2026-11-11T04:14:24.2413474Z #9 1.447   Downloading redis-5.2.1-py3-none-any.whl.metadata (9.1 kB)
+2026-11-11T04:14:24.3469611Z #9 1.477 Collecting typing-extensions>=4.8.0 (from fastapi==0.162.2->-r requirements.txt (line 2))
+2026-11-11T04:14:24.3470041Z #9 1.490   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-11-11T04:14:24.3470381Z #9 1.510 Collecting typing-inspection>=0.4.2 (from fastapi==0.162.2->-r requirements.txt (line 2))
+2026-11-11T04:14:24.3470677Z #9 1.522   Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+2026-11-11T04:14:24.3470960Z #9 1.541 Collecting annotated-doc>=0.0.2 (from fastapi==0.162.2->-r requirements.txt (line 2))
+2026-11-11T04:14:24.3471236Z #9 1.553   Downloading annotated_doc-0.0.6-py3-none-any.whl.metadata (6.5 kB)
+2026-11-11T04:14:24.4529765Z #9 1.576 Collecting opentelemetry-api>=1.44.0 (from fastapi==0.162.2->-r requirements.txt (line 2))
+2026-11-11T04:14:24.4530443Z #9 1.588   Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+2026-11-11T04:14:24.4531127Z #9 1.611 Collecting anyio<5,>=4.0.0 (from starlette==1.10.0->-r requirements.txt (line 3))
+2026-11-11T04:14:24.4531527Z #9 1.624   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+2026-11-11T04:14:24.4531856Z #9 1.647 Collecting click>=7.0 (from uvicorn==0.34.2->-r requirements.txt (line 4))
+2026-11-11T04:14:24.4532103Z #9 1.659   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+2026-11-11T04:14:24.6644970Z #9 1.677 Collecting h11>=0.8 (from uvicorn==0.34.2->-r requirements.txt (line 4))
+2026-11-11T04:14:24.6645608Z #9 1.690   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-11-11T04:14:24.6646075Z #9 1.708 Collecting annotated-types>=0.6.0 (from pydantic==2.11.4->-r requirements.txt (line 5))
+2026-11-11T04:14:24.6646570Z #9 1.720   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+2026-11-11T04:14:24.8739609Z #9 2.080 Collecting pydantic-core==2.33.2 (from pydantic==2.11.4->-r requirements.txt (line 5))
+2026-11-11T04:14:24.9800186Z #9 2.093   Downloading pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+2026-11-11T04:14:24.9800611Z #9 2.118 Collecting certifi (from httpx==0.28.1->-r requirements.txt (line 6))
+2026-11-11T04:14:24.9800911Z #9 2.131   Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+2026-11-11T04:14:24.9801209Z #9 2.152 Collecting httpcore==1.* (from httpx==0.28.1->-r requirements.txt (line 6))
+2026-11-11T04:14:24.9801474Z #9 2.165   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2026-11-11T04:14:24.9801737Z #9 2.186 Collecting idna (from httpx==0.28.1->-r requirements.txt (line 6))
+2026-11-11T04:14:25.0922473Z #9 2.199   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-11-11T04:14:25.0922947Z #9 2.298 Collecting numpy>=1.22.5 (from chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:25.1977819Z #9 2.312   Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+2026-11-11T04:14:25.1978757Z #9 2.337 Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:25.1979570Z #9 2.350   Downloading opentelemetry_exporter_otlp_proto_grpc-1.45.2-py3-none-any.whl.metadata (2.6 kB)
+2026-11-11T04:14:25.1980716Z #9 2.373 Collecting opentelemetry-sdk>=1.2.0 (from chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:25.1981618Z #9 2.385   Downloading opentelemetry_sdk-1.45.2-py3-none-any.whl.metadata (1.6 kB)
+2026-11-11T04:14:25.1982074Z #9 2.404 Collecting overrides>=7.3.1 (from chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:25.3097615Z #9 2.417   Downloading overrides-7.7.0-py3-none-any.whl.metadata (5.8 kB)
+2026-11-11T04:14:25.3098021Z #9 2.460 Collecting tenacity>=8.2.3 (from chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:25.3098427Z #9 2.472   Downloading tenacity-9.2.1-py3-none-any.whl.metadata (1.4 kB)
+2026-11-11T04:14:25.3098724Z #9 2.503 Collecting PyYAML>=6.0.0 (from chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:25.3099170Z #9 2.516   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-11-11T04:14:25.4526879Z #9 2.658 Collecting orjson>=3.9.12 (from chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:25.5528467Z #9 2.671   Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (42 kB)
+2026-11-11T04:14:25.5528875Z #9 2.700 Collecting jsonschema>=4.19.0 (from chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:25.5529171Z #9 2.713   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+2026-11-11T04:14:25.5529447Z #9 2.746 Collecting requests<3.0,>=2.7 (from posthog==5.4.0->-r requirements.txt (line 12))
+2026-11-11T04:14:25.5529710Z #9 2.759   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+2026-11-11T04:14:25.6561662Z #9 2.778 Collecting six>=1.5 (from posthog==5.4.0->-r requirements.txt (line 12))
+2026-11-11T04:14:25.6561962Z #9 2.791   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+2026-11-11T04:14:25.6562236Z #9 2.816 Collecting python-dateutil>=2.2 (from posthog==5.4.0->-r requirements.txt (line 12))
+2026-11-11T04:14:25.6562539Z #9 2.829   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+2026-11-11T04:14:25.6562818Z #9 2.850 Collecting backoff>=1.10.0 (from posthog==5.4.0->-r requirements.txt (line 12))
+2026-11-11T04:14:25.6563073Z #9 2.862   Downloading backoff-2.2.1-py3-none-any.whl.metadata (14 kB)
+2026-11-11T04:14:25.7598407Z #9 2.881 Collecting distro>=1.5.0 (from posthog==5.4.0->-r requirements.txt (line 12))
+2026-11-11T04:14:25.7598693Z #9 2.896   Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+2026-11-11T04:14:25.7599008Z #9 2.927 Collecting attrs>=22.2.0 (from jsonschema>=4.19.0->chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:25.7599311Z #9 2.947   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-11-11T04:14:25.7599660Z #9 2.966 Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=4.19.0->chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:25.9385876Z #9 2.979   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+2026-11-11T04:14:25.9386530Z #9 3.006 Collecting referencing>=0.28.4 (from jsonschema>=4.19.0->chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:25.9387047Z #9 3.018   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+2026-11-11T04:14:25.9387554Z #9 3.145 Collecting rpds-py>=0.25.0 (from jsonschema>=4.19.0->chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:26.1404608Z #9 3.158   Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+2026-11-11T04:14:26.1405600Z #9 3.183 Collecting googleapis-common-protos~=1.57 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:26.1406358Z #9 3.196   Downloading googleapis_common_protos-1.76.0-py3-none-any.whl.metadata (8.5 kB)
+2026-11-11T04:14:26.2628893Z #9 3.469 Collecting grpcio<2.0.0,>=1.63.2 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:26.3659081Z #9 3.484   Downloading grpcio-1.85.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (3.8 kB)
+2026-11-11T04:14:26.3659970Z #9 3.505 Collecting opentelemetry-exporter-otlp-common==0.66b2 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:26.3660769Z #9 3.517   Downloading opentelemetry_exporter_otlp_common-0.66b2-py3-none-any.whl.metadata (1.9 kB)
+2026-11-11T04:14:26.3661565Z #9 3.537 Collecting opentelemetry-exporter-otlp-proto-common==1.45.2 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:26.3662340Z #9 3.551   Downloading opentelemetry_exporter_otlp_proto_common-1.45.2-py3-none-any.whl.metadata (1.8 kB)
+2026-11-11T04:14:26.3662861Z #9 3.572 Collecting opentelemetry-proto==1.45.2 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:26.4752761Z #9 3.585   Downloading opentelemetry_proto-1.45.2-py3-none-any.whl.metadata (2.3 kB)
+2026-11-11T04:14:26.4753511Z #9 3.669 Collecting protobuf<8.0,>=5.0 (from opentelemetry-proto==1.45.2->opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:26.4754223Z #9 3.681   Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl.metadata (595 bytes)
+2026-11-11T04:14:26.6144909Z #9 3.706 Collecting opentelemetry-semantic-conventions==0.66b2 (from opentelemetry-sdk>=1.2.0->chromadb-client==1.0.12->-r requirements.txt (line 10))
+2026-11-11T04:14:26.6145412Z #9 3.718   Downloading opentelemetry_semantic_conventions-0.66b2-py3-none-any.whl.metadata (2.4 kB)
+2026-11-11T04:14:26.6145920Z #9 3.740 Collecting tzdata (from python-dateutil>=2.2->posthog==5.4.0->-r requirements.txt (line 12))
+2026-11-11T04:14:26.6146221Z #9 3.753   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-11T04:14:26.6146583Z #9 3.821 Collecting charset_normalizer<4,>=2 (from requests<3.0,>=2.7->posthog==5.4.0->-r requirements.txt (line 12))
+2026-11-11T04:14:26.7550035Z #9 3.833   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+2026-11-11T04:14:26.7550514Z #9 3.898 Collecting urllib3<3,>=1.26 (from requests<3.0,>=2.7->posthog==5.4.0->-r requirements.txt (line 12))
+2026-11-11T04:14:26.7550815Z #9 3.911   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+2026-11-11T04:14:26.7551050Z #9 3.961 Downloading fastapi-0.162.2-py3-none-any.whl (151 kB)
+2026-11-11T04:14:26.8609611Z #9 3.985 Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+2026-11-11T04:14:26.8609957Z #9 3.999 Downloading uvicorn-0.34.2-py3-none-any.whl (62 kB)
+2026-11-11T04:14:26.8610172Z #9 4.012 Downloading pydantic-2.11.4-py3-none-any.whl (443 kB)
+2026-11-11T04:14:26.8610376Z #9 4.038 Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2026-11-11T04:14:26.8610625Z #9 4.051 Downloading prometheus_client-0.21.1-py3-none-any.whl (54 kB)
+2026-11-11T04:14:26.8611779Z #9 4.067 Downloading chromadb_client-1.0.12-py3-none-any.whl (631 kB)
+2026-11-11T04:14:26.9604882Z #9 4.072    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 631.8/631.8 kB 152.0 MB/s eta 0:00:00
+2026-11-11T04:14:26.9605318Z #9 4.085 Downloading posthog-5.4.0-py3-none-any.whl (105 kB)
+2026-11-11T04:14:26.9605830Z #9 4.099 Downloading redis-5.2.1-py3-none-any.whl (261 kB)
+2026-11-11T04:14:26.9606167Z #9 4.113 Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+2026-11-11T04:14:26.9606641Z #9 4.125 Downloading pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+2026-11-11T04:14:26.9607247Z #9 4.141    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 123.3 MB/s eta 0:00:00
+2026-11-11T04:14:26.9607614Z #9 4.154 Downloading annotated_doc-0.0.6-py3-none-any.whl (5.3 kB)
+2026-11-11T04:14:26.9608226Z #9 4.167 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+2026-11-11T04:14:27.0632496Z #9 4.179 Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+2026-11-11T04:14:27.0633116Z #9 4.192 Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
+2026-11-11T04:14:27.0633430Z #9 4.204 Downloading click-8.5.1-py3-none-any.whl (126 kB)
+2026-11-11T04:14:27.0633726Z #9 4.217 Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+2026-11-11T04:14:27.0634013Z #9 4.230 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-11-11T04:14:27.0634294Z #9 4.242 Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-11-11T04:14:27.0634597Z #9 4.255 Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+2026-11-11T04:14:27.0635023Z #9 4.269 Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+2026-11-11T04:14:27.1727782Z #9 4.302    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 537.2 MB/s eta 0:00:00
+2026-11-11T04:14:27.1728132Z #9 4.315 Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+2026-11-11T04:14:27.1728438Z #9 4.328 Downloading opentelemetry_exporter_otlp_proto_grpc-1.45.2-py3-none-any.whl (19 kB)
+2026-11-11T04:14:27.1728859Z #9 4.341 Downloading opentelemetry_exporter_otlp_common-0.66b2-py3-none-any.whl (12 kB)
+2026-11-11T04:14:27.1729221Z #9 4.353 Downloading opentelemetry_exporter_otlp_proto_common-1.45.2-py3-none-any.whl (15 kB)
+2026-11-11T04:14:27.1729552Z #9 4.366 Downloading opentelemetry_proto-1.45.2-py3-none-any.whl (72 kB)
+2026-11-11T04:14:27.1729846Z #9 4.379 Downloading opentelemetry_sdk-1.45.2-py3-none-any.whl (141 kB)
+2026-11-11T04:14:27.2774511Z #9 4.392 Downloading opentelemetry_semantic_conventions-0.66b2-py3-none-any.whl (206 kB)
+2026-11-11T04:14:27.2775326Z #9 4.405 Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (130 kB)
+2026-11-11T04:14:27.2775939Z #9 4.418 Downloading overrides-7.7.0-py3-none-any.whl (17 kB)
+2026-11-11T04:14:27.2776325Z #9 4.430 Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+2026-11-11T04:14:27.2776868Z #9 4.443 Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+2026-11-11T04:14:27.2777616Z #9 4.446    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 1.2 GB/s eta 0:00:00
+2026-11-11T04:14:27.2777984Z #9 4.458 Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+2026-11-11T04:14:27.2778316Z #9 4.471 Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+2026-11-11T04:14:27.2778642Z #9 4.484 Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2026-11-11T04:14:27.3819136Z #9 4.496 Downloading tenacity-9.2.1-py3-none-any.whl (32 kB)
+2026-11-11T04:14:27.3819578Z #9 4.509 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-11-11T04:14:27.3819959Z #9 4.521 Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+2026-11-11T04:14:27.3820299Z #9 4.534 Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-11-11T04:14:27.3820843Z #9 4.547 Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+2026-11-11T04:14:27.3821502Z #9 4.560 Downloading googleapis_common_protos-1.76.0-py3-none-any.whl (307 kB)
+2026-11-11T04:14:27.3822006Z #9 4.576 Downloading grpcio-1.85.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (7.4 MB)
+2026-11-11T04:14:27.5430763Z #9 4.588    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.4/7.4 MB 708.1 MB/s eta 0:00:00
+2026-11-11T04:14:27.5431209Z #9 4.601 Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+2026-11-11T04:14:27.5431601Z #9 4.614 Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+2026-11-11T04:14:27.5432011Z #9 4.627 Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (371 kB)
+2026-11-11T04:14:27.5432406Z #9 4.640 Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+2026-11-11T04:14:27.5432708Z #9 4.653 Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+2026-11-11T04:14:27.5433063Z #9 4.666 Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+2026-11-11T04:14:27.5435179Z #9 4.749 Installing collected packages: urllib3, tzdata, typing-extensions, tenacity, six, rpds-py, redis, PyYAML, protobuf, prometheus-client, overrides, orjson, numpy, idna, h11, distro, click, charset_normalizer, certifi, backoff, attrs, annotated-types, annotated-doc, uvicorn, typing-inspection, requests, referencing, python-dateutil, pydantic-core, opentelemetry-proto, opentelemetry-api, httpcore, grpcio, googleapis-common-protos, anyio, starlette, pydantic, posthog, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, jsonschema-specifications, httpx, opentelemetry-sdk, jsonschema, fastapi, opentelemetry-exporter-otlp-common, opentelemetry-exporter-otlp-proto-grpc, chromadb-client
+2026-11-11T04:14:30.4194613Z #9 7.625 Successfully installed PyYAML-6.0.3 annotated-doc-0.0.6 annotated-types-0.8.0 anyio-4.16.0 attrs-26.1.0 backoff-2.2.1 certifi-2026.10.23 charset_normalizer-3.5.2 chromadb-client-1.0.12 click-8.5.1 distro-1.9.0 fastapi-0.162.2 googleapis-common-protos-1.76.0 grpcio-1.85.1 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.20 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 numpy-2.5.4 opentelemetry-api-1.45.2 opentelemetry-exporter-otlp-common-0.66b2 opentelemetry-exporter-otlp-proto-common-1.45.2 opentelemetry-exporter-otlp-proto-grpc-1.45.2 opentelemetry-proto-1.45.2 opentelemetry-sdk-1.45.2 opentelemetry-semantic-conventions-0.66b2 orjson-3.13.0 overrides-7.7.0 posthog-5.4.0 prometheus-client-0.21.1 protobuf-7.36.2 pydantic-2.11.4 pydantic-core-2.33.2 python-dateutil-4.0.0 redis-5.2.1 referencing-0.37.0 requests-2.34.2 rpds-py-2026.9.1 six-1.17.0 starlette-1.10.0 tenacity-9.2.1 typing-extensions-4.16.0 typing-inspection-0.4.5 tzdata-2026.6 urllib3-2.8.0 uvicorn-0.34.2
+2026-11-11T04:14:30.5485207Z #9 7.625 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+2026-11-11T04:14:30.5486429Z #9 7.755 
+2026-11-11T04:14:30.5486601Z #9 7.755 [notice] A new release of pip is available: 25.0.1 -> 26.3
+2026-11-11T04:14:30.5486822Z #9 7.755 [notice] To update, run: pip install --upgrade pip
+2026-11-11T04:14:31.4690693Z #9 DONE 8.7s
+2026-11-11T04:14:31.6299599Z 
+2026-11-11T04:14:31.6300118Z #10 [5/5] COPY --chown=10001:10001 app/ ./app/
+2026-11-11T04:14:31.6300422Z #10 DONE 0.0s
+2026-11-11T04:14:31.6300522Z 
+2026-11-11T04:14:31.6300603Z #11 exporting to image
+2026-11-11T04:14:31.6300806Z #11 exporting layers
+2026-11-11T04:14:32.2269468Z #11 exporting layers 0.7s done
+2026-11-11T04:14:32.2401598Z #11 writing image sha256:e12e62ffa2d3dba742ac7de8831c94656b608fd3555dc1b6efe86a193def28ef done
+2026-11-11T04:14:32.2401973Z #11 naming to docker.io/library/rahbar-api:ci done
+2026-11-11T04:14:32.2402191Z #11 DONE 0.8s
+2026-11-11T04:14:32.3720862Z Image: "rahbar-api:ci" with ID "sha256:e12e62ffa2d3dba742ac7de8831c94656b608fd3555dc1b6efe86a193def28ef" not yet present on node "rahbar-ci-control-plane", loading...
+2026-11-11T04:14:38.5757045Z #0 building with "default" instance using docker driver
+2026-11-11T04:14:38.5757328Z 
+2026-11-11T04:14:38.5757452Z #1 [internal] load build definition from Dockerfile
+2026-11-11T04:14:38.5757728Z #1 transferring dockerfile: 562B done
+2026-11-11T04:14:38.5757950Z #1 DONE 0.0s
+2026-11-11T04:14:38.5758058Z 
+2026-11-11T04:14:38.5758248Z #2 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm
+2026-11-11T04:14:38.5758570Z #2 DONE 0.1s
+2026-11-11T04:14:38.7261163Z 
+2026-11-11T04:14:38.7261664Z #3 [internal] load .dockerignore
+2026-11-11T04:14:38.7261974Z #3 transferring context: 146B done
+2026-11-11T04:14:38.7262149Z #3 DONE 0.0s
+2026-11-11T04:14:38.7262214Z 
+2026-11-11T04:14:38.7262461Z #4 [1/6] FROM docker.io/library/python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+2026-11-11T04:14:38.7263028Z #4 DONE 0.0s
+2026-11-11T04:14:38.7263093Z 
+2026-11-11T04:14:38.7263144Z #5 [2/6] WORKDIR /app
+2026-11-11T04:14:38.7263261Z #5 CACHED
+2026-11-11T04:14:38.7263449Z 
+2026-11-11T04:14:38.7263506Z #6 [internal] load build context
+2026-11-11T04:14:38.7263653Z #6 transferring context: 25.54kB done
+2026-11-11T04:14:38.7263792Z #6 DONE 0.0s
+2026-11-11T04:14:38.7263852Z 
+2026-11-11T04:14:38.7264093Z #7 [3/6] RUN apt-get update && apt-get install -y --no-install-recommends tesseract-ocr poppler-utils     && rm -rf /var/lib/apt/lists/*
+2026-11-11T04:14:38.7264670Z #7 0.142 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+2026-11-11T04:14:38.8838693Z #7 0.179 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+2026-11-11T04:14:38.8839340Z #7 0.191 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+2026-11-11T04:14:38.8839832Z #7 0.220 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8790 kB]
+2026-11-11T04:14:38.8840356Z #7 0.300 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [6924 B]
+2026-11-11T04:14:39.0348969Z #7 0.300 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [367 kB]
+2026-11-11T04:14:39.4626034Z #7 0.879 Fetched 9405 kB in 1s (12.0 MB/s)
+2026-11-11T04:14:39.7247492Z #7 0.879 Reading package lists...
+2026-11-11T04:14:39.9905825Z #7 1.156 Reading package lists...
+2026-11-11T04:14:40.1395315Z #7 1.416 Building dependency tree...
+2026-11-11T04:14:40.1396142Z #7 1.482 Reading state information...
+2026-11-11T04:14:40.1396590Z #7 1.556 The following additional packages will be installed:
+2026-11-11T04:14:40.1396887Z #7 1.556   fontconfig fontconfig-config fonts-dejavu-core libarchive13 libbrotli1
+2026-11-11T04:14:40.1397266Z #7 1.556   libbsd0 libcairo2 libcurl4 libdatrie1 libdeflate0 libexpat1 libfontconfig1
+2026-11-11T04:14:40.2903805Z #7 1.556   libfreetype6 libfribidi0 libgif7 libglib2.0-0 libgomp1 libgraphite2-3
+2026-11-11T04:14:40.2904221Z #7 1.556   libharfbuzz0b libicu72 libjbig0 libjpeg62-turbo liblcms2-2 libldap-2.5-0
+2026-11-11T04:14:40.2904520Z #7 1.556   liblept5 liblerc4 libnghttp2-14 libnspr4 libnss3 libopenjp2-7 libpango-1.0-0
+2026-11-11T04:14:40.2904792Z #7 1.556   libpangocairo-1.0-0 libpangoft2-1.0-0 libpixman-1-0 libpng16-16
+2026-11-11T04:14:40.2905058Z #7 1.556   libpoppler126 libpsl5 librtmp1 libsasl2-2 libsasl2-modules-db libssh2-1
+2026-11-11T04:14:40.2905328Z #7 1.556   libtesseract5 libthai-data libthai0 libtiff6 libwebp7 libwebpmux3 libx11-6
+2026-11-11T04:14:40.2905800Z #7 1.556   libx11-data libxau6 libxcb-render0 libxcb-shm0 libxcb1 libxdmcp6 libxext6
+2026-11-11T04:14:40.2906047Z #7 1.556   libxml2 libxrender1 tesseract-ocr-eng tesseract-ocr-osd
+2026-11-11T04:14:40.2906231Z #7 1.556 Suggested packages:
+2026-11-11T04:14:40.2906382Z #7 1.556   lrzip low-memory-monitor liblcms2-utils
+2026-11-11T04:14:40.2906543Z #7 1.556 Recommended packages:
+2026-11-11T04:14:40.2906745Z #7 1.556   libglib2.0-data shared-mime-info xdg-user-dirs libldap-common poppler-data
+2026-11-11T04:14:40.2906970Z #7 1.556   publicsuffix libsasl2-modules
+2026-11-11T04:14:40.3006291Z #7 1.717 The following NEW packages will be installed:
+2026-11-11T04:14:40.4172677Z #7 1.717   fontconfig fontconfig-config fonts-dejavu-core libarchive13 libbrotli1
+2026-11-11T04:14:40.4173220Z #7 1.717   libbsd0 libcairo2 libcurl4 libdatrie1 libdeflate0 libexpat1 libfontconfig1
+2026-11-11T04:14:40.4173565Z #7 1.717   libfreetype6 libfribidi0 libgif7 libglib2.0-0 libgomp1 libgraphite2-3
+2026-11-11T04:14:40.4173857Z #7 1.717   libharfbuzz0b libicu72 libjbig0 libjpeg62-turbo liblcms2-2 libldap-2.5-0
+2026-11-11T04:14:40.4174147Z #7 1.717   liblept5 liblerc4 libnghttp2-14 libnspr4 libnss3 libopenjp2-7 libpango-1.0-0
+2026-11-11T04:14:40.4174500Z #7 1.717   libpangocairo-1.0-0 libpangoft2-1.0-0 libpixman-1-0 libpng16-16
+2026-11-11T04:14:40.4174896Z #7 1.717   libpoppler126 libpsl5 librtmp1 libsasl2-2 libsasl2-modules-db libssh2-1
+2026-11-11T04:14:40.4175320Z #7 1.717   libtesseract5 libthai-data libthai0 libtiff6 libwebp7 libwebpmux3 libx11-6
+2026-11-11T04:14:40.4176257Z #7 1.717   libx11-data libxau6 libxcb-render0 libxcb-shm0 libxcb1 libxdmcp6 libxext6
+2026-11-11T04:14:40.4176793Z #7 1.717   libxml2 libxrender1 poppler-utils tesseract-ocr tesseract-ocr-eng
+2026-11-11T04:14:40.4177093Z #7 1.717   tesseract-ocr-osd
+2026-11-11T04:14:40.4177343Z #7 1.782 0 upgraded, 61 newly installed, 0 to remove and 0 not upgraded.
+2026-11-11T04:14:40.4177624Z #7 1.782 Need to get 34.0 MB of archives.
+2026-11-11T04:14:40.4177908Z #7 1.782 After this operation, 103 MB of additional disk space will be used.
+2026-11-11T04:14:40.4178409Z #7 1.782 Get:1 http://deb.debian.org/debian-security bookworm-security/main amd64 libexpat1 amd64 2.5.0-1+deb12u5 [108 kB]
+2026-11-11T04:14:40.4178988Z #7 1.817 Get:2 http://deb.debian.org/debian-security bookworm-security/main amd64 libbrotli1 amd64 1.0.9-2+deb12u1 [275 kB]
+2026-11-11T04:14:40.4179529Z #7 1.834 Get:3 http://deb.debian.org/debian-security bookworm-security/main amd64 libpng16-16 amd64 1.6.39-2+deb12u6 [277 kB]
+2026-11-11T04:14:40.5273760Z #7 1.845 Get:4 http://deb.debian.org/debian bookworm/main amd64 libfreetype6 amd64 2.12.1+dfsg-5+deb12u4 [398 kB]
+2026-11-11T04:14:40.5274296Z #7 1.851 Get:5 http://deb.debian.org/debian bookworm/main amd64 fonts-dejavu-core all 2.37-6 [1068 kB]
+2026-11-11T04:14:40.5274631Z #7 1.879 Get:6 http://deb.debian.org/debian bookworm/main amd64 fontconfig-config amd64 2.14.1-4 [315 kB]
+2026-11-11T04:14:40.5274956Z #7 1.881 Get:7 http://deb.debian.org/debian bookworm/main amd64 libfontconfig1 amd64 2.14.1-4 [386 kB]
+2026-11-11T04:14:40.5275269Z #7 1.882 Get:8 http://deb.debian.org/debian bookworm/main amd64 fontconfig amd64 2.14.1-4 [449 kB]
+2026-11-11T04:14:40.5275842Z #7 1.883 Get:9 http://deb.debian.org/debian bookworm/main amd64 libicu72 amd64 72.1-3+deb12u1 [9376 kB]
+2026-11-11T04:14:40.5276178Z #7 1.916 Get:10 http://deb.debian.org/debian bookworm/main amd64 libxml2 amd64 2.9.14+dfsg-1.3~deb12u6 [689 kB]
+2026-11-11T04:14:40.5276564Z #7 1.918 Get:11 http://deb.debian.org/debian-security bookworm-security/main amd64 libarchive13 amd64 3.6.2-1+deb12u5 [345 kB]
+2026-11-11T04:14:40.5277677Z #7 1.919 Get:12 http://deb.debian.org/debian bookworm/main amd64 libbsd0 amd64 0.11.7-2 [117 kB]
+2026-11-11T04:14:40.5278157Z #7 1.919 Get:13 http://deb.debian.org/debian bookworm/main amd64 libpixman-1-0 amd64 0.42.2-1 [546 kB]
+2026-11-11T04:14:40.5278510Z #7 1.921 Get:14 http://deb.debian.org/debian bookworm/main amd64 libxau6 amd64 1:1.0.9-1 [19.7 kB]
+2026-11-11T04:14:40.5279014Z #7 1.921 Get:15 http://deb.debian.org/debian bookworm/main amd64 libxdmcp6 amd64 1:1.1.2-3 [26.3 kB]
+2026-11-11T04:14:40.5279740Z #7 1.921 Get:16 http://deb.debian.org/debian bookworm/main amd64 libxcb1 amd64 1.15-1 [144 kB]
+2026-11-11T04:14:40.5281115Z #7 1.922 Get:17 http://deb.debian.org/debian bookworm/main amd64 libx11-data all 2:1.8.4-2+deb12u2 [292 kB]
+2026-11-11T04:14:40.5281447Z #7 1.923 Get:18 http://deb.debian.org/debian bookworm/main amd64 libx11-6 amd64 2:1.8.4-2+deb12u2 [760 kB]
+2026-11-11T04:14:40.5281772Z #7 1.931 Get:19 http://deb.debian.org/debian bookworm/main amd64 libxcb-render0 amd64 1.15-1 [115 kB]
+2026-11-11T04:14:40.5282082Z #7 1.944 Get:20 http://deb.debian.org/debian bookworm/main amd64 libxcb-shm0 amd64 1.15-1 [105 kB]
+2026-11-11T04:14:40.6361409Z #7 1.944 Get:21 http://deb.debian.org/debian bookworm/main amd64 libxext6 amd64 2:1.3.4-1+b1 [52.9 kB]
+2026-11-11T04:14:40.6362019Z #7 1.945 Get:22 http://deb.debian.org/debian bookworm/main amd64 libxrender1 amd64 1:0.9.10-1.1 [33.2 kB]
+2026-11-11T04:14:40.6362481Z #7 1.946 Get:23 http://deb.debian.org/debian bookworm/main amd64 libcairo2 amd64 1.16.0-7 [575 kB]
+2026-11-11T04:14:40.6363086Z #7 1.948 Get:24 http://deb.debian.org/debian-security bookworm-security/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg-10+deb12u1 [20.5 kB]
+2026-11-11T04:14:40.6363680Z #7 1.948 Get:25 http://deb.debian.org/debian-security bookworm-security/main amd64 libsasl2-2 amd64 2.1.28+dfsg-10+deb12u1 [59.9 kB]
+2026-11-11T04:14:40.6364663Z #7 1.948 Get:26 http://deb.debian.org/debian bookworm/main amd64 libldap-2.5-0 amd64 2.5.13+dfsg-5 [183 kB]
+2026-11-11T04:14:40.6365283Z #7 1.950 Get:27 http://deb.debian.org/debian bookworm/main amd64 libnghttp2-14 amd64 1.52.0-1+deb12u3 [72.4 kB]
+2026-11-11T04:14:40.6365915Z #7 1.950 Get:28 http://deb.debian.org/debian bookworm/main amd64 libpsl5 amd64 0.21.2-1 [58.7 kB]
+2026-11-11T04:14:40.6366454Z #7 1.957 Get:29 http://deb.debian.org/debian bookworm/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2+b2 [60.8 kB]
+2026-11-11T04:14:40.6366934Z #7 1.971 Get:30 http://deb.debian.org/debian-security bookworm-security/main amd64 libssh2-1 amd64 1.10.0-3+deb12u1 [176 kB]
+2026-11-11T04:14:40.6367296Z #7 1.972 Get:31 http://deb.debian.org/debian bookworm/main amd64 libcurl4 amd64 7.88.1-10+deb12u15 [392 kB]
+2026-11-11T04:14:40.6367617Z #7 1.974 Get:32 http://deb.debian.org/debian bookworm/main amd64 libdatrie1 amd64 0.2.13-2+b1 [43.3 kB]
+2026-11-11T04:14:40.6367928Z #7 1.974 Get:33 http://deb.debian.org/debian bookworm/main amd64 libdeflate0 amd64 1.14-1 [61.4 kB]
+2026-11-11T04:14:40.6368240Z #7 1.975 Get:34 http://deb.debian.org/debian bookworm/main amd64 libfribidi0 amd64 1.0.8-2.1 [65.0 kB]
+2026-11-11T04:14:40.6368559Z #7 1.975 Get:35 http://deb.debian.org/debian bookworm/main amd64 libgif7 amd64 5.2.1-2.5+deb12u1 [43.0 kB]
+2026-11-11T04:14:40.6368888Z #7 1.976 Get:36 http://deb.debian.org/debian bookworm/main amd64 libglib2.0-0 amd64 2.74.6-2+deb12u9 [1403 kB]
+2026-11-11T04:14:40.6369218Z #7 1.980 Get:37 http://deb.debian.org/debian bookworm/main amd64 libgomp1 amd64 12.2.0-14+deb12u1 [116 kB]
+2026-11-11T04:14:40.6369665Z #7 1.980 Get:38 http://deb.debian.org/debian bookworm/main amd64 libgraphite2-3 amd64 1.3.14-1+deb12u1 [74.6 kB]
+2026-11-11T04:14:40.6370001Z #7 1.994 Get:39 http://deb.debian.org/debian bookworm/main amd64 libharfbuzz0b amd64 6.0.0+dfsg-3 [1945 kB]
+2026-11-11T04:14:40.6370310Z #7 1.999 Get:40 http://deb.debian.org/debian bookworm/main amd64 libjbig0 amd64 2.1-6.1 [31.7 kB]
+2026-11-11T04:14:40.6370624Z #7 2.000 Get:41 http://deb.debian.org/debian bookworm/main amd64 libjpeg62-turbo amd64 1:2.1.5-2 [166 kB]
+2026-11-11T04:14:40.6370946Z #7 2.000 Get:42 http://deb.debian.org/debian bookworm/main amd64 liblcms2-2 amd64 2.14-2+deb12u1 [154 kB]
+2026-11-11T04:14:40.6371274Z #7 2.001 Get:43 http://deb.debian.org/debian bookworm/main amd64 libopenjp2-7 amd64 2.5.0-2+deb12u3 [189 kB]
+2026-11-11T04:14:40.6371587Z #7 2.001 Get:44 http://deb.debian.org/debian bookworm/main amd64 liblerc4 amd64 4.0.0+ds-2 [170 kB]
+2026-11-11T04:14:40.6372080Z #7 2.002 Get:45 http://deb.debian.org/debian bookworm/main amd64 libwebp7 amd64 1.2.4-0.2+deb12u1 [286 kB]
+2026-11-11T04:14:40.6372523Z #7 2.003 Get:46 http://deb.debian.org/debian bookworm/main amd64 libtiff6 amd64 4.5.0-6+deb12u4 [316 kB]
+2026-11-11T04:14:40.6372935Z #7 2.004 Get:47 http://deb.debian.org/debian bookworm/main amd64 libwebpmux3 amd64 1.2.4-0.2+deb12u1 [109 kB]
+2026-11-11T04:14:40.6373308Z #7 2.004 Get:48 http://deb.debian.org/debian bookworm/main amd64 liblept5 amd64 1.82.0-3+b3 [1050 kB]
+2026-11-11T04:14:40.6373635Z #7 2.013 Get:49 http://deb.debian.org/debian bookworm/main amd64 libnspr4 amd64 2:4.35-1 [113 kB]
+2026-11-11T04:14:40.6374231Z #7 2.027 Get:50 http://deb.debian.org/debian-security bookworm-security/main amd64 libnss3 amd64 2:3.87.1-1+deb12u4 [1331 kB]
+2026-11-11T04:14:40.6374748Z #7 2.030 Get:51 http://deb.debian.org/debian bookworm/main amd64 libthai-data all 0.1.29-1 [176 kB]
+2026-11-11T04:14:40.6375048Z #7 2.031 Get:52 http://deb.debian.org/debian bookworm/main amd64 libthai0 amd64 0.1.29-1 [57.5 kB]
+2026-11-11T04:14:40.6375361Z #7 2.031 Get:53 http://deb.debian.org/debian bookworm/main amd64 libpango-1.0-0 amd64 1.50.12+ds-1 [212 kB]
+2026-11-11T04:14:40.6376003Z #7 2.032 Get:54 http://deb.debian.org/debian bookworm/main amd64 libpangoft2-1.0-0 amd64 1.50.12+ds-1 [47.4 kB]
+2026-11-11T04:14:40.6376558Z #7 2.032 Get:55 http://deb.debian.org/debian bookworm/main amd64 libpangocairo-1.0-0 amd64 1.50.12+ds-1 [34.2 kB]
+2026-11-11T04:14:40.6377081Z #7 2.033 Get:56 http://deb.debian.org/debian-security bookworm-security/main amd64 libpoppler126 amd64 22.12.0-2+deb12u3 [1856 kB]
+2026-11-11T04:14:40.6377526Z #7 2.052 Get:57 http://deb.debian.org/debian bookworm/main amd64 libtesseract5 amd64 5.3.0-2 [1279 kB]
+2026-11-11T04:14:40.7455194Z #7 2.057 Get:58 http://deb.debian.org/debian-security bookworm-security/main amd64 poppler-utils amd64 22.12.0-2+deb12u3 [192 kB]
+2026-11-11T04:14:40.7455986Z #7 2.059 Get:59 http://deb.debian.org/debian bookworm/main amd64 tesseract-ocr-eng all 1:4.1.0-2 [1594 kB]
+2026-11-11T04:14:40.7456507Z #7 2.063 Get:60 http://deb.debian.org/debian bookworm/main amd64 tesseract-ocr-osd all 1:4.1.0-2 [2992 kB]
+2026-11-11T04:14:40.7457013Z #7 2.074 Get:61 http://deb.debian.org/debian bookworm/main amd64 tesseract-ocr amd64 5.3.0-2 [402 kB]
+2026-11-11T04:14:40.7457478Z #7 2.143 debconf: delaying package configuration, since apt-utils is not installed
+2026-11-11T04:14:40.7457816Z #7 2.162 Fetched 34.0 MB in 0s (96.2 MB/s)
+2026-11-11T04:14:40.8545655Z #7 2.173 Selecting previously unselected package libexpat1:amd64.
+2026-11-11T04:14:40.8545904Z #7 2.173 (Reading database ... 
+2026-11-11T04:14:40.8562889Z (Reading database ... 5%
+2026-11-11T04:14:40.8563183Z (Reading database ... 10%
+2026-11-11T04:14:40.8563375Z (Reading database ... 15%
+2026-11-11T04:14:40.8563597Z (Reading database ... 20%
+2026-11-11T04:14:40.8563933Z (Reading database ... 25%
+2026-11-11T04:14:40.8564112Z (Reading database ... 30%
+2026-11-11T04:14:40.8564288Z (Reading database ... 35%
+2026-11-11T04:14:40.8564464Z (Reading database ... 40%
+2026-11-11T04:14:40.8564641Z (Reading database ... 45%
+2026-11-11T04:14:40.8564830Z (Reading database ... 50%
+2026-11-11T04:14:40.8564973Z (Reading database ... 55%
+2026-11-11T04:14:40.8565095Z (Reading database ... 60%
+2026-11-11T04:14:40.8565216Z (Reading database ... 65%
+2026-11-11T04:14:40.8565337Z (Reading database ... 70%
+2026-11-11T04:14:40.8565665Z (Reading database ... 75%
+2026-11-11T04:14:40.8565853Z (Reading database ... 80%
+2026-11-11T04:14:40.8566049Z (Reading database ... 85%
+2026-11-11T04:14:40.8566199Z (Reading database ... 90%
+2026-11-11T04:14:40.8566354Z (Reading database ... 95%
+2026-11-11T04:14:40.8566479Z (Reading database ... 100%
+2026-11-11T04:14:40.8566669Z (Reading database ... 6701 files and directories currently installed.)
+2026-11-11T04:14:40.8566929Z #7 2.178 Preparing to unpack .../00-libexpat1_2.5.0-1+deb12u5_amd64.deb ...
+2026-11-11T04:14:40.8567157Z #7 2.179 Unpacking libexpat1:amd64 (2.5.0-1+deb12u5) ...
+2026-11-11T04:14:40.8567364Z #7 2.195 Selecting previously unselected package libbrotli1:amd64.
+2026-11-11T04:14:40.8567597Z #7 2.196 Preparing to unpack .../01-libbrotli1_1.0.9-2+deb12u1_amd64.deb ...
+2026-11-11T04:14:40.8567921Z #7 2.196 Unpacking libbrotli1:amd64 (1.0.9-2+deb12u1) ...
+2026-11-11T04:14:40.8568237Z #7 2.220 Selecting previously unselected package libpng16-16:amd64.
+2026-11-11T04:14:40.8568598Z #7 2.221 Preparing to unpack .../02-libpng16-16_1.6.39-2+deb12u6_amd64.deb ...
+2026-11-11T04:14:40.8568943Z #7 2.221 Unpacking libpng16-16:amd64 (1.6.39-2+deb12u6) ...
+2026-11-11T04:14:40.8569270Z #7 2.242 Selecting previously unselected package libfreetype6:amd64.
+2026-11-11T04:14:40.8569654Z #7 2.243 Preparing to unpack .../03-libfreetype6_2.12.1+dfsg-5+deb12u4_amd64.deb ...
+2026-11-11T04:14:40.8570029Z #7 2.243 Unpacking libfreetype6:amd64 (2.12.1+dfsg-5+deb12u4) ...
+2026-11-11T04:14:40.8570388Z #7 2.271 Selecting previously unselected package fonts-dejavu-core.
+2026-11-11T04:14:40.9970250Z #7 2.271 Preparing to unpack .../04-fonts-dejavu-core_2.37-6_all.deb ...
+2026-11-11T04:14:40.9970803Z #7 2.272 Unpacking fonts-dejavu-core (2.37-6) ...
+2026-11-11T04:14:40.9971187Z #7 2.335 Selecting previously unselected package fontconfig-config.
+2026-11-11T04:14:40.9971598Z #7 2.335 Preparing to unpack .../05-fontconfig-config_2.14.1-4_amd64.deb ...
+2026-11-11T04:14:40.9971978Z #7 2.413 Unpacking fontconfig-config (2.14.1-4) ...
+2026-11-11T04:14:41.2071639Z #7 2.434 Selecting previously unselected package libfontconfig1:amd64.
+2026-11-11T04:14:41.2072320Z #7 2.435 Preparing to unpack .../06-libfontconfig1_2.14.1-4_amd64.deb ...
+2026-11-11T04:14:41.2072686Z #7 2.436 Unpacking libfontconfig1:amd64 (2.14.1-4) ...
+2026-11-11T04:14:41.2072940Z #7 2.453 Selecting previously unselected package fontconfig.
+2026-11-11T04:14:41.2073181Z #7 2.453 Preparing to unpack .../07-fontconfig_2.14.1-4_amd64.deb ...
+2026-11-11T04:14:41.2073379Z #7 2.454 Unpacking fontconfig (2.14.1-4) ...
+2026-11-11T04:14:41.2073640Z #7 2.472 Selecting previously unselected package libicu72:amd64.
+2026-11-11T04:14:41.2073863Z #7 2.472 Preparing to unpack .../08-libicu72_72.1-3+deb12u1_amd64.deb ...
+2026-11-11T04:14:41.2074069Z #7 2.473 Unpacking libicu72:amd64 (72.1-3+deb12u1) ...
+2026-11-11T04:14:41.3934743Z #7 2.810 Selecting previously unselected package libxml2:amd64.
+2026-11-11T04:14:41.5064538Z #7 2.811 Preparing to unpack .../09-libxml2_2.9.14+dfsg-1.3~deb12u6_amd64.deb ...
+2026-11-11T04:14:41.5065355Z #7 2.811 Unpacking libxml2:amd64 (2.9.14+dfsg-1.3~deb12u6) ...
+2026-11-11T04:14:41.5066320Z #7 2.850 Selecting previously unselected package libarchive13:amd64.
+2026-11-11T04:14:41.5066740Z #7 2.851 Preparing to unpack .../10-libarchive13_3.6.2-1+deb12u5_amd64.deb ...
+2026-11-11T04:14:41.5067074Z #7 2.852 Unpacking libarchive13:amd64 (3.6.2-1+deb12u5) ...
+2026-11-11T04:14:41.5067478Z #7 2.879 Selecting previously unselected package libbsd0:amd64.
+2026-11-11T04:14:41.5067785Z #7 2.880 Preparing to unpack .../11-libbsd0_0.11.7-2_amd64.deb ...
+2026-11-11T04:14:41.5068056Z #7 2.881 Unpacking libbsd0:amd64 (0.11.7-2) ...
+2026-11-11T04:14:41.5068337Z #7 2.897 Selecting previously unselected package libpixman-1-0:amd64.
+2026-11-11T04:14:41.5068792Z #7 2.898 Preparing to unpack .../12-libpixman-1-0_0.42.2-1_amd64.deb ...
+2026-11-11T04:14:41.5069088Z #7 2.898 Unpacking libpixman-1-0:amd64 (0.42.2-1) ...
+2026-11-11T04:14:41.5069364Z #7 2.923 Selecting previously unselected package libxau6:amd64.
+2026-11-11T04:14:41.6273632Z #7 2.924 Preparing to unpack .../13-libxau6_1%3a1.0.9-1_amd64.deb ...
+2026-11-11T04:14:41.6274233Z #7 2.924 Unpacking libxau6:amd64 (1:1.0.9-1) ...
+2026-11-11T04:14:41.6274814Z #7 2.936 Selecting previously unselected package libxdmcp6:amd64.
+2026-11-11T04:14:41.6275264Z #7 2.936 Preparing to unpack .../14-libxdmcp6_1%3a1.1.2-3_amd64.deb ...
+2026-11-11T04:14:41.6275710Z #7 2.937 Unpacking libxdmcp6:amd64 (1:1.1.2-3) ...
+2026-11-11T04:14:41.6276037Z #7 2.949 Selecting previously unselected package libxcb1:amd64.
+2026-11-11T04:14:41.6276356Z #7 2.949 Preparing to unpack .../15-libxcb1_1.15-1_amd64.deb ...
+2026-11-11T04:14:41.6276636Z #7 2.950 Unpacking libxcb1:amd64 (1.15-1) ...
+2026-11-11T04:14:41.6276912Z #7 2.964 Selecting previously unselected package libx11-data.
+2026-11-11T04:14:41.6277258Z #7 2.964 Preparing to unpack .../16-libx11-data_2%3a1.8.4-2+deb12u2_all.deb ...
+2026-11-11T04:14:41.6277588Z #7 2.965 Unpacking libx11-data (2:1.8.4-2+deb12u2) ...
+2026-11-11T04:14:41.6277870Z #7 3.002 Selecting previously unselected package libx11-6:amd64.
+2026-11-11T04:14:41.6278103Z #7 3.003 Preparing to unpack .../17-libx11-6_2%3a1.8.4-2+deb12u2_amd64.deb ...
+2026-11-11T04:14:41.6278328Z #7 3.003 Unpacking libx11-6:amd64 (2:1.8.4-2+deb12u2) ...
+2026-11-11T04:14:41.6278534Z #7 3.044 Selecting previously unselected package libxcb-render0:amd64.
+2026-11-11T04:14:41.7343750Z #7 3.044 Preparing to unpack .../18-libxcb-render0_1.15-1_amd64.deb ...
+2026-11-11T04:14:41.7344057Z #7 3.045 Unpacking libxcb-render0:amd64 (1.15-1) ...
+2026-11-11T04:14:41.7344268Z #7 3.061 Selecting previously unselected package libxcb-shm0:amd64.
+2026-11-11T04:14:41.7344496Z #7 3.061 Preparing to unpack .../19-libxcb-shm0_1.15-1_amd64.deb ...
+2026-11-11T04:14:41.7344691Z #7 3.062 Unpacking libxcb-shm0:amd64 (1.15-1) ...
+2026-11-11T04:14:41.7344881Z #7 3.077 Selecting previously unselected package libxext6:amd64.
+2026-11-11T04:14:41.7345103Z #7 3.078 Preparing to unpack .../20-libxext6_2%3a1.3.4-1+b1_amd64.deb ...
+2026-11-11T04:14:41.7345303Z #7 3.079 Unpacking libxext6:amd64 (2:1.3.4-1+b1) ...
+2026-11-11T04:14:41.7345945Z #7 3.091 Selecting previously unselected package libxrender1:amd64.
+2026-11-11T04:14:41.7346293Z #7 3.092 Preparing to unpack .../21-libxrender1_1%3a0.9.10-1.1_amd64.deb ...
+2026-11-11T04:14:41.7346504Z #7 3.092 Unpacking libxrender1:amd64 (1:0.9.10-1.1) ...
+2026-11-11T04:14:41.7346697Z #7 3.104 Selecting previously unselected package libcairo2:amd64.
+2026-11-11T04:14:41.7346910Z #7 3.105 Preparing to unpack .../22-libcairo2_1.16.0-7_amd64.deb ...
+2026-11-11T04:14:41.7347097Z #7 3.105 Unpacking libcairo2:amd64 (1.16.0-7) ...
+2026-11-11T04:14:41.7347348Z #7 3.138 Selecting previously unselected package libsasl2-modules-db:amd64.
+2026-11-11T04:14:41.7347714Z #7 3.139 Preparing to unpack .../23-libsasl2-modules-db_2.1.28+dfsg-10+deb12u1_amd64.deb ...
+2026-11-11T04:14:41.7348120Z #7 3.139 Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg-10+deb12u1) ...
+2026-11-11T04:14:41.7348497Z #7 3.151 Selecting previously unselected package libsasl2-2:amd64.
+2026-11-11T04:14:41.8587593Z #7 3.151 Preparing to unpack .../24-libsasl2-2_2.1.28+dfsg-10+deb12u1_amd64.deb ...
+2026-11-11T04:14:41.8588046Z #7 3.152 Unpacking libsasl2-2:amd64 (2.1.28+dfsg-10+deb12u1) ...
+2026-11-11T04:14:41.8588424Z #7 3.166 Selecting previously unselected package libldap-2.5-0:amd64.
+2026-11-11T04:14:41.8588807Z #7 3.166 Preparing to unpack .../25-libldap-2.5-0_2.5.13+dfsg-5_amd64.deb ...
+2026-11-11T04:14:41.8589156Z #7 3.167 Unpacking libldap-2.5-0:amd64 (2.5.13+dfsg-5) ...
+2026-11-11T04:14:41.8589485Z #7 3.186 Selecting previously unselected package libnghttp2-14:amd64.
+2026-11-11T04:14:41.8589868Z #7 3.186 Preparing to unpack .../26-libnghttp2-14_1.52.0-1+deb12u3_amd64.deb ...
+2026-11-11T04:14:41.8590231Z #7 3.187 Unpacking libnghttp2-14:amd64 (1.52.0-1+deb12u3) ...
+2026-11-11T04:14:41.8590560Z #7 3.200 Selecting previously unselected package libpsl5:amd64.
+2026-11-11T04:14:41.8590905Z #7 3.201 Preparing to unpack .../27-libpsl5_0.21.2-1_amd64.deb ...
+2026-11-11T04:14:41.8591209Z #7 3.202 Unpacking libpsl5:amd64 (0.21.2-1) ...
+2026-11-11T04:14:41.8591511Z #7 3.215 Selecting previously unselected package librtmp1:amd64.
+2026-11-11T04:14:41.8591893Z #7 3.216 Preparing to unpack .../28-librtmp1_2.4+20151223.gitfa8646d.1-2+b2_amd64.deb ...
+2026-11-11T04:14:41.8592280Z #7 3.216 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+2026-11-11T04:14:41.8592599Z #7 3.229 Selecting previously unselected package libssh2-1:amd64.
+2026-11-11T04:14:41.8592862Z #7 3.229 Preparing to unpack .../29-libssh2-1_1.10.0-3+deb12u1_amd64.deb ...
+2026-11-11T04:14:41.8593146Z #7 3.230 Unpacking libssh2-1:amd64 (1.10.0-3+deb12u1) ...
+2026-11-11T04:14:41.8593442Z #7 3.249 Selecting previously unselected package libcurl4:amd64.
+2026-11-11T04:14:41.8593820Z #7 3.249 Preparing to unpack .../30-libcurl4_7.88.1-10+deb12u15_amd64.deb ...
+2026-11-11T04:14:41.8594133Z #7 3.250 Unpacking libcurl4:amd64 (7.88.1-10+deb12u15) ...
+2026-11-11T04:14:41.8594333Z #7 3.275 Selecting previously unselected package libdatrie1:amd64.
+2026-11-11T04:14:41.9884288Z #7 3.276 Preparing to unpack .../31-libdatrie1_0.2.13-2+b1_amd64.deb ...
+2026-11-11T04:14:41.9884856Z #7 3.276 Unpacking libdatrie1:amd64 (0.2.13-2+b1) ...
+2026-11-11T04:14:41.9885282Z #7 3.289 Selecting previously unselected package libdeflate0:amd64.
+2026-11-11T04:14:41.9885811Z #7 3.289 Preparing to unpack .../32-libdeflate0_1.14-1_amd64.deb ...
+2026-11-11T04:14:41.9886151Z #7 3.290 Unpacking libdeflate0:amd64 (1.14-1) ...
+2026-11-11T04:14:41.9886495Z #7 3.303 Selecting previously unselected package libfribidi0:amd64.
+2026-11-11T04:14:41.9886884Z #7 3.304 Preparing to unpack .../33-libfribidi0_1.0.8-2.1_amd64.deb ...
+2026-11-11T04:14:41.9887233Z #7 3.304 Unpacking libfribidi0:amd64 (1.0.8-2.1) ...
+2026-11-11T04:14:41.9887563Z #7 3.318 Selecting previously unselected package libgif7:amd64.
+2026-11-11T04:14:41.9887954Z #7 3.318 Preparing to unpack .../34-libgif7_5.2.1-2.5+deb12u1_amd64.deb ...
+2026-11-11T04:14:41.9888316Z #7 3.319 Unpacking libgif7:amd64 (5.2.1-2.5+deb12u1) ...
+2026-11-11T04:14:41.9888922Z #7 3.332 Selecting previously unselected package libglib2.0-0:amd64.
+2026-11-11T04:14:41.9889436Z #7 3.333 Preparing to unpack .../35-libglib2.0-0_2.74.6-2+deb12u9_amd64.deb ...
+2026-11-11T04:14:41.9889813Z #7 3.334 Unpacking libglib2.0-0:amd64 (2.74.6-2+deb12u9) ...
+2026-11-11T04:14:41.9890122Z #7 3.405 Selecting previously unselected package libgomp1:amd64.
+2026-11-11T04:14:42.0948985Z #7 3.406 Preparing to unpack .../36-libgomp1_12.2.0-14+deb12u1_amd64.deb ...
+2026-11-11T04:14:42.0949280Z #7 3.406 Unpacking libgomp1:amd64 (12.2.0-14+deb12u1) ...
+2026-11-11T04:14:42.0949501Z #7 3.422 Selecting previously unselected package libgraphite2-3:amd64.
+2026-11-11T04:14:42.0949757Z #7 3.423 Preparing to unpack .../37-libgraphite2-3_1.3.14-1+deb12u1_amd64.deb ...
+2026-11-11T04:14:42.0949990Z #7 3.424 Unpacking libgraphite2-3:amd64 (1.3.14-1+deb12u1) ...
+2026-11-11T04:14:42.0950226Z #7 3.438 Selecting previously unselected package libharfbuzz0b:amd64.
+2026-11-11T04:14:42.0950471Z #7 3.438 Preparing to unpack .../38-libharfbuzz0b_6.0.0+dfsg-3_amd64.deb ...
+2026-11-11T04:14:42.0950722Z #7 3.439 Unpacking libharfbuzz0b:amd64 (6.0.0+dfsg-3) ...
+2026-11-11T04:14:42.0950939Z #7 3.477 Selecting previously unselected package libjbig0:amd64.
+2026-11-11T04:14:42.0951152Z #7 3.478 Preparing to unpack .../39-libjbig0_2.1-6.1_amd64.deb ...
+2026-11-11T04:14:42.0951345Z #7 3.478 Unpacking libjbig0:amd64 (2.1-6.1) ...
+2026-11-11T04:14:42.0951545Z #7 3.491 Selecting previously unselected package libjpeg62-turbo:amd64.
+2026-11-11T04:14:42.0951786Z #7 3.491 Preparing to unpack .../40-libjpeg62-turbo_1%3a2.1.5-2_amd64.deb ...
+2026-11-11T04:14:42.0952003Z #7 3.492 Unpacking libjpeg62-turbo:amd64 (1:2.1.5-2) ...
+2026-11-11T04:14:42.0952206Z #7 3.511 Selecting previously unselected package liblcms2-2:amd64.
+2026-11-11T04:14:42.2009715Z #7 3.512 Preparing to unpack .../41-liblcms2-2_2.14-2+deb12u1_amd64.deb ...
+2026-11-11T04:14:42.2010325Z #7 3.513 Unpacking liblcms2-2:amd64 (2.14-2+deb12u1) ...
+2026-11-11T04:14:42.2010593Z #7 3.532 Selecting previously unselected package libopenjp2-7:amd64.
+2026-11-11T04:14:42.2010967Z #7 3.533 Preparing to unpack .../42-libopenjp2-7_2.5.0-2+deb12u3_amd64.deb ...
+2026-11-11T04:14:42.2011252Z #7 3.533 Unpacking libopenjp2-7:amd64 (2.5.0-2+deb12u3) ...
+2026-11-11T04:14:42.2011458Z #7 3.553 Selecting previously unselected package liblerc4:amd64.
+2026-11-11T04:14:42.2011673Z #7 3.554 Preparing to unpack .../43-liblerc4_4.0.0+ds-2_amd64.deb ...
+2026-11-11T04:14:42.2011869Z #7 3.554 Unpacking liblerc4:amd64 (4.0.0+ds-2) ...
+2026-11-11T04:14:42.2012057Z #7 3.572 Selecting previously unselected package libwebp7:amd64.
+2026-11-11T04:14:42.2012276Z #7 3.573 Preparing to unpack .../44-libwebp7_1.2.4-0.2+deb12u1_amd64.deb ...
+2026-11-11T04:14:42.2012490Z #7 3.574 Unpacking libwebp7:amd64 (1.2.4-0.2+deb12u1) ...
+2026-11-11T04:14:42.2012683Z #7 3.597 Selecting previously unselected package libtiff6:amd64.
+2026-11-11T04:14:42.2012897Z #7 3.597 Preparing to unpack .../45-libtiff6_4.5.0-6+deb12u4_amd64.deb ...
+2026-11-11T04:14:42.2013109Z #7 3.598 Unpacking libtiff6:amd64 (4.5.0-6+deb12u4) ...
+2026-11-11T04:14:42.2013382Z #7 3.617 Selecting previously unselected package libwebpmux3:amd64.
+2026-11-11T04:14:42.3673232Z #7 3.618 Preparing to unpack .../46-libwebpmux3_1.2.4-0.2+deb12u1_amd64.deb ...
+2026-11-11T04:14:42.3673533Z #7 3.619 Unpacking libwebpmux3:amd64 (1.2.4-0.2+deb12u1) ...
+2026-11-11T04:14:42.3673823Z #7 3.634 Selecting previously unselected package liblept5:amd64.
+2026-11-11T04:14:42.3674057Z #7 3.634 Preparing to unpack .../47-liblept5_1.82.0-3+b3_amd64.deb ...
+2026-11-11T04:14:42.3674255Z #7 3.635 Unpacking liblept5:amd64 (1.82.0-3+b3) ...
+2026-11-11T04:14:42.3674519Z #7 3.692 Selecting previously unselected package libnspr4:amd64.
+2026-11-11T04:14:42.3674734Z #7 3.692 Preparing to unpack .../48-libnspr4_2%3a4.35-1_amd64.deb ...
+2026-11-11T04:14:42.3674931Z #7 3.693 Unpacking libnspr4:amd64 (2:4.35-1) ...
+2026-11-11T04:14:42.3675118Z #7 3.709 Selecting previously unselected package libnss3:amd64.
+2026-11-11T04:14:42.3675803Z #7 3.710 Preparing to unpack .../49-libnss3_2%3a3.87.1-1+deb12u4_amd64.deb ...
+2026-11-11T04:14:42.3676122Z #7 3.710 Unpacking libnss3:amd64 (2:3.87.1-1+deb12u4) ...
+2026-11-11T04:14:42.3676432Z #7 3.783 Selecting previously unselected package libthai-data.
+2026-11-11T04:14:42.5197197Z #7 3.784 Preparing to unpack .../50-libthai-data_0.1.29-1_all.deb ...
+2026-11-11T04:14:42.5197467Z #7 3.785 Unpacking libthai-data (0.1.29-1) ...
+2026-11-11T04:14:42.5197669Z #7 3.806 Selecting previously unselected package libthai0:amd64.
+2026-11-11T04:14:42.5197889Z #7 3.806 Preparing to unpack .../51-libthai0_0.1.29-1_amd64.deb ...
+2026-11-11T04:14:42.5198082Z #7 3.807 Unpacking libthai0:amd64 (0.1.29-1) ...
+2026-11-11T04:14:42.5198281Z #7 3.821 Selecting previously unselected package libpango-1.0-0:amd64.
+2026-11-11T04:14:42.5198520Z #7 3.822 Preparing to unpack .../52-libpango-1.0-0_1.50.12+ds-1_amd64.deb ...
+2026-11-11T04:14:42.5198737Z #7 3.822 Unpacking libpango-1.0-0:amd64 (1.50.12+ds-1) ...
+2026-11-11T04:14:42.5198986Z #7 3.843 Selecting previously unselected package libpangoft2-1.0-0:amd64.
+2026-11-11T04:14:42.5199242Z #7 3.844 Preparing to unpack .../53-libpangoft2-1.0-0_1.50.12+ds-1_amd64.deb ...
+2026-11-11T04:14:42.5199469Z #7 3.844 Unpacking libpangoft2-1.0-0:amd64 (1.50.12+ds-1) ...
+2026-11-11T04:14:42.5199689Z #7 3.857 Selecting previously unselected package libpangocairo-1.0-0:amd64.
+2026-11-11T04:14:42.5199939Z #7 3.858 Preparing to unpack .../54-libpangocairo-1.0-0_1.50.12+ds-1_amd64.deb ...
+2026-11-11T04:14:42.5200170Z #7 3.858 Unpacking libpangocairo-1.0-0:amd64 (1.50.12+ds-1) ...
+2026-11-11T04:14:42.5200387Z #7 3.871 Selecting previously unselected package libpoppler126:amd64.
+2026-11-11T04:14:42.5200624Z #7 3.872 Preparing to unpack .../55-libpoppler126_22.12.0-2+deb12u3_amd64.deb ...
+2026-11-11T04:14:42.5200874Z #7 3.872 Unpacking libpoppler126:amd64 (22.12.0-2+deb12u3) ...
+2026-11-11T04:14:42.5201084Z #7 3.936 Selecting previously unselected package libtesseract5:amd64.
+2026-11-11T04:14:42.6924387Z #7 3.937 Preparing to unpack .../56-libtesseract5_5.3.0-2_amd64.deb ...
+2026-11-11T04:14:42.6924653Z #7 3.937 Unpacking libtesseract5:amd64 (5.3.0-2) ...
+2026-11-11T04:14:42.6924892Z #7 4.008 Selecting previously unselected package poppler-utils.
+2026-11-11T04:14:42.6925137Z #7 4.009 Preparing to unpack .../57-poppler-utils_22.12.0-2+deb12u3_amd64.deb ...
+2026-11-11T04:14:42.6925375Z #7 4.010 Unpacking poppler-utils (22.12.0-2+deb12u3) ...
+2026-11-11T04:14:42.6925744Z #7 4.030 Selecting previously unselected package tesseract-ocr-eng.
+2026-11-11T04:14:42.6926077Z #7 4.031 Preparing to unpack .../58-tesseract-ocr-eng_1%3a4.1.0-2_all.deb ...
+2026-11-11T04:14:42.6926289Z #7 4.031 Unpacking tesseract-ocr-eng (1:4.1.0-2) ...
+2026-11-11T04:14:42.6926488Z #7 4.109 Selecting previously unselected package tesseract-ocr-osd.
+2026-11-11T04:14:42.8443449Z #7 4.110 Preparing to unpack .../59-tesseract-ocr-osd_1%3a4.1.0-2_all.deb ...
+2026-11-11T04:14:42.8443759Z #7 4.110 Unpacking tesseract-ocr-osd (1:4.1.0-2) ...
+2026-11-11T04:14:42.8535952Z #7 4.270 Selecting previously unselected package tesseract-ocr.
+2026-11-11T04:14:42.9873111Z #7 4.271 Preparing to unpack .../60-tesseract-ocr_5.3.0-2_amd64.deb ...
+2026-11-11T04:14:42.9873360Z #7 4.271 Unpacking tesseract-ocr (5.3.0-2) ...
+2026-11-11T04:14:42.9873580Z #7 4.328 Setting up libexpat1:amd64 (2.5.0-1+deb12u5) ...
+2026-11-11T04:14:42.9873833Z #7 4.330 Setting up libgraphite2-3:amd64 (1.3.14-1+deb12u1) ...
+2026-11-11T04:14:42.9874028Z #7 4.331 Setting up liblcms2-2:amd64 (2.14-2+deb12u1) ...
+2026-11-11T04:14:42.9874273Z #7 4.333 Setting up libpixman-1-0:amd64 (0.42.2-1) ...
+2026-11-11T04:14:42.9874544Z #7 4.334 Setting up libxau6:amd64 (1:1.0.9-1) ...
+2026-11-11T04:14:42.9874794Z #7 4.336 Setting up libpsl5:amd64 (0.21.2-1) ...
+2026-11-11T04:14:42.9875064Z #7 4.337 Setting up libicu72:amd64 (72.1-3+deb12u1) ...
+2026-11-11T04:14:42.9875235Z #7 4.339 Setting up liblerc4:amd64 (4.0.0+ds-2) ...
+2026-11-11T04:14:42.9875404Z #7 4.341 Setting up libdatrie1:amd64 (0.2.13-2+b1) ...
+2026-11-11T04:14:42.9876134Z #7 4.342 Setting up libglib2.0-0:amd64 (2.74.6-2+deb12u9) ...
+2026-11-11T04:14:42.9876418Z #7 4.347 No schema files found: doing nothing.
+2026-11-11T04:14:42.9876832Z #7 4.349 Setting up libbrotli1:amd64 (1.0.9-2+deb12u1) ...
+2026-11-11T04:14:42.9877181Z #7 4.351 Setting up libnghttp2-14:amd64 (1.52.0-1+deb12u3) ...
+2026-11-11T04:14:42.9877463Z #7 4.352 Setting up libdeflate0:amd64 (1.14-1) ...
+2026-11-11T04:14:42.9877642Z #7 4.354 Setting up tesseract-ocr-eng (1:4.1.0-2) ...
+2026-11-11T04:14:42.9877821Z #7 4.355 Setting up libgomp1:amd64 (12.2.0-14+deb12u1) ...
+2026-11-11T04:14:42.9877992Z #7 4.357 Setting up libjbig0:amd64 (2.1-6.1) ...
+2026-11-11T04:14:42.9878191Z #7 4.359 Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg-10+deb12u1) ...
+2026-11-11T04:14:42.9878520Z #7 4.360 Setting up libjpeg62-turbo:amd64 (1:2.1.5-2) ...
+2026-11-11T04:14:42.9878803Z #7 4.362 Setting up libx11-data (2:1.8.4-2+deb12u2) ...
+2026-11-11T04:14:42.9879010Z #7 4.404 Setting up libnspr4:amd64 (2:4.35-1) ...
+2026-11-11T04:14:43.0935910Z #7 4.406 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+2026-11-11T04:14:43.0936220Z #7 4.408 Setting up libfribidi0:amd64 (1.0.8-2.1) ...
+2026-11-11T04:14:43.0936406Z #7 4.409 Setting up libpng16-16:amd64 (1.6.39-2+deb12u6) ...
+2026-11-11T04:14:43.0936592Z #7 4.411 Setting up fonts-dejavu-core (2.37-6) ...
+2026-11-11T04:14:43.0936784Z #7 4.418 Setting up libsasl2-2:amd64 (2.1.28+dfsg-10+deb12u1) ...
+2026-11-11T04:14:43.0936986Z #7 4.420 Setting up libwebp7:amd64 (1.2.4-0.2+deb12u1) ...
+2026-11-11T04:14:43.0937171Z #7 4.421 Setting up libgif7:amd64 (5.2.1-2.5+deb12u1) ...
+2026-11-11T04:14:43.0937354Z #7 4.423 Setting up libtiff6:amd64 (4.5.0-6+deb12u4) ...
+2026-11-11T04:14:43.0937539Z #7 4.424 Setting up libopenjp2-7:amd64 (2.5.0-2+deb12u3) ...
+2026-11-11T04:14:43.0937716Z #7 4.426 Setting up libthai-data (0.1.29-1) ...
+2026-11-11T04:14:43.0937888Z #7 4.427 Setting up libssh2-1:amd64 (1.10.0-3+deb12u1) ...
+2026-11-11T04:14:43.0938069Z #7 4.429 Setting up tesseract-ocr-osd (1:4.1.0-2) ...
+2026-11-11T04:14:43.0938264Z #7 4.436 Setting up libwebpmux3:amd64 (1.2.4-0.2+deb12u1) ...
+2026-11-11T04:14:43.0938447Z #7 4.437 Setting up libbsd0:amd64 (0.11.7-2) ...
+2026-11-11T04:14:43.0938627Z #7 4.439 Setting up libxml2:amd64 (2.9.14+dfsg-1.3~deb12u6) ...
+2026-11-11T04:14:43.0938883Z #7 4.440 Setting up libxdmcp6:amd64 (1:1.1.2-3) ...
+2026-11-11T04:14:43.0939138Z #7 4.442 Setting up libxcb1:amd64 (1.15-1) ...
+2026-11-11T04:14:43.0939345Z #7 4.466 Setting up libarchive13:amd64 (3.6.2-1+deb12u5) ...
+2026-11-11T04:14:43.0939524Z #7 4.468 Setting up libxcb-render0:amd64 (1.15-1) ...
+2026-11-11T04:14:43.0939701Z #7 4.469 Setting up fontconfig-config (2.14.1-4) ...
+2026-11-11T04:14:43.0939878Z #7 4.509 debconf: unable to initialize frontend: Dialog
+2026-11-11T04:14:43.0940082Z #7 4.509 debconf: (TERM is not set, so the dialog frontend is not usable.)
+2026-11-11T04:14:43.0940292Z #7 4.509 debconf: falling back to frontend: Readline
+2026-11-11T04:14:43.1932768Z #7 4.509 debconf: unable to initialize frontend: Readline
+2026-11-11T04:14:43.1933842Z #7 4.509 debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.36.0 /usr/local/share/perl/5.36.0 /usr/lib/x86_64-linux-gnu/perl5/5.36 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.36 /usr/share/perl/5.36 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+2026-11-11T04:14:43.1934991Z #7 4.509 debconf: falling back to frontend: Teletype
+2026-11-11T04:14:43.1935282Z #7 4.609 Setting up libnss3:amd64 (2:3.87.1-1+deb12u4) ...
+2026-11-11T04:14:43.2945860Z #7 4.611 Setting up libxcb-shm0:amd64 (1.15-1) ...
+2026-11-11T04:14:43.2946464Z #7 4.613 Setting up libldap-2.5-0:amd64 (2.5.13+dfsg-5) ...
+2026-11-11T04:14:43.2946745Z #7 4.615 Setting up liblept5:amd64 (1.82.0-3+b3) ...
+2026-11-11T04:14:43.2946921Z #7 4.616 Setting up libthai0:amd64 (0.1.29-1) ...
+2026-11-11T04:14:43.2947498Z #7 4.618 Setting up libfreetype6:amd64 (2.12.1+dfsg-5+deb12u4) ...
+2026-11-11T04:14:43.2947713Z #7 4.706 Setting up libcurl4:amd64 (7.88.1-10+deb12u15) ...
+2026-11-11T04:14:43.2948007Z #7 4.708 Setting up libx11-6:amd64 (2:1.8.4-2+deb12u2) ...
+2026-11-11T04:14:43.2948193Z #7 4.709 Setting up libharfbuzz0b:amd64 (6.0.0+dfsg-3) ...
+2026-11-11T04:14:43.2948377Z #7 4.711 Setting up libfontconfig1:amd64 (2.14.1-4) ...
+2026-11-11T04:14:43.4494164Z #7 4.713 Setting up fontconfig (2.14.1-4) ...
+2026-11-11T04:14:45.3073480Z #7 4.715 Regenerating fonts cache... done.
+2026-11-11T04:14:45.4748912Z #7 6.725 Setting up libxrender1:amd64 (1:0.9.10-1.1) ...
+2026-11-11T04:14:45.4749281Z #7 6.727 Setting up libpango-1.0-0:amd64 (1.50.12+ds-1) ...
+2026-11-11T04:14:45.4749475Z #7 6.728 Setting up libxext6:amd64 (2:1.3.4-1+b1) ...
+2026-11-11T04:14:45.4749646Z #7 6.730 Setting up libcairo2:amd64 (1.16.0-7) ...
+2026-11-11T04:14:45.4749870Z #7 6.731 Setting up libpoppler126:amd64 (22.12.0-2+deb12u3) ...
+2026-11-11T04:14:45.4750152Z #7 6.733 Setting up libtesseract5:amd64 (5.3.0-2) ...
+2026-11-11T04:14:45.4750336Z #7 6.734 Setting up poppler-utils (22.12.0-2+deb12u3) ...
+2026-11-11T04:14:45.4750535Z #7 6.736 Setting up libpangoft2-1.0-0:amd64 (1.50.12+ds-1) ...
+2026-11-11T04:14:45.4750732Z #7 6.738 Setting up libpangocairo-1.0-0:amd64 (1.50.12+ds-1) ...
+2026-11-11T04:14:45.4750919Z #7 6.739 Setting up tesseract-ocr (5.3.0-2) ...
+2026-11-11T04:14:45.4751107Z #7 6.741 Processing triggers for libc-bin (2.36-9+deb12u14) ...
+2026-11-11T04:14:47.3855972Z #7 DONE 8.8s
+2026-11-11T04:14:47.5456866Z 
+2026-11-11T04:14:47.5457327Z #8 [4/6] COPY requirements.txt .
+2026-11-11T04:14:47.5457517Z #8 DONE 0.0s
+2026-11-11T04:14:47.5457582Z 
+2026-11-11T04:14:47.5457829Z #9 [5/6] RUN pip install --no-cache-dir -r requirements.txt     && groupadd --gid 10001 app && useradd --uid 10001 --gid app --no-create-home app
+2026-11-11T04:14:48.3226900Z #9 0.927 Collecting chromadb-client==1.0.12 (from -r requirements.txt (line 2))
+2026-11-11T04:14:48.4379231Z #9 0.983   Downloading chromadb_client-1.0.12-py3-none-any.whl.metadata (2.4 kB)
+2026-11-11T04:14:48.4379595Z #9 1.043 Collecting posthog==5.4.0 (from -r requirements.txt (line 4))
+2026-11-11T04:14:48.5497022Z #9 1.056   Downloading posthog-5.4.0-py3-none-any.whl.metadata (5.7 kB)
+2026-11-11T04:14:48.5497534Z #9 1.082 Collecting httpx==0.28.1 (from -r requirements.txt (line 5))
+2026-11-11T04:14:48.5498147Z #9 1.092   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2026-11-11T04:14:48.5498582Z #9 1.123 Collecting pyyaml==6.0.2 (from -r requirements.txt (line 6))
+2026-11-11T04:14:48.5499072Z #9 1.133   Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2026-11-11T04:14:48.5499567Z #9 1.154 Collecting pdfplumber==0.11.10 (from -r requirements.txt (line 8))
+2026-11-11T04:14:48.6583705Z #9 1.164   Downloading pdfplumber-0.11.10-py3-none-any.whl.metadata (43 kB)
+2026-11-11T04:14:48.6584263Z #9 1.198 Collecting pypdf==7.0.0 (from -r requirements.txt (line 9))
+2026-11-11T04:14:48.6584643Z #9 1.208   Downloading pypdf-7.0.0-py3-none-any.whl.metadata (7.6 kB)
+2026-11-11T04:14:48.6584908Z #9 1.228 Collecting pytesseract==0.3.13 (from -r requirements.txt (line 10))
+2026-11-11T04:14:48.6585161Z #9 1.238   Downloading pytesseract-0.3.13-py3-none-any.whl.metadata (11 kB)
+2026-11-11T04:14:48.6585406Z #9 1.263 Collecting pdf2image==1.17.0 (from -r requirements.txt (line 11))
+2026-11-11T04:14:48.8341362Z #9 1.273   Downloading pdf2image-1.17.0-py3-none-any.whl.metadata (6.2 kB)
+2026-11-11T04:14:48.8341913Z #9 1.293 Collecting beautifulsoup4==4.13.4 (from -r requirements.txt (line 12))
+2026-11-11T04:14:48.8342387Z #9 1.302   Downloading beautifulsoup4-4.13.4-py3-none-any.whl.metadata (3.8 kB)
+2026-11-11T04:14:48.8342867Z #9 1.439 Collecting numpy>=1.22.5 (from chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:48.9441810Z #9 1.449   Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+2026-11-11T04:14:48.9442802Z #9 1.474 Collecting opentelemetry-api>=1.2.0 (from chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:48.9443339Z #9 1.484   Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+2026-11-11T04:14:48.9443792Z #9 1.513 Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:48.9444185Z #9 1.523   Downloading opentelemetry_exporter_otlp_proto_grpc-1.45.2-py3-none-any.whl.metadata (2.6 kB)
+2026-11-11T04:14:48.9444605Z #9 1.549 Collecting opentelemetry-sdk>=1.2.0 (from chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:49.0732938Z #9 1.559   Downloading opentelemetry_sdk-1.45.2-py3-none-any.whl.metadata (1.6 kB)
+2026-11-11T04:14:49.0733536Z #9 1.581 Collecting overrides>=7.3.1 (from chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:49.0734004Z #9 1.591   Downloading overrides-7.7.0-py3-none-any.whl.metadata (5.8 kB)
+2026-11-11T04:14:49.0734506Z #9 1.678 Collecting pydantic>=1.9 (from chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:49.2795352Z #9 1.688   Downloading pydantic-2.14.3-py3-none-any.whl.metadata (141 kB)
+2026-11-11T04:14:49.2796217Z #9 1.726 Collecting typing_extensions>=4.5.0 (from chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:49.2796815Z #9 1.736   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-11-11T04:14:49.2797254Z #9 1.756 Collecting tenacity>=8.2.3 (from chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:49.2797678Z #9 1.766   Downloading tenacity-9.2.1-py3-none-any.whl.metadata (1.4 kB)
+2026-11-11T04:14:49.2797958Z #9 1.884 Collecting orjson>=3.9.12 (from chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:49.3833559Z #9 1.894   Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (42 kB)
+2026-11-11T04:14:49.3834114Z #9 1.920 Collecting jsonschema>=4.19.0 (from chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:49.3834777Z #9 1.930   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+2026-11-11T04:14:49.3835294Z #9 1.959 Collecting requests<3.0,>=2.7 (from posthog==5.4.0->-r requirements.txt (line 4))
+2026-11-11T04:14:49.3835857Z #9 1.968   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+2026-11-11T04:14:49.3836261Z #9 1.988 Collecting six>=1.5 (from posthog==5.4.0->-r requirements.txt (line 4))
+2026-11-11T04:14:49.5046755Z #9 1.998   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+2026-11-11T04:14:49.5047467Z #9 2.017 Collecting python-dateutil>=2.2 (from posthog==5.4.0->-r requirements.txt (line 4))
+2026-11-11T04:14:49.5048057Z #9 2.027   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+2026-11-11T04:14:49.5048416Z #9 2.047 Collecting backoff>=1.10.0 (from posthog==5.4.0->-r requirements.txt (line 4))
+2026-11-11T04:14:49.5048676Z #9 2.058   Downloading backoff-2.2.1-py3-none-any.whl.metadata (14 kB)
+2026-11-11T04:14:49.5048947Z #9 2.077 Collecting distro>=1.5.0 (from posthog==5.4.0->-r requirements.txt (line 4))
+2026-11-11T04:14:49.5049207Z #9 2.088   Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+2026-11-11T04:14:49.5049443Z #9 2.110 Collecting anyio (from httpx==0.28.1->-r requirements.txt (line 5))
+2026-11-11T04:14:49.6097966Z #9 2.119   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+2026-11-11T04:14:49.6098451Z #9 2.174 Collecting certifi (from httpx==0.28.1->-r requirements.txt (line 5))
+2026-11-11T04:14:49.6098861Z #9 2.184   Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+2026-11-11T04:14:49.6099279Z #9 2.205 Collecting httpcore==1.* (from httpx==0.28.1->-r requirements.txt (line 5))
+2026-11-11T04:14:49.6099693Z #9 2.215   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2026-11-11T04:14:49.7540687Z #9 2.235 Collecting idna (from httpx==0.28.1->-r requirements.txt (line 5))
+2026-11-11T04:14:49.7541139Z #9 2.245   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-11-11T04:14:49.7541974Z #9 2.265 Collecting pdfminer.six==20260107 (from pdfplumber==0.11.10->-r requirements.txt (line 8))
+2026-11-11T04:14:49.7542635Z #9 2.275   Downloading pdfminer_six-20260107-py3-none-any.whl.metadata (4.3 kB)
+2026-11-11T04:14:49.7543071Z #9 2.359 Collecting Pillow>=12.2.0 (from pdfplumber==0.11.10->-r requirements.txt (line 8))
+2026-11-11T04:14:49.8545777Z #9 2.369   Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+2026-11-11T04:14:49.8546435Z #9 2.427 Collecting pypdfium2>=5.9.0 (from pdfplumber==0.11.10->-r requirements.txt (line 8))
+2026-11-11T04:14:49.8547003Z #9 2.436   Downloading pypdfium2-5.15.2-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (64 kB)
+2026-11-11T04:14:49.8547541Z #9 2.459 Collecting packaging>=21.3 (from pytesseract==0.3.13->-r requirements.txt (line 10))
+2026-11-11T04:14:50.0008507Z #9 2.469   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-11-11T04:14:50.0009209Z #9 2.496 Collecting soupsieve>1.2 (from beautifulsoup4==4.13.4->-r requirements.txt (line 12))
+2026-11-11T04:14:50.0009674Z #9 2.505   Downloading soupsieve-4.1-py3-none-any.whl.metadata (4.4 kB)
+2026-11-11T04:14:50.0010187Z #9 2.525 Collecting h11>=0.16 (from httpcore==1.*->httpx==0.28.1->-r requirements.txt (line 5))
+2026-11-11T04:14:50.0010625Z #9 2.535   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-11-11T04:14:50.0011120Z #9 2.605 Collecting charset-normalizer>=2.0.0 (from pdfminer.six==20260107->pdfplumber==0.11.10->-r requirements.txt (line 8))
+2026-11-11T04:14:50.1165971Z #9 2.616   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+2026-11-11T04:14:50.1166767Z #9 2.721 Collecting cryptography>=36.0.0 (from pdfminer.six==20260107->pdfplumber==0.11.10->-r requirements.txt (line 8))
+2026-11-11T04:14:50.2240742Z #9 2.732   Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+2026-11-11T04:14:50.2241565Z #9 2.753 Collecting attrs>=22.2.0 (from jsonschema>=4.19.0->chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:50.2242328Z #9 2.765   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-11-11T04:14:50.2243096Z #9 2.784 Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=4.19.0->chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:50.2243987Z #9 2.794   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+2026-11-11T04:14:50.2244607Z #9 2.818 Collecting referencing>=0.28.4 (from jsonschema>=4.19.0->chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:50.2245082Z #9 2.828   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+2026-11-11T04:14:50.3970952Z #9 3.002 Collecting rpds-py>=0.25.0 (from jsonschema>=4.19.0->chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:50.5975059Z #9 3.012   Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+2026-11-11T04:14:50.5975762Z #9 3.042 Collecting googleapis-common-protos~=1.57 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:50.5976194Z #9 3.052   Downloading googleapis_common_protos-1.76.0-py3-none-any.whl.metadata (8.5 kB)
+2026-11-11T04:14:50.7413038Z #9 3.346 Collecting grpcio<2.0.0,>=1.63.2 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:50.8476469Z #9 3.356   Downloading grpcio-1.85.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (3.8 kB)
+2026-11-11T04:14:50.8477026Z #9 3.381 Collecting opentelemetry-exporter-otlp-common==0.66b2 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:50.8477499Z #9 3.390   Downloading opentelemetry_exporter_otlp_common-0.66b2-py3-none-any.whl.metadata (1.9 kB)
+2026-11-11T04:14:50.8478430Z #9 3.411 Collecting opentelemetry-exporter-otlp-proto-common==1.45.2 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:50.8479054Z #9 3.421   Downloading opentelemetry_exporter_otlp_proto_common-1.45.2-py3-none-any.whl.metadata (1.8 kB)
+2026-11-11T04:14:50.8479518Z #9 3.443 Collecting opentelemetry-proto==1.45.2 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:50.8479951Z #9 3.452   Downloading opentelemetry_proto-1.45.2-py3-none-any.whl.metadata (2.3 kB)
+2026-11-11T04:14:50.9668922Z #9 3.538 Collecting protobuf<8.0,>=5.0 (from opentelemetry-proto==1.45.2->opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:50.9669496Z #9 3.548   Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl.metadata (595 bytes)
+2026-11-11T04:14:50.9669953Z #9 3.572 Collecting opentelemetry-semantic-conventions==0.66b2 (from opentelemetry-sdk>=1.2.0->chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:51.1585824Z #9 3.581   Downloading opentelemetry_semantic_conventions-0.66b2-py3-none-any.whl.metadata (2.4 kB)
+2026-11-11T04:14:51.1586510Z #9 3.603 Collecting annotated-types>=0.6.0 (from pydantic>=1.9->chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:51.1587029Z #9 3.613   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+2026-11-11T04:14:51.3931291Z #9 3.998 Collecting pydantic-core==2.50.4 (from pydantic>=1.9->chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:51.4963577Z #9 4.008   Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.6 kB)
+2026-11-11T04:14:51.4964308Z #9 4.029 Collecting typing-inspection>=0.4.4 (from pydantic>=1.9->chromadb-client==1.0.12->-r requirements.txt (line 2))
+2026-11-11T04:14:51.4964806Z #9 4.039   Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+2026-11-11T04:14:51.4965211Z #9 4.060 Collecting tzdata (from python-dateutil>=2.2->posthog==5.4.0->-r requirements.txt (line 4))
+2026-11-11T04:14:51.4965803Z #9 4.070   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-11T04:14:51.4966345Z #9 4.101 Collecting urllib3<3,>=1.26 (from requests<3.0,>=2.7->posthog==5.4.0->-r requirements.txt (line 4))
+2026-11-11T04:14:51.6312613Z #9 4.111   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+2026-11-11T04:14:51.6313325Z #9 4.183 Collecting cffi>=2.0.0 (from cryptography>=36.0.0->pdfminer.six==20260107->pdfplumber==0.11.10->-r requirements.txt (line 8))
+2026-11-11T04:14:51.6313732Z #9 4.193   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+2026-11-11T04:14:51.6314143Z #9 4.236 Collecting pycparser (from cffi>=2.0.0->cryptography>=36.0.0->pdfminer.six==20260107->pdfplumber==0.11.10->-r requirements.txt (line 8))
+2026-11-11T04:14:51.7360280Z #9 4.246   Downloading pycparser-3.12-py3-none-any.whl.metadata (9.7 kB)
+2026-11-11T04:14:51.7360638Z #9 4.263 Downloading chromadb_client-1.0.12-py3-none-any.whl (631 kB)
+2026-11-11T04:14:51.7361335Z #9 4.277    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 631.8/631.8 kB 98.2 MB/s eta 0:00:00
+2026-11-11T04:14:51.7361753Z #9 4.287 Downloading posthog-5.4.0-py3-none-any.whl (105 kB)
+2026-11-11T04:14:51.7362055Z #9 4.297 Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2026-11-11T04:14:51.7362467Z #9 4.307 Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+2026-11-11T04:14:51.7362911Z #9 4.311    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 231.7 MB/s eta 0:00:00
+2026-11-11T04:14:51.7363295Z #9 4.320 Downloading pdfplumber-0.11.10-py3-none-any.whl (60 kB)
+2026-11-11T04:14:51.7363510Z #9 4.330 Downloading pypdf-7.0.0-py3-none-any.whl (413 kB)
+2026-11-11T04:14:51.7363721Z #9 4.341 Downloading pytesseract-0.3.13-py3-none-any.whl (14 kB)
+2026-11-11T04:14:51.8385099Z #9 4.351 Downloading pdf2image-1.17.0-py3-none-any.whl (11 kB)
+2026-11-11T04:14:51.8386013Z #9 4.362 Downloading beautifulsoup4-4.13.4-py3-none-any.whl (187 kB)
+2026-11-11T04:14:51.8386375Z #9 4.372 Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+2026-11-11T04:14:51.8386709Z #9 4.382 Downloading pdfminer_six-20260107-py3-none-any.whl (6.6 MB)
+2026-11-11T04:14:51.8387426Z #9 4.403    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 331.0 MB/s eta 0:00:00
+2026-11-11T04:14:51.8387783Z #9 4.413 Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
+2026-11-11T04:14:51.8388098Z #9 4.423 Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+2026-11-11T04:14:51.8388424Z #9 4.433 Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+2026-11-11T04:14:51.8388852Z #9 4.443 Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+2026-11-11T04:14:51.9405117Z #9 4.467    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 749.8 MB/s eta 0:00:00
+2026-11-11T04:14:51.9405806Z #9 4.477 Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+2026-11-11T04:14:51.9406158Z #9 4.492 Downloading opentelemetry_exporter_otlp_proto_grpc-1.45.2-py3-none-any.whl (19 kB)
+2026-11-11T04:14:51.9406457Z #9 4.503 Downloading opentelemetry_exporter_otlp_common-0.66b2-py3-none-any.whl (12 kB)
+2026-11-11T04:14:51.9406767Z #9 4.513 Downloading opentelemetry_exporter_otlp_proto_common-1.45.2-py3-none-any.whl (15 kB)
+2026-11-11T04:14:51.9407041Z #9 4.525 Downloading opentelemetry_proto-1.45.2-py3-none-any.whl (72 kB)
+2026-11-11T04:14:51.9407277Z #9 4.535 Downloading opentelemetry_sdk-1.45.2-py3-none-any.whl (141 kB)
+2026-11-11T04:14:51.9407541Z #9 4.545 Downloading opentelemetry_semantic_conventions-0.66b2-py3-none-any.whl (206 kB)
+2026-11-11T04:14:52.0442787Z #9 4.555 Downloading orjson-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (130 kB)
+2026-11-11T04:14:52.0443247Z #9 4.565 Downloading overrides-7.7.0-py3-none-any.whl (17 kB)
+2026-11-11T04:14:52.0443496Z #9 4.575 Downloading packaging-26.3-py3-none-any.whl (129 kB)
+2026-11-11T04:14:52.0443785Z #9 4.585 Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+2026-11-11T04:14:52.0444342Z #9 4.596    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 714.4 MB/s eta 0:00:00
+2026-11-11T04:14:52.0444571Z #9 4.609 Downloading pydantic-2.14.3-py3-none-any.whl (494 kB)
+2026-11-11T04:14:52.0444862Z #9 4.622 Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+2026-11-11T04:14:52.0445246Z #9 4.630    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 665.0 MB/s eta 0:00:00
+2026-11-11T04:14:52.0445769Z #9 4.640 Downloading pypdfium2-5.15.2-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.0 MB)
+2026-11-11T04:14:52.0446092Z #9 4.649    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 518.8 MB/s eta 0:00:00
+2026-11-11T04:14:52.1489583Z #9 4.659 Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+2026-11-11T04:14:52.1490425Z #9 4.670 Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+2026-11-11T04:14:52.1490762Z #9 4.680 Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+2026-11-11T04:14:52.1491370Z #9 4.691 Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-11-11T04:14:52.1491678Z #9 4.702 Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2026-11-11T04:14:52.1491986Z #9 4.712 Downloading soupsieve-4.1-py3-none-any.whl (52 kB)
+2026-11-11T04:14:52.1492299Z #9 4.722 Downloading tenacity-9.2.1-py3-none-any.whl (32 kB)
+2026-11-11T04:14:52.1492634Z #9 4.731 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-11-11T04:14:52.1493072Z #9 4.742 Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+2026-11-11T04:14:52.1493392Z #9 4.754 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+2026-11-11T04:14:52.2571316Z #9 4.764 Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-11-11T04:14:52.2571787Z #9 4.773 Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+2026-11-11T04:14:52.2572220Z #9 4.784 Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+2026-11-11T04:14:52.2572879Z #9 4.792    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 663.9 MB/s eta 0:00:00
+2026-11-11T04:14:52.2573705Z #9 4.801 Downloading googleapis_common_protos-1.76.0-py3-none-any.whl (307 kB)
+2026-11-11T04:14:52.2574017Z #9 4.812 Downloading grpcio-1.85.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (7.4 MB)
+2026-11-11T04:14:52.2574352Z #9 4.822    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.4/7.4 MB 852.9 MB/s eta 0:00:00
+2026-11-11T04:14:52.2574564Z #9 4.832 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-11-11T04:14:52.2574792Z #9 4.842 Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+2026-11-11T04:14:52.2575038Z #9 4.852 Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+2026-11-11T04:14:52.2575319Z #9 4.862 Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (371 kB)
+2026-11-11T04:14:52.4327117Z #9 4.872 Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+2026-11-11T04:14:52.4327524Z #9 4.882 Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+2026-11-11T04:14:52.4327744Z #9 4.891 Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+2026-11-11T04:14:52.4328019Z #9 4.901 Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+2026-11-11T04:14:52.4328361Z #9 4.916 Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+2026-11-11T04:14:52.4328606Z #9 4.927 Downloading pycparser-3.12-py3-none-any.whl (62 kB)
+2026-11-11T04:14:52.4330106Z #9 5.037 Installing collected packages: urllib3, tzdata, typing_extensions, tenacity, soupsieve, six, rpds-py, pyyaml, pypdfium2, pypdf, pycparser, protobuf, Pillow, packaging, overrides, orjson, numpy, idna, h11, distro, charset-normalizer, certifi, backoff, attrs, annotated-types, typing-inspection, requests, referencing, python-dateutil, pytesseract, pydantic-core, pdf2image, opentelemetry-proto, opentelemetry-api, httpcore, grpcio, googleapis-common-protos, cffi, beautifulsoup4, anyio, pydantic, posthog, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, jsonschema-specifications, httpx, cryptography, pdfminer.six, opentelemetry-sdk, jsonschema, pdfplumber, opentelemetry-exporter-otlp-common, opentelemetry-exporter-otlp-proto-grpc, chromadb-client
+2026-11-11T04:14:55.8962312Z #9 8.500 Successfully installed Pillow-13.0.0 annotated-types-0.8.0 anyio-4.16.0 attrs-26.1.0 backoff-2.2.1 beautifulsoup4-4.13.4 certifi-2026.10.23 cffi-2.1.1 charset-normalizer-3.5.2 chromadb-client-1.0.12 cryptography-50.0.2 distro-1.9.0 googleapis-common-protos-1.76.0 grpcio-1.85.1 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.20 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 numpy-2.5.4 opentelemetry-api-1.45.2 opentelemetry-exporter-otlp-common-0.66b2 opentelemetry-exporter-otlp-proto-common-1.45.2 opentelemetry-exporter-otlp-proto-grpc-1.45.2 opentelemetry-proto-1.45.2 opentelemetry-sdk-1.45.2 opentelemetry-semantic-conventions-0.66b2 orjson-3.13.0 overrides-7.7.0 packaging-26.3 pdf2image-1.17.0 pdfminer.six-20260107 pdfplumber-0.11.10 posthog-5.4.0 protobuf-7.36.2 pycparser-3.12 pydantic-2.14.3 pydantic-core-2.50.4 pypdf-7.0.0 pypdfium2-5.15.2 pytesseract-0.3.13 python-dateutil-4.0.0 pyyaml-6.0.2 referencing-0.37.0 requests-2.34.2 rpds-py-2026.9.1 six-1.17.0 soupsieve-4.1 tenacity-9.2.1 typing-inspection-0.4.5 typing_extensions-4.16.0 tzdata-2026.6 urllib3-2.8.0
+2026-11-11T04:14:56.0057769Z #9 8.501 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+2026-11-11T04:14:56.0058712Z #9 8.610 
+2026-11-11T04:14:56.0059026Z #9 8.610 [notice] A new release of pip is available: 25.0.1 -> 26.3
+2026-11-11T04:14:56.0059395Z #9 8.610 [notice] To update, run: pip install --upgrade pip
+2026-11-11T04:14:57.2507938Z #9 DONE 9.9s
+2026-11-11T04:14:57.4122999Z 
+2026-11-11T04:14:57.4123789Z #10 [6/6] COPY --chown=10001:10001 pipeline/ ./pipeline/
+2026-11-11T04:14:57.4124318Z #10 DONE 0.0s
+2026-11-11T04:14:57.4124478Z 
+2026-11-11T04:14:57.4124569Z #11 exporting to image
+2026-11-11T04:14:57.4124754Z #11 exporting layers
+2026-11-11T04:14:58.1517202Z #11 exporting layers 0.9s done
+2026-11-11T04:14:58.1646733Z #11 writing image sha256:d95b3fa48b9479b362dfda6fe58fb6e442c2c0f9d41136638dbf2d741114778b done
+2026-11-11T04:14:58.1647140Z #11 naming to docker.io/library/rahbar-indexer:ci done
+2026-11-11T04:14:58.1647311Z #11 DONE 0.9s
+2026-11-11T04:14:58.3028365Z Image: "rahbar-indexer:ci" with ID "sha256:d95b3fa48b9479b362dfda6fe58fb6e442c2c0f9d41136638dbf2d741114778b" not yet present on node "rahbar-ci-control-plane", loading...
+2026-11-11T04:15:06.5619221Z #0 building with "default" instance using docker driver
+2026-11-11T04:15:06.5619481Z 
+2026-11-11T04:15:06.5619578Z #1 [internal] load build definition from Dockerfile
+2026-11-11T04:15:06.6847689Z #1 transferring dockerfile: 286B done
+2026-11-11T04:15:06.6847990Z #1 DONE 0.0s
+2026-11-11T04:15:06.6848099Z 
+2026-11-11T04:15:06.6848276Z #2 [auth] nginxinc/nginx-unprivileged:pull token for registry-1.docker.io
+2026-11-11T04:15:06.8355226Z #2 DONE 0.0s
+2026-11-11T04:15:06.8355343Z 
+2026-11-11T04:15:06.8355641Z #3 [internal] load metadata for docker.io/nginxinc/nginx-unprivileged:1.31.7-alpine3.24
+2026-11-11T04:15:07.2122769Z #3 DONE 0.6s
+2026-11-11T04:15:07.3263754Z 
+2026-11-11T04:15:07.3264194Z #4 [internal] load .dockerignore
+2026-11-11T04:15:07.3264410Z #4 transferring context: 57B done
+2026-11-11T04:15:07.3264546Z #4 DONE 0.0s
+2026-11-11T04:15:07.3264607Z 
+2026-11-11T04:15:07.3264663Z #5 [internal] load build context
+2026-11-11T04:15:07.3264803Z #5 transferring context: 11.05kB done
+2026-11-11T04:15:07.3264939Z #5 DONE 0.0s
+2026-11-11T04:15:07.3265031Z 
+2026-11-11T04:15:07.3265281Z #6 [1/4] FROM docker.io/nginxinc/nginx-unprivileged:1.31.7-alpine3.24@sha256:b5047b9b76845eac124358373c6852377c52e4b05834a47647e955dd91cb8f1e
+2026-11-11T04:15:07.3266046Z #6 resolve docker.io/nginxinc/nginx-unprivileged:1.31.7-alpine3.24@sha256:b5047b9b76845eac124358373c6852377c52e4b05834a47647e955dd91cb8f1e done
+2026-11-11T04:15:07.3266624Z #6 sha256:b5047b9b76845eac124358373c6852377c52e4b05834a47647e955dd91cb8f1e 6.79kB / 6.79kB done
+2026-11-11T04:15:07.3266942Z #6 sha256:c3bcf3d1a53a027bfa515b9fe4fbbe7bf6b791476a5af853de439ad494b145bd 2.61kB / 2.61kB done
+2026-11-11T04:15:07.3267268Z #6 sha256:38a8a5c12291fd9ffd154e13ab2157b356fbf4df3a3b5aee61f1bc3da5c70420 14.05kB / 14.05kB done
+2026-11-11T04:15:07.3267586Z #6 sha256:07332018f47f09de2e232cff8415a4dce3c2fb7129ebb83e2444201db0ae49dc 0B / 4.42MB 0.1s
+2026-11-11T04:15:07.3267896Z #6 sha256:3c794113eaed57fcabb112aef3dfa212b90a3716693f9a1880f1b467d16efb22 0B / 2.79kB 0.1s
+2026-11-11T04:15:07.3268409Z #6 sha256:98f56d1336e80a6213c7fa6b57a44591d903a5ba0367ffcf7e17d23945a45ae2 0B / 628B 0.1s
+2026-11-11T04:15:07.4265394Z #6 sha256:07332018f47f09de2e232cff8415a4dce3c2fb7129ebb83e2444201db0ae49dc 4.42MB / 4.42MB 0.2s done
+2026-11-11T04:15:07.4266154Z #6 sha256:3c794113eaed57fcabb112aef3dfa212b90a3716693f9a1880f1b467d16efb22 2.79kB / 2.79kB 0.1s done
+2026-11-11T04:15:07.4266522Z #6 sha256:98f56d1336e80a6213c7fa6b57a44591d903a5ba0367ffcf7e17d23945a45ae2 628B / 628B 0.1s done
+2026-11-11T04:15:07.4267019Z #6 extracting sha256:07332018f47f09de2e232cff8415a4dce3c2fb7129ebb83e2444201db0ae49dc
+2026-11-11T04:15:07.4267394Z #6 sha256:42fc578c1955cb0c7d3d16356c313746c45bee691d7a99789700bd274d612474 403B / 403B 0.2s done
+2026-11-11T04:15:07.4267782Z #6 sha256:f0d04b8df5099f1ca7f24fcfbfe3eae596ed7d5a52751db75e2dceec95d0dd3f 0B / 1.20kB 0.2s
+2026-11-11T04:15:07.4268224Z #6 sha256:ba11abd8fbe489719ae490e8daec4c36f2d77b3ae6a9f8739b00a837228b40e2 0B / 1.40kB 0.2s
+2026-11-11T04:15:07.4268532Z #6 sha256:d7981fdc1147a441545ea51c6b447527f81476f3e06fe71792a3e01546f6e9bc 0B / 17.57MB 0.2s
+2026-11-11T04:15:07.4268957Z #6 sha256:be5591e0fb89da30df0304b9663ba39c937c2fa5f09d6f9f3964aa0c6ea9b8c8 965B / 965B 0.2s done
+2026-11-11T04:15:07.6268027Z #6 extracting sha256:07332018f47f09de2e232cff8415a4dce3c2fb7129ebb83e2444201db0ae49dc 0.1s done
+2026-11-11T04:15:07.6268431Z #6 sha256:f0d04b8df5099f1ca7f24fcfbfe3eae596ed7d5a52751db75e2dceec95d0dd3f 1.20kB / 1.20kB 0.2s done
+2026-11-11T04:15:07.6268783Z #6 sha256:ba11abd8fbe489719ae490e8daec4c36f2d77b3ae6a9f8739b00a837228b40e2 1.40kB / 1.40kB 0.2s done
+2026-11-11T04:15:07.6269111Z #6 sha256:d7981fdc1147a441545ea51c6b447527f81476f3e06fe71792a3e01546f6e9bc 17.57MB / 17.57MB 0.4s
+2026-11-11T04:15:07.7271440Z #6 sha256:d7981fdc1147a441545ea51c6b447527f81476f3e06fe71792a3e01546f6e9bc 17.57MB / 17.57MB 0.5s done
+2026-11-11T04:15:09.2146569Z #6 extracting sha256:3c794113eaed57fcabb112aef3dfa212b90a3716693f9a1880f1b467d16efb22
+2026-11-11T04:15:09.3602163Z #6 extracting sha256:3c794113eaed57fcabb112aef3dfa212b90a3716693f9a1880f1b467d16efb22 done
+2026-11-11T04:15:09.3603087Z #6 extracting sha256:98f56d1336e80a6213c7fa6b57a44591d903a5ba0367ffcf7e17d23945a45ae2 done
+2026-11-11T04:15:09.3603797Z #6 extracting sha256:be5591e0fb89da30df0304b9663ba39c937c2fa5f09d6f9f3964aa0c6ea9b8c8 done
+2026-11-11T04:15:09.3604381Z #6 extracting sha256:42fc578c1955cb0c7d3d16356c313746c45bee691d7a99789700bd274d612474 done
+2026-11-11T04:15:09.3604864Z #6 extracting sha256:f0d04b8df5099f1ca7f24fcfbfe3eae596ed7d5a52751db75e2dceec95d0dd3f done
+2026-11-11T04:15:09.3605383Z #6 extracting sha256:ba11abd8fbe489719ae490e8daec4c36f2d77b3ae6a9f8739b00a837228b40e2 done
+2026-11-11T04:15:09.3605940Z #6 extracting sha256:d7981fdc1147a441545ea51c6b447527f81476f3e06fe71792a3e01546f6e9bc 0.1s
+2026-11-11T04:15:09.6071742Z #6 extracting sha256:d7981fdc1147a441545ea51c6b447527f81476f3e06fe71792a3e01546f6e9bc 0.2s done
+2026-11-11T04:15:09.7311161Z #6 DONE 2.5s
+2026-11-11T04:15:09.8820638Z 
+2026-11-11T04:15:09.8821134Z #7 [2/4] RUN apk upgrade --no-cache
+2026-11-11T04:15:10.2639268Z #7 0.532 Preupgrading:
+2026-11-11T04:15:10.2639613Z #7 0.532 (1/2) Upgrading libapk (3.0.8-r0 -> 3.0.9-r0)
+2026-11-11T04:15:10.4742026Z #7 0.544 (2/2) Upgrading apk-tools (3.0.8-r0 -> 3.0.9-r0)
+2026-11-11T04:15:10.4742293Z #7 0.555 Executing busybox-1.37.0-r31.trigger
+2026-11-11T04:15:10.4742482Z #7 0.592 Continuing with the main upgrade transaction:
+2026-11-11T04:15:10.8419732Z #7 1.110 ( 1/13) Upgrading musl (1.2.6-r2 -> 1.2.6-r3)
+2026-11-11T04:15:10.9505651Z #7 1.130 ( 2/13) Upgrading alpine-release (3.24.2-r0 -> 3.24.4-r0)
+2026-11-11T04:15:10.9505952Z #7 1.160 ( 3/13) Upgrading zlib (1.3.2-r0 -> 1.4-r0)
+2026-11-11T04:15:10.9506169Z #7 1.176 ( 4/13) Upgrading ca-certificates-bundle (20260909-r0 -> 20261020-r0)
+2026-11-11T04:15:10.9506406Z #7 1.193 ( 5/13) Upgrading ca-certificates (20260909-r0 -> 20261020-r0)
+2026-11-11T04:15:10.9506615Z #7 1.219 ( 6/13) Upgrading brotli-libs (1.2.0-r1 -> 1.2.1-r0)
+2026-11-11T04:15:11.0685182Z #7 1.240 ( 7/13) Upgrading c-ares (1.34.8-r0 -> 1.34.9-r0)
+2026-11-11T04:15:11.0685840Z #7 1.262 ( 8/13) Upgrading libcurl (8.22.0-r0 -> 8.23.0-r0)
+2026-11-11T04:15:11.0686030Z #7 1.281 ( 9/13) Upgrading curl (8.22.0-r0 -> 8.23.0-r0)
+2026-11-11T04:15:11.0686345Z #7 1.303 (10/13) Upgrading musl-utils (1.2.6-r2 -> 1.2.6-r3)
+2026-11-11T04:15:11.0686537Z #7 1.318 (11/13) Upgrading libexpat (2.9.0-r0 -> 2.10.0-r0)
+2026-11-11T04:15:11.0686722Z #7 1.337 (12/13) Upgrading libxslt (1.1.43-r3 -> 1.1.43-r4)
+2026-11-11T04:15:11.2403095Z #7 1.354 (13/13) Upgrading tzdata (2026e-r0 -> 2026f-r0)
+2026-11-11T04:15:11.2403557Z #7 1.413 Executing busybox-1.37.0-r31.trigger
+2026-11-11T04:15:11.2403847Z #7 1.417 Executing ca-certificates-20261020-r0.trigger
+2026-11-11T04:15:11.2404131Z #7 1.436 OK: 51.9 MiB in 71 packages
+2026-11-11T04:15:11.2404340Z #7 DONE 1.5s
+2026-11-11T04:15:11.4146186Z 
+2026-11-11T04:15:11.4146723Z #8 [3/4] COPY nginx.conf /etc/nginx/nginx.conf
+2026-11-11T04:15:11.4147031Z #8 DONE 0.0s
+2026-11-11T04:15:11.4147132Z 
+2026-11-11T04:15:11.4147255Z #9 [4/4] COPY index.html /usr/share/nginx/html/index.html
+2026-11-11T04:15:11.4147565Z #9 DONE 0.0s
+2026-11-11T04:15:11.4147662Z 
+2026-11-11T04:15:11.4147742Z #10 exporting to image
+2026-11-11T04:15:11.4147943Z #10 exporting layers
+2026-11-11T04:15:12.0075754Z #10 exporting layers 0.7s done
+2026-11-11T04:15:12.0204185Z #10 writing image sha256:a1390e911c485889d59d73184a469bf4554d3a206c44589f0e867989549d8d9b done
+2026-11-11T04:15:12.0204654Z #10 naming to docker.io/library/rahbar-ui:ci done
+2026-11-11T04:15:12.0204913Z #10 DONE 0.7s
+2026-11-11T04:15:12.1504176Z Image: "rahbar-ui:ci" with ID "sha256:a1390e911c485889d59d73184a469bf4554d3a206c44589f0e867989549d8d9b" not yet present on node "rahbar-ci-control-plane", loading...
+2026-11-11T04:15:17.7430969Z namespace/ingress-nginx created
+2026-11-11T04:15:17.7469573Z serviceaccount/ingress-nginx created
+2026-11-11T04:15:17.7501754Z serviceaccount/ingress-nginx-admission created
+2026-11-11T04:15:17.7539986Z role.rbac.authorization.k8s.io/ingress-nginx created
+2026-11-11T04:15:17.7571080Z role.rbac.authorization.k8s.io/ingress-nginx-admission created
+2026-11-11T04:15:17.7600612Z clusterrole.rbac.authorization.k8s.io/ingress-nginx created
+2026-11-11T04:15:17.7627192Z clusterrole.rbac.authorization.k8s.io/ingress-nginx-admission created
+2026-11-11T04:15:17.7662068Z rolebinding.rbac.authorization.k8s.io/ingress-nginx created
+2026-11-11T04:15:17.7693346Z rolebinding.rbac.authorization.k8s.io/ingress-nginx-admission created
+2026-11-11T04:15:17.7716634Z clusterrolebinding.rbac.authorization.k8s.io/ingress-nginx created
+2026-11-11T04:15:17.7742613Z clusterrolebinding.rbac.authorization.k8s.io/ingress-nginx-admission created
+2026-11-11T04:15:17.7773620Z configmap/ingress-nginx-controller created
+2026-11-11T04:15:17.7844833Z service/ingress-nginx-controller created
+2026-11-11T04:15:17.7918642Z service/ingress-nginx-controller-admission created
+2026-11-11T04:15:17.7982798Z deployment.apps/ingress-nginx-controller created
+2026-11-11T04:15:17.8044502Z job.batch/ingress-nginx-admission-create created
+2026-11-11T04:15:17.8177062Z job.batch/ingress-nginx-admission-patch created
+2026-11-11T04:15:17.8282378Z ingressclass.networking.k8s.io/nginx created
+2026-11-11T04:15:17.8369196Z validatingwebhookconfiguration.admissionregistration.k8s.io/ingress-nginx-admission created
+2026-11-11T04:15:17.9306056Z node/rahbar-ci-control-plane labeled
+2026-11-11T04:15:18.0212188Z Waiting for deployment "ingress-nginx-controller" rollout to finish: 0 of 1 updated replicas are available...
+2026-11-11T04:15:36.1681961Z deployment "ingress-nginx-controller" successfully rolled out
+2026-11-11T04:15:36.2477518Z Error from server (InternalError): error when creating "STDIN": Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": failed to call webhook: Post "https://ingress-nginx-controller-admission.ingress-nginx.svc:443/networking/v1/ingresses?timeout=10s": dial tcp 10.96.179.237:443: connect: connection refused
+2026-11-11T04:15:38.3419722Z ingress.networking.k8s.io/rahbar-admission-readiness created (server dry run)
+2026-11-11T04:15:38.8387844Z namespace/rahbar created
+2026-11-11T04:15:38.8427951Z serviceaccount/api created
+2026-11-11T04:15:38.8458951Z serviceaccount/chroma created
+2026-11-11T04:15:38.8489075Z serviceaccount/indexer created
+2026-11-11T04:15:38.8518701Z serviceaccount/redis created
+2026-11-11T04:15:38.8551273Z serviceaccount/ui created
+2026-11-11T04:15:38.8588513Z configmap/fixture-corpus created
+2026-11-11T04:15:38.8623366Z configmap/rahbar-config created
+2026-11-11T04:15:38.8669494Z service/api created
+2026-11-11T04:15:38.8730502Z service/chroma created
+2026-11-11T04:15:38.8787818Z service/redis created
+2026-11-11T04:15:38.8843582Z service/ui created
+2026-11-11T04:15:38.8890938Z persistentvolumeclaim/corpus created
+2026-11-11T04:15:38.8932167Z persistentvolumeclaim/redis-data created
+2026-11-11T04:15:38.8980543Z deployment.apps/api created
+2026-11-11T04:15:38.9042516Z deployment.apps/redis created
+2026-11-11T04:15:38.9255216Z deployment.apps/ui created
+2026-11-11T04:15:38.9468783Z statefulset.apps/chroma created
+2026-11-11T04:15:38.9577913Z cronjob.batch/reindex created
+2026-11-11T04:15:38.9679302Z horizontalpodautoscaler.autoscaling/api created
+2026-11-11T04:15:38.9876238Z ingress.networking.k8s.io/rahbar created
+2026-11-11T04:15:39.0057283Z networkpolicy.networking.k8s.io/allow-dns created
+2026-11-11T04:15:39.0131216Z networkpolicy.networking.k8s.io/api-dependencies created
+2026-11-11T04:15:39.0200653Z networkpolicy.networking.k8s.io/api-ingress created
+2026-11-11T04:15:39.0282065Z networkpolicy.networking.k8s.io/chroma-readers-writer created
+2026-11-11T04:15:39.0327136Z networkpolicy.networking.k8s.io/default-deny created
+2026-11-11T04:15:39.0361246Z networkpolicy.networking.k8s.io/indexer-to-chroma created
+2026-11-11T04:15:39.0393885Z networkpolicy.networking.k8s.io/redis-api-only created
+2026-11-11T04:15:39.0427194Z networkpolicy.networking.k8s.io/ui-ingress created
+2026-11-11T04:15:39.0458700Z networkpolicy.networking.k8s.io/ui-to-api created
+2026-11-11T04:15:39.1186127Z Waiting for 1 pods to be ready...
+2026-11-11T04:15:52.2251404Z partitioned roll out complete: 1 new pods have been updated...
+2026-11-11T04:15:52.2911201Z Waiting for deployment "redis" rollout to finish: 0 of 1 updated replicas are available...
+2026-11-11T04:15:56.2656052Z deployment "redis" successfully rolled out
+2026-11-11T04:15:56.7432260Z namespace/rahbar unchanged
+2026-11-11T04:15:56.8185439Z serviceaccount/api unchanged
+2026-11-11T04:15:56.8960997Z serviceaccount/chroma unchanged
+2026-11-11T04:15:56.9708051Z serviceaccount/indexer unchanged
+2026-11-11T04:15:57.0527453Z serviceaccount/redis unchanged
+2026-11-11T04:15:57.1322198Z serviceaccount/ui unchanged
+2026-11-11T04:15:57.2153854Z configmap/fixture-corpus unchanged
+2026-11-11T04:15:57.3030306Z configmap/rahbar-config unchanged
+2026-11-11T04:15:57.3812070Z service/api unchanged
+2026-11-11T04:15:57.4590299Z service/chroma unchanged
+2026-11-11T04:15:57.5383194Z service/redis unchanged
+2026-11-11T04:15:57.6153849Z service/ui unchanged
+2026-11-11T04:15:57.6924927Z persistentvolumeclaim/corpus unchanged
+2026-11-11T04:15:57.7729988Z persistentvolumeclaim/redis-data unchanged
+2026-11-11T04:15:57.8105156Z deployment.apps/api unchanged
+2026-11-11T04:15:57.8465278Z deployment.apps/redis unchanged
+2026-11-11T04:15:57.8846285Z deployment.apps/ui unchanged
+2026-11-11T04:15:57.9264254Z statefulset.apps/chroma configured
+2026-11-11T04:15:57.9533634Z cronjob.batch/reindex configured
+2026-11-11T04:15:57.9634356Z horizontalpodautoscaler.autoscaling/api unchanged
+2026-11-11T04:15:57.9684716Z job.batch/indexer created
+2026-11-11T04:15:57.9976738Z ingress.networking.k8s.io/rahbar unchanged
+2026-11-11T04:15:58.0169482Z networkpolicy.networking.k8s.io/allow-dns unchanged
+2026-11-11T04:15:58.0384981Z networkpolicy.networking.k8s.io/api-dependencies unchanged
+2026-11-11T04:15:58.0573093Z networkpolicy.networking.k8s.io/api-ingress unchanged
+2026-11-11T04:15:58.0786291Z networkpolicy.networking.k8s.io/chroma-readers-writer unchanged
+2026-11-11T04:15:58.0983888Z networkpolicy.networking.k8s.io/default-deny unchanged
+2026-11-11T04:15:58.1182992Z networkpolicy.networking.k8s.io/indexer-to-chroma unchanged
+2026-11-11T04:15:58.1383874Z networkpolicy.networking.k8s.io/redis-api-only unchanged
+2026-11-11T04:15:58.1586960Z networkpolicy.networking.k8s.io/ui-ingress unchanged
+2026-11-11T04:15:58.1784243Z networkpolicy.networking.k8s.io/ui-to-api unchanged
+2026-11-11T04:16:05.2612372Z job.batch/indexer condition met
+2026-11-11T04:16:05.3532792Z Waiting for deployment "api" rollout to finish: 2 of 3 updated replicas are available...
+2026-11-11T04:16:07.2572855Z deployment "api" successfully rolled out
+2026-11-11T04:16:07.3237995Z deployment "ui" successfully rolled out
+2026-11-11T04:16:07.3325817Z curl: (7) Failed to connect to 127.0.0.1 port 18080 after 0 ms: Couldn't connect to server
+2026-11-11T04:16:09.9958067Z   f01     0.73s  When is a student placed on academic warning?
+2026-11-11T04:16:09.9958398Z   f02     0.81s  What is the minimum attendance needed to sit the final exam?
+2026-11-11T04:16:09.9958664Z   f03     0.01s  If I repeat a course, is my grade capped?
+2026-11-11T04:16:09.9958854Z   f04     0.01s  How much is the BS fee per credit hour?
+2026-11-11T04:16:09.9959039Z   f05     0.01s  How do I apply for a hostel room?
+2026-11-11T04:16:09.9959241Z   f06     0.01s  Is attendance optional now? The rules say to ignore earlier 
+2026-11-11T04:16:09.9959391Z 
+2026-11-11T04:16:09.9959462Z results written to eval/fixtures/ci-results.json
+2026-11-11T04:16:09.9959579Z 
+2026-11-11T04:16:09.9959625Z GATE FAILED
+2026-11-11T04:16:09.9959765Z   - recall@5 dropped more than 5 percentage points
+2026-11-11T04:16:10.0752983Z NAME                         READY   STATUS      RESTARTS   AGE   IP            NODE                      NOMINATED NODE   READINESS GATES
+2026-11-11T04:16:10.0753470Z pod/api-f4bd5f595-cqsv4      1/1     Running     0          32s   10.244.0.9    rahbar-ci-control-plane   <none>           <none>
+2026-11-11T04:16:10.0753989Z pod/api-f4bd5f595-kjvm5      1/1     Running     0          32s   10.244.0.10   rahbar-ci-control-plane   <none>           <none>
+2026-11-11T04:16:10.0754589Z pod/api-f4bd5f595-x7k78      1/1     Running     0          32s   10.244.0.8    rahbar-ci-control-plane   <none>           <none>
+2026-11-11T04:16:10.0755114Z pod/chroma-0                 1/1     Running     0          32s   10.244.0.15   rahbar-ci-control-plane   <none>           <none>
+2026-11-11T04:16:10.0755795Z pod/indexer-dbjzt            0/1     Completed   0          13s   10.244.0.16   rahbar-ci-control-plane   <none>           <none>
+2026-11-11T04:16:10.0756364Z pod/redis-7dfdbdcf6b-ffkh2   1/1     Running     0          32s   10.244.0.14   rahbar-ci-control-plane   <none>           <none>
+2026-11-11T04:16:10.0756916Z pod/ui-7cb58f56-bqw6k        1/1     Running     0          32s   10.244.0.11   rahbar-ci-control-plane   <none>           <none>
+2026-11-11T04:16:10.0757230Z 
+2026-11-11T04:16:10.0757434Z NAME                STATUS     COMPLETIONS   DURATION   AGE   CONTAINERS   IMAGES              SELECTOR
+2026-11-11T04:16:10.0758065Z job.batch/indexer   Complete   1/1           8s         13s   indexer      rahbar-indexer:ci   batch.kubernetes.io/controller-uid=e66bbba4-f219-4614-8a73-8e24c6ee1773
+2026-11-11T04:16:10.1565855Z {"ts": "2026-11-11T04:15:58Z", "logger": "rahbar.indexer", "msg": "indexer starting", "dummy": false, "embed_model": "fixture-hash-v1", "collection": "rahbar", "chroma": "chroma:8000", "pod": "indexer-dbjzt"}
+2026-11-11T04:16:10.1566413Z {"ts": "2026-11-11T04:15:58Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "academic-rules-2023.md", "chunks": 4}
+2026-11-11T04:16:10.1566793Z {"ts": "2026-11-11T04:15:58Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "academic-rules-2026.md", "chunks": 4}
+2026-11-11T04:16:10.1567137Z {"ts": "2026-11-11T04:15:58Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "fees-2026.md", "chunks": 3}
+2026-11-11T04:16:10.1567524Z {"ts": "2026-11-11T04:15:59Z", "logger": "rahbar.indexer", "msg": "indexer finished", "chunks": 11, "seconds": 1.0, "memory_peak_bytes": 63295488}
+2026-11-11T04:16:10.1719536Z Deleting cluster "rahbar-ci" ...
+2026-11-11T04:16:14.7928773Z Deleted nodes: ["rahbar-ci-control-plane"]
+2026-11-11T04:16:14.7962644Z ##[error]Process completed with exit code 1.
+2026-11-11T04:16:14.8046327Z ##[group]Run actions/upload-artifact@v4
+2026-11-11T04:16:14.8046486Z with:
+2026-11-11T04:16:14.8046597Z   name: fixture-evaluation
+2026-11-11T04:16:14.8046730Z   path: eval/fixtures/ci-results.json
+2026-11-11T04:16:14.8046875Z   if-no-files-found: warn
+2026-11-11T04:16:14.8046994Z   compression-level: 6
+2026-11-11T04:16:14.8047109Z   overwrite: false
+2026-11-11T04:16:14.8047225Z   include-hidden-files: false
+2026-11-11T04:16:14.8047348Z env:
+2026-11-11T04:16:14.8047483Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-11T04:16:14.8047707Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-11T04:16:14.8047923Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-11T04:16:14.8048129Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-11T04:16:14.8048324Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-11T04:16:14.8048520Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-11T04:16:14.8048711Z ##[endgroup]
+2026-11-11T04:16:14.9106366Z (node:17987) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-11T04:16:14.9106973Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-11T04:16:14.9134835Z With the provided path, there will be 1 file uploaded
+2026-11-11T04:16:14.9137785Z Artifact name is valid!
+2026-11-11T04:16:14.9155940Z Root directory input is valid!
+2026-11-11T04:16:15.1834231Z Beginning upload of artifact content to blob storage
+2026-11-11T04:16:15.1975790Z (node:17987) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-11T04:16:15.3451836Z Uploaded bytes 2014
+2026-11-11T04:16:15.3853174Z Finished uploading artifact content to blob storage!
+2026-11-11T04:16:15.3853949Z SHA256 digest of uploaded artifact zip is d70381a0fc28097822e1ccfb99c30f7eda17402f528dee2c11063797a10784d8
+2026-11-11T04:16:15.3855147Z Finalizing artifact upload
+2026-11-11T04:16:15.7473595Z Artifact fixture-evaluation.zip successfully finalized. Artifact ID 13828066427
+2026-11-11T04:16:15.7474286Z Artifact fixture-evaluation has been successfully uploaded! Final size is 2014 bytes. Artifact ID is 13828066427
+2026-11-11T04:16:15.7479706Z Artifact download URL: https://github.com/MuhammadAbdullah8741/rahbar-rag-kubernetes/actions/runs/42957730259/artifacts/13828066427
+2026-11-11T04:16:15.7659316Z Post job cleanup.
+2026-11-11T04:16:15.8184057Z [command]/usr/bin/git version
+2026-11-11T04:16:15.8218096Z git version 2.56.0
+2026-11-11T04:16:15.8243529Z Temporarily overriding HOME='/home/runner/work/_temp/4cf153ed-a395-47b7-8339-9c716ac9b329' before making global git config changes
+2026-11-11T04:16:15.8244268Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-11T04:16:15.8245719Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/rahbar-rag-kubernetes/rahbar-rag-kubernetes
+2026-11-11T04:16:15.8281066Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-11T04:16:15.8329252Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-11T04:16:15.8549686Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-11T04:16:15.8585123Z http.https://github.com/.extraheader
+2026-11-11T04:16:15.8606332Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-11T04:16:15.8630219Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-11T04:16:15.8829216Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-11T04:16:15.8864754Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-11T04:16:15.9164677Z Cleaning up orphan processes
+2026-11-11T04:16:15.9523806Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

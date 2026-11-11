@@ -1,8 +1,10 @@
 # Final verification — 8 November 2026
 
-The implementation and real corpus deployment are local to this Windows/WSL machine.
-Git commits, pushes, PR review, branch protection, Docker Hub publication and GitHub
-Actions execution are reserved for the students and have not been performed here.
+The local implementation and measurements below were recorded on 8 November 2026.
+External delivery resumed on 11 November 2026 with the student's authorization.
+The repository is public, dev is pushed, PR #1 is open, main is protected with one
+required approval and six required checks, and Docker Hub Actions secrets are set.
+See [GitHub evidence](evidence/github-runs.md) for current external delivery status.
 
 ## Implementation and checks
 
@@ -24,11 +26,11 @@ Actions execution are reserved for the students and have not been performed here
 | Browser | HTTP 200, no JavaScript errors, real cited Ollama answer and cache hit — `evidence/browser-check.json`, `evidence/live-chat.png` |
 | Restart recovery | Docker Desktop/minikube restarted; existing index survived; UI and cited-answer smoke test passed — `evidence/restart-smoke.txt` |
 
-The submission checker's two Git warnings remain for the students: few commits and
-one author so far. Its other warnings are heuristic misses: readiness explicitly
-checks nonempty collection count, cache rules exclude refusals/follow-ups, and the
-Job template has `restartPolicy: OnFailure`. Inspect the corresponding source and
-manifests rather than weakening working code to match a text-search heuristic.
+The saved submission-check report predates the final Git commits. Its heuristic
+warnings do not replace source inspection: readiness checks the nonempty collection,
+cache rules exclude refusals/follow-ups, and the Job uses `restartPolicy: OnFailure`.
+Run the checker again before submitting; do not fabricate commits or authorship to
+satisfy a count heuristic.
 
 The fresh kind fixture run achieved recall@3/@5, citation validity and required
 abstention correctness of 100%, with zero fallbacks. It used the deterministic
@@ -80,17 +82,19 @@ These are known quality limitations, not hidden successes. Further improvement
 should target the missed approval section, claim-to-citation support and unnecessary
 refusals. Source documents remain authoritative; the assistant is not a policy oracle.
 
-## Scope and remaining student work
+## External delivery and submission
 
-Read [the manual GitHub workflow](GIT-WORKFLOW.md). Both students must review and
-understand the code, add truthful revisions to `AI-USAGE.md`, make their own commits,
-push dev, configure main protection and required checks, and complete a genuine PR
-review. Capture a deliberately failing evaluation PR and its repaired passing gate.
-Configure Docker Hub repository secrets, merge the reviewed passing PR, and obtain
-a successful CD run and SHA-tagged image links. None of that external evidence is
-replaced by local tests or screenshots.
+PR #1: https://github.com/MuhammadAbdullah8741/rahbar-rag-kubernetes/pull/1
 
-Submit the repository URL, successful CD URL, Docker Hub image links and committed
-`eval/results.json` / `eval/baseline.json` on Google Classroom by **8 November 2026,
-23:59 PKT**. The local service can be opened at `http://localhost:18081` while the
-current port-forward runs; README documents restarting a forward on port 18080.
+The first GitHub e2e runs failed on nginx admission startup; the readiness fix is
+committed as `dd0a3bd` and corrected for Job TTL deletion in `9f9937e`.
+Both normal GitHub CI runs passed all six checks. The deliberate fixture-label
+regression then failed the recall gate at 0.80 versus baseline 1.00 and was reverted.
+A successful GitHub CI run is not a successful GitHub CD run.
+Remaining external requirements are tracked in [GitHub evidence](evidence/github-runs.md).
+Umar must review from his own account. No approval or contribution is impersonated.
+
+[Classroom handover](CLASSROOM-SUBMISSION.md) lists the exact four submission items.
+The manual states 8 November 2026 at 23:59 PKT and says late submissions are not
+accepted; work resumed on 11 November. The team must resolve submission acceptance
+with the instructor; no deadline extension is assumed.

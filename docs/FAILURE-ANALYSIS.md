@@ -90,3 +90,13 @@ The first repair run exposed a second startup assumption: nginx admission setup
 Jobs are TTL-deleted immediately after success, so waiting for their names can
 return NotFound even on a healthy installation. The repair now relies directly
 on the bounded server-side dry-run probe instead of those transient Job objects.
+
+## GitHub evaluation gate demonstration
+
+On 11 November, commit `9fd363c` deliberately changed one fixture's expected
+section label without changing retrieval or baseline. The deployed stack remained
+healthy, but recall@5 dropped from 1.00 to 0.80 and CI exited 1 with
+`GATE FAILED: recall@5 dropped more than 5 percentage points`. Citation membership
+and required abstention remained 1.00. This was an intentional gate test, not a real
+corpus improvement or a claim that the corrupted golden label was correct.
+See `evidence/github-gate-failed-results.json` and `evidence/github-runs.md`.
