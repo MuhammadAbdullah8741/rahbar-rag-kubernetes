@@ -78,3 +78,10 @@ multi-platform manifest issue: `kind load` requested blobs for platforms that ha
 not been downloaded. The optional local cache path imports only linux/amd64.
 Normal GitHub runs pull the manifest references directly. The final clean run is
 recorded separately from the interrupted attempts.
+
+The first GitHub e2e runs reached a ready nginx controller but failed when creating
+the application Ingress: the admission Service returned connection refused. Pod
+readiness was not proof that the webhook listener and routing were available.
+CI now waits for both certificate Jobs and retries a server-side dry-run Ingress
+through the actual admission path for a bounded period. It does not disable
+validation or persist the probe. This check is shared by CI and CD.
