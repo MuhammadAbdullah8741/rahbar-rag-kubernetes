@@ -122,8 +122,8 @@ def run_pipeline(settings: IndexerSettings) -> int:
 
     from .retention import retain
 
-    signatures = {}
-    versions = {}
+    signatures: dict[str, list[float]] = {}
+    versions: dict[str, str] = {}
     replacements = {}
     threshold = float(os.environ.get("NEAR_DUPLICATE_THRESHOLD", "0.99"))
     if not 0 < threshold <= 1:
@@ -178,8 +178,8 @@ def run_pipeline(settings: IndexerSettings) -> int:
         vector = document_vector(pieces, settings)
         scores = {name: sum(a*b for a, b in zip(vector, other, strict=True))
                   for name, other in signatures.items() if name != previous}
-        closest = max(scores, key=scores.get) if scores else None
-        score = scores.get(closest)
+        closest = max(scores, key=lambda name: scores[name]) if scores else None
+        score = scores[closest] if closest is not None else None
         unique = score is None or score < threshold
         log("near duplicate verification", source=path.name, passed=unique, closest=closest,
             cosine=score, threshold=threshold, excluded_predecessor=previous)

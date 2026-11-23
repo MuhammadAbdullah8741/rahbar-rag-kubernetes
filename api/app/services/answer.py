@@ -1,6 +1,7 @@
 """Retrieve, cache, generate, validate, and decline safely when evidence is missing."""
 
 from __future__ import annotations
+from typing import Any
 import logging
 import time
 import datetime
@@ -45,7 +46,7 @@ def answer_question(
     follow_up: bool = False,
 ) -> AskResponse:
     trace_started = time.perf_counter()
-    trace = {"trace_id": request_id_var.get(), "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    trace: dict[str, Any] = {"trace_id": request_id_var.get(), "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
              "user_query": question, "embedding_model": settings.embed_model, "embedding_version": settings.embed_model,
              "configured_collection": settings.collection, "guardrail_actions": []}
     trace_token = current.set(trace)

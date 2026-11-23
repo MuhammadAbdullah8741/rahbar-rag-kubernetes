@@ -1,4 +1,5 @@
 """Request-local, reproducible generation evidence, persisted per worker."""
+from typing import Any
 import contextvars
 import hashlib
 import json
@@ -6,7 +7,7 @@ import logging
 import os
 from pathlib import Path
 
-current = contextvars.ContextVar("trace", default=None)
+current: contextvars.ContextVar[dict[str, Any] | None] = contextvars.ContextVar("trace", default=None)
 
 
 def event(kind, **values):
