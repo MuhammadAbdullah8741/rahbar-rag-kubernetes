@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: indexer
+  name: a3-storage
+  namespace: rahbar
+spec:
+  containers:
+  - command:
+    - sleep
+    - '86400'
+    image: rahbar-indexer:a3
+    imagePullPolicy: Never
+    name: storage
+    resources:
+      limits:
+        cpu: 200m
+        memory: 256Mi
+      requests:
+        cpu: 10m
+        memory: 32Mi
+    volumeMounts:
+    - mountPath: /retained
+      name: retained
+    - mountPath: /results
+      name: results
+  restartPolicy: Never
+  securityContext:
+    fsGroup: 10001
+    runAsGroup: 10001
+    runAsUser: 10001
+  volumes:
+  - name: retained
+    persistentVolumeClaim:
+      claimName: rahbar-a3-retention
+  - name: results
+    persistentVolumeClaim:
+      claimName: a3-results
