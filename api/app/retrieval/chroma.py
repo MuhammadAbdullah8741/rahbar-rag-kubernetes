@@ -14,6 +14,7 @@ from typing import Any
 from ..config import Settings
 from ..schemas import Passage
 from ..services.embedding import embed_query
+from ..services.tracing import event
 
 
 class ChromaRetriever:
@@ -145,7 +146,12 @@ class ChromaRetriever:
                         page=meta["page"],
                         score=cosine,
                     )
-        return [passages[cid] for cid in sorted(ranks, key=lambda i: ranks[i], reverse=True)[:k]]
+        ordered = sorted(ranks, key=lambda i: ranks[i], reverse=True)[:k]
+        metadata = dict(zip(all_rows["ids"], all_rows["metadatas"]))
+        event("retrieval", collection=collection.name, collection_metadata=collection.metadata,
+              filters=where, reranked_order=ordered,
+              passages=[{**passages[cid].model_dump(), "metadata": metadata[cid]} for cid in ordered])
+        return [passages[cid] for cid in ordered]
 
 
 STOPWORDS = set(

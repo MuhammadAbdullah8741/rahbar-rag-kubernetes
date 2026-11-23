@@ -3,6 +3,8 @@
 from __future__ import annotations
 import logging
 import time
+import datetime
+import re
 import redis
 from ..config import Settings
 from ..logjson import request_id_var
@@ -15,6 +17,7 @@ from ..schemas import Answer, AskResponse, RetrievedRef
 from .cache import SemanticCache
 from .usage import tokens
 from .validation import validate_grounding
+from .tracing import current, event, persist
 
 log = logging.getLogger("rahbar.answer")
 
@@ -41,6 +44,11 @@ def answer_question(
     session_id: str | None = None,
     follow_up: bool = False,
 ) -> AskResponse:
+    trace_started = time.perf_counter()
+    trace = {"trace_id": request_id_var.get(), "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+             "user_query": question, "embedding_model": settings.embed_model, "embedding_version": settings.embed_model,
+             "configured_collection": settings.collection, "guardrail_actions": []}
+    trace_token = current.set(trace)
     tokens.set((0, 0))
     passages = []
     cache = None
@@ -63,7 +71,7 @@ def answer_question(
                 except redis.RedisError:
                     log.warning("conversation store unavailable")
             collection, vector = retriever.prepare(query)
-            generation = collection.name
+            generation = str(collection.name)
             if settings.cache_enabled and not follow_up:
                 metrics.CACHE_LOOKUPS.inc()
                 try:
@@ -71,6 +79,7 @@ def answer_question(
                 except (redis.RedisError, ValueError, KeyError):
                     log.warning("cache lookup failed; continuing without cache")
                 if result:
+                    trace["cache_origin_trace_id"] = result.request_id
                     cached = True
                     metrics.CACHE_HITS.inc()
                     result = result.model_copy(
@@ -83,19 +92,28 @@ def answer_question(
     except Exception as exc:
         log.warning("retrieval failed", extra={"error_type": type(exc).__name__})
         fallback = True
-    metrics.RETRIEVAL.observe(time.perf_counter() - started)
+    retrieval_seconds = time.perf_counter() - started
+    metrics.RETRIEVAL.observe(retrieval_seconds)
+    generation_started = time.perf_counter()
+    for p in passages:
+        if re.search(r"ignore (?:all )?(?:previous|prior) instructions|reply only|BLUE-PENCIL", p.text, re.I):
+            trace["guardrail_actions"].append({"action": "treat_as_untrusted_evidence", "chunk_id": p.chunk_id,
+                                               "defence": "system prompt prohibits following evidence instructions"})
     if not result:
         grounded = [p for p in passages if p.score >= settings.relevance_floor]
         answer = decline(fallback)
         if grounded and not fallback:
             started = time.perf_counter()
+            correction = "validation"
             for retry in range(2):
                 try:
+                    stage = "generation"
                     generated = (
-                        provider.generate(query, grounded, correction="validation")
+                        provider.generate(query, grounded, correction=correction)
                         if retry and isinstance(provider, OllamaProvider)
                         else provider.generate(query, grounded)
                     )
+                    stage = "grounding"
                     answer = validate_grounding(
                         generated,
                         grounded,
@@ -104,8 +122,13 @@ def answer_question(
                     )
                     break
                 except Exception as exc:
+                    event("validation_failures", attempt=retry + 1, stage=stage, reason=str(exc))
+                    if stage == "grounding" and str(exc) == "An abstention must not cite supporting evidence":
+                        correction = "abstention_with_citations"
                     log.warning(
-                        "generation validation failed",
+                        "generation validation failed at %s: %s",
+                        stage,
+                        str(exc) if stage == "grounding" and type(exc) is ValueError else type(exc).__name__,
                         extra={"attempt": retry + 1, "error_type": type(exc).__name__},
                     )
             else:
@@ -165,4 +188,13 @@ def answer_question(
             "tokens_out": output_tokens,
         },
     )
+    trace.update(rewritten_query=query, collection=generation or settings.collection,
+                 response=result.model_dump(), citations=[c.model_dump() for c in result.citations],
+                 cache_status="hit" if cached else "miss",
+                 latency={"retrieval": retrieval_seconds, "generation_and_validation": time.perf_counter() - generation_started,
+                          "total": time.perf_counter() - trace_started})
+    try:
+        persist(trace)
+    finally:
+        current.reset(trace_token)
     return result

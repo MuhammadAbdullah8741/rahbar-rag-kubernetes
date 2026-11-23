@@ -7,6 +7,7 @@ from .prompt import messages
 from ...services.usage import record_usage
 from ...config import Settings
 from ...schemas import Answer, Passage
+from ...services.tracing import event
 
 
 class OllamaProvider:
@@ -34,6 +35,16 @@ class OllamaProvider:
                 "copy source, section and page exactly. Do not add uncited background. "
                 "If the evidence does not answer the question, abstain with no citations."
             )
+        if correction == "abstention_with_citations":
+            prompt[0]["content"] += (
+                "\nYour previous response set answered_from_context to false but supplied citations. "
+                "Read the passages again. If a passage directly answers the question, give the "
+                "supported answer, set answered_from_context to true, and cite that passage. "
+                "If evidence is insufficient, set answered_from_context to false and citations to []."
+            )
+        event("generation_attempts", prompt=prompt, schema=schema, correction=correction,
+              model=self.settings.llm_model, parameters={"temperature": self.settings.temperature,
+              "seed": 42, "num_ctx": 4096, "num_predict": 400})
         with httpx.Client(timeout=self.settings.llm_timeout, trust_env=False) as client:
             r = client.post(
                 self.settings.ollama_url.rstrip("/") + "/api/chat",
@@ -44,6 +55,7 @@ class OllamaProvider:
                     "stream": False,
                     "keep_alive": "30m",
                     "options": {
+                        "seed": 42,
                         "temperature": self.settings.temperature,
                         "num_ctx": 4096,
                         "num_predict": 400,
