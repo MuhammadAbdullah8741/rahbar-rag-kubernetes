@@ -1,0 +1,15 @@
+Assignment 3 authorship and review status ? 2026-11-23
+
+H1?H8: user supplied human-authored questions; H1?H4 Abdullah, H5?H8 Umar.
+q16?q19: approved by Abdullah.
+q20?q21: approved by Umar.
+q22: Umar correction applied to question, answer and evidence sections.
+q23: Approved by Umar; user subsequently confirmed all documents were checked. Original review text retained in dataset alongside this clarification.
+Eight synthetic human reviews are complete.
+
+IMPORTANT: golden sets changed. Existing evaluation results, PDF and ZIP describe
+the previous dataset. They are historical evidence, not results for this revision.
+The current scorer uses substring matching for atomic facts; it must be adapted
+and validated for these multi-fact/paraphrased/calculated expected answers before
+rerunning the controlled evaluations and regenerating the report/package.
+Umar roll number and actual member contributions remain to be supplied.

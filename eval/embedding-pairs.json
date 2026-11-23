@@ -1,0 +1,17 @@
+[
+ {"text":"How much is the admission fee?","paraphrase":"What one-time admission charge must I pay?","unrelated":"How does a volcano erupt?"},
+ {"text":"Is the security deposit refundable?","paraphrase":"Can students get their security deposit back?","unrelated":"Bake a chocolate cake."},
+ {"text":"What is the tuition fee per credit hour?","paraphrase":"How much does one credit hour cost?","unrelated":"Explain the orbit of Jupiter."},
+ {"text":"When does an incomplete grade become F?","paraphrase":"When is an I grade converted to a failing grade?","unrelated":"Repair a bicycle chain."},
+ {"text":"How long is the summer semester?","paraphrase":"How many weeks do summer classes last?","unrelated":"Translate a French poem."},
+ {"text":"What CGPA avoids academic warning?","paraphrase":"Which minimum cumulative GPA keeps a student off probation?","unrelated":"Where do penguins live?"},
+ {"text":"What is the activities fund charge?","paraphrase":"How much is charged for student activities?","unrelated":"Predict tomorrow's rainfall."},
+ {"text":"What is the fee refund policy?","paraphrase":"Under what conditions is tuition reimbursed?","unrelated":"How do magnets attract iron?"},
+ {"text":"Who approves a faculty startup?","paraphrase":"Who authorizes a professor's new business application?","unrelated":"Describe whale migration."},
+ {"text":"What grade points does B- carry?","paraphrase":"How many GPA points are awarded for B minus?","unrelated":"How is bread fermented?"},
+ {"text":"Which desk reserves the practice room?","paraphrase":"Where do I book a practice room?","unrelated":"Write a detective story."},
+ {"text":"Which form grants simulation lab access?","paraphrase":"What paperwork is needed to enter the simulation laboratory?","unrelated":"What is the speed of light?"},
+ {"text":"Which ticket does the demo desk use?","paraphrase":"What is the demonstration desk ticket code?","unrelated":"Name the oceans of Earth."},
+ {"text":"Where do I return borrowed headsets?","paraphrase":"Which counter accepts headset returns?","unrelated":"How does photosynthesis work?"},
+ {"text":"Which form requests a grade review?","paraphrase":"What form should I submit to have a grade reconsidered?","unrelated":"Explain a chess opening."}
+]
