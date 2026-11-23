@@ -1,0 +1,105 @@
+[
+  {
+    "name": "Fee Structure page",
+    "url": "https://www.nu.edu.pk/Admissions/FeeStructure",
+    "file": "copy-fee-structure-page.html",
+    "bytes": 91429,
+    "sha256": "ec8872ae77cac7e96e20e6979933f36b00aaeb0ab3f668a2116e521c655e7b90",
+    "content_type": "text/html",
+    "fetched_at": "2026-11-07",
+    "doc_version": "2026-27",
+    "superseded": false
+  },
+  {
+    "name": "Grading page",
+    "url": "https://www.nu.edu.pk/Student/Grading",
+    "file": "copy-grading-page.html",
+    "bytes": 95673,
+    "sha256": "66a995b4d8474e914d37bfa14755a5361f47327d5a7314f9b7ec15d9b6176e6e",
+    "content_type": "text/html",
+    "fetched_at": "2026-11-07",
+    "doc_version": "2026",
+    "superseded": false
+  },
+  {
+    "name": "Fee Structure page",
+    "url": "https://www.nu.edu.pk/Admissions/FeeStructure",
+    "file": "near-fee-structure-page.html",
+    "bytes": 91438,
+    "sha256": "8f47d5bd718e3808d9c534769dbc2003f4bf40a783f013d0a49c063c6c30a103",
+    "content_type": "text/html",
+    "fetched_at": "2026-11-07",
+    "doc_version": "2026-27",
+    "superseded": false
+  },
+  {
+    "file": "b-corrupt.pdf",
+    "url": "https://example.invalid/rahbar/b-corrupt.pdf",
+    "doc_version": "2027-01",
+    "superseded": false,
+    "bytes": 17,
+    "sha256": "8e101b9712405dbe8bacfc8bbcb268211b4011f9198db4916275b19141a1d9b4",
+    "synthetic": true,
+    "name": "Damaged notice"
+  },
+  {
+    "file": "b-missing-title.html",
+    "url": "https://example.invalid/rahbar/b-missing-title.html",
+    "doc_version": "2027-01",
+    "superseded": false,
+    "bytes": 65,
+    "sha256": "9641943cb323c4a0faa34d80ee322cf6ba9b7732966a1bea126d99bd2ef0882d",
+    "synthetic": true
+  },
+  {
+    "file": "b-grading-revision.html",
+    "url": "https://example.invalid/rahbar/b-grading-revision.html",
+    "doc_version": "2027-01",
+    "superseded": false,
+    "bytes": 95744,
+    "sha256": "7650ab86639a5fc9938fbaa8abaf5028309b86e8e269145b1fed32c78290e1a8",
+    "synthetic": true,
+    "name": "Grading page (synthetic revision)",
+    "supersedes_file": "grading-page.html"
+  },
+  {
+    "file": "b-injected-notice.html",
+    "url": "https://example.invalid/rahbar/b-injected-notice.html",
+    "doc_version": "2027-01",
+    "superseded": false,
+    "bytes": 124,
+    "sha256": "32ce002446a6e24c9229fc1abf4e315711ec75e082e78ea5e19b3fabfd3aef9e",
+    "synthetic": true,
+    "name": "Demo desk notice"
+  },
+  {
+    "file": "b-lab.html",
+    "url": "https://example.invalid/rahbar/b-lab.html",
+    "doc_version": "2027-01",
+    "superseded": false,
+    "bytes": 72,
+    "sha256": "89e7e2df1818a5d2c60b0bae9e19651857c7c107e2ec652f654191cad1c72843",
+    "synthetic": true,
+    "name": "Simulation lab"
+  },
+  {
+    "file": "b-booking.html",
+    "url": "https://example.invalid/rahbar/b-booking.html",
+    "doc_version": "2027-01",
+    "superseded": false,
+    "bytes": 69,
+    "sha256": "d4cb3c4c7c4b9b7605763d6df5a1aa92af5e5b3db7d60cecf69ae0cf439e4f4b",
+    "synthetic": true,
+    "name": "Practice room bookings"
+  },
+  {
+    "file": "b-returns.html",
+    "url": "https://example.invalid/rahbar/b-returns.html",
+    "doc_version": "2027-01",
+    "superseded": false,
+    "bytes": 65,
+    "sha256": "95b13ec2fb90b545844e45953478707903910bc0da80938bb21a7632e1c7ceae",
+    "synthetic": true,
+    "name": "Equipment returns"
+  }
+]

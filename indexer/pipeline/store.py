@@ -29,6 +29,8 @@ def store(chunks: list[Chunk], vectors: list[list[float]], settings: IndexerSett
     if not dimension or any(len(v) != dimension for v in vectors):
         raise ValueError("Embedding dimensions must agree")
     client = get_client(settings)
+    from .embed import model_digest
+    digest = model_digest(settings.ollama_url, settings.embed_model)
     lock_name = settings.collection + "-writer-lock"
     # Atomic collection creation admits only one writer. A killed writer leaves a
     # conservative lock: an operator must check Jobs before removing a stale lock.
@@ -40,6 +42,7 @@ def store(chunks: list[Chunk], vectors: list[list[float]], settings: IndexerSett
             metadata={
                 "hnsw:space": "cosine",
                 "embed_model": settings.embed_model,
+                "embedding_version": digest,
                 "dimension": dimension,
                 "generation": name,
             },

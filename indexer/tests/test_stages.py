@@ -58,7 +58,7 @@ def test_chunks_bound_size_keep_metadata_and_stable_ids():
     assert len(parts) > 2 and all(len(c.text.split()) <= 50 for c in parts)
     assert parts[0].text.split()[-10:] == parts[1].text.split()[:10]
     assert parts[0].metadata() == dict(
-        source="x", section="Rules", page=2, doc_version="2023", superseded=True
+        document_id="x", source="x", section="Rules", page=2, doc_version="2023", superseded=True
     )
     assert [c.id for c in parts] == [c.id for c in chunk(doc, 50, 10)]
     with pytest.raises(ValueError):
@@ -72,6 +72,7 @@ def test_fixture_embeddings_are_deterministic_normalized(monkeypatch):
 
 
 def test_atomic_store_publishes_only_complete_index(monkeypatch):
+    monkeypatch.setattr("pipeline.embed.model_digest", lambda *_: "test-digest")
     client = Mock()
     lock = Mock(name="lock")
     lock.name = "lock"
@@ -88,6 +89,7 @@ def test_atomic_store_publishes_only_complete_index(monkeypatch):
 
 
 def test_failed_store_never_changes_active_pointer(monkeypatch):
+    monkeypatch.setattr("pipeline.embed.model_digest", lambda *_: "test-digest")
     client = Mock()
     lock = Mock()
     lock.name = "lock"
