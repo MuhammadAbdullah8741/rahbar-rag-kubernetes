@@ -1,0 +1,12 @@
++ kubectl apply -f -
+job.batch/a3-final-query created
++ kubectl get job a3-final-query -n rahbar -o json
++ kubectl get job a3-final-query -n rahbar -o json
++ kubectl logs -n rahbar job/a3-final-query
++ kubectl cp rahbar/a3-storage:/results/. eval/results/cluster
+tar: Removing leading `/' from member names
++ kubectl cp rahbar/a3-storage:/results/traces/. traces
+tar: Removing leading `/' from member names
++ kubectl cp rahbar/a3-storage:/retained/reports/. eval/results/verification
+tar: Removing leading `/' from member names
+PASS: final deployed source, D17 answer, explicit model digest, embedding timing and document IDs

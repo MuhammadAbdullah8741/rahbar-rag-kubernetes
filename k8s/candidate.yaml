@@ -1,0 +1,274 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-candidate
+  namespace: rahbar
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: api-candidate
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: api-candidate
+    spec:
+      automountServiceAccountToken: false
+      containers:
+      - env:
+        - name: CHROMA_COLLECTION
+          value: rahbar-a3-candidate
+        - name: CACHE_ENABLED
+          value: 'false'
+        - name: TRACE_DIR
+          value: /results/traces
+        - name: TOP_K
+          value: '3'
+        envFrom:
+        - configMapRef:
+            name: rahbar-config
+        - secretRef:
+            name: rahbar-secret
+            optional: true
+        image: rahbar-api:a3
+        imagePullPolicy: IfNotPresent
+        lifecycle:
+          preStop:
+            exec:
+              command:
+              - /bin/sh
+              - -c
+              - sleep 5
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /healthz
+            port: 8000
+            scheme: HTTP
+          periodSeconds: 20
+          successThreshold: 1
+          timeoutSeconds: 2
+        name: api
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /readyz
+            port: 8000
+            scheme: HTTP
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 8
+        resources:
+          limits:
+            cpu: 500m
+            memory: 384Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
+        startupProbe:
+          failureThreshold: 30
+          httpGet:
+            path: /healthz
+            port: 8000
+            scheme: HTTP
+          periodSeconds: 2
+          successThreshold: 1
+          timeoutSeconds: 1
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /tmp
+          name: tmp
+        - mountPath: /results
+          name: results
+      dnsPolicy: ClusterFirst
+      hostAliases:
+      - hostnames:
+        - host.docker.internal
+        ip: 192.168.65.254
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        fsGroup: 10001
+        runAsGroup: 10001
+        runAsNonRoot: true
+        runAsUser: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      serviceAccount: api
+      serviceAccountName: api
+      terminationGracePeriodSeconds: 650
+      volumes:
+      - emptyDir: {}
+        name: tmp
+      - name: results
+        persistentVolumeClaim:
+          claimName: a3-results
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-candidate
+  namespace: rahbar
+spec:
+  ports:
+  - port: 8000
+    targetPort: 8000
+  selector:
+    app: api-candidate
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: candidate-api-ingress
+  namespace: rahbar
+spec:
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ingress-nginx
+      podSelector:
+        matchLabels:
+          app.kubernetes.io/component: controller
+    - podSelector:
+        matchLabels:
+          app: ui
+    ports:
+    - port: 8000
+      protocol: TCP
+  podSelector:
+    matchLabels:
+      app: api-candidate
+  policyTypes:
+  - Ingress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: candidate-ui-to-api
+  namespace: rahbar
+spec:
+  egress:
+  - ports:
+    - port: 8000
+      protocol: TCP
+    to:
+    - podSelector:
+        matchLabels:
+          app: api-candidate
+  podSelector:
+    matchLabels:
+      app: ui
+  policyTypes:
+  - Egress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: candidate-api-dependencies
+  namespace: rahbar
+spec:
+  egress:
+  - ports:
+    - port: 8000
+      protocol: TCP
+    to:
+    - podSelector:
+        matchLabels:
+          app: chroma
+  - ports:
+    - port: 6379
+      protocol: TCP
+    to:
+    - podSelector:
+        matchLabels:
+          app: redis
+  podSelector:
+    matchLabels:
+      app: api-candidate
+  policyTypes:
+  - Egress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: candidate-chroma-readers-writer
+  namespace: rahbar
+spec:
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: api-candidate
+    - podSelector:
+        matchLabels:
+          app: indexer
+    ports:
+    - port: 8000
+      protocol: TCP
+  podSelector:
+    matchLabels:
+      app: chroma
+  policyTypes:
+  - Ingress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: candidate-redis-api-only
+  namespace: rahbar
+spec:
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: api-candidate
+    ports:
+    - port: 6379
+      protocol: TCP
+  podSelector:
+    matchLabels:
+      app: redis
+  policyTypes:
+  - Ingress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: candidate-ollama-host-egress
+  namespace: rahbar
+spec:
+  egress:
+  - ports:
+    - port: 11434
+      protocol: TCP
+    to:
+    - ipBlock:
+        cidr: 192.168.65.254/32
+  podSelector:
+    matchExpressions:
+    - key: app
+      operator: In
+      values:
+      - api-candidate
+      - indexer
+  policyTypes:
+  - Egress

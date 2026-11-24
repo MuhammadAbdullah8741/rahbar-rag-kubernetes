@@ -1,0 +1,14 @@
+{
+  "counts": {
+    "total": 25,
+    "answerable": 20,
+    "unanswerable": 5,
+    "hard": 12,
+    "human_written": 0,
+    "synthetic_reviewed_by_human": 0
+  },
+  "failures": [
+    "human_written: 0 < 8",
+    "synthetic_reviewed_by_human: 0 < 8"
+  ]
+}

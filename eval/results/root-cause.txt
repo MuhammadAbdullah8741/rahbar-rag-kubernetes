@@ -1,0 +1,5 @@
+Trace d9871d8345a34b89984ee973eccab23c used collection rahbar-a3-ab-2666b46b6d18 with the filter superseded=false.
+Its first chunk b42b9b5e8aa56cbbf22c1a1e was b-grading-revision.html, version 2027-01, page 1, with similarity 0.75623006 and the explicit GR-17 fact.
+The generation context also included LAB-5 and the handbook's rechecking procedure, so evidence from several forms was available.
+Attempt 1 failed because an abstention carried citations; attempt 2 failed because the cited evidence did not contain the stated form code.
+The API returned a safe fallback after both validation failures; this trace localizes the failure to generation/citation selection rather than absence of the revised chunk.

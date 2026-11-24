@@ -1,0 +1,8 @@
+{
+  "candidate": "blocked",
+  "bad_candidate": "blocked",
+  "strict_config_rejected": true,
+  "restored_config_passed": false,
+  "strict_minimum": 1.01,
+  "rollout_undo": "Final candidate blocked; prior successful 25-question release/undo retained as historical evidence."
+}

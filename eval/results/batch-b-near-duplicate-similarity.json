@@ -1,0 +1,15 @@
+{
+  "model": "nomic-embed-text:latest",
+  "chunks_per_document": {
+    "original": 8,
+    "exact_copy": 8,
+    "near_copy": 8,
+    "grading": 7
+  },
+  "near_copy_changed_embedding_input": true,
+  "cosine_similarity_to_original_fee_page": {
+    "exact_copy": 1.0,
+    "near_copy": 0.999701,
+    "grading": 0.802849
+  }
+}

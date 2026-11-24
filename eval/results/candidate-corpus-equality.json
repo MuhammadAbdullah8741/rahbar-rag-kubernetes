@@ -1,0 +1,13 @@
+{
+  "rahbar-a3-ab": {
+    "collection": "rahbar-a3-ab-2666b46b6d18",
+    "chunks": 351,
+    "content_metadata_vector_sha256": "b2f55e6b29c9897b20166fe958c24d6d9961cf24078378824261e39a8bf081be"
+  },
+  "rahbar-a3-candidate": {
+    "collection": "rahbar-a3-candidate-740df1771f94",
+    "chunks": 351,
+    "content_metadata_vector_sha256": "b2f55e6b29c9897b20166fe958c24d6d9961cf24078378824261e39a8bf081be"
+  },
+  "identical": true
+}

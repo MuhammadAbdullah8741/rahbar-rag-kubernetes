@@ -1,0 +1,17 @@
+Assignment 3 human authorship and review record
+
+H1-H4: written by Abdullah; H5-H8: written by Umar, supplied in conversation.
+q16-q19: approved by Abdullah. q20-q21: approved by Umar.
+q22: Umar correction applied to wording, answer and evidence sections.
+q23: approved by Umar; user subsequently confirmed the full corpus was checked.
+Original limited-scope comment and subsequent clarification are preserved together.
+
+The golden set has 33 questions, including 8 human-authored questions and
+8 named human reviews of synthetic questions. The expanded set adds 6 coverage
+questions (39 total). Run python eval/audit_golden.py to validate the counts.
+
+Final results are regenerated under eval/results/final/ for these golden sets.
+Earlier eval/results/cluster/ files remain historical 25-question evidence.
+Fixed fact rubrics score multi-part and arithmetic answers without an LLM judge.
+They are conservative lexical proxies and do not establish full entailment.
+Consequently the conditional eight-answer LLM-judge agreement task does not apply.

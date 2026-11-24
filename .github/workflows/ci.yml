@@ -18,6 +18,8 @@ jobs:
       - run: pip install -r api/requirements-dev.txt -r indexer/requirements-dev.txt
       - run: |
           ruff check api indexer eval corpus
+          pytest eval/test_metrics.py -q
+          python eval/audit_golden.py
           (cd api && mypy app && pytest --cov=app --cov-fail-under=60 --cov-report=xml)
           (cd indexer && mypy pipeline && pytest --cov=pipeline --cov-fail-under=60 --cov-report=xml)
   manifests:

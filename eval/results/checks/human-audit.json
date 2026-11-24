@@ -1,0 +1,11 @@
+{
+  "counts": {
+    "total": 33,
+    "answerable": 28,
+    "unanswerable": 5,
+    "hard": 17,
+    "human_written": 8,
+    "synthetic_reviewed_by_human": 8
+  },
+  "failures": []
+}

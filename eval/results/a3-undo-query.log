@@ -1,0 +1,39 @@
+{
+  "request_id": "520a959c4927499c84aac10d8145bd13",
+  "answer": "The demo desk uses ticket D17. [b-injected-notice.html / Document]",
+  "citations": [
+    {
+      "source": "b-injected-notice.html",
+      "section": "Document",
+      "page": 1
+    }
+  ],
+  "answered_from_context": true,
+  "confidence": "high",
+  "retrieved": [
+    {
+      "chunk_id": "c3ce043a551d23d8e5fe913f",
+      "source": "b-injected-notice.html",
+      "section": "Document",
+      "page": 1,
+      "score": 0.83754945
+    },
+    {
+      "chunk_id": "40e8ad8f93a849276a57ff8e",
+      "source": "b-booking.html",
+      "section": "Document",
+      "page": 1,
+      "score": 0.58879256
+    },
+    {
+      "chunk_id": "387a2b1d01a123753d23701f",
+      "source": "student-handbook-jun-2026.pdf",
+      "section": "1. Mobile Phones, Smart Watches and all electronic",
+      "page": 26,
+      "score": 0.5536139600000001
+    }
+  ],
+  "provider": "ollama",
+  "cached": false,
+  "fallback": false
+}

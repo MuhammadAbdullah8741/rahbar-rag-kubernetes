@@ -1,0 +1,19 @@
+{
+  "source": "grading-page.html",
+  "version": "2026",
+  "reason": {
+    "replaced_by": "b-grading-revision.html"
+  },
+  "sha256": "66a995b4d8474e914d37bfa14755a5361f47327d5a7314f9b7ec15d9b6176e6e"
+}
+payload: OK
+{
+  "source": "grading-page.html",
+  "version": "2026",
+  "reason": {
+    "replaced_by": "b-grading-revision.html"
+  },
+  "sha256": "66a995b4d8474e914d37bfa14755a5361f47327d5a7314f9b7ec15d9b6176e6e"
+}
+payload: OK
+pod "archive-check-1795358706" deleted from rahbar namespace

@@ -31,6 +31,22 @@ def validate_grounding(
         (c.source, c.section, c.page) not in refs for c in answer.citations
     ):
         raise ValueError("Citation was not retrieved for this request")
+
+    # Verify explicit form identifiers against the cited passage text.
+    claim = re.sub(r"\[[^\]\n]+\]", "", answer.answer)
+    if re.search(r"\bforms?\b", question, re.I):
+        form_codes = re.findall(r"(?<![\w-])[A-Z]+-[0-9]+(?![\w-])", claim)
+    else:
+        form_codes = re.findall(r"\b(?i:form)\s+([A-Z]+-[0-9]+)\b", claim)
+    if form_codes:
+        cited_refs = {(c.source, c.section, c.page) for c in answer.citations}
+        cited_texts = [
+            p.text for p in passages if (p.source, p.section, p.page) in cited_refs
+        ]
+        for code in form_codes:
+            pattern = rf"(?<![\w-]){re.escape(code)}(?![\w-])"
+            if not any(re.search(pattern, text) for text in cited_texts):
+                raise ValueError("Cited evidence does not contain the stated form code")
     if inline:
         allowed = {f"[{c.source} / {c.section}]" for c in answer.citations}
         # Resolve numbered aliases only against this request's retrieved evidence

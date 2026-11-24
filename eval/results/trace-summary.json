@@ -1,0 +1,18 @@
+{
+  "queries": 25,
+  "top1_similarity": {
+    "min": 0.558716,
+    "mean": 0.7489360032,
+    "p50": 0.75623006,
+    "p95": 0.84680898,
+    "max": 0.91088009
+  },
+  "abstention_rate": 0.36,
+  "cache_hit_rate": 0,
+  "stage_p95": {
+    "generation_and_validation": 79.70626475519995,
+    "retrieval": 0.8430894627997074,
+    "total": 80.3932600582
+  },
+  "flagged_injection_queries": 2
+}

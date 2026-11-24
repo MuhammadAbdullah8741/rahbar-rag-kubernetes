@@ -1,0 +1,62 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: eval-batch-a
+  namespace: rahbar
+spec:
+  activeDeadlineSeconds: 14400
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: eval
+    spec:
+      automountServiceAccountToken: false
+      containers:
+      - command:
+        - /bin/sh
+        - -ec
+        - python eval/suite.py --api http://api-candidate:8000 --label eval-batch-a
+          --out /results/batch-a.json
+        env:
+        - name: CHROMA_COLLECTION
+          value: rahbar
+        - name: TOP_K
+          value: '5'
+        - name: CACHE_ENABLED
+          value: 'false'
+        envFrom:
+        - configMapRef:
+            name: rahbar-config
+        image: rahbar-eval:a3-tools
+        imagePullPolicy: Never
+        name: eval
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 768Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        volumeMounts:
+        - mountPath: /results
+          name: results
+        - mountPath: /gate
+          name: gate
+          readOnly: true
+      hostAliases:
+      - hostnames:
+        - host.docker.internal
+        ip: 192.168.65.254
+      restartPolicy: Never
+      securityContext:
+        fsGroup: 10001
+        runAsGroup: 10001
+        runAsUser: 10001
+      volumes:
+      - name: results
+        persistentVolumeClaim:
+          claimName: a3-results
+      - configMap:
+          name: a3-gate
+        name: gate

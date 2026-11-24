@@ -1,0 +1,146 @@
+{
+  "model": "nomic-embed-text:latest",
+  "threshold": 0.99,
+  "pairs_checked": 21,
+  "flagged_pairs": 0,
+  "highest_pair": {
+    "a": "undergraduate-academic-rules-aug-2023.pdf",
+    "b": "prospectus-2026-academic-rules-and-regulations.pdf",
+    "cosine": 0.98662509,
+    "flagged": false
+  },
+  "policy_version_pair": {
+    "a": "undergraduate-academic-rules-aug-2023.pdf",
+    "b": "academic-rules-handbook-jun-2026.pdf",
+    "cosine": 0.97813213,
+    "flagged": false
+  },
+  "pairs": [
+    {
+      "a": "undergraduate-academic-rules-aug-2023.pdf",
+      "b": "prospectus-2026-academic-rules-and-regulations.pdf",
+      "cosine": 0.98662509,
+      "flagged": false
+    },
+    {
+      "a": "undergraduate-academic-rules-aug-2023.pdf",
+      "b": "academic-rules-handbook-jun-2026.pdf",
+      "cosine": 0.97813213,
+      "flagged": false
+    },
+    {
+      "a": "academic-rules-handbook-jun-2026.pdf",
+      "b": "student-handbook-jun-2026.pdf",
+      "cosine": 0.97403317,
+      "flagged": false
+    },
+    {
+      "a": "academic-rules-handbook-jun-2026.pdf",
+      "b": "prospectus-2026-academic-rules-and-regulations.pdf",
+      "cosine": 0.96840701,
+      "flagged": false
+    },
+    {
+      "a": "undergraduate-academic-rules-aug-2023.pdf",
+      "b": "grading-page.html",
+      "cosine": 0.95480945,
+      "flagged": false
+    },
+    {
+      "a": "prospectus-2026-academic-rules-and-regulations.pdf",
+      "b": "grading-page.html",
+      "cosine": 0.9514183,
+      "flagged": false
+    },
+    {
+      "a": "undergraduate-academic-rules-aug-2023.pdf",
+      "b": "student-handbook-jun-2026.pdf",
+      "cosine": 0.94367957,
+      "flagged": false
+    },
+    {
+      "a": "academic-rules-handbook-jun-2026.pdf",
+      "b": "grading-page.html",
+      "cosine": 0.93650385,
+      "flagged": false
+    },
+    {
+      "a": "prospectus-2026-academic-rules-and-regulations.pdf",
+      "b": "student-handbook-jun-2026.pdf",
+      "cosine": 0.93491518,
+      "flagged": false
+    },
+    {
+      "a": "student-handbook-jun-2026.pdf",
+      "b": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+      "cosine": 0.90695916,
+      "flagged": false
+    },
+    {
+      "a": "academic-rules-handbook-jun-2026.pdf",
+      "b": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+      "cosine": 0.90267025,
+      "flagged": false
+    },
+    {
+      "a": "student-handbook-jun-2026.pdf",
+      "b": "grading-page.html",
+      "cosine": 0.89418419,
+      "flagged": false
+    },
+    {
+      "a": "undergraduate-academic-rules-aug-2023.pdf",
+      "b": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+      "cosine": 0.88865863,
+      "flagged": false
+    },
+    {
+      "a": "prospectus-2026-academic-rules-and-regulations.pdf",
+      "b": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+      "cosine": 0.87920665,
+      "flagged": false
+    },
+    {
+      "a": "prospectus-2026-academic-rules-and-regulations.pdf",
+      "b": "fee-structure-page.html",
+      "cosine": 0.87048191,
+      "flagged": false
+    },
+    {
+      "a": "undergraduate-academic-rules-aug-2023.pdf",
+      "b": "fee-structure-page.html",
+      "cosine": 0.86492619,
+      "flagged": false
+    },
+    {
+      "a": "student-handbook-jun-2026.pdf",
+      "b": "fee-structure-page.html",
+      "cosine": 0.85804732,
+      "flagged": false
+    },
+    {
+      "a": "academic-rules-handbook-jun-2026.pdf",
+      "b": "fee-structure-page.html",
+      "cosine": 0.84797658,
+      "flagged": false
+    },
+    {
+      "a": "grading-page.html",
+      "b": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+      "cosine": 0.82811941,
+      "flagged": false
+    },
+    {
+      "a": "fee-structure-page.html",
+      "b": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+      "cosine": 0.81572988,
+      "flagged": false
+    },
+    {
+      "a": "fee-structure-page.html",
+      "b": "grading-page.html",
+      "cosine": 0.80284906,
+      "flagged": false
+    }
+  ]
+}

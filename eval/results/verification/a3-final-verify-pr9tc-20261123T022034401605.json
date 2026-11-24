@@ -1,0 +1,585 @@
+{
+  "timestamp": "2026-11-23T02:20:34.401903+00:00",
+  "documents": [
+    {
+      "document_id": "academic-rules-handbook-jun-2026.pdf",
+      "checks": {
+        "completeness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "reason": "page sequence complete and text checks passed",
+            "expected_pages": 58,
+            "extracted_pages": 58,
+            "blank_after_cleaning": [
+              2,
+              56,
+              57
+            ]
+          }
+        },
+        "quality": {
+          "pass": true,
+          "reason": "page sequence complete and text checks passed"
+        },
+        "uniqueness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "closest": null,
+            "cosine": null,
+            "threshold": 0.99,
+            "excluded_predecessor": null
+          }
+        },
+        "recency": {
+          "pass": true,
+          "reason": "No newer version detected"
+        }
+      },
+      "decision": "indexed",
+      "chunks": 98
+    },
+    {
+      "document_id": "prospectus-2026-academic-rules-and-regulations.pdf",
+      "checks": {
+        "completeness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "reason": "page sequence complete and text checks passed",
+            "expected_pages": 5,
+            "extracted_pages": 5,
+            "blank_after_cleaning": []
+          }
+        },
+        "quality": {
+          "pass": true,
+          "reason": "page sequence complete and text checks passed"
+        },
+        "uniqueness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "closest": "academic-rules-handbook-jun-2026.pdf",
+            "cosine": 0.9684070072523444,
+            "threshold": 0.99,
+            "excluded_predecessor": null
+          }
+        },
+        "recency": {
+          "pass": true,
+          "reason": "No newer version detected"
+        }
+      },
+      "decision": "indexed",
+      "chunks": 41
+    },
+    {
+      "document_id": "student-handbook-jun-2026.pdf",
+      "checks": {
+        "completeness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "reason": "page sequence complete and text checks passed",
+            "expected_pages": 64,
+            "extracted_pages": 64,
+            "blank_after_cleaning": [
+              2,
+              63
+            ]
+          }
+        },
+        "quality": {
+          "pass": true,
+          "reason": "page sequence complete and text checks passed"
+        },
+        "uniqueness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "closest": "academic-rules-handbook-jun-2026.pdf",
+            "cosine": 0.9740331729389534,
+            "threshold": 0.99,
+            "excluded_predecessor": null
+          }
+        },
+        "recency": {
+          "pass": true,
+          "reason": "No newer version detected"
+        }
+      },
+      "decision": "indexed",
+      "chunks": 107
+    },
+    {
+      "document_id": "fee-structure-page.html",
+      "checks": {
+        "completeness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "reason": "page sequence complete and text checks passed",
+            "expected_pages": 1,
+            "extracted_pages": 1,
+            "blank_after_cleaning": []
+          }
+        },
+        "quality": {
+          "pass": true,
+          "reason": "page sequence complete and text checks passed"
+        },
+        "uniqueness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "closest": "prospectus-2026-academic-rules-and-regulations.pdf",
+            "cosine": 0.8704819054929445,
+            "threshold": 0.99,
+            "excluded_predecessor": null
+          }
+        },
+        "recency": {
+          "pass": true,
+          "reason": "No newer version detected"
+        }
+      },
+      "decision": "indexed",
+      "chunks": 8
+    },
+    {
+      "document_id": "grading-page.html",
+      "checks": {
+        "completeness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "reason": "page sequence complete and text checks passed",
+            "expected_pages": 1,
+            "extracted_pages": 1,
+            "blank_after_cleaning": []
+          }
+        },
+        "quality": {
+          "pass": true,
+          "reason": "page sequence complete and text checks passed"
+        },
+        "uniqueness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "closest": "prospectus-2026-academic-rules-and-regulations.pdf",
+            "cosine": 0.951418299222298,
+            "threshold": 0.99,
+            "excluded_predecessor": null
+          }
+        },
+        "recency": {
+          "pass": false,
+          "reason": "Superseded by b-grading-revision.html"
+        }
+      },
+      "decision": "archive",
+      "chunks": 7
+    },
+    {
+      "document_id": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+      "checks": {
+        "completeness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "reason": "page sequence complete and text checks passed",
+            "expected_pages": 8,
+            "extracted_pages": 8,
+            "blank_after_cleaning": []
+          }
+        },
+        "quality": {
+          "pass": true,
+          "reason": "page sequence complete and text checks passed"
+        },
+        "uniqueness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "closest": "student-handbook-jun-2026.pdf",
+            "cosine": 0.9069591625526415,
+            "threshold": 0.99,
+            "excluded_predecessor": null
+          }
+        },
+        "recency": {
+          "pass": true,
+          "reason": "No newer version detected"
+        }
+      },
+      "decision": "indexed",
+      "chunks": 20
+    },
+    {
+      "document_id": "copy-fee-structure-page.html",
+      "checks": {
+        "completeness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "reason": "page sequence complete and text checks passed",
+            "expected_pages": 1,
+            "extracted_pages": 1,
+            "blank_after_cleaning": []
+          }
+        },
+        "quality": {
+          "pass": true,
+          "reason": "page sequence complete and text checks passed"
+        },
+        "uniqueness": {
+          "pass": false,
+          "reason": {
+            "passed": false,
+            "sha256": "ec8872ae77cac7e96e20e6979933f36b00aaeb0ab3f668a2116e521c655e7b90",
+            "duplicate_of": "fee-structure-page.html",
+            "reason": "exact duplicate"
+          }
+        },
+        "recency": {
+          "pass": false,
+          "reason": "Not evaluated after an earlier rejection; not admitted"
+        }
+      },
+      "decision": "quarantine"
+    },
+    {
+      "document_id": "copy-grading-page.html",
+      "checks": {
+        "completeness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "reason": "page sequence complete and text checks passed",
+            "expected_pages": 1,
+            "extracted_pages": 1,
+            "blank_after_cleaning": []
+          }
+        },
+        "quality": {
+          "pass": true,
+          "reason": "page sequence complete and text checks passed"
+        },
+        "uniqueness": {
+          "pass": false,
+          "reason": {
+            "passed": false,
+            "sha256": "66a995b4d8474e914d37bfa14755a5361f47327d5a7314f9b7ec15d9b6176e6e",
+            "duplicate_of": "grading-page.html",
+            "reason": "exact duplicate"
+          }
+        },
+        "recency": {
+          "pass": false,
+          "reason": "Not evaluated after an earlier rejection; not admitted"
+        }
+      },
+      "decision": "quarantine"
+    },
+    {
+      "document_id": "near-fee-structure-page.html",
+      "checks": {
+        "completeness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "reason": "page sequence complete and text checks passed",
+            "expected_pages": 1,
+            "extracted_pages": 1,
+            "blank_after_cleaning": []
+          }
+        },
+        "quality": {
+          "pass": true,
+          "reason": "page sequence complete and text checks passed"
+        },
+        "uniqueness": {
+          "pass": false,
+          "reason": {
+            "passed": false,
+            "closest": "fee-structure-page.html",
+            "cosine": 0.9997010113702675,
+            "threshold": 0.99,
+            "excluded_predecessor": null
+          }
+        },
+        "recency": {
+          "pass": false,
+          "reason": "Not evaluated after an earlier rejection; not admitted"
+        }
+      },
+      "decision": "quarantine"
+    },
+    {
+      "document_id": "b-corrupt.pdf",
+      "checks": {
+        "completeness": {
+          "pass": false,
+          "reason": {
+            "passed": false,
+            "reason": "PdfminerException: Unexpected EOF"
+          }
+        },
+        "quality": {
+          "pass": false,
+          "reason": "PdfminerException: Unexpected EOF"
+        },
+        "recency": {
+          "pass": false,
+          "reason": "Not evaluated after an earlier rejection; not admitted"
+        },
+        "uniqueness": {
+          "pass": false,
+          "reason": "Not evaluated after an earlier rejection; not admitted"
+        }
+      },
+      "decision": "quarantine"
+    },
+    {
+      "document_id": "b-missing-title.html",
+      "checks": {
+        "completeness": {
+          "pass": false,
+          "reason": {
+            "metadata": "missing name",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "quality": {
+          "pass": false,
+          "reason": "Not evaluated after an earlier rejection; not admitted"
+        },
+        "recency": {
+          "pass": false,
+          "reason": "Not evaluated after an earlier rejection; not admitted"
+        },
+        "uniqueness": {
+          "pass": false,
+          "reason": "Not evaluated after an earlier rejection; not admitted"
+        }
+      },
+      "decision": "quarantine"
+    },
+    {
+      "document_id": "b-injected-notice.html",
+      "checks": {
+        "completeness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "reason": "page sequence complete and text checks passed",
+            "expected_pages": 1,
+            "extracted_pages": 1,
+            "blank_after_cleaning": []
+          }
+        },
+        "quality": {
+          "pass": true,
+          "reason": "page sequence complete and text checks passed"
+        },
+        "uniqueness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "closest": "student-handbook-jun-2026.pdf",
+            "cosine": 0.7246453101193772,
+            "threshold": 0.99,
+            "excluded_predecessor": null
+          }
+        },
+        "recency": {
+          "pass": true,
+          "reason": "No newer version detected"
+        }
+      },
+      "decision": "indexed",
+      "chunks": 1
+    },
+    {
+      "document_id": "b-lab.html",
+      "checks": {
+        "completeness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "reason": "page sequence complete and text checks passed",
+            "expected_pages": 1,
+            "extracted_pages": 1,
+            "blank_after_cleaning": []
+          }
+        },
+        "quality": {
+          "pass": true,
+          "reason": "page sequence complete and text checks passed"
+        },
+        "uniqueness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "closest": "b-injected-notice.html",
+            "cosine": 0.7753572671454954,
+            "threshold": 0.99,
+            "excluded_predecessor": null
+          }
+        },
+        "recency": {
+          "pass": true,
+          "reason": "No newer version detected"
+        }
+      },
+      "decision": "indexed",
+      "chunks": 1
+    },
+    {
+      "document_id": "b-booking.html",
+      "checks": {
+        "completeness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "reason": "page sequence complete and text checks passed",
+            "expected_pages": 1,
+            "extracted_pages": 1,
+            "blank_after_cleaning": []
+          }
+        },
+        "quality": {
+          "pass": true,
+          "reason": "page sequence complete and text checks passed"
+        },
+        "uniqueness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "closest": "b-injected-notice.html",
+            "cosine": 0.8275341005478939,
+            "threshold": 0.99,
+            "excluded_predecessor": null
+          }
+        },
+        "recency": {
+          "pass": true,
+          "reason": "No newer version detected"
+        }
+      },
+      "decision": "indexed",
+      "chunks": 1
+    },
+    {
+      "document_id": "b-returns.html",
+      "checks": {
+        "completeness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "reason": "page sequence complete and text checks passed",
+            "expected_pages": 1,
+            "extracted_pages": 1,
+            "blank_after_cleaning": []
+          }
+        },
+        "quality": {
+          "pass": true,
+          "reason": "page sequence complete and text checks passed"
+        },
+        "uniqueness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "closest": "b-booking.html",
+            "cosine": 0.8033271931802662,
+            "threshold": 0.99,
+            "excluded_predecessor": null
+          }
+        },
+        "recency": {
+          "pass": true,
+          "reason": "No newer version detected"
+        }
+      },
+      "decision": "indexed",
+      "chunks": 1
+    },
+    {
+      "document_id": "undergraduate-academic-rules-aug-2023.pdf",
+      "checks": {
+        "completeness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "reason": "page sequence complete and text checks passed",
+            "expected_pages": 26,
+            "extracted_pages": 26,
+            "blank_after_cleaning": [
+              3
+            ]
+          }
+        },
+        "quality": {
+          "pass": true,
+          "reason": "page sequence complete and text checks passed"
+        },
+        "uniqueness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "closest": "prospectus-2026-academic-rules-and-regulations.pdf",
+            "cosine": 0.9866250933035968,
+            "threshold": 0.99,
+            "excluded_predecessor": null
+          }
+        },
+        "recency": {
+          "pass": false,
+          "reason": "Superseded by newer manifest version (superseded=true)"
+        }
+      },
+      "decision": "archive",
+      "chunks": 59
+    },
+    {
+      "document_id": "b-grading-revision.html",
+      "checks": {
+        "completeness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "reason": "page sequence complete and text checks passed",
+            "expected_pages": 1,
+            "extracted_pages": 1,
+            "blank_after_cleaning": []
+          }
+        },
+        "quality": {
+          "pass": true,
+          "reason": "page sequence complete and text checks passed"
+        },
+        "uniqueness": {
+          "pass": true,
+          "reason": {
+            "passed": true,
+            "closest": "undergraduate-academic-rules-aug-2023.pdf",
+            "cosine": 0.9544052397386021,
+            "threshold": 0.99,
+            "excluded_predecessor": "grading-page.html"
+          }
+        },
+        "recency": {
+          "pass": true,
+          "reason": "Newer version replaces grading-page.html"
+        }
+      },
+      "decision": "indexed",
+      "chunks": 7
+    }
+  ]
+}

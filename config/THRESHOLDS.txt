@@ -1,0 +1,20 @@
+Release gate thresholds were configured before the candidate experiment.
+
+Recall@5: at most 0.02 absolute regression. With 20 answerable questions, a
+single completely lost question costs 0.05, so the gate rejects that loss.
+Faithfulness proxy: at least 0.80 among answered cases. Baseline measured 0.8125.
+This is a task-specific fact-and-cited-context check, not complete entailment.
+Citation membership: at least 0.95; baseline measured 1.0.
+Unanswerable abstention: 1.0, and no drop from baseline (baseline 1.0).
+Answerable success: at least 0.50, to stop an always-abstaining candidate from
+passing safety-oriented metrics. Baseline measured 0.60.
+Latency p95: at most 180 seconds on this local CPU setup; baseline measured
+80.408 seconds. The budget leaves room for retries but rejects multi-minute
+tail latency. It is an educational local-demo budget, not a production SLA.
+HTTP/evaluation errors: zero.
+
+Coverage uses cosine >= 0.85 and requires >= 0.85 of live queries covered.
+This cutoff is stricter than broad topical resemblance. With the fixed 40-query
+fixture it covered all 28 in-domain queries initially and none of the 12 new-topic
+queries. After adding six explicit new-topic tests it covered 37/40. This is
+resubstitution on a designed log, not evidence of generalization to held-out users.

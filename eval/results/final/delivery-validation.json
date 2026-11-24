@@ -1,0 +1,16 @@
+{
+  "golden_sha256": "c0fc0432bc1ab735f77cd78229518a93027d76c007ecb01bee61c7aef5b90c05",
+  "scorer_sha256": "19ce011d8ad8cac7ebc6bb0f92e0fbbea710ca9b1cb4e2971e41f2502dc3a789",
+  "questions_per_run": 33,
+  "runs": [
+    "baseline-ab",
+    "baseline-repeat",
+    "candidate",
+    "bad-candidate",
+    "batch-a"
+  ],
+  "candidate_decision": "reject",
+  "trace_count": 33,
+  "coverage_before": 0.675,
+  "coverage_after": 0.9
+}

@@ -1,0 +1,210 @@
+{
+  "before": "/mnt/x/semester 5/SCD/A2/rahbar-starter/eval/results/final/baseline-ab.json",
+  "after": "/mnt/x/semester 5/SCD/A2/rahbar-starter/eval/results/final/baseline-repeat.json",
+  "same_golden": true,
+  "rows": [
+    {
+      "level": "module",
+      "metric": "paraphrase_mean",
+      "before": 0.7828617377229276,
+      "after": 0.7828617377229276,
+      "delta": 0.0
+    },
+    {
+      "level": "module",
+      "metric": "unrelated_mean",
+      "before": 0.4192277980519883,
+      "after": 0.4192277980519883,
+      "delta": 0.0
+    },
+    {
+      "level": "module",
+      "metric": "gap",
+      "before": 0.36363393967093927,
+      "after": 0.36363393967093927,
+      "delta": 0.0
+    },
+    {
+      "level": "module",
+      "metric": "seconds_per_chunk",
+      "before": 0.1560896262127302,
+      "after": 0.08226416338290252,
+      "delta": -0.07382546282982769
+    },
+    {
+      "level": "module",
+      "metric": "max_repeat_difference",
+      "before": 0.0,
+      "after": 0.0,
+      "delta": 0.0
+    },
+    {
+      "level": "module",
+      "metric": "paraphrase_pairs",
+      "before": 15,
+      "after": 15,
+      "delta": 0
+    },
+    {
+      "level": "module",
+      "metric": "unrelated_pairs",
+      "before": 15,
+      "after": 15,
+      "delta": 0
+    },
+    {
+      "level": "component",
+      "metric": "recall_at_3",
+      "before": 0.8452380952380952,
+      "after": 0.8452380952380952,
+      "delta": 0.0
+    },
+    {
+      "level": "component",
+      "metric": "recall_at_5",
+      "before": 0.8571428571428571,
+      "after": 0.8571428571428571,
+      "delta": 0.0
+    },
+    {
+      "level": "component",
+      "metric": "mrr",
+      "before": 0.8571428571428571,
+      "after": 0.8571428571428571,
+      "delta": 0.0
+    },
+    {
+      "level": "component",
+      "metric": "ndcg_at_5",
+      "before": 0.8509195080243882,
+      "after": 0.8509195080243882,
+      "delta": 0.0
+    },
+    {
+      "level": "noise",
+      "metric": "recall_at_3",
+      "before": 0.8095238095238095,
+      "after": 0.8095238095238095,
+      "delta": 0.0
+    },
+    {
+      "level": "noise",
+      "metric": "recall_at_5",
+      "before": 0.8452380952380952,
+      "after": 0.8452380952380952,
+      "delta": 0.0
+    },
+    {
+      "level": "noise",
+      "metric": "mrr",
+      "before": 0.8303571428571429,
+      "after": 0.8303571428571429,
+      "delta": 0.0
+    },
+    {
+      "level": "noise",
+      "metric": "ndcg_at_5",
+      "before": 0.8255627851503644,
+      "after": 0.8255627851503644,
+      "delta": 0.0
+    },
+    {
+      "level": "noise_delta",
+      "metric": "recall_at_3",
+      "before": -0.0357142857142857,
+      "after": -0.0357142857142857,
+      "delta": 0.0
+    },
+    {
+      "level": "noise_delta",
+      "metric": "recall_at_5",
+      "before": -0.011904761904761862,
+      "after": -0.011904761904761862,
+      "delta": 0.0
+    },
+    {
+      "level": "noise_delta",
+      "metric": "mrr",
+      "before": -0.02678571428571419,
+      "after": -0.02678571428571419,
+      "delta": 0.0
+    },
+    {
+      "level": "noise_delta",
+      "metric": "ndcg_at_5",
+      "before": -0.025356722874023796,
+      "after": -0.025356722874023796,
+      "delta": 0.0
+    },
+    {
+      "level": "end_to_end",
+      "metric": "citation_validity",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "level": "end_to_end",
+      "metric": "faithfulness",
+      "before": 0.6666666666666666,
+      "after": 0.7272727272727273,
+      "delta": 0.06060606060606066
+    },
+    {
+      "level": "end_to_end",
+      "metric": "citation_ground_truth",
+      "before": 0.6071428571428571,
+      "after": 0.6785714285714286,
+      "delta": 0.07142857142857151
+    },
+    {
+      "level": "end_to_end",
+      "metric": "answerable_success",
+      "before": 0.4642857142857143,
+      "after": 0.5357142857142857,
+      "delta": 0.0714285714285714
+    },
+    {
+      "level": "end_to_end",
+      "metric": "abstention_correctness",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "level": "end_to_end",
+      "metric": "latency_p50",
+      "before": 24.868855757000347,
+      "after": 11.438547298999765,
+      "delta": -13.430308458000582
+    },
+    {
+      "level": "end_to_end",
+      "metric": "latency_p95",
+      "before": 49.151175917799804,
+      "after": 35.145902899800234,
+      "delta": -14.00527301799957
+    },
+    {
+      "level": "end_to_end",
+      "metric": "answered_count",
+      "before": 21,
+      "after": 22,
+      "delta": 1
+    },
+    {
+      "level": "end_to_end",
+      "metric": "cache_hit_rate",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "level": "end_to_end",
+      "metric": "errors",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{"bad_candidate": "blocked before rollout", "candidate": "approved", "top_k": 3, "collection": "rahbar-a3-candidate"}
++ kubectl apply -f -
+configmap/a3-gate configured
++ kubectl apply -f -
+job.batch/gate-strict created
++ kubectl get job gate-strict -n rahbar -o json
++ kubectl get job gate-strict -n rahbar -o json
++ kubectl logs -n rahbar job/gate-strict
+{
+  "decision": "reject",
+  "failures": [
+    "end_to_end.faithfulness: 0.9444444444444444 < 1.0"
+  ],
+  "baseline": "/results/baseline-ab.json",
+  "candidate": "/results/candidate.json",
+  "thresholds": {
+    "component.recall_at_5": {
+      "max_drop": 0.02
+    },
+    "end_to_end.faithfulness": {
+      "min": 1.0
+    },
+    "end_to_end.citation_validity": {
+      "min": 0.95
+    },
+    "end_to_end.abstention_correctness": {
+      "min": 1.0,
+      "max_drop": 0.0
+    },
+    "end_to_end.latency_p95": {
+      "max": 180
+    },
+    "end_to_end.errors": {
+      "max": 0
+    },
+    "end_to_end.answerable_success": {
+      "min": 0.5
+    }
+  }
+}
+
++ kubectl apply -f -
+configmap/a3-gate configured
++ kubectl apply -f -
+job.batch/gate-restored created
++ kubectl get job gate-restored -n rahbar -o json
++ kubectl get job gate-restored -n rahbar -o json
++ kubectl logs -n rahbar job/gate-restored
++ kubectl get deployment api-candidate -n rahbar -o json
++ kubectl patch deployment api -n rahbar --type=strategic -p {"spec": {"template": {"spec": {"containers": [{"name": "api", "image": "rahbar-api:a3", "env": [{"name": "CHROMA_COLLECTION", "value": "rahbar-a3-candidate"}, {"name": "CACHE_ENABLED", "value": "false"}, {"name": "TRACE_DIR", "value": "/results/traces"}, {"name": "TOP_K", "value": "3"}]}]}}}}
+deployment.apps/api patched
++ kubectl rollout status deployment/api -n rahbar --timeout=180s
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "api" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "api" rollout to finish: 1 old replicas are pending termination...
+deployment "api" successfully rolled out
++ kubectl apply -f -
+job.batch/a3-release-query created
++ kubectl get job a3-release-query -n rahbar -o json
++ kubectl get job a3-release-query -n rahbar -o json
++ kubectl get job a3-release-query -n rahbar -o json
++ kubectl logs -n rahbar job/a3-release-query
++ kubectl set env deployment/api -n rahbar CHROMA_COLLECTION=rahbar TOP_K=0
+deployment.apps/api env updated
++ kubectl rollout status deployment/api -n rahbar --timeout=180s
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "api" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "api" rollout to finish: 1 old replicas are pending termination...
+deployment "api" successfully rolled out
++ kubectl apply -f -
+job.batch/a3-bad-release-query created
++ kubectl get job a3-bad-release-query -n rahbar -o json
++ kubectl get job a3-bad-release-query -n rahbar -o json
++ kubectl logs -n rahbar job/a3-bad-release-query
++ kubectl rollout undo deployment/api -n rahbar
+Warning: resource deployments/api was previously managed with 'kubectl apply'. Rolling back will not update the kubectl.kubernetes.io/last-applied-configuration annotation, which may cause unexpected behavior on future 'kubectl apply' operations. Consider using 'kubectl apply' with your previous configuration file instead.
+deployment.apps/api rolled back
++ kubectl rollout status deployment/api -n rahbar --timeout=180s
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "api" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "api" rollout to finish: 1 old replicas are pending termination...
+deployment "api" successfully rolled out
++ kubectl apply -f -
+job.batch/a3-undo-query created
++ kubectl get job a3-undo-query -n rahbar -o json
++ kubectl get job a3-undo-query -n rahbar -o json
++ kubectl logs -n rahbar job/a3-undo-query
+CONTROLLED RELEASE AND UNDO COMPLETE

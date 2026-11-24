@@ -1,0 +1,72 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: a3-delete-after
+  namespace: rahbar
+spec:
+  activeDeadlineSeconds: 7200
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: indexer
+    spec:
+      automountServiceAccountToken: false
+      containers:
+      - env:
+        - name: RAHBAR_RETENTION_DIR
+          value: /retained
+        - name: CORPUS_DIR
+          value: /retained/input-deletion
+        - name: CHROMA_COLLECTION
+          value: rahbar-a3-deletion
+        envFrom:
+        - configMapRef:
+            name: rahbar-config
+        image: rahbar-indexer:a3
+        imagePullPolicy: Never
+        name: indexer
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          readOnlyRootFilesystem: true
+        volumeMounts:
+        - mountPath: /tmp
+          name: tmp
+        - mountPath: /corpus
+          name: corpus
+          readOnly: true
+        - mountPath: /retained
+          name: retained
+      hostAliases:
+      - hostnames:
+        - host.docker.internal
+        ip: 192.168.65.254
+      restartPolicy: Never
+      securityContext:
+        fsGroup: 10001
+        runAsGroup: 10001
+        runAsNonRoot: true
+        runAsUser: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      serviceAccountName: indexer
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - emptyDir: {}
+        name: tmp
+      - name: corpus
+        persistentVolumeClaim:
+          claimName: corpus
+      - name: retained
+        persistentVolumeClaim:
+          claimName: rahbar-a3-retention

@@ -1,0 +1,64 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: a3-coverage
+  namespace: rahbar
+spec:
+  activeDeadlineSeconds: 14400
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: eval
+    spec:
+      automountServiceAccountToken: false
+      containers:
+      - command:
+        - /bin/sh
+        - -c
+        - python eval/coverage.py --out /results/coverage-before.json; before=$?;
+          echo BEFORE_EXIT=$before; python eval/coverage.py --golden eval/golden-expanded.jsonl
+          --out /results/coverage-after.json; after=$?; echo AFTER_EXIT=$after; exit
+          $after
+        env:
+        - name: CHROMA_COLLECTION
+          value: rahbar-a3-ab
+        - name: CACHE_ENABLED
+          value: 'false'
+        - name: TOP_K
+          value: '5'
+        envFrom:
+        - configMapRef:
+            name: rahbar-config
+        image: rahbar-eval:a3-tools
+        imagePullPolicy: Never
+        name: eval
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 768Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        volumeMounts:
+        - mountPath: /results
+          name: results
+        - mountPath: /gate
+          name: gate
+          readOnly: true
+      hostAliases:
+      - hostnames:
+        - host.docker.internal
+        ip: 192.168.65.254
+      restartPolicy: Never
+      securityContext:
+        fsGroup: 10001
+        runAsGroup: 10001
+        runAsUser: 10001
+      volumes:
+      - name: results
+        persistentVolumeClaim:
+          claimName: a3-results
+      - configMap:
+          name: a3-gate
+        name: gate

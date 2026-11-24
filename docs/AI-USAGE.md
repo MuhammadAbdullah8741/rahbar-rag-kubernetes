@@ -1,5 +1,13 @@
 # AI usage
 
+Assignment 3, 23 November 2026: Codex implemented the additional evaluation,
+tracing, coverage, release-gate and Kubernetes scripts, ran the local pipeline,
+and prepared the report from saved results. AI-authored questions remain labelled
+synthetic. Human authorship, manual review and member contributions are not
+invented; the group supplied its actual questions, reviews and contribution split.
+Initial delivery excluded GitHub. After the group opened PR 2 and requested
+completion of the failing checks, Codex pushed CI/scoring fixes and final evidence.
+
 This log records assistance received so far. Extend it as implementation proceeds. The team must review and understand the work before submission.
 
 | Tool | What it wrote or shaped | What we changed afterwards, and why |
@@ -26,3 +34,14 @@ Codex also ran a clearly labelled controlled fixture-label regression on GitHub,
 recorded the measured 20-percentage-point recall drop, and restored the original
 label. The real corpus baseline was not changed. GitHub check records and downloaded
 artifacts are genuine; screenshots are still a separate outstanding requirement.
+
+## Final Assignment 3 revision - 23 November 2026
+
+The group supplied eight human questions and eight named reviews. The user
+confirmed that the first three A3 implementation commits belong to Umar and
+the following three to Abdullah; author metadata was corrected accordingly.
+Codex assistance remains disclosed and commit ownership is not a claim of
+independent unaided implementation. Codex fixed CI lint/type failures, added
+fixed multi-fact/arithmetic scoring rubrics and tests, and reran evaluations
+for the 33-question set. Earlier 25-question evidence is retained separately.
+The final report uses final run measurements rather than reusing old scores.

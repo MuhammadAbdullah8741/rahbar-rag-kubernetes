@@ -1,0 +1,2 @@
+PASS: handbook citation rejected for missing LAB-5
+PASS: supporting b-lab.html citation accepted

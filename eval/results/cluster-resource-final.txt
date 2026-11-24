@@ -1,0 +1,10 @@
+$ kubectl top pods -n rahbar
+NAME                             CPU(cores)   MEMORY(bytes)   
+a3-storage                       1m           55Mi            
+api-6bf6f7448b-8wb8k             6m           76Mi            
+api-6bf6f7448b-mwrbs             5m           48Mi            
+api-6bf6f7448b-xzh8f             5m           49Mi            
+api-candidate-555bcb75d6-kvmz5   6m           62Mi            
+chroma-0                         2m           168Mi           
+redis-64f484c8c9-bzdj2           10m          13Mi            
+ui-5c7899b9bb-xg7mp              1m           5Mi             

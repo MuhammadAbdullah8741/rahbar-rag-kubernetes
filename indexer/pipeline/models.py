@@ -36,6 +36,7 @@ class Chunk:
     def metadata(self) -> dict[str, str | int | bool]:
         """Chroma metadata values must be str, int, float or bool."""
         return {
+            "document_id": self.source,
             "source": self.source,
             "section": self.section,
             "page": self.page,

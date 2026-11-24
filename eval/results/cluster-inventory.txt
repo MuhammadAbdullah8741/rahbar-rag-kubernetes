@@ -1,0 +1,100 @@
+$ kubectl get all,pvc,configmap,cronjob,job -n rahbar
+NAME                                 READY   STATUS      RESTARTS        AGE
+pod/a3-bad-release-query-z5tcq       0/1     Completed   0               3m27s
+pod/a3-coverage-l9wfr                0/1     Completed   0               6h3m
+pod/a3-delete-after-2t76f            0/1     Completed   0               5h47m
+pod/a3-delete-before-cslj8           0/1     Completed   0               5h52m
+pod/a3-final-verify-pr9tc            0/1     Completed   0               4m29s
+pod/a3-ingest-candidate-6p9z2        0/1     Completed   0               6h8m
+pod/a3-release-query-wzhft           0/1     Completed   0               4m12s
+pod/a3-sized-verify-vn6w7            0/1     Completed   0               3m51s
+pod/a3-storage                       1/1     Running     0               6h8m
+pod/a3-unchanged-h7fbg               0/1     Completed   0               5h58m
+pod/a3-undo-query-7ppxm              0/1     Completed   0               2m58s
+pod/api-6bf6f7448b-8wb8k             1/1     Running     0               3m7s
+pod/api-6bf6f7448b-mwrbs             1/1     Running     0               3m3s
+pod/api-6bf6f7448b-xzh8f             1/1     Running     0               3m12s
+pod/api-candidate-555bcb75d6-kvmz5   1/1     Running     0               5h32m
+pod/chroma-0                         1/1     Running     1 (6h31m ago)   16h
+pod/eval-bad-66v2p                   0/1     Error       0               5h40m
+pod/eval-baseline-v7z84              0/1     Completed   0               6h11m
+pod/eval-batch-a-hjrbp               0/1     Completed   0               5h39m
+pod/eval-repeat-cptv5                0/1     Completed   0               5h56m
+pod/eval-topk3-qtf97                 0/1     Completed   0               5h47m
+pod/gate-restored-jvvdq              0/1     Completed   0               4m42s
+pod/gate-strict-gxzrx                0/1     Error       0               4m59s
+pod/redis-64f484c8c9-bzdj2           1/1     Running     1 (6h31m ago)   16h
+pod/ui-5c7899b9bb-xg7mp              1/1     Running     1 (6h31m ago)   16h
+pod/verify-ab-20261122152203-klmz8   0/1     Completed   0               11h
+
+NAME                    TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+service/api             ClusterIP   10.96.40.201    <none>        8000/TCP   16h
+service/api-candidate   ClusterIP   10.110.98.196   <none>        8000/TCP   6h6m
+service/chroma          ClusterIP   None            <none>        8000/TCP   16h
+service/redis           ClusterIP   10.97.43.34     <none>        6379/TCP   16h
+service/ui              ClusterIP   10.101.149.94   <none>        8080/TCP   16h
+
+NAME                            READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/api             3/3     3            3           16h
+deployment.apps/api-candidate   1/1     1            1           6h6m
+deployment.apps/redis           1/1     1            1           16h
+deployment.apps/ui              1/1     1            1           16h
+
+NAME                                       DESIRED   CURRENT   READY   AGE
+replicaset.apps/api-567bbfdd96             0         0         0       3m41s
+replicaset.apps/api-589967f9b9             0         0         0       6h22m
+replicaset.apps/api-5cf8bb647d             0         0         0       6h30m
+replicaset.apps/api-66d7db6999             0         0         0       10h
+replicaset.apps/api-6bf6f7448b             3         3         3       4m26s
+replicaset.apps/api-744c744f59             0         0         0       6h13m
+replicaset.apps/api-757875d9b9             0         0         0       10h
+replicaset.apps/api-77998f847f             0         0         0       6h26m
+replicaset.apps/api-7b4b444485             0         0         0       16h
+replicaset.apps/api-candidate-555bcb75d6   1         1         1       6h6m
+replicaset.apps/api-candidate-59c444dcdc   0         0         0       5h39m
+replicaset.apps/api-candidate-64d6747567   0         0         0       5h40m
+replicaset.apps/redis-64f484c8c9           1         1         1       16h
+replicaset.apps/ui-5c7899b9bb              1         1         1       16h
+
+NAME                      READY   AGE
+statefulset.apps/chroma   1/1     16h
+
+NAME                                      REFERENCE        TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/api   Deployment/api   cpu: 5%/70%   3         8         3          16h
+
+NAME                    SCHEDULE    TIMEZONE       SUSPEND   ACTIVE   LAST SCHEDULE   AGE
+cronjob.batch/reindex   0 2 * * 0   Asia/Karachi   False     0        <none>          16h
+
+NAME                                 STATUS     COMPLETIONS   DURATION   AGE
+job.batch/a3-bad-release-query       Complete   1/1           5s         3m27s
+job.batch/a3-coverage                Complete   1/1           103s       6h3m
+job.batch/a3-delete-after            Complete   1/1           14s        5h47m
+job.batch/a3-delete-before           Complete   1/1           4m51s      5h52m
+job.batch/a3-final-verify            Complete   1/1           9s         4m29s
+job.batch/a3-ingest-candidate        Complete   1/1           9m19s      6h8m
+job.batch/a3-release-query           Complete   1/1           30s        4m12s
+job.batch/a3-sized-verify            Complete   1/1           10s        3m51s
+job.batch/a3-unchanged               Complete   1/1           6m32s      5h58m
+job.batch/a3-undo-query              Complete   1/1           15s        2m58s
+job.batch/eval-bad                   Failed     0/1           5h40m      5h40m
+job.batch/eval-baseline              Complete   1/1           13m        6h11m
+job.batch/eval-batch-a               Complete   1/1           6m43s      5h39m
+job.batch/eval-repeat                Complete   1/1           8m55s      5h56m
+job.batch/eval-topk3                 Complete   1/1           7m12s      5h47m
+job.batch/gate-restored              Complete   1/1           3s         4m42s
+job.batch/gate-strict                Failed     0/1           4m59s      4m59s
+job.batch/indexer                    Failed     0/1           16h        16h
+job.batch/rollback-ab-1795358837     Failed     0/1           11h        11h
+job.batch/verify-ab-20261122152203   Complete   1/1           102s       11h
+
+NAME                                        STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/a3-results            Bound    pvc-a2447904-d1ed-4f22-8d10-111f720dae00   2Gi        RWO            standard       <unset>                 6h13m
+persistentvolumeclaim/corpus                Bound    pvc-7ae6ef79-cfc8-4502-a8c6-0ef8abdb75b6   1Gi        RWO            standard       <unset>                 16h
+persistentvolumeclaim/data-chroma-0         Bound    pvc-57bb3f17-4f20-4e97-90bd-72e2e683228c   2Gi        RWO            standard       <unset>                 16h
+persistentvolumeclaim/rahbar-a3-retention   Bound    pvc-0e27bf3e-e011-4a9c-8ee2-0f229fc3cf9f   1Gi        RWO            standard       <unset>                 11h
+persistentvolumeclaim/redis-data            Bound    pvc-f5ff8de0-ed4f-4336-a781-e114159e8cf8   1Gi        RWO            standard       <unset>                 16h
+
+NAME                         DATA   AGE
+configmap/a3-gate            1      6h11m
+configmap/kube-root-ca.crt   1      16h
+configmap/rahbar-config      22     16h

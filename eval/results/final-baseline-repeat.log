@@ -1,0 +1,62 @@
+q01 15.75s answered=True error=None
+q02 9.37s answered=True error=None
+q03 15.69s answered=True error=None
+q04 19.80s answered=False error=None
+q05 7.04s answered=False error=None
+q06 37.51s answered=True error=None
+q07 26.90s answered=True error=None
+q08 11.38s answered=True error=None
+q09 11.44s answered=True error=None
+q10 11.86s answered=True error=None
+q11 10.54s answered=True error=None
+q12 33.57s answered=True error=None
+q13 12.21s answered=False error=None
+q14 0.23s answered=False error=None
+q15 25.56s answered=False error=None
+q16 8.85s answered=True error=None
+q17 7.90s answered=True error=None
+q18 7.27s answered=True error=None
+q19 9.07s answered=True error=None
+q20 46.32s answered=False error=None
+q21 9.17s answered=True error=None
+q22 25.94s answered=True error=None
+q23 0.20s answered=False error=None
+q24 0.25s answered=False error=None
+q25 0.23s answered=False error=None
+H1 22.41s answered=True error=None
+H2 26.91s answered=True error=None
+H3 0.23s answered=False error=None
+H4 11.18s answered=True error=None
+H5 31.95s answered=True error=None
+H6 10.65s answered=True error=None
+H7 18.50s answered=True error=None
+H8 17.60s answered=False error=None
+Level | Metric | Value
+--- | --- | ---
+module | paraphrase_mean | 0.7828617377229276
+module | unrelated_mean | 0.4192277980519883
+module | gap | 0.36363393967093927
+module | seconds_per_chunk | 0.08226416338290252
+module | max_repeat_difference | 0.0
+module | paraphrase_pairs | 15
+module | unrelated_pairs | 15
+component | recall_at_3 | 0.8452380952380952
+component | recall_at_5 | 0.8571428571428571
+component | mrr | 0.8571428571428571
+component | ndcg_at_5 | 0.8509195080243882
+noise_delta | recall_at_3 | -0.0357142857142857
+noise_delta | recall_at_5 | -0.011904761904761862
+noise_delta | mrr | -0.02678571428571419
+noise_delta | ndcg_at_5 | -0.025356722874023796
+end_to_end | citation_validity | 1
+end_to_end | faithfulness | 0.7272727272727273
+end_to_end | citation_ground_truth | 0.6785714285714286
+end_to_end | answerable_success | 0.5357142857142857
+end_to_end | abstention_correctness | 1
+end_to_end | latency_p50 | 11.438547298999765
+end_to_end | latency_p95 | 35.145902899800234
+end_to_end | answered_count | 22
+end_to_end | cache_hit_rate | 0
+end_to_end | errors | 0
+
+RESULT /results/final/baseline-repeat.json

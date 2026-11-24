@@ -1,0 +1,86 @@
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl get job a3-ingest-candidate -n rahbar -o json
++ kubectl logs -n rahbar job/a3-ingest-candidate
++ kubectl apply -f -
+job.batch/a3-unchanged created
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl get job a3-unchanged -n rahbar -o json
++ kubectl logs -n rahbar job/a3-unchanged
++ kubectl exec -n rahbar a3-storage -- python -c import shutil; shutil.copytree('/retained/input-ab','/retained/input-deletion',dirs_exist_ok=True)
++ kubectl apply -f -
+job.batch/a3-delete-before created
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl get job a3-delete-before -n rahbar -o json
++ kubectl logs -n rahbar job/a3-delete-before
++ kubectl exec -n rahbar a3-storage -- python -c import json; from pathlib import Path; p=Path('/retained/input-deletion'); rows=json.loads((p/'_index.json').read_text()); (p/'_index.json').write_text(json.dumps([r for r in rows if r['file']!='b-booking.html'])); (p/'b-booking.html').unlink()
++ kubectl apply -f -
+job.batch/a3-delete-after created
++ kubectl get job a3-delete-after -n rahbar -o json
++ kubectl get job a3-delete-after -n rahbar -o json
++ kubectl logs -n rahbar job/a3-delete-after
+{
+  "document_id": "b-booking.html",
+  "before_count": 1,
+  "after_count": 0,
+  "before_collection": "rahbar-a3-deletion-3fc30506f354",
+  "after_collection": "rahbar-a3-deletion-ea964b0a4128",
+  "unrelated_ids_unchanged": true
+}
