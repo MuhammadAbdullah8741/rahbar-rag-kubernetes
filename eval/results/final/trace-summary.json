@@ -1,0 +1,11 @@
+{
+  "queries": 33,
+  "top1_similarity": {
+    "mean": 0.7531525566666667,
+    "p50": 0.75840503,
+    "p95": 0.84258232
+  },
+  "abstention_rate": 0.36363636363636365,
+  "cache_hit_rate": 0,
+  "flagged_injection_queries": 2
+}

@@ -1,0 +1,35 @@
+{
+  "decision": "reject",
+  "failures": [
+    "component.recall_at_5: regression",
+    "end_to_end.faithfulness: missing/nonfinite",
+    "end_to_end.citation_validity: missing/nonfinite",
+    "end_to_end.answerable_success: 0.0 < 0.5"
+  ],
+  "baseline": "/results/final/baseline-ab.json",
+  "candidate": "/results/final/bad-candidate.json",
+  "thresholds": {
+    "component.recall_at_5": {
+      "max_drop": 0.02
+    },
+    "end_to_end.faithfulness": {
+      "min": 0.8
+    },
+    "end_to_end.citation_validity": {
+      "min": 0.95
+    },
+    "end_to_end.abstention_correctness": {
+      "min": 1.0,
+      "max_drop": 0.0
+    },
+    "end_to_end.latency_p95": {
+      "max": 180
+    },
+    "end_to_end.errors": {
+      "max": 0
+    },
+    "end_to_end.answerable_success": {
+      "min": 0.5
+    }
+  }
+}

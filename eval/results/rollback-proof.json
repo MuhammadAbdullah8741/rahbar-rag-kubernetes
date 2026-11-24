@@ -1,0 +1,12 @@
+{
+  "before_trace": "b43153925c9b49b3a0ea12630eee5dfd",
+  "bad_trace": "44f4e370957741a0be349f565126e6fc",
+  "after_trace": "520a959c4927499c84aac10d8145bd13",
+  "before_collection": "rahbar-a3-candidate-740df1771f94",
+  "bad_collection": "rahbar-9b0f448f2e72",
+  "after_collection": "rahbar-a3-candidate-740df1771f94",
+  "before_embedding_version": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+  "after_embedding_version": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+  "after_answer": "The demo desk uses ticket D17. [b-injected-notice.html / Document]",
+  "after_answered": true
+}

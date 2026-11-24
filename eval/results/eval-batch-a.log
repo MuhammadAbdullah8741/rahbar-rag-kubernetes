@@ -1,0 +1,54 @@
+q01 20.38s answered=True error=None
+q02 17.29s answered=True error=None
+q03 19.89s answered=True error=None
+q04 19.95s answered=True error=None
+q05 28.70s answered=False error=None
+q06 28.58s answered=True error=None
+q07 30.91s answered=True error=None
+q08 26.20s answered=True error=None
+q09 21.92s answered=True error=None
+q10 25.95s answered=True error=None
+q11 14.52s answered=True error=None
+q12 39.19s answered=True error=None
+q13 9.54s answered=False error=None
+q14 0.38s answered=False error=None
+q15 24.59s answered=False error=None
+q16 0.35s answered=False error=None
+q17 0.24s answered=False error=None
+q18 0.25s answered=False error=None
+q19 0.32s answered=False error=None
+q20 21.82s answered=True error=None
+q21 11.52s answered=True error=None
+q22 11.40s answered=True error=None
+q23 0.30s answered=False error=None
+q24 0.38s answered=False error=None
+q25 0.32s answered=False error=None
+Level | Metric | Value
+--- | --- | ---
+module | paraphrase_mean | 0.7828617377229276
+module | unrelated_mean | 0.4192277980519883
+module | gap | 0.36363393967093927
+module | seconds_per_chunk | 0.21368271599995034
+module | max_repeat_difference | 0.0
+module | paraphrase_pairs | 15
+module | unrelated_pairs | 15
+component | recall_at_3 | 0.65
+component | recall_at_5 | 0.65
+component | mrr | 0.6
+component | ndcg_at_5 | 0.6130929753571458
+noise_delta | recall_at_3 | 0.0
+noise_delta | recall_at_5 | 0.0
+noise_delta | mrr | -0.016666666666666607
+noise_delta | ndcg_at_5 | -0.01309297535714582
+end_to_end | citation_validity | 1
+end_to_end | faithfulness | 0.6428571428571429
+end_to_end | citation_ground_truth | 0.4
+end_to_end | answerable_success | 0.4
+end_to_end | abstention_correctness | 1
+end_to_end | latency_p50 | 17.29290256899958
+end_to_end | latency_p95 | 30.469131548799755
+end_to_end | answered_count | 14
+end_to_end | cache_hit_rate | 0
+end_to_end | errors | 0
+
+RESULT /results/batch-a.json

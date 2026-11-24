@@ -1,0 +1,54 @@
+q01 21.49s answered=True error=None
+q02 18.34s answered=True error=None
+q03 21.49s answered=True error=None
+q04 35.33s answered=False error=None
+q05 38.76s answered=False error=None
+q06 84.07s answered=True error=None
+q07 46.71s answered=True error=None
+q08 72.86s answered=True error=None
+q09 48.25s answered=True error=None
+q10 71.57s answered=True error=None
+q11 23.80s answered=True error=None
+q12 58.13s answered=True error=None
+q13 19.85s answered=False error=None
+q14 0.38s answered=False error=None
+q15 62.81s answered=False error=None
+q16 14.40s answered=True error=None
+q17 13.54s answered=True error=None
+q18 12.07s answered=True error=None
+q19 17.64s answered=True error=None
+q20 82.29s answered=False error=None
+q21 17.41s answered=True error=None
+q22 18.73s answered=True error=None
+q23 0.45s answered=False error=None
+q24 0.32s answered=False error=None
+q25 0.51s answered=False error=None
+Level | Metric | Value
+--- | --- | ---
+module | paraphrase_mean | 0.7828617377229276
+module | unrelated_mean | 0.4192277980519883
+module | gap | 0.36363393967093927
+module | seconds_per_chunk | 0.1305508526595773
+module | max_repeat_difference | 0.0
+module | paraphrase_pairs | 15
+module | unrelated_pairs | 15
+component | recall_at_3 | 0.8
+component | recall_at_5 | 0.8
+component | mrr | 0.8
+component | ndcg_at_5 | 0.8
+noise_delta | recall_at_3 | 0.0
+noise_delta | recall_at_5 | 0.0
+noise_delta | mrr | -0.033333333333333326
+noise_delta | ndcg_at_5 | -0.025000000000000022
+end_to_end | citation_validity | 1
+end_to_end | faithfulness | 0.8125
+end_to_end | citation_ground_truth | 0.6
+end_to_end | answerable_success | 0.6
+end_to_end | abstention_correctness | 1
+end_to_end | latency_p50 | 21.49106054899994
+end_to_end | latency_p95 | 80.40837914239998
+end_to_end | answered_count | 16
+end_to_end | cache_hit_rate | 0
+end_to_end | errors | 0
+
+RESULT /results/baseline-ab.json

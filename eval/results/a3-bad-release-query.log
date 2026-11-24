@@ -1,0 +1,11 @@
+{
+  "request_id": "44f4e370957741a0be349f565126e6fc",
+  "answer": "The available documents do not contain enough evidence to answer this question.",
+  "citations": [],
+  "answered_from_context": false,
+  "confidence": "low",
+  "retrieved": [],
+  "provider": "ollama",
+  "cached": false,
+  "fallback": false
+}

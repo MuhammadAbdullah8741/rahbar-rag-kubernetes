@@ -1,0 +1,210 @@
+{
+  "before": "eval/results/cluster/baseline-ab.json",
+  "after": "eval/results/cluster/candidate.json",
+  "same_golden": true,
+  "rows": [
+    {
+      "level": "module",
+      "metric": "paraphrase_mean",
+      "before": 0.7828617377229276,
+      "after": 0.7828617377229276,
+      "delta": 0.0
+    },
+    {
+      "level": "module",
+      "metric": "unrelated_mean",
+      "before": 0.4192277980519883,
+      "after": 0.4192277980519883,
+      "delta": 0.0
+    },
+    {
+      "level": "module",
+      "metric": "gap",
+      "before": 0.36363393967093927,
+      "after": 0.36363393967093927,
+      "delta": 0.0
+    },
+    {
+      "level": "module",
+      "metric": "seconds_per_chunk",
+      "before": 0.1305508526595773,
+      "after": 0.14171260425533508,
+      "delta": 0.011161751595757774
+    },
+    {
+      "level": "module",
+      "metric": "max_repeat_difference",
+      "before": 0.0,
+      "after": 0.0,
+      "delta": 0.0
+    },
+    {
+      "level": "module",
+      "metric": "paraphrase_pairs",
+      "before": 15,
+      "after": 15,
+      "delta": 0
+    },
+    {
+      "level": "module",
+      "metric": "unrelated_pairs",
+      "before": 15,
+      "after": 15,
+      "delta": 0
+    },
+    {
+      "level": "component",
+      "metric": "recall_at_3",
+      "before": 0.8,
+      "after": 0.8,
+      "delta": 0.0
+    },
+    {
+      "level": "component",
+      "metric": "recall_at_5",
+      "before": 0.8,
+      "after": 0.8,
+      "delta": 0.0
+    },
+    {
+      "level": "component",
+      "metric": "mrr",
+      "before": 0.8,
+      "after": 0.8,
+      "delta": 0.0
+    },
+    {
+      "level": "component",
+      "metric": "ndcg_at_5",
+      "before": 0.8,
+      "after": 0.8,
+      "delta": 0.0
+    },
+    {
+      "level": "noise",
+      "metric": "recall_at_3",
+      "before": 0.8,
+      "after": 0.8,
+      "delta": 0.0
+    },
+    {
+      "level": "noise",
+      "metric": "recall_at_5",
+      "before": 0.8,
+      "after": 0.8,
+      "delta": 0.0
+    },
+    {
+      "level": "noise",
+      "metric": "mrr",
+      "before": 0.7666666666666667,
+      "after": 0.7666666666666667,
+      "delta": 0.0
+    },
+    {
+      "level": "noise",
+      "metric": "ndcg_at_5",
+      "before": 0.775,
+      "after": 0.775,
+      "delta": 0.0
+    },
+    {
+      "level": "noise_delta",
+      "metric": "recall_at_3",
+      "before": 0.0,
+      "after": 0.0,
+      "delta": 0.0
+    },
+    {
+      "level": "noise_delta",
+      "metric": "recall_at_5",
+      "before": 0.0,
+      "after": 0.0,
+      "delta": 0.0
+    },
+    {
+      "level": "noise_delta",
+      "metric": "mrr",
+      "before": -0.033333333333333326,
+      "after": -0.033333333333333326,
+      "delta": 0.0
+    },
+    {
+      "level": "noise_delta",
+      "metric": "ndcg_at_5",
+      "before": -0.025000000000000022,
+      "after": -0.025000000000000022,
+      "delta": 0.0
+    },
+    {
+      "level": "end_to_end",
+      "metric": "citation_validity",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "level": "end_to_end",
+      "metric": "faithfulness",
+      "before": 0.8125,
+      "after": 0.9444444444444444,
+      "delta": 0.13194444444444442
+    },
+    {
+      "level": "end_to_end",
+      "metric": "citation_ground_truth",
+      "before": 0.6,
+      "after": 0.7,
+      "delta": 0.09999999999999998
+    },
+    {
+      "level": "end_to_end",
+      "metric": "answerable_success",
+      "before": 0.6,
+      "after": 0.7,
+      "delta": 0.09999999999999998
+    },
+    {
+      "level": "end_to_end",
+      "metric": "abstention_correctness",
+      "before": 1,
+      "after": 1,
+      "delta": 0
+    },
+    {
+      "level": "end_to_end",
+      "metric": "latency_p50",
+      "before": 21.49106054899994,
+      "after": 13.562587187999725,
+      "delta": -7.928473361000215
+    },
+    {
+      "level": "end_to_end",
+      "metric": "latency_p95",
+      "before": 80.40837914239998,
+      "after": 44.82671593600013,
+      "delta": -35.58166320639985
+    },
+    {
+      "level": "end_to_end",
+      "metric": "answered_count",
+      "before": 16,
+      "after": 18,
+      "delta": 2
+    },
+    {
+      "level": "end_to_end",
+      "metric": "cache_hit_rate",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    },
+    {
+      "level": "end_to_end",
+      "metric": "errors",
+      "before": 0,
+      "after": 0,
+      "delta": 0
+    }
+  ]
+}

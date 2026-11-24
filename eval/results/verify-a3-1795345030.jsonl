@@ -1,0 +1,16 @@
+{"ts": "2026-11-22T10:57:12Z", "logger": "rahbar.indexer", "msg": "indexer starting", "dummy": false, "embed_model": "nomic-embed-text:latest", "collection": "rahbar", "chroma": "chroma:8000", "pod": "verify-a3-1795345030-45hc2"}
+{"ts": "2026-11-22T10:57:13Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "undergraduate-academic-rules-aug-2023.pdf", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-22T10:58:28Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "undergraduate-academic-rules-aug-2023.pdf", "chunks": 59}
+{"ts": "2026-11-22T10:58:28Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "academic-rules-handbook-jun-2026.pdf", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-22T10:58:37Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "academic-rules-handbook-jun-2026.pdf", "chunks": 98}
+{"ts": "2026-11-22T10:58:37Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "prospectus-2026-academic-rules-and-regulations.pdf", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-22T10:58:39Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "prospectus-2026-academic-rules-and-regulations.pdf", "chunks": 41}
+{"ts": "2026-11-22T10:58:39Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "student-handbook-jun-2026.pdf", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-22T10:58:49Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "student-handbook-jun-2026.pdf", "chunks": 107}
+{"ts": "2026-11-22T10:58:49Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "fee-structure-page.html", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-22T10:58:49Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "fee-structure-page.html", "chunks": 8}
+{"ts": "2026-11-22T10:58:49Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "grading-page.html", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-22T10:58:49Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "grading-page.html", "chunks": 7}
+{"ts": "2026-11-22T10:58:49Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-22T10:59:00Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf", "chunks": 20}
+{"ts": "2026-11-22T11:00:18Z", "logger": "rahbar.indexer", "msg": "indexer finished", "chunks": 340, "seconds": 184.3, "memory_peak_bytes": 242302976}

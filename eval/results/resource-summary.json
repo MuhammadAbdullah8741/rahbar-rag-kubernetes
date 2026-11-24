@@ -1,0 +1,19 @@
+{
+  "indexer": {
+    "peak_observed_cpu_m": 985.0,
+    "peak_observed_memory_Mi": 199.0
+  },
+  "api": {
+    "peak_observed_cpu_m": 74.0,
+    "peak_observed_memory_Mi": 86.0
+  },
+  "chroma": {
+    "peak_observed_cpu_m": 54.0,
+    "peak_observed_memory_Mi": 131.0
+  },
+  "eval": {
+    "peak_observed_cpu_m": 184.0,
+    "peak_observed_memory_Mi": 71.0
+  },
+  "note": "kubectl top samples, not guaranteed lifetime peaks; indexer cgroup memory.peak is also saved in Job logs"
+}

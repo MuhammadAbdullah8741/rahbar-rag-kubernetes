@@ -1,0 +1,62 @@
+q01 16.13s answered=True error=None
+q02 9.63s answered=True error=None
+q03 8.78s answered=True error=None
+q04 24.20s answered=True error=None
+q05 11.01s answered=True error=None
+q06 37.99s answered=True error=None
+q07 10.15s answered=True error=None
+q08 12.78s answered=True error=None
+q09 10.54s answered=True error=None
+q10 11.49s answered=True error=None
+q11 9.84s answered=True error=None
+q12 26.89s answered=True error=None
+q13 10.56s answered=False error=None
+q14 0.22s answered=False error=None
+q15 16.98s answered=False error=None
+q16 8.44s answered=True error=None
+q17 8.31s answered=True error=None
+q18 7.37s answered=True error=None
+q19 8.80s answered=True error=None
+q20 43.91s answered=False error=None
+q21 9.08s answered=True error=None
+q22 32.06s answered=True error=None
+q23 0.92s answered=False error=None
+q24 0.47s answered=False error=None
+q25 0.22s answered=False error=None
+H1 17.97s answered=True error=None
+H2 19.34s answered=True error=None
+H3 0.23s answered=False error=None
+H4 7.28s answered=False error=None
+H5 20.80s answered=True error=None
+H6 12.41s answered=True error=None
+H7 19.18s answered=True error=None
+H8 20.75s answered=False error=None
+Level | Metric | Value
+--- | --- | ---
+module | paraphrase_mean | 0.7828617377229276
+module | unrelated_mean | 0.4192277980519883
+module | gap | 0.36363393967093927
+module | seconds_per_chunk | 0.07000269985114078
+module | max_repeat_difference | 0.0
+module | paraphrase_pairs | 15
+module | unrelated_pairs | 15
+component | recall_at_3 | 0.8452380952380952
+component | recall_at_5 | 0.8452380952380952
+component | mrr | 0.8571428571428571
+component | ndcg_at_5 | 0.8437013885065116
+noise_delta | recall_at_3 | -0.0357142857142857
+noise_delta | recall_at_5 | -0.0357142857142857
+noise_delta | mrr | -0.0357142857142857
+noise_delta | ndcg_at_5 | -0.03351990900162549
+end_to_end | citation_validity | 1
+end_to_end | faithfulness | 0.782608695652174
+end_to_end | citation_ground_truth | 0.6785714285714286
+end_to_end | answerable_success | 0.5357142857142857
+end_to_end | abstention_correctness | 1
+end_to_end | latency_p50 | 10.55991420800001
+end_to_end | latency_p95 | 34.4321369883999
+end_to_end | answered_count | 23
+end_to_end | cache_hit_rate | 0
+end_to_end | errors | 0
+
+RESULT /results/final/candidate.json

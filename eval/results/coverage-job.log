@@ -1,0 +1,55 @@
+{
+  "coverage": 0.7,
+  "similarity_threshold": 0.85,
+  "minimum_coverage": 0.85,
+  "embedding_model": "nomic-embed-text:latest",
+  "golden_count": 25,
+  "queries": 40,
+  "uncovered_topics": {
+    "WiFi support": [
+      "How do I reset my campus WiFi password?",
+      "Where can I change the password for campus wireless internet?"
+    ],
+    "bus tracking": [
+      "Where is my campus shuttle right now?",
+      "Can I track the university bus live?"
+    ],
+    "counselling": [
+      "How can I book a student counselling appointment?",
+      "Where do I schedule a meeting with the campus counsellor?"
+    ],
+    "lost property": [
+      "Where do I report a lost student ID card?",
+      "Who handles a missing campus identity card?"
+    ],
+    "printing": [
+      "What does colour printing cost at the campus print shop?",
+      "How much do I pay per colour page at the university printing shop?"
+    ],
+    "sports trials": [
+      "When are the university cricket team trials?",
+      "What is the date for cricket team selection?"
+    ]
+  }
+}
+BEFORE_EXIT=1
+{
+  "coverage": 0.925,
+  "similarity_threshold": 0.85,
+  "minimum_coverage": 0.85,
+  "embedding_model": "nomic-embed-text:latest",
+  "golden_count": 31,
+  "queries": 40,
+  "uncovered_topics": {
+    "bus tracking": [
+      "Can I track the university bus live?"
+    ],
+    "counselling": [
+      "Where do I schedule a meeting with the campus counsellor?"
+    ],
+    "sports trials": [
+      "What is the date for cricket team selection?"
+    ]
+  }
+}
+AFTER_EXIT=0

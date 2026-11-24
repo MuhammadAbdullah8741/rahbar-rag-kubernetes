@@ -1,0 +1,560 @@
+{
+  "run": "verify-ab-20261122142318",
+  "documents": 17,
+  "indexed": 12,
+  "rejected": 5,
+  "chunks": 351,
+  "records": [
+    {
+      "source": "academic-rules-handbook-jun-2026.pdf",
+      "decision": "indexed",
+      "checks": {
+        "manifest verification": {
+          "passed": true,
+          "checks": {
+            "metadata": "pass",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "extraction verification": {
+          "passed": true,
+          "reason": "page sequence complete and text checks passed",
+          "expected_pages": 58,
+          "extracted_pages": 58,
+          "blank_after_cleaning": [
+            2,
+            56,
+            57
+          ]
+        },
+        "exact duplicate verification": {
+          "passed": true,
+          "sha256": "4cfee3e191b84aeb9168f17656c7642212ff52b90f2780d028b33c154aa74b62",
+          "duplicate_of": null,
+          "reason": "unique file content"
+        },
+        "near duplicate verification": {
+          "passed": true,
+          "closest": null,
+          "cosine": null,
+          "threshold": 0.99,
+          "excluded_predecessor": null
+        }
+      },
+      "chunks": 98
+    },
+    {
+      "source": "prospectus-2026-academic-rules-and-regulations.pdf",
+      "decision": "indexed",
+      "checks": {
+        "manifest verification": {
+          "passed": true,
+          "checks": {
+            "metadata": "pass",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "extraction verification": {
+          "passed": true,
+          "reason": "page sequence complete and text checks passed",
+          "expected_pages": 5,
+          "extracted_pages": 5,
+          "blank_after_cleaning": []
+        },
+        "exact duplicate verification": {
+          "passed": true,
+          "sha256": "a7e7f6896a59eb9413c9e8826e6c4c018ebe52045d10cebfcba92ded10a3174a",
+          "duplicate_of": null,
+          "reason": "unique file content"
+        },
+        "near duplicate verification": {
+          "passed": true,
+          "closest": "academic-rules-handbook-jun-2026.pdf",
+          "cosine": 0.9684070072523444,
+          "threshold": 0.99,
+          "excluded_predecessor": null
+        }
+      },
+      "chunks": 41
+    },
+    {
+      "source": "student-handbook-jun-2026.pdf",
+      "decision": "indexed",
+      "checks": {
+        "manifest verification": {
+          "passed": true,
+          "checks": {
+            "metadata": "pass",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "extraction verification": {
+          "passed": true,
+          "reason": "page sequence complete and text checks passed",
+          "expected_pages": 64,
+          "extracted_pages": 64,
+          "blank_after_cleaning": [
+            2,
+            63
+          ]
+        },
+        "exact duplicate verification": {
+          "passed": true,
+          "sha256": "717eb4b8d37e50185ffe952735c08ef19edd16074d547f10ebd22cf23da67c4d",
+          "duplicate_of": null,
+          "reason": "unique file content"
+        },
+        "near duplicate verification": {
+          "passed": true,
+          "closest": "academic-rules-handbook-jun-2026.pdf",
+          "cosine": 0.9740331729389534,
+          "threshold": 0.99,
+          "excluded_predecessor": null
+        }
+      },
+      "chunks": 107
+    },
+    {
+      "source": "fee-structure-page.html",
+      "decision": "indexed",
+      "checks": {
+        "manifest verification": {
+          "passed": true,
+          "checks": {
+            "metadata": "pass",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "extraction verification": {
+          "passed": true,
+          "reason": "page sequence complete and text checks passed",
+          "expected_pages": 1,
+          "extracted_pages": 1,
+          "blank_after_cleaning": []
+        },
+        "exact duplicate verification": {
+          "passed": true,
+          "sha256": "ec8872ae77cac7e96e20e6979933f36b00aaeb0ab3f668a2116e521c655e7b90",
+          "duplicate_of": null,
+          "reason": "unique file content"
+        },
+        "near duplicate verification": {
+          "passed": true,
+          "closest": "prospectus-2026-academic-rules-and-regulations.pdf",
+          "cosine": 0.8704819054929445,
+          "threshold": 0.99,
+          "excluded_predecessor": null
+        }
+      },
+      "chunks": 8
+    },
+    {
+      "source": "grading-page.html",
+      "decision": "indexed",
+      "checks": {
+        "manifest verification": {
+          "passed": true,
+          "checks": {
+            "metadata": "pass",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "extraction verification": {
+          "passed": true,
+          "reason": "page sequence complete and text checks passed",
+          "expected_pages": 1,
+          "extracted_pages": 1,
+          "blank_after_cleaning": []
+        },
+        "exact duplicate verification": {
+          "passed": true,
+          "sha256": "66a995b4d8474e914d37bfa14755a5361f47327d5a7314f9b7ec15d9b6176e6e",
+          "duplicate_of": null,
+          "reason": "unique file content"
+        },
+        "near duplicate verification": {
+          "passed": true,
+          "closest": "prospectus-2026-academic-rules-and-regulations.pdf",
+          "cosine": 0.951418299222298,
+          "threshold": 0.99,
+          "excluded_predecessor": null
+        }
+      },
+      "chunks": 7,
+      "superseded_by": "b-grading-revision.html"
+    },
+    {
+      "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf",
+      "decision": "indexed",
+      "checks": {
+        "manifest verification": {
+          "passed": true,
+          "checks": {
+            "metadata": "pass",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "extraction verification": {
+          "passed": true,
+          "reason": "page sequence complete and text checks passed",
+          "expected_pages": 8,
+          "extracted_pages": 8,
+          "blank_after_cleaning": []
+        },
+        "exact duplicate verification": {
+          "passed": true,
+          "sha256": "c2d5c7648d1593daf34d5c0596ede476e8984b0551830cc1690017e6e22f1359",
+          "duplicate_of": null,
+          "reason": "unique file content"
+        },
+        "near duplicate verification": {
+          "passed": true,
+          "closest": "student-handbook-jun-2026.pdf",
+          "cosine": 0.9069591625526415,
+          "threshold": 0.99,
+          "excluded_predecessor": null
+        }
+      },
+      "chunks": 20
+    },
+    {
+      "source": "copy-fee-structure-page.html",
+      "decision": "rejected",
+      "checks": {
+        "manifest verification": {
+          "passed": true,
+          "checks": {
+            "metadata": "pass",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "extraction verification": {
+          "passed": true,
+          "reason": "page sequence complete and text checks passed",
+          "expected_pages": 1,
+          "extracted_pages": 1,
+          "blank_after_cleaning": []
+        },
+        "exact duplicate verification": {
+          "passed": false,
+          "sha256": "ec8872ae77cac7e96e20e6979933f36b00aaeb0ab3f668a2116e521c655e7b90",
+          "duplicate_of": "fee-structure-page.html",
+          "reason": "exact duplicate"
+        }
+      }
+    },
+    {
+      "source": "copy-grading-page.html",
+      "decision": "rejected",
+      "checks": {
+        "manifest verification": {
+          "passed": true,
+          "checks": {
+            "metadata": "pass",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "extraction verification": {
+          "passed": true,
+          "reason": "page sequence complete and text checks passed",
+          "expected_pages": 1,
+          "extracted_pages": 1,
+          "blank_after_cleaning": []
+        },
+        "exact duplicate verification": {
+          "passed": false,
+          "sha256": "66a995b4d8474e914d37bfa14755a5361f47327d5a7314f9b7ec15d9b6176e6e",
+          "duplicate_of": "grading-page.html",
+          "reason": "exact duplicate"
+        }
+      }
+    },
+    {
+      "source": "near-fee-structure-page.html",
+      "decision": "rejected",
+      "checks": {
+        "manifest verification": {
+          "passed": true,
+          "checks": {
+            "metadata": "pass",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "extraction verification": {
+          "passed": true,
+          "reason": "page sequence complete and text checks passed",
+          "expected_pages": 1,
+          "extracted_pages": 1,
+          "blank_after_cleaning": []
+        },
+        "exact duplicate verification": {
+          "passed": true,
+          "sha256": "8f47d5bd718e3808d9c534769dbc2003f4bf40a783f013d0a49c063c6c30a103",
+          "duplicate_of": null,
+          "reason": "unique file content"
+        },
+        "near duplicate verification": {
+          "passed": false,
+          "closest": "fee-structure-page.html",
+          "cosine": 0.9997010113702675,
+          "threshold": 0.99,
+          "excluded_predecessor": null
+        }
+      }
+    },
+    {
+      "source": "b-corrupt.pdf",
+      "decision": "rejected",
+      "checks": {
+        "manifest verification": {
+          "passed": true,
+          "checks": {
+            "metadata": "pass",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "extraction verification": {
+          "passed": false,
+          "reason": "PdfminerException: Unexpected EOF"
+        }
+      }
+    },
+    {
+      "source": "b-missing-title.html",
+      "decision": "rejected",
+      "checks": {
+        "manifest verification": {
+          "passed": false,
+          "checks": {
+            "metadata": "missing name",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        }
+      }
+    },
+    {
+      "source": "b-injected-notice.html",
+      "decision": "indexed",
+      "checks": {
+        "manifest verification": {
+          "passed": true,
+          "checks": {
+            "metadata": "pass",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "extraction verification": {
+          "passed": true,
+          "reason": "page sequence complete and text checks passed",
+          "expected_pages": 1,
+          "extracted_pages": 1,
+          "blank_after_cleaning": []
+        },
+        "exact duplicate verification": {
+          "passed": true,
+          "sha256": "32ce002446a6e24c9229fc1abf4e315711ec75e082e78ea5e19b3fabfd3aef9e",
+          "duplicate_of": null,
+          "reason": "unique file content"
+        },
+        "near duplicate verification": {
+          "passed": true,
+          "closest": "student-handbook-jun-2026.pdf",
+          "cosine": 0.7246453101193772,
+          "threshold": 0.99,
+          "excluded_predecessor": null
+        }
+      },
+      "chunks": 1
+    },
+    {
+      "source": "b-lab.html",
+      "decision": "indexed",
+      "checks": {
+        "manifest verification": {
+          "passed": true,
+          "checks": {
+            "metadata": "pass",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "extraction verification": {
+          "passed": true,
+          "reason": "page sequence complete and text checks passed",
+          "expected_pages": 1,
+          "extracted_pages": 1,
+          "blank_after_cleaning": []
+        },
+        "exact duplicate verification": {
+          "passed": true,
+          "sha256": "0cc3c4b6d2c7694b7e0822901c98f9178a47d3409914815b0825cec43fee7429",
+          "duplicate_of": null,
+          "reason": "unique file content"
+        },
+        "near duplicate verification": {
+          "passed": true,
+          "closest": "b-injected-notice.html",
+          "cosine": 0.7753537238159298,
+          "threshold": 0.99,
+          "excluded_predecessor": null
+        }
+      },
+      "chunks": 1
+    },
+    {
+      "source": "b-booking.html",
+      "decision": "indexed",
+      "checks": {
+        "manifest verification": {
+          "passed": true,
+          "checks": {
+            "metadata": "pass",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "extraction verification": {
+          "passed": true,
+          "reason": "page sequence complete and text checks passed",
+          "expected_pages": 1,
+          "extracted_pages": 1,
+          "blank_after_cleaning": []
+        },
+        "exact duplicate verification": {
+          "passed": true,
+          "sha256": "d4cb3c4c7c4b9b7605763d6df5a1aa92af5e5b3db7d60cecf69ae0cf439e4f4b",
+          "duplicate_of": null,
+          "reason": "unique file content"
+        },
+        "near duplicate verification": {
+          "passed": true,
+          "closest": "b-injected-notice.html",
+          "cosine": 0.8275341005478939,
+          "threshold": 0.99,
+          "excluded_predecessor": null
+        }
+      },
+      "chunks": 1
+    },
+    {
+      "source": "b-returns.html",
+      "decision": "indexed",
+      "checks": {
+        "manifest verification": {
+          "passed": true,
+          "checks": {
+            "metadata": "pass",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "extraction verification": {
+          "passed": true,
+          "reason": "page sequence complete and text checks passed",
+          "expected_pages": 1,
+          "extracted_pages": 1,
+          "blank_after_cleaning": []
+        },
+        "exact duplicate verification": {
+          "passed": true,
+          "sha256": "95b13ec2fb90b545844e45953478707903910bc0da80938bb21a7632e1c7ceae",
+          "duplicate_of": null,
+          "reason": "unique file content"
+        },
+        "near duplicate verification": {
+          "passed": true,
+          "closest": "b-booking.html",
+          "cosine": 0.8033271931802662,
+          "threshold": 0.99,
+          "excluded_predecessor": null
+        }
+      },
+      "chunks": 1
+    },
+    {
+      "source": "undergraduate-academic-rules-aug-2023.pdf",
+      "decision": "indexed",
+      "checks": {
+        "manifest verification": {
+          "passed": true,
+          "checks": {
+            "metadata": "pass",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "extraction verification": {
+          "passed": true,
+          "reason": "page sequence complete and text checks passed",
+          "expected_pages": 26,
+          "extracted_pages": 26,
+          "blank_after_cleaning": [
+            3
+          ]
+        },
+        "exact duplicate verification": {
+          "passed": true,
+          "sha256": "cddfe1f5e9770132e27d686abd1c2e6742ef4732f0c2f431ed514bc1691d2004",
+          "duplicate_of": null,
+          "reason": "unique file content"
+        },
+        "near duplicate verification": {
+          "passed": true,
+          "closest": "prospectus-2026-academic-rules-and-regulations.pdf",
+          "cosine": 0.9866250933035968,
+          "threshold": 0.99,
+          "excluded_predecessor": null
+        }
+      },
+      "chunks": 59
+    },
+    {
+      "source": "b-grading-revision.html",
+      "decision": "indexed",
+      "checks": {
+        "manifest verification": {
+          "passed": true,
+          "checks": {
+            "metadata": "pass",
+            "bytes": "pass",
+            "sha256": "pass"
+          }
+        },
+        "extraction verification": {
+          "passed": true,
+          "reason": "page sequence complete and text checks passed",
+          "expected_pages": 1,
+          "extracted_pages": 1,
+          "blank_after_cleaning": []
+        },
+        "exact duplicate verification": {
+          "passed": true,
+          "sha256": "7650ab86639a5fc9938fbaa8abaf5028309b86e8e269145b1fed32c78290e1a8",
+          "duplicate_of": null,
+          "reason": "unique file content"
+        },
+        "near duplicate verification": {
+          "passed": true,
+          "closest": "undergraduate-academic-rules-aug-2023.pdf",
+          "cosine": 0.9544052397386021,
+          "threshold": 0.99,
+          "excluded_predecessor": "grading-page.html"
+        }
+      },
+      "supersedes": "grading-page.html",
+      "chunks": 7
+    }
+  ]
+}

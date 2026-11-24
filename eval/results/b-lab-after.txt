@@ -1,0 +1,4 @@
+Active collection: rahbar-a3-ab-2666b46b6d18
+Before ID: 475e2013260321ecbef237ae
+Current IDs: ['c3cbaaabb7da9d1512788529']
+PASS: active collection contains one b-lab.html chunk with LAB-5 and no LAB-4

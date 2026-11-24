@@ -1,0 +1,89 @@
+q01 2.29s answered=False error=None
+q02 0.23s answered=False error=None
+q03 0.31s answered=False error=None
+q04 0.35s answered=False error=None
+q05 0.22s answered=False error=None
+q06 0.32s answered=False error=None
+q07 0.23s answered=False error=None
+q08 0.25s answered=False error=None
+q09 0.26s answered=False error=None
+q10 0.28s answered=False error=None
+q11 0.22s answered=False error=None
+q12 0.38s answered=False error=None
+q13 0.26s answered=False error=None
+q14 0.33s answered=False error=None
+q15 0.30s answered=False error=None
+q16 0.25s answered=False error=None
+q17 0.31s answered=False error=None
+q18 0.32s answered=False error=None
+q19 0.27s answered=False error=None
+q20 0.38s answered=False error=None
+q21 0.25s answered=False error=None
+q22 0.21s answered=False error=None
+q23 0.34s answered=False error=None
+q24 0.31s answered=False error=None
+q25 0.30s answered=False error=None
+Level | Metric | Value
+--- | --- | ---
+module | paraphrase_mean | 0.7828617377229276
+module | unrelated_mean | 0.4192277980519883
+module | gap | 0.36363393967093927
+module | seconds_per_chunk | 0.12555233763830673
+module | max_repeat_difference | 0.0
+module | paraphrase_pairs | 15
+module | unrelated_pairs | 15
+component | recall_at_3 | 0
+component | recall_at_5 | 0
+component | mrr | 0
+component | ndcg_at_5 | 0.0
+noise_delta | recall_at_3 | 0
+noise_delta | recall_at_5 | 0
+noise_delta | mrr | 0
+noise_delta | ndcg_at_5 | 0.0
+end_to_end | citation_validity | None
+end_to_end | faithfulness | None
+end_to_end | citation_ground_truth | 0
+end_to_end | answerable_success | 0
+end_to_end | abstention_correctness | 1
+end_to_end | latency_p50 | 0.30004891599992334
+end_to_end | latency_p95 | 0.3840201612000783
+end_to_end | answered_count | 0
+end_to_end | cache_hit_rate | 0
+end_to_end | errors | 0
+
+RESULT /results/bad-candidate.json
+{
+  "decision": "reject",
+  "failures": [
+    "component.recall_at_5: regression",
+    "end_to_end.faithfulness: missing/nonfinite",
+    "end_to_end.citation_validity: missing/nonfinite",
+    "end_to_end.answerable_success: 0.0 < 0.5"
+  ],
+  "baseline": "/results/baseline-ab.json",
+  "candidate": "/results/bad-candidate.json",
+  "thresholds": {
+    "component.recall_at_5": {
+      "max_drop": 0.02
+    },
+    "end_to_end.faithfulness": {
+      "min": 0.8
+    },
+    "end_to_end.citation_validity": {
+      "min": 0.95
+    },
+    "end_to_end.abstention_correctness": {
+      "min": 1.0,
+      "max_drop": 0.0
+    },
+    "end_to_end.latency_p95": {
+      "max": 180
+    },
+    "end_to_end.errors": {
+      "max": 0
+    },
+    "end_to_end.answerable_success": {
+      "min": 0.5
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "trace_id": "44f4e370957741a0be349f565126e6fc",
+  "timestamp": "2026-11-23T02:21:34.288481+00:00",
+  "user_query": "Which ticket does the demo desk use?",
+  "embedding_model": "nomic-embed-text:latest",
+  "embedding_version": "nomic-embed-text:latest",
+  "configured_collection": "rahbar",
+  "guardrail_actions": [],
+  "retrieval": [
+    {
+      "collection": "rahbar-9b0f448f2e72",
+      "collection_metadata": {
+        "embed_model": "nomic-embed-text:latest",
+        "generation": "rahbar-9b0f448f2e72",
+        "hnsw:space": "cosine",
+        "dimension": 768
+      },
+      "filters": {
+        "superseded": false
+      },
+      "reranked_order": [],
+      "passages": []
+    }
+  ],
+  "rewritten_query": "Which ticket does the demo desk use?",
+  "collection": "rahbar-9b0f448f2e72",
+  "response": {
+    "request_id": "44f4e370957741a0be349f565126e6fc",
+    "answer": "The available documents do not contain enough evidence to answer this question.",
+    "citations": [],
+    "answered_from_context": false,
+    "confidence": "low",
+    "retrieved": [],
+    "provider": "ollama",
+    "cached": false,
+    "fallback": false
+  },
+  "citations": [],
+  "cache_status": "miss",
+  "latency": {
+    "retrieval": 1.8586649370008672,
+    "generation_and_validation": 0.0006892509991303086,
+    "total": 1.8594155629998568
+  },
+  "prompt_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+}

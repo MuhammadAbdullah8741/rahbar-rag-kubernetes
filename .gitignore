@@ -26,4 +26,9 @@ eval/fixtures/ci-results.json
 
 # Local scratch
 *.log
+!eval/results/**/*.log
 .DS_Store
+output/report-review/
+docs/a3-screenshots/*.ready
+docs/a3-screenshots/*.pid
+output/final-report-review/

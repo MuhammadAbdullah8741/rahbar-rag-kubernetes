@@ -1,0 +1,912 @@
+test	Run ruff check api indexer eval corpus	﻿2026-11-23T17:34:21.9231447Z ##[group]Run ruff check api indexer eval corpus
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9231727Z [36;1mruff check api indexer eval corpus[0m
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9231990Z [36;1m(cd api && mypy app && pytest --cov=app --cov-fail-under=60 --cov-report=xml)[0m
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9232388Z [36;1m(cd indexer && mypy pipeline && pytest --cov=pipeline --cov-fail-under=60 --cov-report=xml)[0m
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9262437Z shell: /usr/bin/bash -e {0}
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9262747Z env:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9262928Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9263216Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9263497Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9263749Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9263994Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9264224Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9264460Z ##[endgroup]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9425739Z eval/audit_golden.py:5:25: E741 Ambiguous variable name: `l`
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9426177Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9426388Z 3 | from pathlib import Path
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9426633Z 4 | import sys
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9427097Z 5 | rows=[json.loads(l) for l in Path(sys.argv[1] if len(sys.argv)>1 else 'eval/golden.jsonl').read_text().splitlines()]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9427603Z   |                         ^ E741
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9428022Z 6 | counts={'total':len(rows),'answerable':sum(bool(r['relevant']) for r in rows),
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9428588Z 7 |         'unanswerable':sum(bool(r.get('must_abstain')) for r in rows),'hard':sum(bool(r.get('hard')) for r in rows),
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9429003Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9429071Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9429229Z eval/audit_golden.py:13:56: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9429569Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9429757Z 11 | failures=[f'{k}: {counts[k]} < {v}' for k,v in minimums.items() if counts[k]<v]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9429991Z 12 | for r in rows:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9430247Z 13 |     if bool(r['relevant'])==bool(r.get('must_abstain')): failures.append(r['id']+': contradictory answerability')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9430771Z    |                                                        ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9430953Z 14 |     for ref in r['relevant']:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9431236Z 15 |         if not ref.get('source') or not isinstance(ref.get('page'),int): failures.append(r['id']+': missing source/page')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9431517Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9431578Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9431687Z eval/audit_golden.py:15:72: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9431960Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9432358Z 13 |     if bool(r['relevant'])==bool(r.get('must_abstain')): failures.append(r['id']+': contradictory answerability')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9432746Z 14 |     for ref in r['relevant']:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9433216Z 15 |         if not ref.get('source') or not isinstance(ref.get('page'),int): failures.append(r['id']+': missing source/page')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9433717Z    |                                                                        ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9434091Z 16 | print(json.dumps({'counts':counts,'failures':failures},indent=2))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9434417Z 17 | sys.exit(bool(failures))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9434644Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9434743Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9434915Z eval/compare.py:6:32: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9435241Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9435400Z 5 | def main():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9436150Z 6 |     p=argparse.ArgumentParser(); p.add_argument('before'); p.add_argument('after'); p.add_argument('--out',required=True); a=p.parse_ar…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9436669Z   |                                ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9437394Z 7 |     b=json.loads(Path(a.before).read_text()); c=json.loads(Path(a.after).read_text()); rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9437871Z 8 |     for level in ('module','component','noise','noise_delta','end_to_end'):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9438442Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9438532Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9438698Z eval/compare.py:6:58: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9438891Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9438994Z 5 | def main():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9439319Z 6 |     p=argparse.ArgumentParser(); p.add_argument('before'); p.add_argument('after'); p.add_argument('--out',required=True); a=p.parse_ar…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9439764Z   |                                                          ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9440020Z 7 |     b=json.loads(Path(a.before).read_text()); c=json.loads(Path(a.after).read_text()); rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9440318Z 8 |     for level in ('module','component','noise','noise_delta','end_to_end'):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9440681Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9440740Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9440846Z eval/compare.py:6:83: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9441035Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9441136Z 5 | def main():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9441457Z 6 |     p=argparse.ArgumentParser(); p.add_argument('before'); p.add_argument('after'); p.add_argument('--out',required=True); a=p.parse_ar…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9441795Z   |                                                                                   ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9442062Z 7 |     b=json.loads(Path(a.before).read_text()); c=json.loads(Path(a.after).read_text()); rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9442361Z 8 |     for level in ('module','component','noise','noise_delta','end_to_end'):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9442563Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9442622Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9442731Z eval/compare.py:6:122: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9442942Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9443166Z 5 | def main():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9443476Z 6 |     p=argparse.ArgumentParser(); p.add_argument('before'); p.add_argument('after'); p.add_argument('--out',required=True); a=p.parse_ar…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9443837Z   |                                                                                                                          ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9444137Z 7 |     b=json.loads(Path(a.before).read_text()); c=json.loads(Path(a.after).read_text()); rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9444431Z 8 |     for level in ('module','component','noise','noise_delta','end_to_end'):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9444632Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9444686Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9444790Z eval/compare.py:7:45: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9444989Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9445090Z 5 | def main():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9445393Z 6 |     p=argparse.ArgumentParser(); p.add_argument('before'); p.add_argument('after'); p.add_argument('--out',required=True); a=p.parse_a…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9445790Z 7 |     b=json.loads(Path(a.before).read_text()); c=json.loads(Path(a.after).read_text()); rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9446047Z   |                                             ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9446260Z 8 |     for level in ('module','component','noise','noise_delta','end_to_end'):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9446485Z 9 |         for key,v in b[level].items():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9446645Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9446701Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9446804Z eval/compare.py:7:86: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9446997Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9447218Z 5 | def main():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9447618Z 6 |     p=argparse.ArgumentParser(); p.add_argument('before'); p.add_argument('after'); p.add_argument('--out',required=True); a=p.parse_a…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9448011Z 7 |     b=json.loads(Path(a.before).read_text()); c=json.loads(Path(a.after).read_text()); rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9448286Z   |                                                                                      ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9448523Z 8 |     for level in ('module','component','noise','noise_delta','end_to_end'):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9448739Z 9 |         for key,v in b[level].items():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9448888Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9448948Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9449159Z eval/compare.py:11:71: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9449348Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9449467Z  9 |         for key,v in b[level].items():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9449626Z 10 |             w=c[level].get(key)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9449962Z 11 |             if isinstance(v,(int,float)) and isinstance(w,(int,float)): rows.append({'level':level,'metric':key,'before':v,'after':w,'…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9456682Z    |                                                                       ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9457007Z 12 |     result={'before':a.before,'after':a.after,'same_golden':b['golden_sha256']==c['golden_sha256'],'rows':rows}
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9457373Z 13 |     Path(a.out).write_text(json.dumps(result,indent=2)); print(json.dumps(result,indent=2))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9457604Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9457667Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9457774Z eval/compare.py:13:56: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9458045Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9458472Z 11 |             if isinstance(v,(int,float)) and isinstance(w,(int,float)): rows.append({'level':level,'metric':key,'before':v,'after':w,'…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9458890Z 12 |     result={'before':a.before,'after':a.after,'same_golden':b['golden_sha256']==c['golden_sha256'],'rows':rows}
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9459347Z 13 |     Path(a.out).write_text(json.dumps(result,indent=2)); print(json.dumps(result,indent=2))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9459899Z    |                                                        ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9460151Z 14 |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9460319Z 15 | if __name__=='__main__': main()
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9460640Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9460731Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9460882Z eval/compare.py:15:24: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9461179Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9461399Z 13 |     Path(a.out).write_text(json.dumps(result,indent=2)); print(json.dumps(result,indent=2))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9461630Z 14 |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9461736Z 15 | if __name__=='__main__': main()
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9461892Z    |                        ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9462024Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9462078Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9462192Z eval/coverage.py:12:32: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9462388Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9462490Z 11 | def main():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9462818Z 12 |     p=argparse.ArgumentParser(); p.add_argument('--golden',default='eval/golden.jsonl'); p.add_argument('--queries',default='eval/live…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9463150Z    |                                ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9463489Z 13 |     p.add_argument('--similarity',type=float,default=.85); p.add_argument('--minimum',type=float,default=.85); p.add_argument('--out',…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9463907Z 14 |     a=p.parse_args(); settings=get_settings(); golden=read_jsonl(a.golden); queries=read_jsonl(a.queries)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9464157Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9464216Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9464321Z eval/coverage.py:12:88: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9464522Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9464622Z 11 | def main():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9464934Z 12 |     p=argparse.ArgumentParser(); p.add_argument('--golden',default='eval/golden.jsonl'); p.add_argument('--queries',default='eval/live…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9465282Z    |                                                                                        ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9465656Z 13 |     p.add_argument('--similarity',type=float,default=.85); p.add_argument('--minimum',type=float,default=.85); p.add_argument('--out',…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9466073Z 14 |     a=p.parse_args(); settings=get_settings(); golden=read_jsonl(a.golden); queries=read_jsonl(a.queries)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9466319Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9466376Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9466480Z eval/coverage.py:13:58: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9466676Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9466776Z 11 | def main():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9467081Z 12 |     p=argparse.ArgumentParser(); p.add_argument('--golden',default='eval/golden.jsonl'); p.add_argument('--queries',default='eval/live…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9467693Z 13 |     p.add_argument('--similarity',type=float,default=.85); p.add_argument('--minimum',type=float,default=.85); p.add_argument('--out',…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9468014Z    |                                                          ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9468290Z 14 |     a=p.parse_args(); settings=get_settings(); golden=read_jsonl(a.golden); queries=read_jsonl(a.queries)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9468697Z 15 |     vectors=[embed_query(q['question'],settings) for q in golden]; rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9468902Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9468962Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9469068Z eval/coverage.py:13:110: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9469267Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9469369Z 11 | def main():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9469680Z 12 |     p=argparse.ArgumentParser(); p.add_argument('--golden',default='eval/golden.jsonl'); p.add_argument('--queries',default='eval/live…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9470176Z 13 |     p.add_argument('--similarity',type=float,default=.85); p.add_argument('--minimum',type=float,default=.85); p.add_argument('--out',…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9470719Z    |                                                                                                              ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9471026Z 14 |     a=p.parse_args(); settings=get_settings(); golden=read_jsonl(a.golden); queries=read_jsonl(a.queries)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9471348Z 15 |     vectors=[embed_query(q['question'],settings) for q in golden]; rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9471550Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9471608Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9471711Z eval/coverage.py:14:21: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9471911Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9472205Z 12 |     p=argparse.ArgumentParser(); p.add_argument('--golden',default='eval/golden.jsonl'); p.add_argument('--queries',default='eval/live…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9472697Z 13 |     p.add_argument('--similarity',type=float,default=.85); p.add_argument('--minimum',type=float,default=.85); p.add_argument('--out',…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9473108Z 14 |     a=p.parse_args(); settings=get_settings(); golden=read_jsonl(a.golden); queries=read_jsonl(a.queries)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9473366Z    |                     ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9473567Z 15 |     vectors=[embed_query(q['question'],settings) for q in golden]; rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9473778Z 16 |     for q in queries:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9473911Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9473973Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9474076Z eval/coverage.py:14:46: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9474273Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9474565Z 12 |     p=argparse.ArgumentParser(); p.add_argument('--golden',default='eval/golden.jsonl'); p.add_argument('--queries',default='eval/live…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9475055Z 13 |     p.add_argument('--similarity',type=float,default=.85); p.add_argument('--minimum',type=float,default=.85); p.add_argument('--out',…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9475473Z 14 |     a=p.parse_args(); settings=get_settings(); golden=read_jsonl(a.golden); queries=read_jsonl(a.queries)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9475744Z    |                                              ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9475964Z 15 |     vectors=[embed_query(q['question'],settings) for q in golden]; rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9476179Z 16 |     for q in queries:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9476304Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9476357Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9476467Z eval/coverage.py:14:75: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9476661Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9476953Z 12 |     p=argparse.ArgumentParser(); p.add_argument('--golden',default='eval/golden.jsonl'); p.add_argument('--queries',default='eval/live…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9477448Z 13 |     p.add_argument('--similarity',type=float,default=.85); p.add_argument('--minimum',type=float,default=.85); p.add_argument('--out',…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9477857Z 14 |     a=p.parse_args(); settings=get_settings(); golden=read_jsonl(a.golden); queries=read_jsonl(a.queries)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9478250Z    |                                                                           ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9495509Z 15 |     vectors=[embed_query(q['question'],settings) for q in golden]; rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9495858Z 16 |     for q in queries:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9496054Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9496143Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9496288Z eval/coverage.py:15:66: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9496640Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9496974Z 13 |     p.add_argument('--similarity',type=float,default=.85); p.add_argument('--minimum',type=float,default=.85); p.add_argument('--out',…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9497401Z 14 |     a=p.parse_args(); settings=get_settings(); golden=read_jsonl(a.golden); queries=read_jsonl(a.queries)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9497725Z 15 |     vectors=[embed_query(q['question'],settings) for q in golden]; rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9497963Z    |                                                                  ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9498150Z 16 |     for q in queries:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9498436Z 17 |         v=embed_query(q['question'],settings); scores=[cosine(v,g) for g in vectors]; i=max(range(len(scores)),key=scores.__getitem__)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9498726Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9498781Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9498893Z eval/coverage.py:17:46: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9499093Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9499260Z 15 |     vectors=[embed_query(q['question'],settings) for q in golden]; rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9499469Z 16 |     for q in queries:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9499744Z 17 |         v=embed_query(q['question'],settings); scores=[cosine(v,g) for g in vectors]; i=max(range(len(scores)),key=scores.__getitem__)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9500053Z    |                                              ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9500793Z 18 |         rows.append({**q,'closest_id':golden[i]['id'],'closest_question':golden[i]['question'],'similarity':scores[i],'covered':scores…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9501133Z 19 |     coverage=sum(r['covered'] for r in rows)/len(rows)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9501323Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9501381Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9501488Z eval/coverage.py:17:85: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9501686Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9501855Z 15 |     vectors=[embed_query(q['question'],settings) for q in golden]; rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9502066Z 16 |     for q in queries:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9502347Z 17 |         v=embed_query(q['question'],settings); scores=[cosine(v,g) for g in vectors]; i=max(range(len(scores)),key=scores.__getitem__)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9502674Z    |                                                                                     ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9503033Z 18 |         rows.append({**q,'closest_id':golden[i]['id'],'closest_question':golden[i]['question'],'similarity':scores[i],'covered':scores…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9503362Z 19 |     coverage=sum(r['covered'] for r in rows)/len(rows)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9503538Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9503594Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9503703Z eval/coverage.py:23:56: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9503898Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9504110Z 21 |     result={'coverage':coverage,'similarity_threshold':a.similarity,'minimum_coverage':a.minimum,
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9504548Z 22 |             'embedding_model':settings.embed_model,'golden_count':len(golden),'queries':len(rows),'uncovered_topics':topics,'rows':row…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9505009Z 23 |     Path(a.out).write_text(json.dumps(result,indent=2)); print(json.dumps({k:v for k,v in result.items() if k!='rows'},indent=2))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9505331Z    |                                                        ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9505509Z 24 |     return int(coverage<a.minimum)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9505656Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9505711Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9505816Z eval/coverage.py:26:24: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9506009Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9506231Z 24 |     return int(coverage<a.minimum)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9506376Z 25 |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9506502Z 26 | if __name__=='__main__': sys.exit(main())
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9506667Z    |                        ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9506799Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9506857Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9506955Z eval/gate.py:10:71: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9507138Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9507354Z  8 | def gate(baseline,candidate,thresholds):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9507520Z  9 |     failures=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9507770Z 10 |     if baseline.get('golden_sha256') != candidate.get('golden_sha256'): failures.append('different golden sets')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9508069Z    |                                                                       ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9508255Z 11 |     def value(data,path):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9508386Z 12 |         try:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9508496Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9508556Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9508651Z eval/gate.py:13:39: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9508837Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9508946Z 11 |     def value(data,path):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9509077Z 12 |         try:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9509221Z 13 |             for key in path.split('.'): data=data[key]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9509398Z    |                                       ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9509631Z 14 |             return float(data) if data is not None and math.isfinite(float(data)) else None
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9509902Z 15 |         except (KeyError,TypeError,ValueError): return None
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9510080Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9510138Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9510232Z eval/gate.py:15:47: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9510566Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9510723Z 13 |             for key in path.split('.'): data=data[key]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9510965Z 14 |             return float(data) if data is not None and math.isfinite(float(data)) else None
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9511224Z 15 |         except (KeyError,TypeError,ValueError): return None
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9511422Z    |                                               ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9511603Z 16 |     for path,spec in thresholds.items():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9511804Z 17 |         got=value(candidate,path); before=value(baseline,path)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9511983Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9512042Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9512144Z eval/gate.py:17:34: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9512331Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9512470Z 15 |         except (KeyError,TypeError,ValueError): return None
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9512666Z 16 |     for path,spec in thresholds.items():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9512860Z 17 |         got=value(candidate,path); before=value(baseline,path)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9513049Z    |                                  ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9513260Z 18 |         if got is None: failures.append(path+': missing/nonfinite'); continue
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9513576Z 19 |         if 'min' in spec and got < spec['min']-1e-9: failures.append(f'{path}: {got} < {spec["min"]}')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9513815Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9513871Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9513967Z eval/gate.py:18:23: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9514145Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9514264Z 16 |     for path,spec in thresholds.items():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9514457Z 17 |         got=value(candidate,path); before=value(baseline,path)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9514700Z 18 |         if got is None: failures.append(path+': missing/nonfinite'); continue
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9514906Z    |                       ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9515129Z 19 |         if 'min' in spec and got < spec['min']-1e-9: failures.append(f'{path}: {got} < {spec["min"]}')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9515450Z 20 |         if 'max' in spec and got > spec['max']+1e-9: failures.append(f'{path}: {got} > {spec["max"]}')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9515683Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9515737Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9515836Z eval/gate.py:18:68: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9516124Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9516244Z 16 |     for path,spec in thresholds.items():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9516435Z 17 |         got=value(candidate,path); before=value(baseline,path)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9516672Z 18 |         if got is None: failures.append(path+': missing/nonfinite'); continue
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9516899Z    |                                                                    ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9517241Z 19 |         if 'min' in spec and got < spec['min']-1e-9: failures.append(f'{path}: {got} < {spec["min"]}')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9517559Z 20 |         if 'max' in spec and got > spec['max']+1e-9: failures.append(f'{path}: {got} > {spec["max"]}')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9517784Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9517840Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9517934Z eval/gate.py:19:52: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9518116Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9518256Z 17 |         got=value(candidate,path); before=value(baseline,path)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9518498Z 18 |         if got is None: failures.append(path+': missing/nonfinite'); continue
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9518780Z 19 |         if 'min' in spec and got < spec['min']-1e-9: failures.append(f'{path}: {got} < {spec["min"]}')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9519031Z    |                                                    ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9519275Z 20 |         if 'max' in spec and got > spec['max']+1e-9: failures.append(f'{path}: {got} > {spec["max"]}')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9519648Z 21 |         if 'max_drop' in spec and (before is None or got < before-spec['max_drop']-1e-9): failures.append(path+': regression')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9519917Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9519971Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9520065Z eval/gate.py:20:52: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9520247Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9520661Z 18 |         if got is None: failures.append(path+': missing/nonfinite'); continue
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9520947Z 19 |         if 'min' in spec and got < spec['min']-1e-9: failures.append(f'{path}: {got} < {spec["min"]}')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9521265Z 20 |         if 'max' in spec and got > spec['max']+1e-9: failures.append(f'{path}: {got} > {spec["max"]}')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9521523Z    |                                                    ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9521817Z 21 |         if 'max_drop' in spec and (before is None or got < before-spec['max_drop']-1e-9): failures.append(path+': regression')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9522101Z 22 |     return failures
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9522228Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9522286Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9522376Z eval/gate.py:21:89: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9522557Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9522745Z 19 |         if 'min' in spec and got < spec['min']-1e-9: failures.append(f'{path}: {got} < {spec["min"]}')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9523058Z 20 |         if 'max' in spec and got > spec['max']+1e-9: failures.append(f'{path}: {got} > {spec["max"]}')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9523424Z 21 |         if 'max_drop' in spec and (before is None or got < before-spec['max_drop']-1e-9): failures.append(path+': regression')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9523738Z    |                                                                                         ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9523923Z 22 |     return failures
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9524049Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9524110Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9524206Z eval/gate.py:25:32: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9524398Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9524508Z 24 | if __name__=='__main__':
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9524795Z 25 |     p=argparse.ArgumentParser(); p.add_argument('--baseline',required=True); p.add_argument('--candidate',required=True)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9525096Z    |                                ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9525329Z 26 |     p.add_argument('--thresholds',default='config/gate.json'); p.add_argument('--out')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9525609Z 27 |     a=p.parse_args(); load=lambda f:json.loads(Path(f).read_text())
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9525796Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9525955Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9526049Z eval/gate.py:25:76: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9526234Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9526342Z 24 | if __name__=='__main__':
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9526623Z 25 |     p=argparse.ArgumentParser(); p.add_argument('--baseline',required=True); p.add_argument('--candidate',required=True)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9526941Z    |                                                                            ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9527284Z 26 |     p.add_argument('--thresholds',default='config/gate.json'); p.add_argument('--out')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9527558Z 27 |     a=p.parse_args(); load=lambda f:json.loads(Path(f).read_text())
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9527745Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9527807Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9527901Z eval/gate.py:26:62: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9528082Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9528187Z 24 | if __name__=='__main__':
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9528460Z 25 |     p=argparse.ArgumentParser(); p.add_argument('--baseline',required=True); p.add_argument('--candidate',required=True)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9528834Z 26 |     p.add_argument('--thresholds',default='config/gate.json'); p.add_argument('--out')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9529078Z    |                                                              ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9529290Z 27 |     a=p.parse_args(); load=lambda f:json.loads(Path(f).read_text())
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9529542Z 28 |     failures=gate(load(a.baseline),load(a.candidate),load(a.thresholds))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9529750Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9529805Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9529904Z eval/gate.py:27:21: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9530088Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9530451Z 25 |     p=argparse.ArgumentParser(); p.add_argument('--baseline',required=True); p.add_argument('--candidate',required=True)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9530916Z 26 |     p.add_argument('--thresholds',default='config/gate.json'); p.add_argument('--out')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9531185Z 27 |     a=p.parse_args(); load=lambda f:json.loads(Path(f).read_text())
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9531374Z    |                     ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9531565Z 28 |     failures=gate(load(a.baseline),load(a.candidate),load(a.thresholds))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9531977Z 29 |     result={'decision':'reject' if failures else 'release','failures':failures,'baseline':a.baseline,'candidate':a.candidate,'threshol…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9532277Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9532339Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9532449Z eval/gate.py:27:23: E731 Do not assign a `lambda` expression, use a `def`
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9532645Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9532890Z 25 |     p=argparse.ArgumentParser(); p.add_argument('--baseline',required=True); p.add_argument('--candidate',required=True)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9533252Z 26 |     p.add_argument('--thresholds',default='config/gate.json'); p.add_argument('--out')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9533524Z 27 |     a=p.parse_args(); load=lambda f:json.loads(Path(f).read_text())
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9533737Z    |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ E731
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9533969Z 28 |     failures=gate(load(a.baseline),load(a.candidate),load(a.thresholds))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9534354Z 29 |     result={'decision':'reject' if failures else 'release','failures':failures,'baseline':a.baseline,'candidate':a.candidate,'threshol…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9534648Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9534762Z    = help: Rewrite `load` as a `def`
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9534871Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9534969Z eval/gate.py:30:39: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9535157Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9535319Z 28 |     failures=gate(load(a.baseline),load(a.candidate),load(a.thresholds))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9535712Z 29 |     result={'decision':'reject' if failures else 'release','failures':failures,'baseline':a.baseline,'candidate':a.candidate,'threshol…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9536086Z 30 |     output=json.dumps(result,indent=2); print(output)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9536271Z    |                                       ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9536590Z 31 |     if a.out: Path(a.out).write_text(output)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9536759Z 32 |     sys.exit(bool(failures))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9536899Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9536958Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9537048Z eval/gate.py:31:13: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9537228Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9537523Z 29 |     result={'decision':'reject' if failures else 'release','failures':failures,'baseline':a.baseline,'candidate':a.candidate,'threshol…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9537951Z 30 |     output=json.dumps(result,indent=2); print(output)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9538145Z 31 |     if a.out: Path(a.out).write_text(output)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9538303Z    |             ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9538436Z 32 |     sys.exit(bool(failures))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9538572Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9538632Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9538709Z eval/suite.py:7:8: F401 [*] `os` imported but unused
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9538874Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9538981Z 5 | import json
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9539104Z 6 | import math
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9539217Z 7 | import os
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9539333Z   |        ^^ F401
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9539468Z 8 | from pathlib import Path
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9539609Z 9 | import random
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9539719Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9539837Z   = help: Remove unused import: `os`
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9539935Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9540035Z eval/suite.py:29:14: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9540224Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9540463Z 28 | def percentile(xs,p):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9540647Z 29 |     if not xs: return None
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9540784Z    |              ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9540994Z 30 |     xs=sorted(xs); pos=(len(xs)-1)*p; lo=math.floor(pos); hi=math.ceil(pos)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9541225Z 31 |     return xs[lo]+(xs[hi]-xs[lo])*(pos-lo)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9541377Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9541432Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9541535Z eval/suite.py:30:18: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9541732Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9541842Z 28 | def percentile(xs,p):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9541979Z 29 |     if not xs: return None
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9542171Z 30 |     xs=sorted(xs); pos=(len(xs)-1)*p; lo=math.floor(pos); hi=math.ceil(pos)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9542374Z    |                  ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9542517Z 31 |     return xs[lo]+(xs[hi]-xs[lo])*(pos-lo)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9542671Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9542732Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9542832Z eval/suite.py:30:37: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9543020Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9543129Z 28 | def percentile(xs,p):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9543266Z 29 |     if not xs: return None
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9543450Z 30 |     xs=sorted(xs); pos=(len(xs)-1)*p; lo=math.floor(pos); hi=math.ceil(pos)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9543661Z    |                                     ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9543827Z 31 |     return xs[lo]+(xs[hi]-xs[lo])*(pos-lo)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9543976Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9544038Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9544135Z eval/suite.py:30:57: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9544320Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9544428Z 28 | def percentile(xs,p):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9544564Z 29 |     if not xs: return None
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9544747Z 30 |     xs=sorted(xs); pos=(len(xs)-1)*p; lo=math.floor(pos); hi=math.ceil(pos)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9544964Z    |                                                         ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9545142Z 31 |     return xs[lo]+(xs[hi]-xs[lo])*(pos-lo)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9545292Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9545351Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9545441Z eval/suite.py:40:16: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9545622Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9545740Z 39 | def retrieval_scores(refs,hits):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9545893Z 40 |     if not refs: return {}
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9546033Z    |                ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9546235Z 41 |     ranks=[next((i+1 for i,h in enumerate(hits) if matches(r,h)),None) for r in refs]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9546662Z 42 |     # Document/page relevance is binary; duplicate chunks of one reference earn no extra gain.
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9546902Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9546963Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9547059Z eval/suite.py:43:15: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9547250Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9547425Z 41 |     ranks=[next((i+1 for i,h in enumerate(hits) if matches(r,h)),None) for r in refs]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9547823Z 42 |     # Document/page relevance is binary; duplicate chunks of one reference earn no extra gain.
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9548066Z 43 |     seen=set(); gains=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9548205Z    |               ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9548338Z 44 |     for h in hits[:5]:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9548545Z 45 |         found=next((i for i,r in enumerate(refs) if matches(r,h) and i not in seen),None)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9548762Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9548823Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9548917Z eval/suite.py:47:29: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9549105Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9549282Z 45 |         found=next((i for i,r in enumerate(refs) if matches(r,h) and i not in seen),None)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9549527Z 46 |         gains.append(int(found is not None))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9549706Z 47 |         if found is not None: seen.add(found)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9549876Z    |                             ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9550062Z 48 |     dcg=sum(g/math.log2(i+2) for i,g in enumerate(gains))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9550280Z 49 |     ideal=sum(1/math.log2(i+2) for i in range(min(5,len(refs))))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9550574Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9550635Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9550728Z eval/suite.py:59:43: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9550913Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9551045Z 58 | def answer_scores(q,response,text_by_id):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9551275Z 59 |     citations=response.get('citations',[]); hits=response.get('retrieved',[])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9551511Z    |                                           ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9551701Z 60 |     answered=response.get('answered_from_context',False)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9552000Z 61 |     membership=mean([any(matches(c,h) for h in hits) for c in citations]) if citations else (0 if answered else None)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9552261Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9552319Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9552413Z eval/suite.py:78:34: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9552601Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9552701Z 76 |     times=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9552824Z 77 |     def embed(text):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9553080Z 78 |         start=time.perf_counter(); v=embed_query(text,settings); times.append(time.perf_counter()-start); return v
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9553358Z    |                                  ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9553515Z 79 |     para=[]; unrelated=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9553659Z 80 |     for p in pairs:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9553782Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9553840Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9553940Z eval/suite.py:78:64: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9554125Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9554225Z 76 |     times=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9554343Z 77 |     def embed(text):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9554598Z 78 |         start=time.perf_counter(); v=embed_query(text,settings); times.append(time.perf_counter()-start); return v
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9554897Z    |                                                                ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9555077Z 79 |     para=[]; unrelated=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9555221Z 80 |     for p in pairs:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9555347Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9555407Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9555505Z eval/suite.py:78:105: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9555694Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9555858Z 76 |     times=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9556038Z 77 |     def embed(text):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9556292Z 78 |         start=time.perf_counter(); v=embed_query(text,settings); times.append(time.perf_counter()-start); return v
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9556705Z    |                                                                                                         ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9556901Z 79 |     para=[]; unrelated=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9557039Z 80 |     for p in pairs:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9557159Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9557220Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9557314Z eval/suite.py:79:12: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9557584Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9557689Z 77 |     def embed(text):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9557938Z 78 |         start=time.perf_counter(); v=embed_query(text,settings); times.append(time.perf_counter()-start); return v
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9558206Z 79 |     para=[]; unrelated=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9558340Z    |            ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9558465Z 80 |     for p in pairs:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9558729Z 81 |         a=embed(p['text']); para.append(cosine(a,embed(p['paraphrase']))); unrelated.append(cosine(a,embed(p['unrelated'])))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9559004Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9559070Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9559166Z eval/suite.py:81:27: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9559359Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9559465Z 79 |     para=[]; unrelated=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9559609Z 80 |     for p in pairs:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9559866Z 81 |         a=embed(p['text']); para.append(cosine(a,embed(p['paraphrase']))); unrelated.append(cosine(a,embed(p['unrelated'])))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9560155Z    |                           ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9560464Z 82 |     first=embed(pairs[0]['text']); second=embed(pairs[0]['text'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9560783Z 83 |     return {'paraphrase_mean':mean(para),'unrelated_mean':mean(unrelated),'gap':mean(para)-mean(unrelated),
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9561041Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9561099Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9561194Z eval/suite.py:81:74: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9561379Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9561487Z 79 |     para=[]; unrelated=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9561632Z 80 |     for p in pairs:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9561888Z 81 |         a=embed(p['text']); para.append(cosine(a,embed(p['paraphrase']))); unrelated.append(cosine(a,embed(p['unrelated'])))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9562192Z    |                                                                          ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9562413Z 82 |     first=embed(pairs[0]['text']); second=embed(pairs[0]['text'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9562715Z 83 |     return {'paraphrase_mean':mean(para),'unrelated_mean':mean(unrelated),'gap':mean(para)-mean(unrelated),
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9562977Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9563038Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9563134Z eval/suite.py:82:34: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9563321Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9563432Z 80 |     for p in pairs:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9563690Z 81 |         a=embed(p['text']); para.append(cosine(a,embed(p['paraphrase']))); unrelated.append(cosine(a,embed(p['unrelated'])))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9564012Z 82 |     first=embed(pairs[0]['text']); second=embed(pairs[0]['text'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9564213Z    |                                  ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9564476Z 83 |     return {'paraphrase_mean':mean(para),'unrelated_mean':mean(unrelated),'gap':mean(para)-mean(unrelated),
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9564855Z 84 |             'seconds_per_chunk':mean(times),'max_repeat_difference':max(abs(a-b) for a,b in zip(first,second)),
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9565109Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9565174Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9565266Z eval/suite.py:90:20: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9565454Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9565563Z 88 |     words=text.split()
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9565705Z 89 |     for i,w in enumerate(words):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9565879Z 90 |         if len(w)>4: words[i]=w[:2]+w[3]+w[2]+w[4:]; break
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9566056Z    |                    ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9566189Z 91 |     return ' '.join(words)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9566319Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9566379Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9566472Z eval/suite.py:90:52: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9566751Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9566866Z 88 |     words=text.split()
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9567008Z 89 |     for i,w in enumerate(words):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9567174Z 90 |         if len(w)>4: words[i]=w[:2]+w[3]+w[2]+w[4:]; break
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9567364Z    |                                                    ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9567530Z 91 |     return ' '.join(words)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9567738Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9567796Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9567888Z eval/suite.py:95:28: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9568074Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9568180Z 93 | def suite(args):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9568306Z 94 |     random.seed(42)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9568546Z 95 |     settings=get_settings(); retriever=ChromaRetriever(settings); snapshot=retriever.snapshot()
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9568803Z    |                            ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9569034Z 96 |     data=snapshot.get(include=['documents']); texts=dict(zip(data['ids'],data['documents']))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9569288Z 97 |     questions=read_jsonl(args.golden)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9569435Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9569493Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9569587Z eval/suite.py:95:65: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9569773Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9569879Z 93 | def suite(args):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9570005Z 94 |     random.seed(42)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9570243Z 95 |     settings=get_settings(); retriever=ChromaRetriever(settings); snapshot=retriever.snapshot()
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9570682Z    |                                                                 ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9570939Z 96 |     data=snapshot.get(include=['documents']); texts=dict(zip(data['ids'],data['documents']))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9571185Z 97 |     questions=read_jsonl(args.golden)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9571329Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9571390Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9571487Z eval/suite.py:96:45: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9571681Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9571791Z 94 |     random.seed(42)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9572018Z 95 |     settings=get_settings(); retriever=ChromaRetriever(settings); snapshot=retriever.snapshot()
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9572357Z 96 |     data=snapshot.get(include=['documents']); texts=dict(zip(data['ids'],data['documents']))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9572600Z    |                                             ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9572776Z 97 |     questions=read_jsonl(args.golden)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9572957Z 98 |     pairs=json.loads(Path(args.pairs).read_text())
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9573124Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9573182Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9573280Z eval/suite.py:118:37: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9573477Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9573585Z 116 |             try:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9573824Z 117 |                 r=client.post(args.api.rstrip('/')+'/api/ask',json={'question':q['question'],'follow_up':True})
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9574122Z 118 |                 r.raise_for_status(); response=r.json(); error=None
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9574317Z     |                                     ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9574483Z 119 |             except Exception as exc:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9574754Z 120 |                 response={'answer':'','answered_from_context':False,'citations':[],'retrieved':[],'fallback':True}
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9575012Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9575078Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9575177Z eval/suite.py:118:56: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9575366Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9575470Z 116 |             try:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9575706Z 117 |                 r=client.post(args.api.rstrip('/')+'/api/ask',json={'question':q['question'],'follow_up':True})
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9575996Z 118 |                 r.raise_for_status(); response=r.json(); error=None
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9576198Z     |                                                        ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9576377Z 119 |             except Exception as exc:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9576743Z 120 |                 response={'answer':'','answered_from_context':False,'citations':[],'retrieved':[],'fallback':True}
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9576997Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9577058Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9577153Z eval/suite.py:127:21: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9577338Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9577524Z 125 |                  'response':response,'seconds':time.perf_counter()-start,'error':error}
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9577864Z 126 |             row['answers']=answer_scores(q,response,texts)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9578146Z 127 |             if error: row['answers']={k:(0 if v is not None else None) for k,v in row['answers'].items()}
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9578392Z     |                     ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9578537Z 128 |             out['rows'].append(row)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9578760Z 129 |             dest.with_suffix('.partial.json').write_text(json.dumps(out,indent=2))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9578972Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9579040Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9579133Z eval/suite.py:144:38: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9579324Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9579480Z 142 |     for level in ('module','component','noise_delta','end_to_end'):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9579691Z 143 |         for k,v in out[level].items():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9579891Z 144 |             if not isinstance(v,list): table+=f'{level} | {k} | {v}\n'
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9580104Z     |                                      ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9580281Z 145 |     dest.with_suffix('.md').write_text(table)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9580729Z 146 |     stamped=dest.parent/(args.label+'-'+out['timestamp'].replace(':','').replace('+','_')+'.json')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9580974Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9581038Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9581140Z eval/suite.py:149:28: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9581335Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9581471Z 147 |     stamped.write_text(json.dumps(out,indent=2))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9581671Z 148 |     stamped.with_suffix('.md').write_text(table)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9581885Z 149 |     print(table,flush=True); print('RESULT',dest,flush=True)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9582079Z     |                            ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9582253Z 150 |     return 1 if out['end_to_end']['errors'] else 0
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9582417Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9582478Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9582573Z eval/suite.py:153:32: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9582771Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9582885Z 152 | if __name__=='__main__':
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9583288Z 153 |     p=argparse.ArgumentParser(); p.add_argument('--api',default='http://api:8000'); p.add_argument('--golden',default='eval/golden.js…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9583625Z     |                                ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9583980Z 154 |     p.add_argument('--pairs',default='eval/embedding-pairs.json'); p.add_argument('--label',default='baseline'); p.add_argument('--ou…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9584342Z 155 |     sys.exit(suite(p.parse_args()))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9584493Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9584555Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9584654Z eval/suite.py:153:83: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9584846Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9584962Z 152 | if __name__=='__main__':
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9585289Z 153 |     p=argparse.ArgumentParser(); p.add_argument('--api',default='http://api:8000'); p.add_argument('--golden',default='eval/golden.js…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9585665Z     |                                                                                   ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9586039Z 154 |     p.add_argument('--pairs',default='eval/embedding-pairs.json'); p.add_argument('--label',default='baseline'); p.add_argument('--ou…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9586363Z 155 |     sys.exit(suite(p.parse_args()))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9586509Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9586570Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9586666Z eval/suite.py:154:66: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9586961Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9587075Z 152 | if __name__=='__main__':
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9587399Z 153 |     p=argparse.ArgumentParser(); p.add_argument('--api',default='http://api:8000'); p.add_argument('--golden',default='eval/golden.js…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9587891Z 154 |     p.add_argument('--pairs',default='eval/embedding-pairs.json'); p.add_argument('--label',default='baseline'); p.add_argument('--ou…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9588318Z     |                                                                  ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9588509Z 155 |     sys.exit(suite(p.parse_args()))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9588670Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9588734Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9588838Z eval/suite.py:154:112: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9589044Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9589157Z 152 | if __name__=='__main__':
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9589513Z 153 |     p=argparse.ArgumentParser(); p.add_argument('--api',default='http://api:8000'); p.add_argument('--golden',default='eval/golden.js…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9590088Z 154 |     p.add_argument('--pairs',default='eval/embedding-pairs.json'); p.add_argument('--label',default='baseline'); p.add_argument('--ou…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9590576Z     |                                                                                                                ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9590797Z 155 |     sys.exit(suite(p.parse_args()))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9590957Z     |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9591035Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9591155Z eval/test_metrics.py:26:34: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9591374Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9591519Z 24 |     thresholds={'component.recall_at_5':{'max_drop':.02}}
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9591719Z 25 |     for value in (None,float('nan'),.77):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9591929Z 26 |         c=copy.deepcopy(baseline); c['component']['recall_at_5']=value
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9592135Z    |                                  ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9592306Z 27 |         assert gate(baseline,c,thresholds)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9592509Z 28 |     assert not gate(baseline,baseline,thresholds)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9592679Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9592744Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9592847Z eval/trace_tool.py:9:32: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9593048Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9593150Z  8 | def main():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9593468Z  9 |     p=argparse.ArgumentParser(); p.add_argument('--directory',default='traces'); p.add_argument('--id'); p.add_argument('--since'); p.…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9593784Z    |                                ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9593940Z 10 |     a=p.parse_args(); rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9594113Z 11 |     for file in Path(a.directory).glob('*.jsonl'):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9594278Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9594339Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9594440Z eval/trace_tool.py:9:80: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9594634Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9594742Z  8 | def main():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9595046Z  9 |     p=argparse.ArgumentParser(); p.add_argument('--directory',default='traces'); p.add_argument('--id'); p.add_argument('--since'); p.…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9595383Z    |                                                                                ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9595569Z 10 |     a=p.parse_args(); rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9595738Z 11 |     for file in Path(a.directory).glob('*.jsonl'):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9595898Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9595964Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9596067Z eval/trace_tool.py:9:104: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9596266Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9596367Z  8 | def main():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9596676Z  9 |     p=argparse.ArgumentParser(); p.add_argument('--directory',default='traces'); p.add_argument('--id'); p.add_argument('--since'); p.…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9597024Z    |                                                                                                        ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9597220Z 10 |     a=p.parse_args(); rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9597486Z 11 |     for file in Path(a.directory).glob('*.jsonl'):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9597652Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9597710Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9597813Z eval/trace_tool.py:9:131: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9598011Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9598117Z  8 | …
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9598414Z  9 | …lt='traces'); p.add_argument('--id'); p.add_argument('--since'); p.add_argument('--until'); p.add_argument('--out')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9598806Z    |                                                                 ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9598978Z 10 | …
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9599088Z 11 | …
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9599189Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9599245Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9599352Z eval/trace_tool.py:9:158: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9599552Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9599652Z  8 | …
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9599881Z  9 | …t('--id'); p.add_argument('--since'); p.add_argument('--until'); p.add_argument('--out')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9600137Z    |                                                                 ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9600310Z 10 | …
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9600494Z 11 | …
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9600593Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9600649Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9600756Z eval/trace_tool.py:10:21: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9600953Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9601055Z  8 | def main():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9601367Z  9 |     p=argparse.ArgumentParser(); p.add_argument('--directory',default='traces'); p.add_argument('--id'); p.add_argument('--since'); p.…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9601684Z 10 |     a=p.parse_args(); rows=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9601833Z    |                     ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9602004Z 11 |     for file in Path(a.directory).glob('*.jsonl'):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9602214Z 12 |         for line in file.read_text().splitlines():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9602377Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9602431Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9602537Z eval/trace_tool.py:13:31: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9602740Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9602871Z 11 |     for file in Path(a.directory).glob('*.jsonl'):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9603069Z 12 |         for line in file.read_text().splitlines():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9603259Z 13 |             r=json.loads(line); r=r.get('trace',r)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9603437Z    |                               ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9603599Z 14 |             if 'trace_id' not in r: continue
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9603807Z 15 |             stamp=dt.datetime.fromisoformat(r['timestamp'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9604010Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9604066Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9604209Z eval/trace_tool.py:14:35: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9604450Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9604616Z 12 |         for line in file.read_text().splitlines():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9604856Z 13 |             r=json.loads(line); r=r.get('trace',r)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9605082Z 14 |             if 'trace_id' not in r: continue
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9605279Z    |                                   ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9605516Z 15 |             stamp=dt.datetime.fromisoformat(r['timestamp'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9605801Z 16 |             if a.since and stamp<dt.datetime.fromisoformat(a.since): continue
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9606046Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9606104Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9606236Z eval/trace_tool.py:16:68: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9606461Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9606599Z 14 |             if 'trace_id' not in r: continue
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9606821Z 15 |             stamp=dt.datetime.fromisoformat(r['timestamp'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9607091Z 16 |             if a.since and stamp<dt.datetime.fromisoformat(a.since): continue
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9607355Z    |                                                                    ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9607619Z 17 |             if a.until and stamp>dt.datetime.fromisoformat(a.until): continue
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9607847Z 18 |             rows.append(r)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9608100Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9608198Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9608319Z eval/trace_tool.py:17:68: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9608576Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9608739Z 15 |             stamp=dt.datetime.fromisoformat(r['timestamp'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9608995Z 16 |             if a.since and stamp<dt.datetime.fromisoformat(a.since): continue
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9609260Z 17 |             if a.until and stamp>dt.datetime.fromisoformat(a.until): continue
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9609635Z    |                                                                    ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9609835Z 18 |             rows.append(r)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9610020Z 19 |     rows=list({r['trace_id']:r for r in rows}.values())
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9610209Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9610269Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9610517Z eval/trace_tool.py:22:23: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9610789Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9610894Z 20 |     if a.id:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9611052Z 21 |         row=next((r for r in rows if r['trace_id']==a.id),None)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9611264Z 22 |         if row is None: raise SystemExit('Trace not found')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9611455Z    |                       ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9611610Z 23 |         if row.get('cache_origin_trace_id'):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9611852Z 24 |             origin=next((r for r in rows if r['trace_id']==row['cache_origin_trace_id']),None)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9612083Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9612144Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9612253Z eval/trace_tool.py:34:39: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9612449Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9612725Z 32 |                 'stage_p95':{k:percentile([r['latency'][k] for r in rows if k in r['latency']],.95) for k in sorted({k for r in rows f…
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9613090Z 33 |                 'flagged_injection_queries':sum(bool(r.get('guardrail_actions')) for r in rows)}
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9613361Z 34 |     output=json.dumps(result,indent=2); print(output)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9613556Z    |                                       ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9613727Z 35 |     if a.out: Path(a.out).write_text(output)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9613886Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9613942Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9614044Z eval/trace_tool.py:35:13: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9614236Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9614423Z 33 |                 'flagged_injection_queries':sum(bool(r.get('guardrail_actions')) for r in rows)}
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9614695Z 34 |     output=json.dumps(result,indent=2); print(output)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9614888Z 35 |     if a.out: Path(a.out).write_text(output)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9615058Z    |             ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9615179Z 36 |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9615290Z 37 | if __name__=='__main__': main()
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9615431Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9615486Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9615589Z eval/trace_tool.py:37:24: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9615780Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9615904Z 35 |     if a.out: Path(a.out).write_text(output)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9616059Z 36 |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9616167Z 37 | if __name__=='__main__': main()
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9616319Z    |                        ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9616453Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9616510Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9616636Z indexer/pipeline/report.py:10:31: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9616848Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9616949Z  8 |     rows={}
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9617072Z  9 |     for e in events:
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9617216Z 10 |         if not e.get('source'): continue
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9617380Z    |                               ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9617632Z 11 |         row=rows.setdefault(e['source'],{'document_id':e['source'],'checks':{},'decision':'quarantine'})
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9617901Z 12 |         checks=row['checks']; msg=e['msg']
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9618055Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9618115Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9618240Z indexer/pipeline/report.py:12:29: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9618557Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9618673Z 10 |         if not e.get('source'): continue
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9618925Z 11 |         row=rows.setdefault(e['source'],{'document_id':e['source'],'checks':{},'decision':'quarantine'})
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9619188Z 12 |         checks=row['checks']; msg=e['msg']
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9619348Z    |                             ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9619658Z 13 |         def put(key,passed,reason): checks[key]={'pass':bool(passed),'reason':reason}
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9619952Z 14 |         if msg=='manifest verification': put('completeness',e['passed'],e['checks'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9620172Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9620227Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9620469Z indexer/pipeline/report.py:14:40: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9620729Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9620847Z 12 |         checks=row['checks']; msg=e['msg']
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9621078Z 13 |         def put(key,passed,reason): checks[key]={'pass':bool(passed),'reason':reason}
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9621373Z 14 |         if msg=='manifest verification': put('completeness',e['passed'],e['checks'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9621601Z    |                                        ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9621771Z 15 |         elif msg=='extraction verification':
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9621982Z 16 |             put('quality',e['passed'],e.get('reason','extraction failed'))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9622194Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9622249Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9622368Z indexer/pipeline/report.py:21:41: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9622577Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9622750Z 19 |         elif msg in ('exact duplicate verification','near duplicate verification'):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9623056Z 20 |             put('uniqueness',e['passed'],{k:v for k,v in e.items() if k not in ('msg','source')})
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9623352Z 21 |         elif msg=='recency verification': put('recency',e['passed'],e['reason'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9623576Z    |                                         ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9623829Z 22 |         elif msg=='revision accepted': put('recency',True,'Newer version replaces '+e['previous'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9624134Z 23 |         elif msg=='chunked': row.update(decision='indexed',chunks=e['chunks'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9624337Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9624394Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9624516Z indexer/pipeline/report.py:22:38: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9624730Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9624918Z 20 |             put('uniqueness',e['passed'],{k:v for k,v in e.items() if k not in ('msg','source')})
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9625210Z 21 |         elif msg=='recency verification': put('recency',e['passed'],e['reason'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9625513Z 22 |         elif msg=='revision accepted': put('recency',True,'Newer version replaces '+e['previous'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9625770Z    |                                      ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9625985Z 23 |         elif msg=='chunked': row.update(decision='indexed',chunks=e['chunks'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9626208Z 24 |         elif msg=='superseded metadata':
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9626360Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9626414Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9626533Z indexer/pipeline/report.py:23:28: E701 Multiple statements on one line (colon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9626743Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9626913Z 21 |         elif msg=='recency verification': put('recency',e['passed'],e['reason'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9627218Z 22 |         elif msg=='revision accepted': put('recency',True,'Newer version replaces '+e['previous'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9627514Z 23 |         elif msg=='chunked': row.update(decision='indexed',chunks=e['chunks'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9627731Z    |                            ^ E701
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9627890Z 24 |         elif msg=='superseded metadata':
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9628131Z 25 |             put('recency',False,'Superseded by '+e['replaced_by']); row['decision']='archive'
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9628453Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9628511Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9628634Z indexer/pipeline/report.py:25:67: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9628848Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9629011Z 23 |         elif msg=='chunked': row.update(decision='indexed',chunks=e['chunks'])
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9629230Z 24 |         elif msg=='superseded metadata':
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9629467Z 25 |             put('recency',False,'Superseded by '+e['replaced_by']); row['decision']='archive'
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9629798Z    |                                                                   ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9629980Z 26 |     for row in rows.values():
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9630170Z 27 |         for key in ('quality','completeness','recency','uniqueness'):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9630435Z    |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9630497Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9630640Z indexer/tests/test_extraction_cache.py:6:33: E702 Multiple statements on one line (semicolon)
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9630877Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9631072Z 4 | def test_extraction_cache_reuses_content_but_refreshes_version(tmp_path,monkeypatch):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9631380Z 5 |     monkeypatch.setenv('RAHBAR_RETENTION_DIR',str(tmp_path/'retained'))
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9631639Z 6 |     source=tmp_path/'policy.txt'; source.write_text('old policy')
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9631839Z   |                                 ^ E702
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9632326Z 7 |     calls=[]
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9632561Z 8 |     def extract(path,version,superseded):
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9632810Z   |
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9632931Z 
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9633076Z Found 93 errors.
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9633287Z [*] 1 fixable with the `--fix` option.
+test	Run ruff check api indexer eval corpus	2026-11-23T17:34:21.9643446Z ##[error]Process completed with exit code 1.

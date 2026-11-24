@@ -1,0 +1,141 @@
+{"ts": "2026-11-23T02:21:11Z", "logger": "rahbar.indexer", "msg": "indexer starting", "dummy": false, "embed_model": "nomic-embed-text:latest", "collection": "rahbar-a3-sized", "chroma": "chroma:8000", "pod": "a3-sized-verify-vn6w7"}
+{"ts": "2026-11-23T02:21:12Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "academic-rules-handbook-jun-2026.pdf", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-23T02:21:13Z", "logger": "rahbar.indexer", "msg": "extraction verification", "source": "academic-rules-handbook-jun-2026.pdf", "passed": true, "reason": "page sequence complete and text checks passed", "expected_pages": 58, "extracted_pages": 58, "blank_after_cleaning": [2, 56, 57]}
+{"ts": "2026-11-23T02:21:13Z", "logger": "rahbar.indexer", "msg": "exact duplicate verification", "source": "academic-rules-handbook-jun-2026.pdf", "passed": true, "sha256": "4cfee3e191b84aeb9168f17656c7642212ff52b90f2780d028b33c154aa74b62", "duplicate_of": null, "reason": "unique file content"}
+{"ts": "2026-11-23T02:21:13Z", "logger": "rahbar.indexer", "msg": "near duplicate verification", "source": "academic-rules-handbook-jun-2026.pdf", "passed": true, "closest": null, "cosine": null, "threshold": 0.99, "excluded_predecessor": null}
+{"ts": "2026-11-23T02:21:13Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "academic-rules-handbook-jun-2026.pdf", "chunks": 98}
+{"msg": "retained document", "category": "data-lake", "directory": "/retained/a3-sized-verify-vn6w7/data-lake/academic-rules-handbook-jun-2026.pdf", "source": "academic-rules-handbook-jun-2026.pdf", "version": "2026-06", "reason": {"reason": "verified document"}, "sha256": "4cfee3e191b84aeb9168f17656c7642212ff52b90f2780d028b33c154aa74b62"}
+{"ts": "2026-11-23T02:21:13Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "prospectus-2026-academic-rules-and-regulations.pdf", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-23T02:21:13Z", "logger": "rahbar.indexer", "msg": "extraction verification", "source": "prospectus-2026-academic-rules-and-regulations.pdf", "passed": true, "reason": "page sequence complete and text checks passed", "expected_pages": 5, "extracted_pages": 5, "blank_after_cleaning": []}
+{"ts": "2026-11-23T02:21:13Z", "logger": "rahbar.indexer", "msg": "exact duplicate verification", "source": "prospectus-2026-academic-rules-and-regulations.pdf", "passed": true, "sha256": "a7e7f6896a59eb9413c9e8826e6c4c018ebe52045d10cebfcba92ded10a3174a", "duplicate_of": null, "reason": "unique file content"}
+{"ts": "2026-11-23T02:21:13Z", "logger": "rahbar.indexer", "msg": "near duplicate verification", "source": "prospectus-2026-academic-rules-and-regulations.pdf", "passed": true, "closest": "academic-rules-handbook-jun-2026.pdf", "cosine": 0.9684070072523444, "threshold": 0.99, "excluded_predecessor": null}
+{"ts": "2026-11-23T02:21:13Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "prospectus-2026-academic-rules-and-regulations.pdf", "chunks": 41}
+{"msg": "retained document", "category": "data-lake", "directory": "/retained/a3-sized-verify-vn6w7/data-lake/prospectus-2026-academic-rules-and-regulations.pdf", "source": "prospectus-2026-academic-rules-and-regulations.pdf", "version": "2026", "reason": {"reason": "verified document"}, "sha256": "a7e7f6896a59eb9413c9e8826e6c4c018ebe52045d10cebfcba92ded10a3174a"}
+{"ts": "2026-11-23T02:21:13Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "student-handbook-jun-2026.pdf", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-23T02:21:13Z", "logger": "rahbar.indexer", "msg": "extraction verification", "source": "student-handbook-jun-2026.pdf", "passed": true, "reason": "page sequence complete and text checks passed", "expected_pages": 64, "extracted_pages": 64, "blank_after_cleaning": [2, 63]}
+{"ts": "2026-11-23T02:21:13Z", "logger": "rahbar.indexer", "msg": "exact duplicate verification", "source": "student-handbook-jun-2026.pdf", "passed": true, "sha256": "717eb4b8d37e50185ffe952735c08ef19edd16074d547f10ebd22cf23da67c4d", "duplicate_of": null, "reason": "unique file content"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "near duplicate verification", "source": "student-handbook-jun-2026.pdf", "passed": true, "closest": "academic-rules-handbook-jun-2026.pdf", "cosine": 0.9740331729389534, "threshold": 0.99, "excluded_predecessor": null}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "student-handbook-jun-2026.pdf", "chunks": 107}
+{"msg": "retained document", "category": "data-lake", "directory": "/retained/a3-sized-verify-vn6w7/data-lake/student-handbook-jun-2026.pdf", "source": "student-handbook-jun-2026.pdf", "version": "2026-06", "reason": {"reason": "verified document"}, "sha256": "717eb4b8d37e50185ffe952735c08ef19edd16074d547f10ebd22cf23da67c4d"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "fee-structure-page.html", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "extraction verification", "source": "fee-structure-page.html", "passed": true, "reason": "page sequence complete and text checks passed", "expected_pages": 1, "extracted_pages": 1, "blank_after_cleaning": []}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "exact duplicate verification", "source": "fee-structure-page.html", "passed": true, "sha256": "ec8872ae77cac7e96e20e6979933f36b00aaeb0ab3f668a2116e521c655e7b90", "duplicate_of": null, "reason": "unique file content"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "near duplicate verification", "source": "fee-structure-page.html", "passed": true, "closest": "prospectus-2026-academic-rules-and-regulations.pdf", "cosine": 0.8704819054929445, "threshold": 0.99, "excluded_predecessor": null}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "fee-structure-page.html", "chunks": 8}
+{"msg": "retained document", "category": "data-lake", "directory": "/retained/a3-sized-verify-vn6w7/data-lake/fee-structure-page.html", "source": "fee-structure-page.html", "version": "2026-27", "reason": {"reason": "verified document"}, "sha256": "ec8872ae77cac7e96e20e6979933f36b00aaeb0ab3f668a2116e521c655e7b90"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "grading-page.html", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "extraction verification", "source": "grading-page.html", "passed": true, "reason": "page sequence complete and text checks passed", "expected_pages": 1, "extracted_pages": 1, "blank_after_cleaning": []}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "exact duplicate verification", "source": "grading-page.html", "passed": true, "sha256": "66a995b4d8474e914d37bfa14755a5361f47327d5a7314f9b7ec15d9b6176e6e", "duplicate_of": null, "reason": "unique file content"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "near duplicate verification", "source": "grading-page.html", "passed": true, "closest": "prospectus-2026-academic-rules-and-regulations.pdf", "cosine": 0.951418299222298, "threshold": 0.99, "excluded_predecessor": null}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "grading-page.html", "chunks": 7}
+{"msg": "retained document", "category": "data-lake", "directory": "/retained/a3-sized-verify-vn6w7/data-lake/grading-page.html", "source": "grading-page.html", "version": "2026", "reason": {"reason": "verified document"}, "sha256": "66a995b4d8474e914d37bfa14755a5361f47327d5a7314f9b7ec15d9b6176e6e"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "extraction verification", "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf", "passed": true, "reason": "page sequence complete and text checks passed", "expected_pages": 8, "extracted_pages": 8, "blank_after_cleaning": []}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "exact duplicate verification", "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf", "passed": true, "sha256": "c2d5c7648d1593daf34d5c0596ede476e8984b0551830cc1690017e6e22f1359", "duplicate_of": null, "reason": "unique file content"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "near duplicate verification", "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf", "passed": true, "closest": "student-handbook-jun-2026.pdf", "cosine": 0.9069591625526415, "threshold": 0.99, "excluded_predecessor": null}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf", "chunks": 20}
+{"msg": "retained document", "category": "data-lake", "directory": "/retained/a3-sized-verify-vn6w7/data-lake/faculty-entrepreneurship-and-technical-start-ups-policy.pdf", "source": "faculty-entrepreneurship-and-technical-start-ups-policy.pdf", "version": "2022-05", "reason": {"reason": "verified document"}, "sha256": "c2d5c7648d1593daf34d5c0596ede476e8984b0551830cc1690017e6e22f1359"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "copy-fee-structure-page.html", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "extraction verification", "source": "copy-fee-structure-page.html", "passed": true, "reason": "page sequence complete and text checks passed", "expected_pages": 1, "extracted_pages": 1, "blank_after_cleaning": []}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "exact duplicate verification", "source": "copy-fee-structure-page.html", "passed": false, "sha256": "ec8872ae77cac7e96e20e6979933f36b00aaeb0ab3f668a2116e521c655e7b90", "duplicate_of": "fee-structure-page.html", "reason": "exact duplicate"}
+{"msg": "retained document", "category": "quarantine", "directory": "/retained/a3-sized-verify-vn6w7/quarantine/copy-fee-structure-page.html", "source": "copy-fee-structure-page.html", "version": "2026-27", "reason": {"exact_duplicate_of": "fee-structure-page.html"}, "sha256": "ec8872ae77cac7e96e20e6979933f36b00aaeb0ab3f668a2116e521c655e7b90"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "copy-grading-page.html", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "extraction verification", "source": "copy-grading-page.html", "passed": true, "reason": "page sequence complete and text checks passed", "expected_pages": 1, "extracted_pages": 1, "blank_after_cleaning": []}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "exact duplicate verification", "source": "copy-grading-page.html", "passed": false, "sha256": "66a995b4d8474e914d37bfa14755a5361f47327d5a7314f9b7ec15d9b6176e6e", "duplicate_of": "grading-page.html", "reason": "exact duplicate"}
+{"msg": "retained document", "category": "quarantine", "directory": "/retained/a3-sized-verify-vn6w7/quarantine/copy-grading-page.html", "source": "copy-grading-page.html", "version": "2026", "reason": {"exact_duplicate_of": "grading-page.html"}, "sha256": "66a995b4d8474e914d37bfa14755a5361f47327d5a7314f9b7ec15d9b6176e6e"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "near-fee-structure-page.html", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "extraction verification", "source": "near-fee-structure-page.html", "passed": true, "reason": "page sequence complete and text checks passed", "expected_pages": 1, "extracted_pages": 1, "blank_after_cleaning": []}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "exact duplicate verification", "source": "near-fee-structure-page.html", "passed": true, "sha256": "8f47d5bd718e3808d9c534769dbc2003f4bf40a783f013d0a49c063c6c30a103", "duplicate_of": null, "reason": "unique file content"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "near duplicate verification", "source": "near-fee-structure-page.html", "passed": false, "closest": "fee-structure-page.html", "cosine": 0.9997010113702675, "threshold": 0.99, "excluded_predecessor": null}
+{"msg": "retained document", "category": "quarantine", "directory": "/retained/a3-sized-verify-vn6w7/quarantine/near-fee-structure-page.html", "source": "near-fee-structure-page.html", "version": "2026-27", "reason": {"near_duplicate_of": "fee-structure-page.html", "cosine": 0.9997010113702675, "threshold": 0.99}, "sha256": "8f47d5bd718e3808d9c534769dbc2003f4bf40a783f013d0a49c063c6c30a103"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "b-corrupt.pdf", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+ERROR:root:Could not extract b-corrupt.pdf
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/pdfminer/pdfdocument.py", line 716, in __init__
+    pos = self.find_xref(parser)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pdfminer/pdfdocument.py", line 981, in find_xref
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "extraction verification", "source": "b-corrupt.pdf", "passed": false, "reason": "PdfminerException: Unexpected EOF"}
+    raise PDFNoValidXRef("Unexpected EOF")
+pdfminer.pdfdocument.PDFNoValidXRef: Unexpected EOF
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/pdfplumber/pdf.py", line 50, in __init__
+    self.doc = PDFDocument(PDFParser(stream), password=password or "")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pdfminer/pdfdocument.py", line 722, in __init__
+    newxref.load(parser)
+  File "/usr/local/lib/python3.12/site-packages/pdfminer/pdfdocument.py", line 234, in load
+    (_, obj) = parser.nextobject()
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pdfminer/psparser.py", line 582, in nextobject
+    (pos, token) = self.nexttoken()
+                   ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pdfminer/psparser.py", line 488, in nexttoken
+    changed_stream = self.fillbuf()
+                     ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pdfminer/psparser.py", line 199, in fillbuf
+    raise PSEOF("Unexpected EOF")
+pdfminer.psexceptions.PSEOF: Unexpected EOF
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/pipeline/quality.py", line 18, in checked_extract
+    with pdfplumber.open(path) as pdf:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/pdfplumber/pdf.py", line 107, in open
+    return cls(
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/pdfplumber/pdf.py", line 52, in __init__
+    raise PdfminerException(e)
+pdfplumber.utils.exceptions.PdfminerException: Unexpected EOF
+{"msg": "retained document", "category": "quarantine", "directory": "/retained/a3-sized-verify-vn6w7/quarantine/b-corrupt.pdf", "source": "b-corrupt.pdf", "version": "2027-01", "reason": {"passed": false, "reason": "PdfminerException: Unexpected EOF"}, "sha256": "8e101b9712405dbe8bacfc8bbcb268211b4011f9198db4916275b19141a1d9b4"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "b-missing-title.html", "passed": false, "checks": {"metadata": "missing name", "bytes": "pass", "sha256": "pass"}}
+{"msg": "retained document", "category": "quarantine", "directory": "/retained/a3-sized-verify-vn6w7/quarantine/b-missing-title.html", "source": "b-missing-title.html", "version": "2027-01", "reason": {"metadata": "missing name", "bytes": "pass", "sha256": "pass"}, "sha256": "9641943cb323c4a0faa34d80ee322cf6ba9b7732966a1bea126d99bd2ef0882d"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "b-injected-notice.html", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "extraction verification", "source": "b-injected-notice.html", "passed": true, "reason": "page sequence complete and text checks passed", "expected_pages": 1, "extracted_pages": 1, "blank_after_cleaning": []}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "exact duplicate verification", "source": "b-injected-notice.html", "passed": true, "sha256": "32ce002446a6e24c9229fc1abf4e315711ec75e082e78ea5e19b3fabfd3aef9e", "duplicate_of": null, "reason": "unique file content"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "near duplicate verification", "source": "b-injected-notice.html", "passed": true, "closest": "student-handbook-jun-2026.pdf", "cosine": 0.7246453101193772, "threshold": 0.99, "excluded_predecessor": null}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "b-injected-notice.html", "chunks": 1}
+{"msg": "retained document", "category": "data-lake", "directory": "/retained/a3-sized-verify-vn6w7/data-lake/b-injected-notice.html", "source": "b-injected-notice.html", "version": "2027-01", "reason": {"reason": "verified document"}, "sha256": "32ce002446a6e24c9229fc1abf4e315711ec75e082e78ea5e19b3fabfd3aef9e"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "b-lab.html", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "extraction verification", "source": "b-lab.html", "passed": true, "reason": "page sequence complete and text checks passed", "expected_pages": 1, "extracted_pages": 1, "blank_after_cleaning": []}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "exact duplicate verification", "source": "b-lab.html", "passed": true, "sha256": "89e7e2df1818a5d2c60b0bae9e19651857c7c107e2ec652f654191cad1c72843", "duplicate_of": null, "reason": "unique file content"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "near duplicate verification", "source": "b-lab.html", "passed": true, "closest": "b-injected-notice.html", "cosine": 0.7753572671454954, "threshold": 0.99, "excluded_predecessor": null}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "b-lab.html", "chunks": 1}
+{"msg": "retained document", "category": "data-lake", "directory": "/retained/a3-sized-verify-vn6w7/data-lake/b-lab.html", "source": "b-lab.html", "version": "2027-01", "reason": {"reason": "verified document"}, "sha256": "89e7e2df1818a5d2c60b0bae9e19651857c7c107e2ec652f654191cad1c72843"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "b-booking.html", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "extraction verification", "source": "b-booking.html", "passed": true, "reason": "page sequence complete and text checks passed", "expected_pages": 1, "extracted_pages": 1, "blank_after_cleaning": []}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "exact duplicate verification", "source": "b-booking.html", "passed": true, "sha256": "d4cb3c4c7c4b9b7605763d6df5a1aa92af5e5b3db7d60cecf69ae0cf439e4f4b", "duplicate_of": null, "reason": "unique file content"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "near duplicate verification", "source": "b-booking.html", "passed": true, "closest": "b-injected-notice.html", "cosine": 0.8275341005478939, "threshold": 0.99, "excluded_predecessor": null}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "b-booking.html", "chunks": 1}
+{"msg": "retained document", "category": "data-lake", "directory": "/retained/a3-sized-verify-vn6w7/data-lake/b-booking.html", "source": "b-booking.html", "version": "2027-01", "reason": {"reason": "verified document"}, "sha256": "d4cb3c4c7c4b9b7605763d6df5a1aa92af5e5b3db7d60cecf69ae0cf439e4f4b"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "b-returns.html", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "extraction verification", "source": "b-returns.html", "passed": true, "reason": "page sequence complete and text checks passed", "expected_pages": 1, "extracted_pages": 1, "blank_after_cleaning": []}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "exact duplicate verification", "source": "b-returns.html", "passed": true, "sha256": "95b13ec2fb90b545844e45953478707903910bc0da80938bb21a7632e1c7ceae", "duplicate_of": null, "reason": "unique file content"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "near duplicate verification", "source": "b-returns.html", "passed": true, "closest": "b-booking.html", "cosine": 0.8033271931802662, "threshold": 0.99, "excluded_predecessor": null}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "b-returns.html", "chunks": 1}
+{"msg": "retained document", "category": "data-lake", "directory": "/retained/a3-sized-verify-vn6w7/data-lake/b-returns.html", "source": "b-returns.html", "version": "2027-01", "reason": {"reason": "verified document"}, "sha256": "95b13ec2fb90b545844e45953478707903910bc0da80938bb21a7632e1c7ceae"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "undergraduate-academic-rules-aug-2023.pdf", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "extraction verification", "source": "undergraduate-academic-rules-aug-2023.pdf", "passed": true, "reason": "page sequence complete and text checks passed", "expected_pages": 26, "extracted_pages": 26, "blank_after_cleaning": [3]}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "exact duplicate verification", "source": "undergraduate-academic-rules-aug-2023.pdf", "passed": true, "sha256": "cddfe1f5e9770132e27d686abd1c2e6742ef4732f0c2f431ed514bc1691d2004", "duplicate_of": null, "reason": "unique file content"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "near duplicate verification", "source": "undergraduate-academic-rules-aug-2023.pdf", "passed": true, "closest": "prospectus-2026-academic-rules-and-regulations.pdf", "cosine": 0.9866250933035968, "threshold": 0.99, "excluded_predecessor": null}
+{"msg": "retained document", "category": "archive", "directory": "/retained/a3-sized-verify-vn6w7/archive/undergraduate-academic-rules-aug-2023.pdf", "source": "undergraduate-academic-rules-aug-2023.pdf", "version": "2023-08", "reason": {"reason": "manifest marks version superseded"}, "sha256": "cddfe1f5e9770132e27d686abd1c2e6742ef4732f0c2f431ed514bc1691d2004"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "undergraduate-academic-rules-aug-2023.pdf", "chunks": 59}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "superseded metadata", "source": "undergraduate-academic-rules-aug-2023.pdf", "replaced_by": "newer manifest version (superseded=true)", "chunks": 59}
+{"msg": "retained document", "category": "data-lake", "directory": "/retained/a3-sized-verify-vn6w7/data-lake/undergraduate-academic-rules-aug-2023.pdf", "source": "undergraduate-academic-rules-aug-2023.pdf", "version": "2023-08", "reason": {"reason": "verified document"}, "sha256": "cddfe1f5e9770132e27d686abd1c2e6742ef4732f0c2f431ed514bc1691d2004"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "manifest verification", "source": "b-grading-revision.html", "passed": true, "checks": {"metadata": "pass", "bytes": "pass", "sha256": "pass"}}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "extraction verification", "source": "b-grading-revision.html", "passed": true, "reason": "page sequence complete and text checks passed", "expected_pages": 1, "extracted_pages": 1, "blank_after_cleaning": []}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "exact duplicate verification", "source": "b-grading-revision.html", "passed": true, "sha256": "7650ab86639a5fc9938fbaa8abaf5028309b86e8e269145b1fed32c78290e1a8", "duplicate_of": null, "reason": "unique file content"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "near duplicate verification", "source": "b-grading-revision.html", "passed": true, "closest": "undergraduate-academic-rules-aug-2023.pdf", "cosine": 0.9544052397386021, "threshold": 0.99, "excluded_predecessor": "grading-page.html"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "revision accepted", "source": "b-grading-revision.html", "previous": "grading-page.html", "version": "2027-01"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "chunked", "source": "b-grading-revision.html", "chunks": 7}
+{"msg": "retained document", "category": "data-lake", "directory": "/retained/a3-sized-verify-vn6w7/data-lake/b-grading-revision.html", "source": "b-grading-revision.html", "version": "2027-01", "reason": {"reason": "verified document"}, "sha256": "7650ab86639a5fc9938fbaa8abaf5028309b86e8e269145b1fed32c78290e1a8"}
+{"msg": "retained document", "category": "archive", "directory": "/retained/a3-sized-verify-vn6w7/archive/grading-page.html", "source": "grading-page.html", "version": "2026", "reason": {"replaced_by": "b-grading-revision.html"}, "sha256": "66a995b4d8474e914d37bfa14755a5361f47327d5a7314f9b7ec15d9b6176e6e"}
+{"ts": "2026-11-23T02:21:14Z", "logger": "rahbar.indexer", "msg": "superseded metadata", "source": "grading-page.html", "replaced_by": "b-grading-revision.html", "chunks": 7}
+{"msg": "verification report", "path": "/retained/reports/a3-sized-verify-vn6w7-20261123T022114652161.json"}
+{"ts": "2026-11-23T02:21:16Z", "logger": "rahbar.indexer", "msg": "embedding summary", "verification": {"inputs": 359, "embedded": 0, "model_requests": 0}, "indexing": {"inputs": 351, "embedded": 0, "model_requests": 0}}
+{"ts": "2026-11-23T02:21:16Z", "logger": "rahbar.indexer", "msg": "indexer finished", "chunks": 351, "seconds": 5.2, "memory_peak_bytes": 137785344}

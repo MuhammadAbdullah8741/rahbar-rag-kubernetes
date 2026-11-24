@@ -1,0 +1,8 @@
+{
+  "before_collection": "rahbar-a3-candidate-cc94f4b5d7b2",
+  "after_collection": "rahbar-a3-candidate-740df1771f94",
+  "before_count": 351,
+  "after_count": 351,
+  "stable_ids": true,
+  "note": "Immutable snapshots republish stored vectors; embedding counts are in a3-unchanged.log."
+}

@@ -1,0 +1,62 @@
+q01 2.45s answered=False error=None
+q02 0.24s answered=False error=None
+q03 0.21s answered=False error=None
+q04 0.24s answered=False error=None
+q05 0.22s answered=False error=None
+q06 0.19s answered=False error=None
+q07 0.21s answered=False error=None
+q08 0.25s answered=False error=None
+q09 0.18s answered=False error=None
+q10 0.27s answered=False error=None
+q11 0.20s answered=False error=None
+q12 0.44s answered=False error=None
+q13 0.27s answered=False error=None
+q14 0.35s answered=False error=None
+q15 0.30s answered=False error=None
+q16 0.26s answered=False error=None
+q17 0.23s answered=False error=None
+q18 0.25s answered=False error=None
+q19 0.23s answered=False error=None
+q20 0.60s answered=False error=None
+q21 0.47s answered=False error=None
+q22 0.31s answered=False error=None
+q23 0.39s answered=False error=None
+q24 0.77s answered=False error=None
+q25 0.53s answered=False error=None
+H1 0.46s answered=False error=None
+H2 0.40s answered=False error=None
+H3 0.35s answered=False error=None
+H4 0.37s answered=False error=None
+H5 0.62s answered=False error=None
+H6 0.69s answered=False error=None
+H7 0.52s answered=False error=None
+H8 0.33s answered=False error=None
+Level | Metric | Value
+--- | --- | ---
+module | paraphrase_mean | 0.7828617377229276
+module | unrelated_mean | 0.4192277980519883
+module | gap | 0.36363393967093927
+module | seconds_per_chunk | 0.12306264097870998
+module | max_repeat_difference | 0.0
+module | paraphrase_pairs | 15
+module | unrelated_pairs | 15
+component | recall_at_3 | 0
+component | recall_at_5 | 0
+component | mrr | 0
+component | ndcg_at_5 | 0.0
+noise_delta | recall_at_3 | 0
+noise_delta | recall_at_5 | 0
+noise_delta | mrr | 0
+noise_delta | ndcg_at_5 | 0.0
+end_to_end | citation_validity | None
+end_to_end | faithfulness | None
+end_to_end | citation_ground_truth | 0
+end_to_end | answerable_success | 0
+end_to_end | abstention_correctness | 1
+end_to_end | latency_p50 | 0.3148659670005145
+end_to_end | latency_p95 | 0.7233292468003127
+end_to_end | answered_count | 0
+end_to_end | cache_hit_rate | 0
+end_to_end | errors | 0
+
+RESULT /results/final/bad-candidate.json

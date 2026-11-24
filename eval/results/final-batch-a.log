@@ -1,0 +1,62 @@
+q01 27.64s answered=True error=None
+q02 22.88s answered=True error=None
+q03 29.01s answered=True error=None
+q04 21.19s answered=True error=None
+q05 34.52s answered=False error=None
+q06 36.90s answered=True error=None
+q07 40.28s answered=True error=None
+q08 36.10s answered=True error=None
+q09 29.66s answered=True error=None
+q10 33.58s answered=True error=None
+q11 17.85s answered=True error=None
+q12 48.72s answered=True error=None
+q13 14.53s answered=False error=None
+q14 1.78s answered=False error=None
+q15 31.22s answered=False error=None
+q16 0.37s answered=False error=None
+q17 0.34s answered=False error=None
+q18 0.40s answered=False error=None
+q19 0.62s answered=False error=None
+q20 33.14s answered=True error=None
+q21 17.81s answered=True error=None
+q22 43.43s answered=True error=None
+q23 0.84s answered=False error=None
+q24 0.81s answered=False error=None
+q25 0.93s answered=False error=None
+H1 40.89s answered=True error=None
+H2 46.74s answered=True error=None
+H3 0.82s answered=False error=None
+H4 42.87s answered=True error=None
+H5 33.37s answered=True error=None
+H6 20.78s answered=False error=None
+H7 23.23s answered=True error=None
+H8 22.72s answered=False error=None
+Level | Metric | Value
+--- | --- | ---
+module | paraphrase_mean | 0.7828617377229276
+module | unrelated_mean | 0.4192277980519883
+module | gap | 0.36363393967093927
+module | seconds_per_chunk | 0.15431686725543764
+module | max_repeat_difference | 0.0
+module | paraphrase_pairs | 15
+module | unrelated_pairs | 15
+component | recall_at_3 | 0.7380952380952381
+component | recall_at_5 | 0.75
+component | mrr | 0.7142857142857143
+component | ndcg_at_5 | 0.7174144904223495
+noise_delta | recall_at_3 | 0.0
+noise_delta | recall_at_5 | -0.011904761904761862
+noise_delta | mrr | -0.005952380952380931
+noise_delta | ndcg_at_5 | -0.009699805432768493
+end_to_end | citation_validity | 1
+end_to_end | faithfulness | 0.5263157894736842
+end_to_end | citation_ground_truth | 0.4642857142857143
+end_to_end | answerable_success | 0.32142857142857145
+end_to_end | abstention_correctness | 1
+end_to_end | latency_p50 | 23.23310311900059
+end_to_end | latency_p95 | 44.752058921800014
+end_to_end | answered_count | 19
+end_to_end | cache_hit_rate | 0
+end_to_end | errors | 0
+
+RESULT /results/final/batch-a.json
