@@ -8,6 +8,37 @@ R=Path('eval/results'); C=R/'cluster'
 load=lambda p:json.loads(p.read_text())
 section=sys.argv[1]
 print('RAHBAR Assignment 3 | '+section+' | saved local cluster evidence\n')
+if section.startswith('Z'):
+    F=R/'final'
+    print('FINAL 33-QUESTION DATASET - 8 human questions and 8 human reviews')
+    if section=='ZB':
+        print('RUN: kubectl logs -n rahbar job/final-candidate (metric summary)')
+        result=subprocess.run(['kubectl','logs','-n','rahbar','job/final-candidate'],check=True,text=True,capture_output=True)
+        print(result.stdout[result.stdout.index('Level | Metric'):])
+    elif section=='ZC':
+        print('RUN: python eval/gate.py with saved final metrics and mounted ConfigMaps')
+        for name in ['candidate-gate','bad-candidate-gate','gate-strict','gate-restored']:
+            result=load(F/(name+'.json')); print(name, result['decision'].upper())
+            for reason in result['failures']: print('  '+reason)
+        print('Strict demonstration: deliberately unsatisfiable faithfulness floor 1.01.')
+        print('Restored thresholds are exactly config/gate.json; same image and metrics.')
+        print('Release decision:',json.dumps(load(F/'release-decision.json')))
+    elif section=='ZE':
+        print('RUN: python eval/coverage.py, before and after six added questions')
+        for name in ['coverage-before','coverage-after']:
+            r=load(F/(name+'.json'))
+            print(name, 'golden=',r['golden_count'],'queries=',r['queries'],'coverage=',r['coverage'],'cutoff=',r['similarity_threshold'],'exit=',int(r['coverage']<r['minimum_coverage']))
+            for topic,questions in r['uncovered_topics'].items(): print('  ',topic,len(questions))
+        print('RUN: python eval/audit_golden.py')
+        subprocess.run([sys.executable,'eval/audit_golden.py'],check=True)
+    elif section=='ZF':
+        print('RUN: kubectl get jobs -n rahbar (final experiment Jobs)')
+        r=subprocess.run(['kubectl','get','jobs','-n','rahbar'],check=True,text=True,capture_output=True)
+        print('\n'.join(line for line in r.stdout.splitlines() if line.startswith('NAME') or line.startswith('final-')))
+        print('RUN: saved rollout/undo trace comparison')
+        if (F/'rollback-proof.json').exists(): print(json.dumps(load(F/'rollback-proof.json'),indent=2))
+        else: print(json.dumps(load(F/'release-decision.json'),indent=2))
+    sys.exit(0)
 if section.startswith('F0'):
     command=['kubectl','get','all,pvc,configmap,cronjob,job','-n','rahbar','-o','name']
     result=subprocess.run(command,check=True,text=True,capture_output=True)

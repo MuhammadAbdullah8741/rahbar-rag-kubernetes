@@ -83,3 +83,26 @@ live on `rahbar-a3-retention`; traces and evaluations live on `a3-results`.
 A collection publish uses an immutable snapshot and atomic pointer. Unchanged
 chunks retain IDs and reuse vectors, but snapshot publication still writes
 their stored vectors. The implementation does not claim zero physical writes.
+
+## Final 33-question evaluation
+
+After the setup and candidate-ingestion steps above, build the final tags and
+run the final experiment orchestration (all evaluation requests run in Jobs):
+
+```bash
+docker tag rahbar-api:a3 rahbar-api:a3-final
+docker build -t rahbar-eval:a3-submission -f eval/Dockerfile .
+minikube image load rahbar-api:a3-final rahbar-eval:a3-submission
+kubectl set image -n rahbar deployment/api api=rahbar-api:a3-final
+kubectl set image -n rahbar deployment/api-candidate api=rahbar-api:a3-final
+python scripts/a3_final_experiments.py
+python scripts/a3_final_release.py
+```
+
+The first script runs baseline, repeat, top-k 3, top-k 0 and Batch A on the
+same final golden set. The second runs coverage, candidate/bad/strict/restored
+ConfigMap gates and promotes only a passing candidate, then demonstrates undo.
+`eval/results/final/` contains the final evidence. Old `cluster/` results and
+older screenshots retain their original 25-question provenance.
+Named Jobs must be absent before repeating these scripts; save their results
+and choose new names rather than deleting evidence before collecting it.

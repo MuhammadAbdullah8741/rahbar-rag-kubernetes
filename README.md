@@ -1,4 +1,62 @@
-# RAHBAR: grounded university-policy answers on Kubernetes
+# RAHBAR - Assignment 3 RAGOps
+
+Final source includes 33 golden questions (28 answerable, 5 unanswerable,
+17 hard), 8 group-authored questions and 8 named synthetic-question reviews.
+The coverage-expanded set has 39 questions. Group identity and contributions
+are recorded in `config/team.json`; AI assistance is in `docs/AI-USAGE.md`.
+
+Final measurements are under `eval/results/final/`. Earlier 25-question runs
+remain under `eval/results/cluster/` as historical evidence. Do not mix their
+hashes or metrics. Fact rubrics are fixed before final runs and test both answer
+facts and cited evidence; they are conservative lexical proxies, not a semantic
+LLM judge. Arithmetic checks require the result and evidence for its operands.
+
+Run commands from this repository in WSL after following `k8s/README.md`.
+Activate the Python environment containing API/indexer dependencies first.
+
+| Part | Command |
+| --- | --- |
+| A verification/ingestion | `python scripts/a3_cluster.py ingest --name a3-demo-ingest --collection rahbar-a3-demo` |
+| A logs | `kubectl logs -n rahbar -f job/a3-demo-ingest` |
+| A unchanged/deletion checks | `python scripts/a3_data_proofs.py` |
+| B provenance audit | `python eval/audit_golden.py` |
+| B scorer regression tests | `pytest eval/test_metrics.py -q` |
+| B final experiment suite | `python scripts/a3_final_experiments.py` |
+| B repeat comparison | `python eval/compare.py eval/results/final/baseline-ab.json eval/results/final/baseline-repeat.json --out eval/results/final/repeat-comparison.json` |
+| C final gate | `python eval/gate.py --baseline eval/results/final/baseline-ab.json --candidate eval/results/final/candidate.json --thresholds config/gate.json` |
+| D historical failure lookup | `python eval/trace_tool.py --id d9871d8345a34b89984ee973eccab23c` |
+| D window metrics | `python eval/trace_tool.py --since 2026-11-23T17:40:00+00:00` |
+| E coverage and F mounted gates/release | `python scripts/a3_final_release.py` |
+| E corpus drift | `python eval/compare.py eval/results/final/batch-a.json eval/results/final/baseline-ab.json --out eval/results/final/drift-comparison.json` |
+| F evidence collection | `python scripts/a3_cluster.py collect` |
+| G report | `python scripts/build_a3_report.py` |
+| G package | `python scripts/package_a3.py` |
+
+The final experiment scripts create named Jobs; use fresh names on subsequent
+runs or remove only the previous completed experiment Jobs after saving their
+logs. `a3_final_release.py` promotes only a passing candidate. A failed release
+gate is a measured outcome, not permission to relax thresholds.
+
+Build the evaluation image with
+`docker build -f eval/Dockerfile -t rahbar-eval:a3-submission .`
+and load it using `minikube image load rahbar-eval:a3-submission`.
+The final experiment uses the existing `rahbar-api:a3-final` serving image;
+subsequent source edits to API tracing only add type annotations.
+
+For a fresh machine, follow the image build, corpus fetch, PVC seed and ingestion
+steps in `k8s/README.md` before running final experiments. The local cluster needs
+host Ollama serving llama3.2:3b and nomic-embed-text. Docker and Ollama must both
+be running. Original corpus downloads are verified against `corpus/MANIFEST.md`;
+the local submission ZIP also contains the exact source corpus.
+
+The report is `docs/Assignment_03_Report.pdf`. Its appendix retains labelled
+historical screenshots where the underlying demonstration is unchanged, and
+final results are identified separately. The fixture CI tests do not replace
+the real Ollama/Kubernetes evaluation evidence.
+
+---
+
+## Assignment 2 background
 
 [![CI](https://github.com/MuhammadAbdullah8741/rahbar-rag-kubernetes/actions/workflows/ci.yml/badge.svg)](https://github.com/MuhammadAbdullah8741/rahbar-rag-kubernetes/actions/workflows/ci.yml)
 
